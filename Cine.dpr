@@ -6,7 +6,8 @@ uses
   TMDB.MediaEngine in 'Engine\TMDB.MediaEngine.pas',
   TMDB.ApiClient in 'API\TMDB.ApiClient.pas',
   TMDB.KeyStore in 'Store\TMDB.KeyStore.pas',
-  TokenView in 'Views\TokenView.pas' {TokenMain};
+  TokenView in 'Views\TokenView.pas' {TokenMain},
+  FilmesView in 'Views\FilmesView.pas' {Form1};
 
 {$R *.res}
 
@@ -16,7 +17,7 @@ begin
   Application.ShowMainForm := False;
 
   Application.CreateForm(TCineMain, CineMain);
-
+  Application.CreateForm(TForm1, Form1);
   if HasStoredApiKey then
   begin
     Application.ShowMainForm := True;

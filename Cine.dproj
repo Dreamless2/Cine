@@ -136,6 +136,10 @@
             <Form>TokenMain</Form>
             <FormType>dfm</FormType>
         </DCCReference>
+        <DCCReference Include="Views\FilmesView.pas">
+            <Form>Form1</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
         </BuildConfiguration>
