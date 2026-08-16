@@ -1,0 +1,65 @@
+# Telinha
+
+> ⚠️ Este repositório é apenas para visualização
+
+> ❌ Uso do código não é permitido
+
+---
+
+## 📌 Sobre o Projeto
+
+Telinha é um software desenvolvido com foco em desempenho, organização e arquitetura robusta.
+
+
+Este repositório existe exclusivamente para **portfólio técnico**.
+
+---
+
+## ⚠️ Aviso Legal
+
+Este projeto **não é open source**.
+
+Nenhuma permissão é concedida para:
+
+* Uso
+* Cópia
+* Modificação
+* Distribuição
+* Uso comercial 
+
+Sem autorização prévia por escrito.
+
+---
+
+## 🔒 Licença
+
+Este software está sob licença proprietária.
+
+Consulte o arquivo `LICENSE` para mais detalhes.
+
+---
+
+## 🎯 Objetivo
+
+Demonstrar:
+
+* Arquitetura de software
+* Boas práticas 
+* Organização de código 
+* Capacidade técnica 
+
+---
+
+## 🚫 Uso Não Autorizado
+
+O uso indevido pode resultar em medidas legais.
+
+---
+
+## 📩 Contato
+
+📧 [tiagonet50@gmail.com](mailto:tiagonet50@gmail.com)
+
+---
+
+© 2026 Dreamless2. Todos os direitos reservados.
