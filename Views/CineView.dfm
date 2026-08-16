@@ -21,4 +21,12 @@ object CineMain: TCineMain
     Caption = 'Fechar'
     TabOrder = 0
   end
+  object RadioGroup1: TRadioGroup
+    Left = 280
+    Top = 136
+    Width = 185
+    Height = 105
+    Caption = 'RadioGroup1'
+    TabOrder = 1
+  end
 end
