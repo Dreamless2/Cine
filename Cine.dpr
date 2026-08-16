@@ -7,7 +7,9 @@ uses
   TMDB.ApiClient in 'API\TMDB.ApiClient.pas',
   TMDB.KeyStore in 'Store\TMDB.KeyStore.pas',
   TokenView in 'Views\TokenView.pas' {TokenMain},
-  FilmesView in 'Views\FilmesView.pas' {Form1};
+  FilmesView in 'Views\FilmesView.pas' {PrincipalMain},
+  SeriesView in 'Views\SeriesView.pas' {SeriesMain},
+  AnimesView in 'Views\AnimesView.pas' {AnimesMain};
 
 {$R *.res}
 
@@ -17,7 +19,9 @@ begin
   Application.ShowMainForm := False;
 
   Application.CreateForm(TCineMain, CineMain);
-  Application.CreateForm(TForm1, Form1);
+  Application.CreateForm(TPrincipalMain, PrincipalMain);
+  Application.CreateForm(TSeriesMain, SeriesMain);
+  Application.CreateForm(TAnimesMain, AnimesMain);
   if HasStoredApiKey then
   begin
     Application.ShowMainForm := True;

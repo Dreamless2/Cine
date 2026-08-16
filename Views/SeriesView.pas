@@ -1,4 +1,4 @@
-unit FilmesView;
+unit SeriesView;
 
 interface
 
@@ -7,7 +7,7 @@ uses
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs;
 
 type
-  TPrincipalMain = class(TForm)
+  TSeriesMain = class(TForm)
   private
     { Private declarations }
   public
@@ -15,7 +15,7 @@ type
   end;
 
 var
-  PrincipalMain: TPrincipalMain;
+  SeriesMain: TSeriesMain;
 
 implementation
 

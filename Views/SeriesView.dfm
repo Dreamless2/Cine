@@ -1,10 +1,9 @@
-object PrincipalMain: TPrincipalMain
+object SeriesMain: TSeriesMain
   Left = 0
   Top = 0
-  BorderStyle = bsSingle
-  Caption = 'PrincipalMain'
-  ClientHeight = 795
-  ClientWidth = 1380
+  Caption = 'SeriesMain'
+  ClientHeight = 819
+  ClientWidth = 1139
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText

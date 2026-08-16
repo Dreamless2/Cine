@@ -137,7 +137,15 @@
             <FormType>dfm</FormType>
         </DCCReference>
         <DCCReference Include="Views\FilmesView.pas">
-            <Form>Form1</Form>
+            <Form>PrincipalMain</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="Views\SeriesView.pas">
+            <Form>SeriesMain</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="Views\AnimesView.pas">
+            <Form>AnimesMain</Form>
             <FormType>dfm</FormType>
         </DCCReference>
         <BuildConfiguration Include="Base">
