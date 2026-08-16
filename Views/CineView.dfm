@@ -13,4 +13,12 @@ object CineMain: TCineMain
   Font.Style = []
   Position = poScreenCenter
   TextHeight = 15
+  object CloseButton: TButton
+    Left = 368
+    Top = 408
+    Width = 313
+    Height = 89
+    Caption = 'CloseButton'
+    TabOrder = 0
+  end
 end

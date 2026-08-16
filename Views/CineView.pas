@@ -8,6 +8,7 @@ uses
 
 type
   TCineMain = class(TForm)
+    CloseButton: TButton;
   private
     { Private declarations }
   public
