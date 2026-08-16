@@ -14,11 +14,11 @@ object CineMain: TCineMain
   Position = poScreenCenter
   TextHeight = 15
   object CloseButton: TButton
-    Left = 368
-    Top = 408
+    Left = 424
+    Top = 464
     Width = 313
     Height = 89
-    Caption = 'CloseButton'
+    Caption = 'Fechar'
     TabOrder = 0
   end
 end
