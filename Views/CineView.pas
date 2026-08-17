@@ -8,6 +8,10 @@ uses
 
 type
   TCineMain = class(TForm)
+    PanelTopBar: TPanel;
+    PanelTopTitle: TPanel;
+    PanelStatusBar: TPanel;
+    PanelDesktop: TPanel;
   private
     { Private declarations }
   public
