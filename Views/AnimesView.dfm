@@ -1,9 +1,10 @@
 object AnimesMain: TAnimesMain
   Left = 0
   Top = 0
+  BorderStyle = bsNone
   Caption = 'AnimesMain'
-  ClientHeight = 730
-  ClientWidth = 1200
+  ClientHeight = 769
+  ClientWidth = 1216
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText

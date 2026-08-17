@@ -1,9 +1,10 @@
 object SeriesMain: TSeriesMain
   Left = 0
   Top = 0
+  BorderStyle = bsNone
   Caption = 'SeriesMain'
-  ClientHeight = 819
-  ClientWidth = 1139
+  ClientHeight = 858
+  ClientWidth = 1155
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
