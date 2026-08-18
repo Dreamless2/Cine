@@ -3,8 +3,8 @@ object CineMain: TCineMain
   Top = 0
   BorderStyle = bsNone
   Caption = 'CineMain'
-  ClientHeight = 677
-  ClientWidth = 1311
+  ClientHeight = 929
+  ClientWidth = 1373
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -16,44 +16,41 @@ object CineMain: TCineMain
   object PanelTopBar: TPanel
     Left = 0
     Top = 0
-    Width = 1311
-    Height = 41
+    Width = 1373
+    Height = 25
     Align = alTop
     TabOrder = 0
-    ExplicitLeft = 312
-    ExplicitTop = 88
-    ExplicitWidth = 185
+    ExplicitWidth = 1311
   end
   object PanelTopTitle: TPanel
     Left = 0
-    Top = 41
-    Width = 1311
-    Height = 41
+    Top = 25
+    Width = 1373
+    Height = 64
     Align = alTop
     TabOrder = 1
-    ExplicitTop = 8
+    ExplicitTop = 41
+    ExplicitWidth = 1311
   end
   object PanelStatusBar: TPanel
     Left = 0
-    Top = 636
-    Width = 1311
+    Top = 888
+    Width = 1373
     Height = 41
     Align = alBottom
     TabOrder = 2
-    ExplicitLeft = 504
-    ExplicitTop = 240
-    ExplicitWidth = 185
+    ExplicitTop = 636
+    ExplicitWidth = 1311
   end
   object PanelDesktop: TPanel
     Left = 0
-    Top = 82
-    Width = 1311
-    Height = 554
+    Top = 89
+    Width = 1373
+    Height = 799
     Align = alClient
     TabOrder = 3
-    ExplicitLeft = 384
-    ExplicitTop = 168
-    ExplicitWidth = 185
-    ExplicitHeight = 41
+    ExplicitTop = 82
+    ExplicitWidth = 1311
+    ExplicitHeight = 554
   end
 end
