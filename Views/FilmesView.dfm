@@ -2,8 +2,8 @@ object PrincipalMain: TPrincipalMain
   Left = 0
   Top = 0
   BorderStyle = bsNone
-  ClientHeight = 834
-  ClientWidth = 1396
+  ClientHeight = 833
+  ClientWidth = 1341
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -14,27 +14,31 @@ object PrincipalMain: TPrincipalMain
   object PanelTopBar: TPanel
     Left = 0
     Top = 0
-    Width = 1396
+    Width = 1341
     Height = 41
     Align = alTop
     TabOrder = 0
+    ExplicitWidth = 1396
   end
   object PanelTitle: TPanel
     Left = 0
     Top = 41
-    Width = 1396
+    Width = 1341
     Height = 80
     Align = alTop
     TabOrder = 1
+    ExplicitWidth = 1396
   end
   object PanelDesktop: TPanel
     Left = 0
     Top = 121
-    Width = 1396
-    Height = 713
+    Width = 1341
+    Height = 712
     Align = alClient
     TabOrder = 2
     ExplicitLeft = 32
+    ExplicitWidth = 1396
+    ExplicitHeight = 713
     object Label1: TLabel
       Left = 16
       Top = 14
@@ -256,20 +260,36 @@ object PrincipalMain: TPrincipalMain
       TabOrder = 13
     end
     object Button1: TButton
-      Left = 224
-      Top = 616
+      Left = 248
+      Top = 624
       Width = 203
       Height = 57
       Caption = 'Button1'
       TabOrder = 14
     end
     object Button2: TButton
-      Left = 232
+      Left = 480
       Top = 624
       Width = 203
       Height = 57
       Caption = 'Button1'
       TabOrder = 15
+    end
+    object Button3: TButton
+      Left = 712
+      Top = 624
+      Width = 203
+      Height = 57
+      Caption = 'Button1'
+      TabOrder = 16
+    end
+    object Button4: TButton
+      Left = 944
+      Top = 624
+      Width = 203
+      Height = 57
+      Caption = 'Button1'
+      TabOrder = 17
     end
   end
 end
