@@ -19,10 +19,8 @@ object PrincipalMain: TPrincipalMain
     Height = 706
     Align = alClient
     TabOrder = 0
-    ExplicitLeft = 32
-    ExplicitTop = 121
-    ExplicitWidth = 1396
-    ExplicitHeight = 713
+    ExplicitLeft = -24
+    ExplicitTop = 8
     object Label1: TLabel
       Left = 16
       Top = 14
@@ -38,8 +36,8 @@ object PrincipalMain: TPrincipalMain
       Caption = 'Nome'
     end
     object Label3: TLabel
-      Left = 712
-      Top = 6
+      Left = 703
+      Top = 14
       Width = 75
       Height = 15
       Caption = 'Tipo de '#193'udio'
@@ -115,11 +113,11 @@ object PrincipalMain: TPrincipalMain
       Caption = 'Produtora'
     end
     object Label14: TLabel
-      Left = 888
+      Left = 854
       Top = 14
-      Width = 53
+      Width = 43
       Height = 15
-      Caption = 'Produtora'
+      Caption = 'Resumo'
     end
     object Edit1: TEdit
       Left = 16
@@ -248,7 +246,7 @@ object PrincipalMain: TPrincipalMain
       Top = 624
       Width = 203
       Height = 57
-      Caption = 'Button1'
+      Caption = 'Copiar'
       TabOrder = 14
     end
     object Button2: TButton
@@ -256,7 +254,7 @@ object PrincipalMain: TPrincipalMain
       Top = 624
       Width = 203
       Height = 57
-      Caption = 'Button1'
+      Caption = 'Salvar/Atualizar'
       TabOrder = 15
     end
     object Button3: TButton
@@ -264,7 +262,7 @@ object PrincipalMain: TPrincipalMain
       Top = 624
       Width = 203
       Height = 57
-      Caption = 'Button1'
+      Caption = 'Anterior'
       TabOrder = 16
     end
     object Button4: TButton
@@ -272,7 +270,7 @@ object PrincipalMain: TPrincipalMain
       Top = 624
       Width = 203
       Height = 57
-      Caption = 'Button1'
+      Caption = 'Pr'#243'ximo'
       TabOrder = 17
     end
   end
