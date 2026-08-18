@@ -126,6 +126,13 @@ object PrincipalMain: TPrincipalMain
       Height = 15
       Caption = 'Produtora'
     end
+    object Label14: TLabel
+      Left = 888
+      Top = 14
+      Width = 53
+      Height = 15
+      Caption = 'Produtora'
+    end
     object Edit1: TEdit
       Left = 16
       Top = 35
@@ -157,7 +164,7 @@ object PrincipalMain: TPrincipalMain
         'Desconhecido')
     end
     object Memo1: TMemo
-      Left = 16
+      Left = 15
       Top = 85
       Width = 832
       Height = 196
@@ -205,7 +212,7 @@ object PrincipalMain: TPrincipalMain
       Width = 831
       Height = 23
       TabOrder = 8
-      TextHint = 'Nome Alternativo'
+      TextHint = 'Franquia'
     end
     object Edit7: TEdit
       Left = 17
@@ -213,7 +220,7 @@ object PrincipalMain: TPrincipalMain
       Width = 472
       Height = 23
       TabOrder = 9
-      TextHint = 'Nome Alternativo'
+      TextHint = 'G'#234'nero'
     end
     object Edit8: TEdit
       Left = 495
@@ -221,7 +228,7 @@ object PrincipalMain: TPrincipalMain
       Width = 353
       Height = 23
       TabOrder = 10
-      TextHint = 'Nome Alternativo'
+      TextHint = 'Diretor'
     end
     object Edit9: TEdit
       Left = 17
@@ -238,6 +245,31 @@ object PrincipalMain: TPrincipalMain
       Height = 23
       TabOrder = 12
       TextHint = 'Produtora'
+    end
+    object Memo2: TMemo
+      Left = 854
+      Top = 35
+      Width = 467
+      Height = 548
+      Lines.Strings = (
+        'Memo1')
+      TabOrder = 13
+    end
+    object Button1: TButton
+      Left = 224
+      Top = 616
+      Width = 203
+      Height = 57
+      Caption = 'Button1'
+      TabOrder = 14
+    end
+    object Button2: TButton
+      Left = 232
+      Top = 624
+      Width = 203
+      Height = 57
+      Caption = 'Button1'
+      TabOrder = 15
     end
   end
 end

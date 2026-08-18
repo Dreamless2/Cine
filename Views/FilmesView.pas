@@ -37,6 +37,10 @@ type
     Label13: TLabel;
     Edit9: TEdit;
     Edit10: TEdit;
+    Label14: TLabel;
+    Memo2: TMemo;
+    Button1: TButton;
+    Button2: TButton;
   private
     { Private declarations }
   public
