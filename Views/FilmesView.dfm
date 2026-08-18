@@ -119,7 +119,7 @@ object PrincipalMain: TPrincipalMain
       Height = 15
       Caption = 'Resumo'
     end
-    object Edit1: TEdit
+    object CodigoBox: TEdit
       Left = 16
       Top = 35
       Width = 121
@@ -128,7 +128,7 @@ object PrincipalMain: TPrincipalMain
       TabOrder = 0
       TextHint = 'C'#243'digo TMDB'
     end
-    object Edit2: TEdit
+    object NomeBox: TEdit
       Left = 143
       Top = 35
       Width = 554
@@ -176,7 +176,7 @@ object PrincipalMain: TPrincipalMain
       TabOrder = 5
       Text = '  /  /    '
     end
-    object Edit4: TEdit
+    object TagsBox: TEdit
       Left = 727
       Top = 358
       Width = 120
@@ -192,7 +192,7 @@ object PrincipalMain: TPrincipalMain
       TabOrder = 7
       TextHint = 'Nome Alternativo'
     end
-    object Edit6: TEdit
+    object FranquiaBox: TEdit
       Left = 17
       Top = 408
       Width = 831
@@ -200,7 +200,7 @@ object PrincipalMain: TPrincipalMain
       TabOrder = 8
       TextHint = 'Franquia'
     end
-    object Edit7: TEdit
+    object GeneroBox: TEdit
       Left = 17
       Top = 458
       Width = 472
@@ -208,7 +208,7 @@ object PrincipalMain: TPrincipalMain
       TabOrder = 9
       TextHint = 'G'#234'nero'
     end
-    object Edit8: TEdit
+    object DiretorBox: TEdit
       Left = 495
       Top = 458
       Width = 353
@@ -216,7 +216,7 @@ object PrincipalMain: TPrincipalMain
       TabOrder = 10
       TextHint = 'Diretor'
     end
-    object Edit9: TEdit
+    object ArtistasBox: TEdit
       Left = 17
       Top = 508
       Width = 831
@@ -224,7 +224,7 @@ object PrincipalMain: TPrincipalMain
       TabOrder = 11
       TextHint = 'Artistas'
     end
-    object Edit10: TEdit
+    object ProdutoraBox: TEdit
       Left = 16
       Top = 560
       Width = 831
