@@ -28,6 +28,7 @@ type
     MaskEdit1: TMaskEdit;
     Edit4: TEdit;
     Edit5: TEdit;
+    Edit6: TEdit;
   private
     { Private declarations }
   public

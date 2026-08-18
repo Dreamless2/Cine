@@ -171,5 +171,13 @@ object PrincipalMain: TPrincipalMain
       TabOrder = 7
       TextHint = 'Nome Alternativo'
     end
+    object Edit6: TEdit
+      Left = 24
+      Top = 366
+      Width = 705
+      Height = 23
+      TabOrder = 8
+      TextHint = 'Nome Alternativo'
+    end
   end
 end
