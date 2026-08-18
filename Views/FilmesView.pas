@@ -4,7 +4,7 @@ interface
 
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
-  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.ExtCtrls;
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.ExtCtrls, Vcl.Mask;
 
 type
   TPrincipalMain = class(TForm)
@@ -23,6 +23,9 @@ type
     Edit1: TEdit;
     Edit2: TEdit;
     ComboBox1: TComboBox;
+    Memo1: TMemo;
+    Edit3: TEdit;
+    MaskEdit1: TMaskEdit;
   private
     { Private declarations }
   public

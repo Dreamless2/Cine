@@ -34,8 +34,8 @@ object PrincipalMain: TPrincipalMain
     Height = 713
     Align = alClient
     TabOrder = 2
-    ExplicitLeft = -104
-    ExplicitTop = 127
+    ExplicitLeft = 128
+    ExplicitTop = 47
     object Label1: TLabel
       Left = 16
       Top = 14
@@ -66,35 +66,35 @@ object PrincipalMain: TPrincipalMain
     end
     object Label5: TLabel
       Left = 16
-      Top = 134
+      Top = 287
       Width = 78
       Height = 15
       Caption = 'Nome Original'
     end
     object Label6: TLabel
-      Left = 248
-      Top = 134
+      Left = 727
+      Top = 287
       Width = 109
       Height = 15
       Caption = 'Data de Lan'#231'amento'
     end
     object Label7: TLabel
       Left = 16
-      Top = 216
+      Top = 337
       Width = 94
       Height = 15
       Caption = 'Nome Alternativo'
     end
     object Label8: TLabel
       Left = 333
-      Top = 232
+      Top = 544
       Width = 24
       Height = 15
       Caption = 'Tags'
     end
     object Label9: TLabel
-      Left = 32
-      Top = 296
+      Left = 91
+      Top = 600
       Width = 46
       Height = 15
       Caption = 'Franquia'
@@ -116,12 +116,37 @@ object PrincipalMain: TPrincipalMain
       Text = 'Edit1'
     end
     object ComboBox1: TComboBox
-      Left = 784
-      Top = 392
+      Left = 703
+      Top = 35
       Width = 145
       Height = 23
       TabOrder = 2
       Text = 'ComboBox1'
+    end
+    object Memo1: TMemo
+      Left = 16
+      Top = 85
+      Width = 832
+      Height = 196
+      Lines.Strings = (
+        'Memo1')
+      TabOrder = 3
+    end
+    object Edit3: TEdit
+      Left = 16
+      Top = 308
+      Width = 554
+      Height = 23
+      TabOrder = 4
+      Text = 'Edit1'
+    end
+    object MaskEdit1: TMaskEdit
+      Left = 727
+      Top = 308
+      Width = 121
+      Height = 23
+      TabOrder = 5
+      Text = 'MaskEdit1'
     end
   end
 end
