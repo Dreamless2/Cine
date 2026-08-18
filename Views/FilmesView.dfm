@@ -11,53 +11,60 @@ object PrincipalMain: TPrincipalMain
   Font.Name = 'Segoe UI'
   Font.Style = []
   TextHeight = 15
-  object Label1: TLabel
-    Left = 432
-    Top = 296
-    Width = 75
-    Height = 15
-    Caption = 'C'#243'digo TMDB'
+  object PanelTopBar: TPanel
+    Left = 0
+    Top = 0
+    Width = 1396
+    Height = 41
+    Align = alTop
+    TabOrder = 0
+    ExplicitLeft = 216
+    ExplicitTop = 96
+    ExplicitWidth = 185
   end
-  object Label2: TLabel
-    Left = 672
-    Top = 296
-    Width = 75
-    Height = 15
-    Caption = 'C'#243'digo TMDB'
+  object PanelTitle: TPanel
+    Left = 0
+    Top = 41
+    Width = 1396
+    Height = 96
+    Align = alTop
+    TabOrder = 1
   end
-  object Label3: TLabel
-    Left = 512
-    Top = 336
-    Width = 75
-    Height = 15
-    Caption = 'C'#243'digo TMDB'
+  object PanelDesktop: TPanel
+    Left = 0
+    Top = 137
+    Width = 1396
+    Height = 615
+    Align = alClient
+    Caption = 'PanelDesktop'
+    TabOrder = 2
+    ExplicitLeft = 512
+    ExplicitTop = 272
+    ExplicitWidth = 185
+    ExplicitHeight = 41
   end
-  object Label4: TLabel
-    Left = 552
-    Top = 448
-    Width = 75
-    Height = 15
-    Caption = 'C'#243'digo TMDB'
+  object PanelButtons: TPanel
+    Left = 0
+    Top = 752
+    Width = 1396
+    Height = 41
+    Align = alBottom
+    Caption = 'PanelButtons'
+    TabOrder = 3
+    ExplicitLeft = 224
+    ExplicitTop = 472
+    ExplicitWidth = 185
   end
-  object Label5: TLabel
-    Left = 696
-    Top = 336
-    Width = 111
-    Height = 15
-    Caption = 'object Label1: TLabel'
-  end
-  object Label6: TLabel
-    Left = 552
-    Top = 408
-    Width = 75
-    Height = 15
-    Caption = 'C'#243'digo TMDB'
-  end
-  object Label7: TLabel
-    Left = 696
-    Top = 392
-    Width = 75
-    Height = 15
-    Caption = 'C'#243'digo TMDB'
+  object PanelStatusBar: TPanel
+    Left = 0
+    Top = 793
+    Width = 1396
+    Height = 41
+    Align = alBottom
+    Caption = 'PanelButtons'
+    TabOrder = 4
+    ExplicitLeft = 320
+    ExplicitTop = 576
+    ExplicitWidth = 185
   end
 end
