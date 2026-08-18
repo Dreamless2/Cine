@@ -69,5 +69,19 @@ object PrincipalMain: TPrincipalMain
       Height = 15
       Caption = 'Sinopse'
     end
+    object Label5: TLabel
+      Left = 16
+      Top = 134
+      Width = 78
+      Height = 15
+      Caption = 'Nome Original'
+    end
+    object Label6: TLabel
+      Left = 248
+      Top = 134
+      Width = 109
+      Height = 15
+      Caption = 'Data de Lan'#231'amento'
+    end
   end
 end
