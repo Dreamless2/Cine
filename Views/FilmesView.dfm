@@ -26,45 +26,20 @@ object PrincipalMain: TPrincipalMain
     Left = 0
     Top = 41
     Width = 1396
-    Height = 96
+    Height = 80
     Align = alTop
     TabOrder = 1
   end
   object PanelDesktop: TPanel
     Left = 0
-    Top = 137
+    Top = 121
     Width = 1396
-    Height = 615
+    Height = 713
     Align = alClient
-    Caption = 'PanelDesktop'
     TabOrder = 2
     ExplicitLeft = 512
     ExplicitTop = 272
     ExplicitWidth = 185
     ExplicitHeight = 41
-  end
-  object PanelButtons: TPanel
-    Left = 0
-    Top = 752
-    Width = 1396
-    Height = 41
-    Align = alBottom
-    Caption = 'PanelButtons'
-    TabOrder = 3
-    ExplicitLeft = 224
-    ExplicitTop = 472
-    ExplicitWidth = 185
-  end
-  object PanelStatusBar: TPanel
-    Left = 0
-    Top = 793
-    Width = 1396
-    Height = 41
-    Align = alBottom
-    Caption = 'PanelButtons'
-    TabOrder = 4
-    ExplicitLeft = 320
-    ExplicitTop = 576
-    ExplicitWidth = 185
   end
 end
