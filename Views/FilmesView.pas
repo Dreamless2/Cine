@@ -26,6 +26,8 @@ type
     Memo1: TMemo;
     Edit3: TEdit;
     MaskEdit1: TMaskEdit;
+    Edit4: TEdit;
+    Edit5: TEdit;
   private
     { Private declarations }
   public

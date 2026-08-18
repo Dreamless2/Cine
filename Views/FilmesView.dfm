@@ -34,8 +34,7 @@ object PrincipalMain: TPrincipalMain
     Height = 713
     Align = alClient
     TabOrder = 2
-    ExplicitLeft = 128
-    ExplicitTop = 47
+    ExplicitTop = 127
     object Label1: TLabel
       Left = 16
       Top = 14
@@ -86,15 +85,15 @@ object PrincipalMain: TPrincipalMain
       Caption = 'Nome Alternativo'
     end
     object Label8: TLabel
-      Left = 333
-      Top = 544
+      Left = 673
+      Top = 337
       Width = 24
       Height = 15
       Caption = 'Tags'
     end
     object Label9: TLabel
-      Left = 91
-      Top = 600
+      Left = 16
+      Top = 387
       Width = 46
       Height = 15
       Caption = 'Franquia'
@@ -104,8 +103,8 @@ object PrincipalMain: TPrincipalMain
       Top = 35
       Width = 121
       Height = 23
+      NumbersOnly = True
       TabOrder = 0
-      Text = 'Edit1'
     end
     object Edit2: TEdit
       Left = 143
@@ -135,10 +134,10 @@ object PrincipalMain: TPrincipalMain
     object Edit3: TEdit
       Left = 16
       Top = 308
-      Width = 554
+      Width = 705
       Height = 23
       TabOrder = 4
-      Text = 'Edit1'
+      TextHint = 'Nome Original'
     end
     object MaskEdit1: TMaskEdit
       Left = 727
@@ -147,6 +146,22 @@ object PrincipalMain: TPrincipalMain
       Height = 23
       TabOrder = 5
       Text = 'MaskEdit1'
+    end
+    object Edit4: TEdit
+      Left = 673
+      Top = 358
+      Width = 175
+      Height = 23
+      TabOrder = 6
+      Text = 'Edit1'
+    end
+    object Edit5: TEdit
+      Left = 16
+      Top = 358
+      Width = 651
+      Height = 23
+      TabOrder = 7
+      Text = 'Edit1'
     end
   end
 end
