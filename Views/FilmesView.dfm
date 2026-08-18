@@ -49,11 +49,25 @@ object PrincipalMain: TPrincipalMain
       Caption = 'C'#243'digo TMDB'
     end
     object Label2: TLabel
-      Left = 336
-      Top = 46
+      Left = 272
+      Top = 14
       Width = 33
       Height = 15
       Caption = 'Nome'
+    end
+    object Label3: TLabel
+      Left = 464
+      Top = 6
+      Width = 75
+      Height = 15
+      Caption = 'Tipo de '#193'udio'
+    end
+    object Label4: TLabel
+      Left = 16
+      Top = 54
+      Width = 41
+      Height = 15
+      Caption = 'Sinopse'
     end
   end
 end
