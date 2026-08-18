@@ -29,6 +29,10 @@ type
     Edit4: TEdit;
     Edit5: TEdit;
     Edit6: TEdit;
+    Label10: TLabel;
+    Edit7: TEdit;
+    Edit8: TEdit;
+    Label11: TLabel;
   private
     { Private declarations }
   public

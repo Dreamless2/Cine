@@ -98,6 +98,20 @@ object PrincipalMain: TPrincipalMain
       Height = 15
       Caption = 'Franquia'
     end
+    object Label10: TLabel
+      Left = 16
+      Top = 437
+      Width = 38
+      Height = 15
+      Caption = 'G'#234'nero'
+    end
+    object Label11: TLabel
+      Left = 495
+      Top = 437
+      Width = 36
+      Height = 15
+      Caption = 'Diretor'
+    end
     object Edit1: TEdit
       Left = 16
       Top = 35
@@ -172,11 +186,27 @@ object PrincipalMain: TPrincipalMain
       TextHint = 'Nome Alternativo'
     end
     object Edit6: TEdit
-      Left = 24
-      Top = 366
-      Width = 705
+      Left = 16
+      Top = 408
+      Width = 831
       Height = 23
       TabOrder = 8
+      TextHint = 'Nome Alternativo'
+    end
+    object Edit7: TEdit
+      Left = 17
+      Top = 458
+      Width = 472
+      Height = 23
+      TabOrder = 9
+      TextHint = 'Nome Alternativo'
+    end
+    object Edit8: TEdit
+      Left = 495
+      Top = 458
+      Width = 353
+      Height = 23
+      TabOrder = 10
       TextHint = 'Nome Alternativo'
     end
   end
