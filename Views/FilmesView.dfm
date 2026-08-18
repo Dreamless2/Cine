@@ -18,9 +18,6 @@ object PrincipalMain: TPrincipalMain
     Height = 41
     Align = alTop
     TabOrder = 0
-    ExplicitLeft = 216
-    ExplicitTop = 96
-    ExplicitWidth = 185
   end
   object PanelTitle: TPanel
     Left = 0
@@ -37,10 +34,6 @@ object PrincipalMain: TPrincipalMain
     Height = 713
     Align = alClient
     TabOrder = 2
-    ExplicitLeft = 512
-    ExplicitTop = 272
-    ExplicitWidth = 185
-    ExplicitHeight = 41
     object Label1: TLabel
       Left = 16
       Top = 14
@@ -82,6 +75,13 @@ object PrincipalMain: TPrincipalMain
       Width = 109
       Height = 15
       Caption = 'Data de Lan'#231'amento'
+    end
+    object Label7: TLabel
+      Left = 32
+      Top = 232
+      Width = 34
+      Height = 15
+      Caption = 'Label7'
     end
   end
 end
