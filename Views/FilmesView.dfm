@@ -41,5 +41,19 @@ object PrincipalMain: TPrincipalMain
     ExplicitTop = 272
     ExplicitWidth = 185
     ExplicitHeight = 41
+    object Label1: TLabel
+      Left = 16
+      Top = 14
+      Width = 75
+      Height = 15
+      Caption = 'C'#243'digo TMDB'
+    end
+    object Label2: TLabel
+      Left = 336
+      Top = 46
+      Width = 33
+      Height = 15
+      Caption = 'Nome'
+    end
   end
 end

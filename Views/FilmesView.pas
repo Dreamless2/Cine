@@ -11,6 +11,8 @@ type
     PanelTopBar: TPanel;
     PanelTitle: TPanel;
     PanelDesktop: TPanel;
+    Label1: TLabel;
+    Label2: TLabel;
   private
     { Private declarations }
   public
