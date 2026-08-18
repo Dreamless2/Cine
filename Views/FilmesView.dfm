@@ -105,6 +105,7 @@ object PrincipalMain: TPrincipalMain
       Height = 23
       NumbersOnly = True
       TabOrder = 0
+      TextHint = 'C'#243'digo TMDB'
     end
     object Edit2: TEdit
       Left = 143
@@ -112,7 +113,7 @@ object PrincipalMain: TPrincipalMain
       Width = 554
       Height = 23
       TabOrder = 1
-      Text = 'Edit1'
+      TextHint = 'Nome'
     end
     object ComboBox1: TComboBox
       Left = 703
@@ -120,7 +121,12 @@ object PrincipalMain: TPrincipalMain
       Width = 145
       Height = 23
       TabOrder = 2
-      Text = 'ComboBox1'
+      Text = 'Dublado'
+      Items.Strings = (
+        'Dublado'
+        'Legendado'
+        'Nacional'
+        'Desconhecido')
     end
     object Memo1: TMemo
       Left = 16
@@ -145,7 +151,7 @@ object PrincipalMain: TPrincipalMain
       Width = 121
       Height = 23
       TabOrder = 5
-      Text = 'MaskEdit1'
+      Text = ''
     end
     object Edit4: TEdit
       Left = 673
