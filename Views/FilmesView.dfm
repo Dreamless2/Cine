@@ -112,6 +112,20 @@ object PrincipalMain: TPrincipalMain
       Height = 15
       Caption = 'Diretor'
     end
+    object Label12: TLabel
+      Left = 17
+      Top = 487
+      Width = 39
+      Height = 15
+      Caption = 'Artistas'
+    end
+    object Label13: TLabel
+      Left = 16
+      Top = 539
+      Width = 53
+      Height = 15
+      Caption = 'Produtora'
+    end
     object Edit1: TEdit
       Left = 16
       Top = 35
@@ -186,7 +200,7 @@ object PrincipalMain: TPrincipalMain
       TextHint = 'Nome Alternativo'
     end
     object Edit6: TEdit
-      Left = 16
+      Left = 17
       Top = 408
       Width = 831
       Height = 23
@@ -208,6 +222,22 @@ object PrincipalMain: TPrincipalMain
       Height = 23
       TabOrder = 10
       TextHint = 'Nome Alternativo'
+    end
+    object Edit9: TEdit
+      Left = 17
+      Top = 508
+      Width = 831
+      Height = 23
+      TabOrder = 11
+      TextHint = 'Artistas'
+    end
+    object Edit10: TEdit
+      Left = 16
+      Top = 560
+      Width = 831
+      Height = 23
+      TabOrder = 12
+      TextHint = 'Produtora'
     end
   end
 end
