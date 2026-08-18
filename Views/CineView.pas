@@ -12,6 +12,7 @@ type
     PanelTopTitle: TPanel;
     PanelStatusBar: TPanel;
     PanelDesktop: TPanel;
+    PanelButtons: TPanel;
   private
     { Private declarations }
   public

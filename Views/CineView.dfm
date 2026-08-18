@@ -52,5 +52,13 @@ object CineMain: TCineMain
     ExplicitTop = 82
     ExplicitWidth = 1311
     ExplicitHeight = 554
+    object PanelButtons: TPanel
+      Left = 1
+      Top = 1
+      Width = 224
+      Height = 797
+      Align = alLeft
+      TabOrder = 0
+    end
   end
 end
