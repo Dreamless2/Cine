@@ -2,19 +2,20 @@ object PrincipalMain: TPrincipalMain
   Left = 0
   Top = 0
   BorderStyle = bsNone
-  ClientHeight = 833
-  ClientWidth = 1341
+  ClientHeight = 830
+  ClientWidth = 1338
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
   Font.Height = -12
   Font.Name = 'Segoe UI'
   Font.Style = []
+  Position = poScreenCenter
   TextHeight = 15
   object PanelTopBar: TPanel
     Left = 0
     Top = 0
-    Width = 1341
+    Width = 1338
     Height = 41
     Align = alTop
     TabOrder = 0
@@ -23,7 +24,7 @@ object PrincipalMain: TPrincipalMain
   object PanelTitle: TPanel
     Left = 0
     Top = 41
-    Width = 1341
+    Width = 1338
     Height = 80
     Align = alTop
     TabOrder = 1
@@ -32,8 +33,8 @@ object PrincipalMain: TPrincipalMain
   object PanelDesktop: TPanel
     Left = 0
     Top = 121
-    Width = 1341
-    Height = 712
+    Width = 1338
+    Height = 709
     Align = alClient
     TabOrder = 2
     ExplicitLeft = 32
