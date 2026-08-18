@@ -8,8 +8,6 @@ uses
 
 type
   TPrincipalMain = class(TForm)
-    PanelTopBar: TPanel;
-    PanelTitle: TPanel;
     PanelDesktop: TPanel;
     Label1: TLabel;
     Label2: TLabel;

@@ -2,7 +2,7 @@ object PrincipalMain: TPrincipalMain
   Left = 0
   Top = 0
   BorderStyle = bsNone
-  ClientHeight = 830
+  ClientHeight = 706
   ClientWidth = 1338
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
@@ -12,32 +12,15 @@ object PrincipalMain: TPrincipalMain
   Font.Style = []
   Position = poScreenCenter
   TextHeight = 15
-  object PanelTopBar: TPanel
+  object PanelDesktop: TPanel
     Left = 0
     Top = 0
     Width = 1338
-    Height = 41
-    Align = alTop
-    TabOrder = 0
-    ExplicitWidth = 1396
-  end
-  object PanelTitle: TPanel
-    Left = 0
-    Top = 41
-    Width = 1338
-    Height = 80
-    Align = alTop
-    TabOrder = 1
-    ExplicitWidth = 1396
-  end
-  object PanelDesktop: TPanel
-    Left = 0
-    Top = 121
-    Width = 1338
-    Height = 709
+    Height = 706
     Align = alClient
-    TabOrder = 2
+    TabOrder = 0
     ExplicitLeft = 32
+    ExplicitTop = 121
     ExplicitWidth = 1396
     ExplicitHeight = 713
     object Label1: TLabel
