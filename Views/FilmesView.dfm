@@ -149,16 +149,16 @@ object PrincipalMain: TPrincipalMain
         'Nacional'
         'Desconhecido')
     end
-    object Memo1: TMemo
+    object SinopseBox: TMemo
       Left = 15
       Top = 85
       Width = 832
       Height = 196
       Lines.Strings = (
-        'Memo1')
+        '')
       TabOrder = 3
     end
-    object Edit3: TEdit
+    object OriginalBox: TEdit
       Left = 16
       Top = 308
       Width = 705
@@ -166,7 +166,7 @@ object PrincipalMain: TPrincipalMain
       TabOrder = 4
       TextHint = 'Nome Original'
     end
-    object MaskEdit1: TMaskEdit
+    object DataBox: TMaskEdit
       Left = 727
       Top = 308
       Width = 120
@@ -184,7 +184,7 @@ object PrincipalMain: TPrincipalMain
       TabOrder = 6
       TextHint = 'Tags'
     end
-    object Edit5: TEdit
+    object AlternativoBox: TEdit
       Left = 16
       Top = 358
       Width = 705
@@ -237,8 +237,6 @@ object PrincipalMain: TPrincipalMain
       Top = 35
       Width = 467
       Height = 548
-      Lines.Strings = (
-        'Memo1')
       TabOrder = 13
     end
     object Button1: TButton

@@ -21,11 +21,11 @@ type
     Edit1: TEdit;
     Edit2: TEdit;
     ComboBox1: TComboBox;
-    Memo1: TMemo;
-    Edit3: TEdit;
-    MaskEdit1: TMaskEdit;
+    SinopseBox: TMemo;
+    OriginalBox: TEdit;
+    DataBox: TMaskEdit;
     Edit4: TEdit;
-    Edit5: TEdit;
+    AlternativoBox: TEdit;
     Edit6: TEdit;
     Label10: TLabel;
     Edit7: TEdit;
