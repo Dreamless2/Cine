@@ -34,6 +34,8 @@ object PrincipalMain: TPrincipalMain
     Height = 713
     Align = alClient
     TabOrder = 2
+    ExplicitLeft = -104
+    ExplicitTop = 127
     object Label1: TLabel
       Left = 16
       Top = 14
@@ -42,14 +44,14 @@ object PrincipalMain: TPrincipalMain
       Caption = 'C'#243'digo TMDB'
     end
     object Label2: TLabel
-      Left = 272
+      Left = 152
       Top = 14
       Width = 33
       Height = 15
       Caption = 'Nome'
     end
     object Label3: TLabel
-      Left = 464
+      Left = 712
       Top = 6
       Width = 75
       Height = 15
@@ -57,7 +59,7 @@ object PrincipalMain: TPrincipalMain
     end
     object Label4: TLabel
       Left = 16
-      Top = 54
+      Top = 64
       Width = 41
       Height = 15
       Caption = 'Sinopse'
@@ -77,11 +79,49 @@ object PrincipalMain: TPrincipalMain
       Caption = 'Data de Lan'#231'amento'
     end
     object Label7: TLabel
-      Left = 32
-      Top = 232
-      Width = 34
+      Left = 16
+      Top = 216
+      Width = 94
       Height = 15
-      Caption = 'Label7'
+      Caption = 'Nome Alternativo'
+    end
+    object Label8: TLabel
+      Left = 333
+      Top = 232
+      Width = 24
+      Height = 15
+      Caption = 'Tags'
+    end
+    object Label9: TLabel
+      Left = 32
+      Top = 296
+      Width = 46
+      Height = 15
+      Caption = 'Franquia'
+    end
+    object Edit1: TEdit
+      Left = 16
+      Top = 35
+      Width = 121
+      Height = 23
+      TabOrder = 0
+      Text = 'Edit1'
+    end
+    object Edit2: TEdit
+      Left = 143
+      Top = 35
+      Width = 554
+      Height = 23
+      TabOrder = 1
+      Text = 'Edit1'
+    end
+    object ComboBox1: TComboBox
+      Left = 784
+      Top = 392
+      Width = 145
+      Height = 23
+      TabOrder = 2
+      Text = 'ComboBox1'
     end
   end
 end
