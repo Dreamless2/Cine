@@ -136,7 +136,7 @@ object PrincipalMain: TPrincipalMain
       TabOrder = 1
       TextHint = 'Nome'
     end
-    object ComboBox1: TComboBox
+    object AudioBox: TComboBox
       Left = 703
       Top = 35
       Width = 145
@@ -232,14 +232,14 @@ object PrincipalMain: TPrincipalMain
       TabOrder = 12
       TextHint = 'Produtora'
     end
-    object Memo2: TMemo
+    object ResumoBox: TMemo
       Left = 854
       Top = 35
       Width = 467
       Height = 548
       TabOrder = 13
     end
-    object Button1: TButton
+    object CopiarButton: TButton
       Left = 248
       Top = 624
       Width = 203
@@ -247,7 +247,7 @@ object PrincipalMain: TPrincipalMain
       Caption = 'Copiar'
       TabOrder = 14
     end
-    object Button2: TButton
+    object SalvarButton: TButton
       Left = 480
       Top = 624
       Width = 203
@@ -255,7 +255,7 @@ object PrincipalMain: TPrincipalMain
       Caption = 'Salvar/Atualizar'
       TabOrder = 15
     end
-    object Button3: TButton
+    object Anterior: TButton
       Left = 712
       Top = 624
       Width = 203
@@ -263,7 +263,7 @@ object PrincipalMain: TPrincipalMain
       Caption = 'Anterior'
       TabOrder = 16
     end
-    object Button4: TButton
+    object ProximoButton: TButton
       Left = 944
       Top = 624
       Width = 203

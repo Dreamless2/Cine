@@ -20,7 +20,7 @@ type
     Label9: TLabel;
     CodigoBox: TEdit;
     NomeBox: TEdit;
-    ComboBox1: TComboBox;
+    AudioBox: TComboBox;
     SinopseBox: TMemo;
     OriginalBox: TEdit;
     DataBox: TMaskEdit;
@@ -36,11 +36,11 @@ type
     ArtistasBox: TEdit;
     ProdutoraBox: TEdit;
     Label14: TLabel;
-    Memo2: TMemo;
-    Button1: TButton;
-    Button2: TButton;
-    Button3: TButton;
-    Button4: TButton;
+    ResumoBox: TMemo;
+    CopiarButton: TButton;
+    SalvarButton: TButton;
+    Anterior: TButton;
+    ProximoButton: TButton;
   private
     { Private declarations }
   public
