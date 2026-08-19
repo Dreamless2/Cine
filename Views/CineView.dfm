@@ -51,13 +51,15 @@ object CineMain: TCineMain
       Height = 797
       Align = alLeft
       TabOrder = 0
+      ExplicitLeft = 0
+      ExplicitTop = -4
       object Button1: TButton
         Left = 1
         Top = 744
         Width = 222
         Height = 52
         Align = alBottom
-        Caption = 'Button1'
+        Caption = 'Fechar'
         TabOrder = 0
       end
       object Button2: TButton
@@ -66,7 +68,7 @@ object CineMain: TCineMain
         Width = 222
         Height = 96
         Align = alTop
-        Caption = 'Button1'
+        Caption = 'Animes'
         TabOrder = 1
         ExplicitLeft = 2
         ExplicitTop = 9
@@ -77,7 +79,7 @@ object CineMain: TCineMain
         Width = 222
         Height = 96
         Align = alTop
-        Caption = 'Button1'
+        Caption = 'S'#233'ries'
         TabOrder = 2
         ExplicitLeft = 2
         ExplicitTop = 9
@@ -88,7 +90,7 @@ object CineMain: TCineMain
         Width = 222
         Height = 96
         Align = alTop
-        Caption = 'Button1'
+        Caption = 'Filmes'
         TabOrder = 3
         ExplicitLeft = 2
         ExplicitTop = 9
