@@ -84,7 +84,7 @@ object CineMain: TCineMain
         ExplicitLeft = 2
         ExplicitTop = 9
       end
-      object Button4: TButton
+      object FilmesButton: TButton
         Left = 1
         Top = 1
         Width = 222

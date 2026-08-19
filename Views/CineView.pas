@@ -16,7 +16,7 @@ type
     Button1: TButton;
     Button2: TButton;
     Button3: TButton;
-    Button4: TButton;
+    FilmesButton: TButton;
   private
     { Private declarations }
   public
