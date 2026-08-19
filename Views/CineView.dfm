@@ -20,7 +20,6 @@ object CineMain: TCineMain
     Height = 25
     Align = alTop
     TabOrder = 0
-    ExplicitWidth = 1311
   end
   object PanelTopTitle: TPanel
     Left = 0
@@ -29,8 +28,6 @@ object CineMain: TCineMain
     Height = 64
     Align = alTop
     TabOrder = 1
-    ExplicitTop = 41
-    ExplicitWidth = 1311
   end
   object PanelStatusBar: TPanel
     Left = 0
@@ -39,8 +36,6 @@ object CineMain: TCineMain
     Height = 41
     Align = alBottom
     TabOrder = 2
-    ExplicitTop = 636
-    ExplicitWidth = 1311
   end
   object PanelDesktop: TPanel
     Left = 0
@@ -49,9 +44,6 @@ object CineMain: TCineMain
     Height = 799
     Align = alClient
     TabOrder = 3
-    ExplicitTop = 82
-    ExplicitWidth = 1311
-    ExplicitHeight = 554
     object PanelButtons: TPanel
       Left = 1
       Top = 1
@@ -59,6 +51,48 @@ object CineMain: TCineMain
       Height = 797
       Align = alLeft
       TabOrder = 0
+      object Button1: TButton
+        Left = 1
+        Top = 744
+        Width = 222
+        Height = 52
+        Align = alBottom
+        Caption = 'Button1'
+        TabOrder = 0
+      end
+      object Button2: TButton
+        Left = 1
+        Top = 193
+        Width = 222
+        Height = 96
+        Align = alTop
+        Caption = 'Button1'
+        TabOrder = 1
+        ExplicitLeft = 2
+        ExplicitTop = 9
+      end
+      object Button3: TButton
+        Left = 1
+        Top = 97
+        Width = 222
+        Height = 96
+        Align = alTop
+        Caption = 'Button1'
+        TabOrder = 2
+        ExplicitLeft = 2
+        ExplicitTop = 9
+      end
+      object Button4: TButton
+        Left = 1
+        Top = 1
+        Width = 222
+        Height = 96
+        Align = alTop
+        Caption = 'Button1'
+        TabOrder = 3
+        ExplicitLeft = 2
+        ExplicitTop = 9
+      end
     end
   end
 end
