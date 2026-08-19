@@ -31,9 +31,9 @@ object CineMain: TCineMain
   end
   object PanelStatusBar: TPanel
     Left = 0
-    Top = 888
+    Top = 894
     Width = 1373
-    Height = 41
+    Height = 35
     Align = alBottom
     TabOrder = 2
   end
@@ -41,26 +41,29 @@ object CineMain: TCineMain
     Left = 0
     Top = 89
     Width = 1373
-    Height = 799
+    Height = 805
     Align = alClient
     TabOrder = 3
+    ExplicitHeight = 799
     object PanelButtons: TPanel
       Left = 1
       Top = 1
       Width = 224
-      Height = 797
+      Height = 803
       Align = alLeft
       TabOrder = 0
       ExplicitLeft = 0
       ExplicitTop = -4
+      ExplicitHeight = 797
       object FecharButton: TButton
         Left = 1
-        Top = 744
+        Top = 750
         Width = 222
         Height = 52
         Align = alBottom
         Caption = 'Fechar'
         TabOrder = 0
+        ExplicitTop = 744
       end
       object AnimesButton: TButton
         Left = 1
