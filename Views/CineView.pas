@@ -13,9 +13,9 @@ type
     PanelStatusBar: TPanel;
     PanelDesktop: TPanel;
     PanelButtons: TPanel;
-    Button1: TButton;
-    Button2: TButton;
-    Button3: TButton;
+    FecharButton: TButton;
+    AnimesButton: TButton;
+    SeriesButton: TButton;
     FilmesButton: TButton;
   private
     { Private declarations }

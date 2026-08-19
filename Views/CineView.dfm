@@ -53,7 +53,7 @@ object CineMain: TCineMain
       TabOrder = 0
       ExplicitLeft = 0
       ExplicitTop = -4
-      object Button1: TButton
+      object FecharButton: TButton
         Left = 1
         Top = 744
         Width = 222
@@ -62,7 +62,7 @@ object CineMain: TCineMain
         Caption = 'Fechar'
         TabOrder = 0
       end
-      object Button2: TButton
+      object AnimesButton: TButton
         Left = 1
         Top = 193
         Width = 222
@@ -73,7 +73,7 @@ object CineMain: TCineMain
         ExplicitLeft = 2
         ExplicitTop = 9
       end
-      object Button3: TButton
+      object SeriesButton: TButton
         Left = 1
         Top = 97
         Width = 222
