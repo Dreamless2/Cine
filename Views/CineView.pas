@@ -54,6 +54,13 @@ begin
   AChildForm.Parent      := PanelDesktop;
   AChildForm.Show;
 end;
+
+procedure TCineMain.FormCreate(Sender: TObject);
+begin
+  FilmesButton.Click(System.HelpIntfs);
+end;
+
+
 procedure TCineMain.FormDestroy(Sender: TObject);
 begin
   if Assigned(FCurrentChildForm) then
