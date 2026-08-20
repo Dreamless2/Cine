@@ -48,19 +48,8 @@ type
     FilmeBox: TEdit;
   private
     { Private declarations }
-    FNomeBox, FAudioBox, FSinopseBox, FOriginalBox, FEstreiaBox, FAlternativoBox,
-      FFilmeBox, FFranquiaBox, FGeneroBox, FTagsBox, FDiretorBox, FArtistasBox,
-      FProdutoraBox, FMCUBox: TCustomEdit;
-    FResumoBox: TMemo;
-    procedure QualquerAlteracao(Sender: TObject);
-    procedure NomeBoxChange(Sender: TObject);
   public
     { Public declarations }
-    constructor Create(
-      ANomeBox, AAudioBox, ASinopseBox, AOriginalBox, AEstreiaBox, AAlternativoBox,
-      AFilmeBox, AFranquiaBox, AGeneroBox, ATagsBox, ADiretorBox, AArtistasBox,
-      AProdutoraBox, AMCUBox: TCustomEdit; AResumoBox: TMemo);
-    procedure AtualizarResumo;
   end;
 
 var
@@ -70,67 +59,6 @@ implementation
 
 {$R *.dfm}
 
-function GerarTagFilme(const ANome: string): string;
-begin
-  Result := GerarTagDupla(ANome);
-end;
-
-constructor TFilmesMain.Create(
-  ANomeBox, AAudioBox, ASinopseBox, AOriginalBox, AEstreiaBox, AAlternativoBox,
-  AFilmeBox, AFranquiaBox, AGeneroBox, ATagsBox, ADiretorBox, AArtistasBox,
-  AProdutoraBox, AMCUBox: TCustomEdit; AResumoBox: TMemo);
-var
-  LControles: TArray<TCustomEdit>;
-  LCtrl: TCustomEdit;
-begin
-  inherited Create(nil);
-
-  FNomeBox := ANomeBox;
-  FAudioBox := AAudioBox;
-  FSinopseBox := ASinopseBox;
-  FOriginalBox := AOriginalBox;
-  FEstreiaBox := AEstreiaBox;
-  FAlternativoBox := AAlternativoBox;
-  FFilmeBox := AFilmeBox;
-  FFranquiaBox := AFranquiaBox;
-  FGeneroBox := AGeneroBox;
-  FTagsBox := ATagsBox;
-  FDiretorBox := ADiretorBox;
-  FArtistasBox := AArtistasBox;
-  FProdutoraBox := AProdutoraBox;
-  FMCUBox := AMCUBox;
-  FResumoBox := AResumoBox;
-
-  LControles := [FAudioBox, FSinopseBox, FOriginalBox, FEstreiaBox, FAlternativoBox,
-    FFilmeBox, FFranquiaBox, FGeneroBox, FTagsBox, FDiretorBox, FArtistasBox,
-    FProdutoraBox, FMCUBox];
-
-  for LCtrl in LControles do
-    if Assigned(LCtrl) then
-      TCustomEditAberto(LCtrl).OnChange := QualquerAlteracao;
-
-  TCustomEditAberto(FNomeBox).OnChange := NomeBoxChange;
-end;
-
-procedure TFilmesMain.QualquerAlteracao(Sender: TObject);
-begin
-  AtualizarResumo;
-end;
-
-procedure TFilmesMain.NomeBoxChange(Sender: TObject);
-begin
-  FFilmeBox.Text := GerarTagDupla(FNomeBox.Text);
-  AtualizarResumo;
-end;
-
-procedure TFilmesMain.AtualizarResumo;
-begin
-  FResumoBox.Lines.Text := MontarResumo(
-    FNomeBox.Text, FAudioBox.Text, FSinopseBox.Text, FOriginalBox.Text,
-    FEstreiaBox.Text, FAlternativoBox.Text, FFilmeBox.Text, FFranquiaBox.Text,
-    FGeneroBox.Text, FTagsBox.Text, FDiretorBox.Text, FArtistasBox.Text,
-    FProdutoraBox.Text, FMCUBox.Text);
-end;
 
 
 end.

@@ -61,7 +61,7 @@ begin
   for LCtrl in LControles do
      TCustomEditAberto(LCtrl).OnChange := QualquerAlteracao;
 
-  TCustomEditAberto(LCtrlFNomeBox.OnChange := NomeBoxChange;
+  TCustomEditAberto(FNomeBox).OnChange := NomeBoxChange;
 end;
 
 procedure TMidiaFormHelper.QualquerAlteracao(Sender: TObject);

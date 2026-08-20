@@ -10,7 +10,8 @@ uses
   FilmesView in 'Views\FilmesView.pas' {FilmesMain},
   SeriesView in 'Views\SeriesView.pas' {SeriesMain},
   AnimesView in 'Views\AnimesView.pas' {AnimesMain},
-  ResumoBuilder in 'Builders\ResumoBuilder.pas';
+  ResumoBuilder in 'Builders\ResumoBuilder.pas',
+  MidiaFormEvents in 'Builders\MidiaFormEvents.pas';
 
 {$R *.res}
 

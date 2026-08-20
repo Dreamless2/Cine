@@ -149,6 +149,7 @@
             <FormType>dfm</FormType>
         </DCCReference>
         <DCCReference Include="Builders\ResumoBuilder.pas"/>
+        <DCCReference Include="Builders\MidiaFormEvents.pas"/>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
         </BuildConfiguration>
