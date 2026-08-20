@@ -4,9 +4,7 @@ interface
 
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
-  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.ExtCtrls, Vcl.Mask, TMDB.MediaEngine,
-  ResumoBuilder;
-
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.ExtCtrls, Vcl.Mask, MidiaFormHelper;
 
 
 type
@@ -61,6 +59,13 @@ implementation
 
 {$R *.dfm}
 
+procedure TFilmesMain.FormCreate(Sender: TObject);
+begin
+  FMidiaEvents := TMidiaFormHelper.Create(
+    NomeBox, AudioBox, SinopseBox, OriginalBox, EstreiaBox, AlternativoBox,
+    FilmeBox, FranquiaBox, GeneroBox, TagsBox, DiretorBox, ArtistasBox,
+    ProdutoraBox, MCUBox, ResumoBox);
+end;
 
 
 end.
