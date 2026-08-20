@@ -24,7 +24,7 @@ type
     procedure OpenChildForm(AChildForm: TForm);
   public
     { Public declarations }
-    procedure FormClose(Sender: TObject; var Action: TCloseAction);
+    //procedure FormClose(Sender: TObject; var Action: TCloseAction);
     procedure Filmes_Click(Sender: TObject);
   end;
 
@@ -56,6 +56,8 @@ procedure TCineMain.Filmes_Click(Sender: TObject);
 begin
   OpenChildForm(TFilmesMain.Create(Self));
 end;
+
+
 
 
 
