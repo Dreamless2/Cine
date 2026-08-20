@@ -56,7 +56,7 @@ procedure TCineMain.Filmes_Click(Sender: TObject);
 var
   LFormFilho: TFilmesMain;
 begin
-  LFormFilho := TFormCadastroFilmes.Create(Self);
+  LFormFilho := TFilmesMain.Create(Self);
   OpenChildForm(LFormFilho);
 end;
 
