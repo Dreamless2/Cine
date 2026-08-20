@@ -110,7 +110,7 @@ begin
     if Assigned(LCtrl) then
       TCustomEditAberto(LCtrl).OnChange := QualquerAlteracao;
 
-  TCustomEditAberto(FNomeBox) := NomeBoxChange;
+  TCustomEditAberto(FNomeBox).OnChange := NomeBoxChange;
 end;
 
 procedure TFilmesMain.QualquerAlteracao(Sender: TObject);
