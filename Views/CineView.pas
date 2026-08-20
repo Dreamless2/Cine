@@ -24,7 +24,7 @@ type
     procedure OpenChildForm(AChildForm: TForm);
   public
     { Public declarations }
-    procedure FormCreate(Sender: TObject);
+    constructor FormCreate(Sender: TObject);
     //procedure FormClose(Sender: TObject; var Action: TCloseAction);[
     procedure FormDestroy(Sender: TObject);
     procedure Filmes_Click(Sender: TObject);
@@ -56,8 +56,9 @@ begin
   AChildForm.Show;
 end;
 
-procedure TCineMain.FormCreate(Sender: TObject);
+constructor TCineMain.FormCreate(Sender: TObject);
 begin
+  inherited Create(nil);
   FilmesButton.OnClick := Filmes_Click;
 end;
 
