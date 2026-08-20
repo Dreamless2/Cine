@@ -53,11 +53,8 @@ begin
 end;
 
 procedure TCineMain.Filmes_Click(Sender: TObject);
-var
-  LFormFilho: TFilmesMain;
 begin
-  LFormFilho := TFilmesMain.Create();
-  OpenChildForm(LFormFilho);
+  OpenChildForm(TFilmesMain.Create());
 end;
 
 
