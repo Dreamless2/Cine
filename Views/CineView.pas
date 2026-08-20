@@ -27,8 +27,7 @@ type
     constructor Create(AOwner: TComponent); override;
     destructor Destroy; override;
     procedure Filmes_Click(Sender: TObject);
-    procedure PanelTopBar_MouseDown(Sender: TObject; Button: TMouseButton; Shift: TShiftState; X, Y: Integer);
-    procedure PanelTopTitle_MouseDown(Sender: TObject; Button: TMouseButton; Shift: TShiftState; X: Integer; Y: Integer);
+    procedure Panel_MouseDown(Sender: TObject; Button: TMouseButton; Shift: TShiftState; X, Y: Integer);
 
   end;
 
@@ -43,8 +42,8 @@ constructor TCineMain.Create(AOwner: TComponent);
 begin
   inherited Create(AOwner);
   FilmesButton.OnClick := Filmes_Click;
-  PanelTopBar.OnMouseDown := PanelTopBar_MouseDown;
-  PanelTopTitle.OnMouseDown := PanelTopTitle_MouseDown;
+  PanelTopBar.OnMouseDown := Panel_MouseDown;
+  PanelTopTitle.OnMouseDown := Panel_MouseDown(;
 end;
 
 procedure TCineMain.OpenChildForm(AChildForm: TForm);
@@ -80,23 +79,15 @@ begin
   OpenChildForm(TFilmesMain.Create(Self));
 end;
 
-procedure TCineMain.PanelTopBar_MouseDown(Sender: TObject; Button: TMouseButton; Shift: TShiftState; X: Integer; Y: Integer);
+procedure TCineMain.Panel_MouseDown(Sender: TObject; Button: TMouseButton; Shift: TShiftState; X, Y: Integer);
 begin
   if Button = mbLeft then
   begin
     ReleaseCapture;
-    PostMessage(PanelTopBar.Handle, WM_SYSCOMMAND, $F012, 0);
+    PostMessage(TPanel(Sender).Handle, WM_SYSCOMMAND, $F012, 0);
   end;
 end;
 
-procedure TCineMain.PanelTopTitle_MouseDown(Sender: TObject; Button: TMouseButton; Shift: TShiftState; X: Integer; Y: Integer);
-begin
-  if Button = mbLeft then
-  begin
-    ReleaseCapture;
-    PostMessage(PanelTopBar.Handle, WM_SYSCOMMAND, $F012, 0);
-  end;
-end;
 
 
 
