@@ -84,7 +84,7 @@ var
   LControles: TArray<TCustomEdit>;
   LCtrl: TCustomEdit;
 begin
-  inherited Create;
+  inherited Create(nil);
 
   FNomeBox := ANomeBox;
   FAudioBox := AAudioBox;
