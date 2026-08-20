@@ -101,11 +101,10 @@ begin
     FProdutoraBox, FMCUBox];
 
   for LCtrl in LControles do
-    if Assigen then
-    
-    TLCtrl.OnChange := QualquerAlteracao;
+    if Assigned(LCtrl) then
+      TCustomEditAberto(LCtrl).OnChange := QualquerAlteracao;
 
-  FNomeBox.OnChange := NomeBoxChange;
+  TCustomEditAberto(FNomeBox) := NomeBoxChange;
 end;
 
 procedure TFilmesMain.QualquerAlteracao(Sender: TObject);
