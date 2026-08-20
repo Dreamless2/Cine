@@ -7,8 +7,7 @@ uses
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.ExtCtrls, Vcl.Mask, TMDB.MediaEngine,
   ResumoBuilder;
 
-type
-  TCustomEditAberto = class(TCustomEdit);
+
 
 type
   TFilmesMain = class(TForm)
