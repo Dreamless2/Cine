@@ -42,7 +42,6 @@ constructor TCineMain.Create(AOwner: TComponent);
 begin
   inherited Create(AOwner);
   FilmesButton.OnClick := Filmes_Click;
-  PanelTopBar.OnMouseDown := PanelTopBar_MouseDown(Self);
 end;
 
 procedure TCineMain.OpenChildForm(AChildForm: TForm);
