@@ -2,7 +2,7 @@ object PrincipalMain: TPrincipalMain
   Left = 0
   Top = 0
   BorderStyle = bsNone
-  ClientHeight = 854
+  ClientHeight = 763
   ClientWidth = 1338
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
@@ -16,7 +16,7 @@ object PrincipalMain: TPrincipalMain
     Left = 0
     Top = 0
     Width = 1338
-    Height = 854
+    Height = 763
     Align = alClient
     TabOrder = 0
     ExplicitHeight = 706
@@ -77,36 +77,36 @@ object PrincipalMain: TPrincipalMain
       Caption = 'Tags'
     end
     object Label9: TLabel
-      Left = 16
-      Top = 459
+      Left = 17
+      Top = 437
       Width = 46
       Height = 15
       Caption = 'Franquia'
     end
     object Label10: TLabel
       Left = 16
-      Top = 509
+      Top = 487
       Width = 38
       Height = 15
       Caption = 'G'#234'nero'
     end
     object Label11: TLabel
       Left = 495
-      Top = 509
+      Top = 487
       Width = 36
       Height = 15
       Caption = 'Diretor'
     end
     object Label12: TLabel
-      Left = 17
-      Top = 559
+      Left = 16
+      Top = 537
       Width = 39
       Height = 15
       Caption = 'Artistas'
     end
     object Label13: TLabel
-      Left = 16
-      Top = 611
+      Left = 15
+      Top = 587
       Width = 53
       Height = 15
       Caption = 'Produtora'
@@ -200,7 +200,7 @@ object PrincipalMain: TPrincipalMain
     end
     object FranquiaBox: TEdit
       Left = 17
-      Top = 480
+      Top = 458
       Width = 831
       Height = 23
       TabOrder = 8
@@ -208,7 +208,7 @@ object PrincipalMain: TPrincipalMain
     end
     object GeneroBox: TEdit
       Left = 17
-      Top = 530
+      Top = 508
       Width = 472
       Height = 23
       TabOrder = 9
@@ -216,7 +216,7 @@ object PrincipalMain: TPrincipalMain
     end
     object DiretorBox: TEdit
       Left = 495
-      Top = 530
+      Top = 508
       Width = 353
       Height = 23
       TabOrder = 10
@@ -224,15 +224,15 @@ object PrincipalMain: TPrincipalMain
     end
     object ArtistasBox: TEdit
       Left = 17
-      Top = 580
+      Top = 558
       Width = 831
       Height = 23
       TabOrder = 11
       TextHint = 'Artistas'
     end
     object ProdutoraBox: TEdit
-      Left = 17
-      Top = 632
+      Left = 15
+      Top = 608
       Width = 831
       Height = 23
       TabOrder = 12
@@ -242,12 +242,12 @@ object PrincipalMain: TPrincipalMain
       Left = 854
       Top = 35
       Width = 467
-      Height = 548
+      Height = 596
       TabOrder = 13
     end
     object CopiarButton: TButton
       Left = 240
-      Top = 736
+      Top = 672
       Width = 203
       Height = 57
       Caption = 'Copiar'
@@ -255,7 +255,7 @@ object PrincipalMain: TPrincipalMain
     end
     object SalvarButton: TButton
       Left = 480
-      Top = 736
+      Top = 672
       Width = 203
       Height = 57
       Caption = 'Salvar/Atualizar'
@@ -263,7 +263,7 @@ object PrincipalMain: TPrincipalMain
     end
     object Anterior: TButton
       Left = 712
-      Top = 736
+      Top = 672
       Width = 203
       Height = 57
       Caption = 'Anterior'
@@ -271,7 +271,7 @@ object PrincipalMain: TPrincipalMain
     end
     object ProximoButton: TButton
       Left = 944
-      Top = 736
+      Top = 672
       Width = 203
       Height = 57
       Caption = 'Pr'#243'ximo'
