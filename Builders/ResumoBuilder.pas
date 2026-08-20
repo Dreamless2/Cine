@@ -25,6 +25,7 @@ begin
   LBuilder := TStringBuilder.Create;
   try
     LBuilder.AppendLine(Format('**%s - %s**', [ANomeBox, AAudioBox]));
+    LBuilder.AppendLine;
     LBuilder.AppendLine('**HD** - __720p__');
     LBuilder.AppendLine('**SD** - __480p__');
     LBuilder.AppendLine('__(Os vídeos estão em ordem decrescente, ou seja, de cima para baixo, tal como na descrição das resoluções.)__');
