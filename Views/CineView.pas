@@ -24,7 +24,8 @@ type
     procedure OpenChildForm(AChildForm: TForm);
   public
     { Public declarations }
-    constructor FormCreate(AOwner: TComponent);
+    constructor Create(AOwner: TComponent); override;
+    destructor Destroy; override;
     //procedure FormClose(Sender: TObject; var Action: TCloseAction);[
     procedure FormDestroy(Sender: TObject);
     procedure Filmes_Click(Sender: TObject);
