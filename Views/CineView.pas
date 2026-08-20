@@ -52,6 +52,7 @@ begin
   AChildForm.BorderStyle := bsNone;
   AChildForm.Align       := alClient;
   AChildForm.Parent      := PanelDesktop;
+  AChildForm.BringToFront;
   AChildForm.Show;
 end;
 
