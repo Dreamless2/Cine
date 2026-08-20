@@ -18,6 +18,7 @@ type
     AnimesButton: TButton;
     SeriesButton: TButton;
     FilmesButton: TButton;
+    Label1: TLabel;
   private
     { Private declarations }
     FCurrentChildForm: TForm;

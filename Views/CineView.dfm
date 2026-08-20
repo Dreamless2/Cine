@@ -31,6 +31,19 @@ object CineMain: TCineMain
     TabOrder = 1
     ExplicitTop = 21
     ExplicitWidth = 1373
+    object Label1: TLabel
+      Left = 749
+      Top = 16
+      Width = 69
+      Height = 32
+      Caption = 'Label1'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -24
+      Font.Name = 'Segoe UI'
+      Font.Style = []
+      ParentFont = False
+    end
   end
   object PanelStatusBar: TPanel
     Left = 0
