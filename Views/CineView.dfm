@@ -28,6 +28,7 @@ object CineMain: TCineMain
     Height = 64
     Align = alTop
     TabOrder = 1
+    ExplicitTop = 21
   end
   object PanelStatusBar: TPanel
     Left = 0
