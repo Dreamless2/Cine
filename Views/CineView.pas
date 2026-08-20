@@ -83,7 +83,7 @@ begin
   if Button = mbLeft then
   begin
     ReleaseCapture;
-    PostMessage(TPanel(Sender).Handle, WM_SYSCOMMAND, $F012, 0);
+    PostMessage(Self.Handle, WM_SYSCOMMAND, $F012, 0);
   end;
 end;
 
