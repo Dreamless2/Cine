@@ -16,6 +16,11 @@ begin
   if AValor.Trim.IsEmpty then Result := '--' else Result := AValor;
 end;
 
+function LimparMascaraData(const AValor: string): string;
+begin
+  Result := AValor.Replace('_', '').Trim([' ', '/']);
+end;
+
 function MontarResumo(const ANomeBox, AAudioBox, ASinopseBox, AOriginalBox, AEstreiaBox,
   AAlternativoBox, AFilmeBox, AFranquiaBox, AGeneroBox, ATagsBox, ADiretorBox,
   AArtistasBox, AProdutoraBox, AMCUBox: string): string;
@@ -29,10 +34,12 @@ begin
     LBuilder.AppendLine('**HD** - __720p__');
     LBuilder.AppendLine('**SD** - __480p__');
     LBuilder.AppendLine('__(Os vídeos estão em ordem decrescente, ou seja, de cima para baixo, tal como na descrição das resoluções.)__');
+    LBuilder.AppendLine;
     LBuilder.AppendLine(Format('__Sinopse: %s__', [ValorOuTraco(ASinopseBox)]));
+    LBuilder.AppendLine;
     LBuilder.AppendLine(Format('**Título Original:** __%s__', [ValorOuTraco(AOriginalBox)]));
     LBuilder.AppendLine(Format('**Título Alternativo:** __%s__', [ValorOuTraco(AAlternativoBox)]));
-    LBuilder.AppendLine(Format('**Data de Lançamento:** __%s__', [ValorOuTraco(AEstreiaBox)]));
+    LBuilder.AppendLine(Format('**Data de Lançamento:** __%s__', [ValorOuTraco(LimparMascaraData(AEstreiaBox))]));
     LBuilder.AppendLine(Format('**Filme:** %s', [ValorOuTraco(AFilmeBox)]));
     LBuilder.AppendLine(Format('**Franquia:** %s', [ValorOuTraco(AFranquiaBox)]));
     LBuilder.AppendLine(Format('**Gênero:** %s', [ValorOuTraco(AGeneroBox)]));
