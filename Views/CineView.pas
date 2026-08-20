@@ -54,6 +54,7 @@ begin
   AChildForm.Parent      := PanelDesktop;
   AChildForm.BringToFront;
   AChildForm.Show;
+  PanelDesktop.Repaint;
 end;
 
 procedure TCineMain.FormCreate(Sender: TObject);
