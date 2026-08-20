@@ -98,7 +98,7 @@ begin
     FProdutoraBox, FMCUBox];
 
   for LCtrl in LControles do
-    LCtrl.OnChange := QualquerAlteracao;
+    TLCtrl.OnChange := QualquerAlteracao;
 
   FNomeBox.OnChange := NomeBoxChange;
 end;
