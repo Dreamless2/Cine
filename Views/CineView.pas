@@ -26,8 +26,6 @@ type
     { Public declarations }
     constructor Create(AOwner: TComponent); override;
     destructor Destroy; override;
-    //procedure FormClose(Sender: TObject; var Action: TCloseAction);[
-    procedure FormDestroy(Sender: TObject);
     procedure Filmes_Click(Sender: TObject);
 
   end;
