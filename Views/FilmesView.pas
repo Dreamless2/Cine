@@ -67,7 +67,10 @@ implementation
 
 {$R *.dfm}
 
-constructor TFilmesMain.Create(ANomeBox: TCustomEdit; AAudioBox: TCustomEdit; ASinopseBox: TCustomEdit; AOriginalBox: TCustomEdit; AEstreiaBox: TCustomEdit; AAlternativoBox: TCustomEdit; AFilmeBox: TCustomEdit; AFranquiaBox: TCustomEdit; AGeneroBox: TCustomEdit; ATagsBox: TCustomEdit; ADiretorBox: TCustomEdit; AArtistasBox: TCustomEdit; AProdutoraBox: TCustomEdit; AMCUBox: TCustomEdit; AResumoBox: TMemo);
+constructor TFilmesMain.Create(
+  ANomeBox, AAudioBox, ASinopseBox, AOriginalBox, AEstreiaBox, AAlternativoBox,
+  AFilmeBox, AFranquiaBox, AGeneroBox, ATagsBox, ADiretorBox, AArtistasBox,
+  AProdutoraBox, AMCUBox: TCustomEdit; AResumoBox: TMemo);
 var
   LControles: TArray<TCustomEdit>;
   LCtrl: TCustomEdit;
