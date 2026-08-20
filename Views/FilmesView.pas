@@ -115,7 +115,7 @@ end;
 
 procedure TFilmesMain.NomeBoxChange(Sender: TObject);
 begin
-  FFilmeBox.Text := GerarTagFilme(FNomeBox.Text);
+  FFilmeBox.Text := GerarTagDupla(FNomeBox.Text);
   AtualizarResumo;
 end;
 
