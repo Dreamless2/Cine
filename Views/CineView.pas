@@ -64,7 +64,6 @@ end;
 destructor TCineMain.Destroy;
 begin
   // Libera o formulário filho ativo da memória se houver um
-  if Assigned(FCurrentChildForm) then
   begin
     FCurrentChildForm.Parent := nil;
     FCurrentChildForm.Free;
