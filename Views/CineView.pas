@@ -63,7 +63,7 @@ end;
 
 destructor TCineMain.Destroy;
 begin
-  // Libera o formulário filho ativo da memória se houver um
+  if Assigned(FCurrentChildForm) then
   begin
     FCurrentChildForm.Parent := nil;
     FCurrentChildForm.Free;
@@ -73,12 +73,7 @@ end;
 
 procedure TCineMain.Filmes_Click(Sender: TObject);
 begin
-  with Application do
-  begin
-    NormalizeTopMosts;
-    MessageBox('This should be on top.', 'Look', MB_OK);
-    RestoreTopMosts;
-  end;
+  OpenChildForm(TFilmesMain.Create(Self));
 end;
 
 
