@@ -54,7 +54,7 @@ end;
 
 procedure TCineMain.Filmes_Click(Sender: TObject);
 begin
-  OpenChildForm(TFilmesMain.Create());
+  OpenChildForm(TFilmesMain.Create(Self));
 end;
 
 
