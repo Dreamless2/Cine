@@ -77,7 +77,15 @@ begin
   OpenChildForm(TFilmesMain.Create(Self));
 end;
 
-
+procedure TCineMain.PanelTopBar_MouseDown(Sender: TObject; Button: TMouseButton; Shift: TShiftState; X: Integer; Y: Integer);
+begin
+  if Button = mbLeft then
+  begin
+    ReleaseCapture;
+    PostMessage(PanelTopBar.Handle, WM_SYSCOMMAND, $F012, 0);
+    PostMessage(PanelTopTitle.Handle, )
+  end;
+end;
 
 
 
