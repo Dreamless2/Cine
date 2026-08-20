@@ -42,13 +42,12 @@ begin
   end;
 
   FCurrentChildForm := AChildForm;
-  AChildForm.BorderStyle := bsNone;    /
-  AChildForm.Align := alClient;        // Dock = DockStyle.Fill
-  AChildForm.Parent := PanelDesktop;   // PanelDesktop.Controls.Add(childForm)
+  AChildForm.BorderStyle := bsNone;
+  AChildForm.Align := alClient;
+  AChildForm.Parent := PanelDesktop;
 
 
-  AChildForm.Show;                     // childForm.Show()
+  AChildForm.Show;
 end;
-
 
 end.
