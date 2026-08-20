@@ -54,7 +54,6 @@ begin
   AChildForm.Parent      := PanelDesktop;
   AChildForm.BringToFront;
   AChildForm.Show;
-  PanelDesktop.Repaint;
 end;
 
 procedure TCineMain.FormCreate(Sender: TObject);
@@ -77,7 +76,7 @@ begin
   with Application do
   begin
     NormalizeTopMosts;
-    MessageBox('This should be on top.', 'Look', MB_OK);    // [smbOK]
+    MessageBox('This should be on top.', 'Look', MB_OK);
     RestoreTopMosts;
   end;
 end;
