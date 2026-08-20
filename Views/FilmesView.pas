@@ -67,7 +67,40 @@ implementation
 
 {$R *.dfm}
 
-constructor TPrincipalMain
+constructor TFilmesMain.Create(ANomeBox: TCustomEdit; AAudioBox: TCustomEdit; ASinopseBox: TCustomEdit; AOriginalBox: TCustomEdit; AEstreiaBox: TCustomEdit; AAlternativoBox: TCustomEdit; AFilmeBox: TCustomEdit; AFranquiaBox: TCustomEdit; AGeneroBox: TCustomEdit; ATagsBox: TCustomEdit; ADiretorBox: TCustomEdit; AArtistasBox: TCustomEdit; AProdutoraBox: TCustomEdit; AMCUBox: TCustomEdit; AResumoBox: TMemo);
+var
+  LControles: TArray<TCustomEdit>;
+  LCtrl: TCustomEdit;
+begin
+  inherited Create;
+
+  FNomeBox := ANomeBox;
+  FAudioBox := AAudioBox;
+  FSinopseBox := ASinopseBox;
+  FOriginalBox := AOriginalBox;
+  FEstreiaBox := AEstreiaBox;
+  FAlternativoBox := AAlternativoBox;
+  FFilmeBox := AFilmeBox;
+  FFranquiaBox := AFranquiaBox;
+  FGeneroBox := AGeneroBox;
+  FTagsBox := ATagsBox;
+  FDiretorBox := ADiretorBox;
+  FArtistasBox := AArtistasBox;
+  FProdutoraBox := AProdutoraBox;
+  FMCUBox := AMCUBox;
+  FResumoBox := AResumoBox;
+
+  LControles := [FAudioBox, FSinopseBox, FOriginalBox, FEstreiaBox, FAlternativoBox,
+    FFilmeBox, FFranquiaBox, FGeneroBox, FTagsBox, FDiretorBox, FArtistasBox,
+    FProdutoraBox, FMCUBox];
+
+  for LCtrl in LControles do
+    LCtrl.OnChange := QualquerAlteracao;
+
+  FNomeBox.OnChange := NomeBoxChange;
+end;
+
+procure
 
 
 end.

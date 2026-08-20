@@ -2,6 +2,7 @@ object FilmesMain: TFilmesMain
   Left = 0
   Top = 0
   BorderStyle = bsNone
+  Caption = 'Filmes'
   ClientHeight = 754
   ClientWidth = 1338
   Color = clBtnFace
