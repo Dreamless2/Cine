@@ -48,8 +48,10 @@ type
     FilmeBox: TEdit;
   private
     { Private declarations }
+    FMidiaEvents: TMidiaFormHelper;
   public
     { Public declarations }
+    procedure FormCreate(Sender: TObject);
   end;
 
 var
