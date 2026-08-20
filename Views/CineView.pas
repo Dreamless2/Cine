@@ -24,7 +24,7 @@ type
     procedure OpenChildForm(AChildForm: TForm);
   public
     { Public declarations }
-    constructor FormCreate(Sender: TObject);
+    constructor FormCreate(AOwner: TComponent);
     //procedure FormClose(Sender: TObject; var Action: TCloseAction);[
     procedure FormDestroy(Sender: TObject);
     procedure Filmes_Click(Sender: TObject);
@@ -38,9 +38,9 @@ implementation
 
 {$R *.dfm}
 
-constructor TCineMain.FormCreate(Sender: TObject);
+constructor TCineMain.Create(AOwner: TComponent);
 begin
-  inherited Create;
+   inherited Create(AOwner);
   FilmesButton.OnClick := Filmes_Click;
 end;
 
