@@ -7,6 +7,9 @@ uses
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.ExtCtrls, Vcl.Mask, ResumoBuilder;
 
 type
+  TCustomEditAberto = class(TCustomEdit);
+
+type
   TFilmesMain = class(TForm)
     PanelDesktop: TPanel;
     Label1: TLabel;
@@ -98,6 +101,8 @@ begin
     FProdutoraBox, FMCUBox];
 
   for LCtrl in LControles do
+    if Assigen then
+    
     TLCtrl.OnChange := QualquerAlteracao;
 
   FNomeBox.OnChange := NomeBoxChange;
