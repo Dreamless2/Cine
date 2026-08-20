@@ -28,6 +28,7 @@ type
     destructor Destroy; override;
     procedure Filmes_Click(Sender: TObject);
     procedure PanelTopBar_MouseDown(Sender: TObject; Button: TMouseButton; Shift: TShiftState; X, Y: Integer);
+    procedure PanelTopTitle_MouseDown(Sender: TObject; Button: TMouseButton; Shift: TShiftState; X: Integer; Y: Integer);
 
   end;
 
@@ -43,6 +44,7 @@ begin
   inherited Create(AOwner);
   FilmesButton.OnClick := Filmes_Click;
   PanelTopBar.OnMouseDown := PanelTopBar_MouseDown;
+  PanelTopTitle.OnMouseDown := PanelTopTitle_MouseDown;
 end;
 
 procedure TCineMain.OpenChildForm(AChildForm: TForm);
@@ -79,6 +81,15 @@ begin
 end;
 
 procedure TCineMain.PanelTopBar_MouseDown(Sender: TObject; Button: TMouseButton; Shift: TShiftState; X: Integer; Y: Integer);
+begin
+  if Button = mbLeft then
+  begin
+    ReleaseCapture;
+    PostMessage(PanelTopBar.Handle, WM_SYSCOMMAND, $F012, 0);
+  end;
+end;
+
+procedure TCineMain.PanelTopTitle_MouseDown(Sender: TObject; Button: TMouseButton; Shift: TShiftState; X: Integer; Y: Integer);
 begin
   if Button = mbLeft then
   begin
