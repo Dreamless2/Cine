@@ -44,7 +44,6 @@ object CineMain: TCineMain
     Height = 805
     Align = alClient
     TabOrder = 3
-    ExplicitHeight = 799
     object PanelButtons: TPanel
       Left = 1
       Top = 1
@@ -52,9 +51,6 @@ object CineMain: TCineMain
       Height = 803
       Align = alLeft
       TabOrder = 0
-      ExplicitLeft = 0
-      ExplicitTop = -4
-      ExplicitHeight = 797
       object FecharButton: TButton
         Left = 1
         Top = 750
@@ -63,7 +59,6 @@ object CineMain: TCineMain
         Align = alBottom
         Caption = 'Fechar'
         TabOrder = 0
-        ExplicitTop = 744
       end
       object AnimesButton: TButton
         Left = 1
@@ -73,8 +68,6 @@ object CineMain: TCineMain
         Align = alTop
         Caption = 'Animes'
         TabOrder = 1
-        ExplicitLeft = 2
-        ExplicitTop = 9
       end
       object SeriesButton: TButton
         Left = 1
@@ -84,8 +77,6 @@ object CineMain: TCineMain
         Align = alTop
         Caption = 'S'#233'ries'
         TabOrder = 2
-        ExplicitLeft = 2
-        ExplicitTop = 9
       end
       object FilmesButton: TButton
         Left = 1
@@ -95,8 +86,6 @@ object CineMain: TCineMain
         Align = alTop
         Caption = 'Filmes'
         TabOrder = 3
-        ExplicitLeft = 2
-        ExplicitTop = 9
       end
     end
   end

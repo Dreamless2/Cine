@@ -19,6 +19,8 @@ type
     FilmesButton: TButton;
   private
     { Private declarations }
+    FCurrentChildForm: TForm;
+    procedure OpenChildForm(AChildForm: TForm);
   public
     { Public declarations }
   end;
@@ -29,5 +31,24 @@ var
 implementation
 
 {$R *.dfm}
+
+procedure TCineMain.OpenChildForm(AChildForm: TForm);
+begin
+  if Assigned(FCurrentChildForm) then
+  begin
+    FCurrentChildForm.Close;
+    FCurrentChildForm.Free;
+    FCurrentChildForm := nil;
+  end;
+
+  FCurrentChildForm := AChildForm;
+  AChildForm.BorderStyle := bsNone;    /
+  AChildForm.Align := alClient;        // Dock = DockStyle.Fill
+  AChildForm.Parent := PanelDesktop;   // PanelDesktop.Controls.Add(childForm)
+
+
+  AChildForm.Show;                     // childForm.Show()
+end;
+
 
 end.
