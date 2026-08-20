@@ -60,7 +60,6 @@ begin
   FilmesButton.OnClick := Filmes_Click;
 end;
 
-
 procedure TCineMain.FormDestroy(Sender: TObject);
 begin
   if Assigned(FCurrentChildForm) then
