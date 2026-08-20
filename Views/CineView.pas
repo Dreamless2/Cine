@@ -22,11 +22,12 @@ type
     { Private declarations }
     FCurrentChildForm: TForm;
     procedure OpenChildForm(AChildForm: TForm);
-    
     procedure Filmes_Click(Sender: TObject);
     procedure Panel_MouseDown(Sender: TObject; Button: TMouseButton; Shift: TShiftState; X, Y: Integer);
   public
     { Public declarations }
+    constructor Create(AOwner: TComponent); override;
+    destructor Destroy; override;
   end;
 
 var
