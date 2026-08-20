@@ -57,7 +57,7 @@ end;
 
 procedure TCineMain.FormCreate(Sender: TObject);
 begin
-  FilmesButton.Click(System.HelpIntfs);
+  FilmesButton.Click(Self);
 end;
 
 
