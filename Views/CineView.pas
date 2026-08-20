@@ -73,8 +73,12 @@ end;
 
 procedure TCineMain.Filmes_Click(Sender: TObject);
 begin
-  //OpenChildForm(TFilmesMain.Create(Self));
-  message
+  with Application do
+  begin
+    NormalizeTopMosts;
+    MessageBox('This should be on top.', 'Look', MB_OK);    // [smbOK]
+    RestoreTopMosts;
+  end;
 end;
 
 
