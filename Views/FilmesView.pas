@@ -71,6 +71,11 @@ implementation
 
 {$R *.dfm}
 
+function GerarTagFilme(const ANome: string): string;
+begin
+  Result := GerarTagDupla(ANome);
+end;
+
 constructor TFilmesMain.Create(
   ANomeBox, AAudioBox, ASinopseBox, AOriginalBox, AEstreiaBox, AAlternativoBox,
   AFilmeBox, AFranquiaBox, AGeneroBox, ATagsBox, ADiretorBox, AArtistasBox,
