@@ -3,7 +3,7 @@ unit TMDB.MediaEngine;
 interface
 
 uses
-  System.SysUtils, System.JSON, System.Character, System.Math, System.Generics.Collections;
+  System.SysUtils, System.JSON, System.Character, System.Math;
 
 type
   TMediaData = record
@@ -22,13 +22,16 @@ type
     IdiomaOriginal: string;
     ObraReferencia: string;
     Showrunners: string;
+    TituloTag: string;
   end;
 
 function ProcessarMidiaTMDB(const AJsonString: string; AIsSerie: Boolean): TMediaData;
+function GerarTagDupla(const ATexto: string): string;
+function GerarTagFilme(const ANome: string): string;
 
 implementation
 
-function FormatarParaTag(const ATexto: string): string;
+function FormatarParaTag(const ATexto: string; ARemoverAcentos: Boolean = True): string;
 var
   I: Integer;
   LChar: Char;
@@ -42,11 +45,14 @@ begin
   if ATexto.IsEmpty then Exit;
 
   LTextoLimpo := ATexto;
-  for I := 1 to Length(LTextoLimpo) do
+  if ARemoverAcentos then
   begin
-    var PosAcento := Pos(LTextoLimpo[I], ComAcento);
-    if PosAcento > 0 then
-      LTextoLimpo[I] := SemAcento[PosAcento];
+    for I := 1 to Length(LTextoLimpo) do
+    begin
+      var PosAcento := Pos(LTextoLimpo[I], ComAcento);
+      if PosAcento > 0 then
+        LTextoLimpo[I] := SemAcento[PosAcento];
+    end;
   end;
 
   LStringBuilder := TStringBuilder.Create;
@@ -62,6 +68,24 @@ begin
   finally
     LStringBuilder.Free;
   end;
+end;
+
+function GerarTagDupla(const ATexto: string): string;
+var
+  LComAcento, LSemAcento: string;
+begin
+  LComAcento := FormatarParaTag(ATexto, False);
+  LSemAcento := FormatarParaTag(ATexto, True);
+
+  if LComAcento = LSemAcento then
+    Result := LComAcento
+  else
+    Result := LSemAcento + ' ' + LComAcento;
+end;
+
+function GerarTagFilme(const ANome: string): string;
+begin
+  Result := GerarTagDupla(ANome);
 end;
 
 procedure TratarDataEAno(const ADataISO: string; out ADataPTBR, AAno: string);
@@ -108,17 +132,18 @@ begin
     end;
 
     Result.Sinopse := LJson.GetValue<string>('overview', '');
+    Result.TituloTag := GerarTagFilme(Result.Nome);
 
     LArr := LJson.GetValue<TJSONArray>('genres', nil);
     if Assigned(LArr) then
     begin
-      for I := 0 to Min(2, LArr.Count - 1) do
+      for I := 0 to Min(4, LArr.Count - 1) do
       begin
         LItem := LArr.Items[I] as TJSONObject;
         if LItem.GetValue<Integer>('id', 0) = 16 then
           LIsAnimacao := True;
 
-        Result.Generos := (Result.Generos + ' ' + FormatarParaTag(LItem.GetValue<string>('name', ''))).Trim;
+        Result.Generos := (Result.Generos + ' ' + GerarTagDupla(LItem.GetValue<string>('name', ''))).Trim;
       end;
     end;
 
