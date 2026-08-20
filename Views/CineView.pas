@@ -27,6 +27,7 @@ type
     constructor Create(AOwner: TComponent); override;
     destructor Destroy; override;
     procedure Filmes_Click(Sender: TObject);
+    procedure PanelTopBar_MouseDown(Sender: TObject; Button: TMouseButton; Shift: TShiftState; X, Y: Integer);
 
   end;
 
