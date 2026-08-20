@@ -2,7 +2,7 @@ object PrincipalMain: TPrincipalMain
   Left = 0
   Top = 0
   BorderStyle = bsNone
-  ClientHeight = 706
+  ClientHeight = 854
   ClientWidth = 1338
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
@@ -16,11 +16,10 @@ object PrincipalMain: TPrincipalMain
     Left = 0
     Top = 0
     Width = 1338
-    Height = 706
+    Height = 854
     Align = alClient
     TabOrder = 0
-    ExplicitLeft = -24
-    ExplicitTop = 8
+    ExplicitHeight = 706
     object Label1: TLabel
       Left = 16
       Top = 14
@@ -240,8 +239,8 @@ object PrincipalMain: TPrincipalMain
       TabOrder = 13
     end
     object CopiarButton: TButton
-      Left = 248
-      Top = 624
+      Left = 240
+      Top = 736
       Width = 203
       Height = 57
       Caption = 'Copiar'
@@ -249,7 +248,7 @@ object PrincipalMain: TPrincipalMain
     end
     object SalvarButton: TButton
       Left = 480
-      Top = 624
+      Top = 736
       Width = 203
       Height = 57
       Caption = 'Salvar/Atualizar'
@@ -257,7 +256,7 @@ object PrincipalMain: TPrincipalMain
     end
     object Anterior: TButton
       Left = 712
-      Top = 624
+      Top = 736
       Width = 203
       Height = 57
       Caption = 'Anterior'
@@ -265,7 +264,7 @@ object PrincipalMain: TPrincipalMain
     end
     object ProximoButton: TButton
       Left = 944
-      Top = 624
+      Top = 736
       Width = 203
       Height = 57
       Caption = 'Pr'#243'ximo'
