@@ -38,6 +38,12 @@ implementation
 
 {$R *.dfm}
 
+constructor TCineMain.FormCreate(Sender: TObject);
+begin
+  inherited Create;
+  FilmesButton.OnClick := Filmes_Click;
+end;
+
 procedure TCineMain.OpenChildForm(AChildForm: TForm);
 begin
   if Assigned(FCurrentChildForm) then
@@ -56,11 +62,7 @@ begin
   AChildForm.Show;
 end;
 
-constructor TCineMain.FormCreate(Sender: TObject);
-begin
-  inherited Create(nil);
-  FilmesButton.OnClick := Filmes_Click;
-end;
+
 
 procedure TCineMain.FormDestroy(Sender: TObject);
 begin
