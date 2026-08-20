@@ -40,8 +40,9 @@ implementation
 
 constructor TCineMain.Create(AOwner: TComponent);
 begin
-   inherited Create(AOwner);
+  inherited Create(AOwner);
   FilmesButton.OnClick := Filmes_Click;
+  PanelTopBar.OnMouseDown := PanelTopBar_MouseDown(Self);
 end;
 
 procedure TCineMain.OpenChildForm(AChildForm: TForm);
@@ -83,7 +84,7 @@ begin
   begin
     ReleaseCapture;
     PostMessage(PanelTopBar.Handle, WM_SYSCOMMAND, $F012, 0);
-    PostMessage(PanelTopTitle.Handle, )
+    PostMessage(PanelTopTitle.Handle, WM_SYSCOMMAND, $F012, 0);
   end;
 end;
 
