@@ -2,7 +2,7 @@ object PrincipalMain: TPrincipalMain
   Left = 0
   Top = 0
   BorderStyle = bsNone
-  ClientHeight = 763
+  ClientHeight = 754
   ClientWidth = 1338
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
@@ -16,7 +16,7 @@ object PrincipalMain: TPrincipalMain
     Left = 0
     Top = 0
     Width = 1338
-    Height = 763
+    Height = 754
     Align = alClient
     TabOrder = 0
     ExplicitHeight = 706
