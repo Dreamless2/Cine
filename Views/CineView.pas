@@ -57,7 +57,7 @@ end;
 
 procedure TCineMain.FormCreate(Sender: TObject);
 begin
-  FilmesButton.Click(Self);
+  Filmes_Click(Self);
 end;
 
 
