@@ -100,7 +100,21 @@ begin
   FNomeBox.OnChange := NomeBoxChange;
 end;
 
-procure
+procedure TFilmesMain.QualquerAlteracao(Sender: TObject);
+begin
+  AtualizarResumo;
+end;
+
+procedure t
+
+procedure TFilmesMain.AtualizarResumo;
+begin
+  FResumoBox.Lines.Text := MontarResumo(
+    FNomeBox.Text, FAudioBox.Text, FSinopseBox.Text, FOriginalBox.Text,
+    FEstreiaBox.Text, FAlternativoBox.Text, FFilmeBox.Text, FFranquiaBox.Text,
+    FGeneroBox.Text, FTagsBox.Text, FDiretorBox.Text, FArtistasBox.Text,
+    FProdutoraBox.Text, FMCUBox.Text);
+end;
 
 
 end.
