@@ -63,16 +63,15 @@ begin
   AChildForm.Show;
 end;
 
-
-
-procedure TCineMain.FormDestroy(Sender: TObject);
+destructor TCineMain.Destroy;
 begin
+  // Libera o formulário filho ativo da memória se houver um
   if Assigned(FCurrentChildForm) then
   begin
     FCurrentChildForm.Parent := nil;
     FCurrentChildForm.Free;
-    FCurrentChildForm := nil;
   end;
+  inherited Destroy;
 end;
 
 procedure TCineMain.Filmes_Click(Sender: TObject);
