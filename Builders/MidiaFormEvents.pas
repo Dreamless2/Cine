@@ -7,6 +7,9 @@ uses
   ResumoBuilder, TMDB.MediaEngine;
 
 type
+  TCustomEditAberto = class(TCustomEdit);
+
+type
   TMidiaFormHelper = class
   private
     FNomeBox, FAudioBox, FSinopseBox, FOriginalBox, FEstreiaBox, FAlternativoBox,
@@ -56,9 +59,9 @@ begin
     FProdutoraBox, FMCUBox];
 
   for LCtrl in LControles do
-    LCtrl.OnChange := QualquerAlteracao;
+     TCustomEditAberto(LCtrl).OnChange := QualquerAlteracao;
 
-  FNomeBox.OnChange := NomeBoxChange;
+  TCustomEditAberto(LCtrlFNomeBox.OnChange := NomeBoxChange;
 end;
 
 procedure TMidiaFormHelper.QualquerAlteracao(Sender: TObject);
