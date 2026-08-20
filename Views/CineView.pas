@@ -43,7 +43,7 @@ begin
   inherited Create(AOwner);
   FilmesButton.OnClick := Filmes_Click;
   PanelTopBar.OnMouseDown := Panel_MouseDown;
-  PanelTopTitle.OnMouseDown := Panel_MouseDown(;
+  PanelTopTitle.OnMouseDown := Panel_MouseDown;
 end;
 
 procedure TCineMain.OpenChildForm(AChildForm: TForm);
