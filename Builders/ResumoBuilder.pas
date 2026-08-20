@@ -3,10 +3,11 @@ unit ResumoBuilder;
 interface
 
 uses
-  System.SysUtils, System.StrUtils, TMDB.MediaEngine;
+  System.SysUtils;
 
-function MontarResumo(const AMedia: TMediaData; const ANomeBox, AFilmeBox, AFranquiaBox,
-  AAudioBox: string; const AFaseMCU: string = '--'): string;
+function MontarResumo(const ANomeBox, AAudioBox, ASinopseBox, AOriginalBox, AEstreiaBox,
+  AAlternativoBox, AFilmeBox, AFranquiaBox, AGeneroBox, ATagsBox, ADiretorBox,
+  AArtistasBox, AProdutoraBox, AMCUBox: string): string;
 
 implementation
 
@@ -15,32 +16,30 @@ begin
   if AValor.Trim.IsEmpty then Result := '--' else Result := AValor;
 end;
 
-function MontarResumo(const AMedia: TMediaData; const ANomeBox, AFilmeBox, AFranquiaBox,
-  AAudioBox: string; const AFaseMCU: string = '--'): string;
+function MontarResumo(const ANomeBox, AAudioBox, ASinopseBox, AOriginalBox, AEstreiaBox,
+  AAlternativoBox, AFilmeBox, AFranquiaBox, AGeneroBox, ATagsBox, ADiretorBox,
+  AArtistasBox, AProdutoraBox, AMCUBox: string): string;
 var
   LBuilder: TStringBuilder;
-  LTipoLabel: string;
 begin
-  LTipoLabel := IfThen(AMedia.IsSerie, 'Série', 'Filme');
-
   LBuilder := TStringBuilder.Create;
   try
     LBuilder.AppendLine(Format('**%s - %s**', [ANomeBox, AAudioBox]));
     LBuilder.AppendLine('**HD** - __720p__');
     LBuilder.AppendLine('**SD** - __480p__');
     LBuilder.AppendLine('__(Os vídeos estão em ordem decrescente, ou seja, de cima para baixo, tal como na descrição das resoluções.)__');
-    LBuilder.AppendLine(Format('__Sinopse: %s__', [ValorOuTraco(AMedia.Sinopse)]));
-    LBuilder.AppendLine(Format('**Título Original:** __%s__', [ValorOuTraco(AMedia.NomeOriginal)]));
-    LBuilder.AppendLine(Format('**Título Alternativo:** __%s__', [ValorOuTraco(AMedia.NomeAlternativo)]));
-    LBuilder.AppendLine(Format('**Data de Lançamento:** __%s__', [ValorOuTraco(AMedia.DataEstreia)]));
-    LBuilder.AppendLine(Format('**%s:** %s', [LTipoLabel, ValorOuTraco(AFilmeBox)]));
+    LBuilder.AppendLine(Format('__Sinopse: %s__', [ValorOuTraco(ASinopseBox)]));
+    LBuilder.AppendLine(Format('**Título Original:** __%s__', [ValorOuTraco(AOriginalBox)]));
+    LBuilder.AppendLine(Format('**Título Alternativo:** __%s__', [ValorOuTraco(AAlternativoBox)]));
+    LBuilder.AppendLine(Format('**Data de Lançamento:** __%s__', [ValorOuTraco(AEstreiaBox)]));
+    LBuilder.AppendLine(Format('**Filme:** %s', [ValorOuTraco(AFilmeBox)]));
     LBuilder.AppendLine(Format('**Franquia:** %s', [ValorOuTraco(AFranquiaBox)]));
-    LBuilder.AppendLine(Format('**Gênero:** %s', [ValorOuTraco(AMedia.Generos)]));
-    LBuilder.AppendLine(Format('**Tags:** %s', [ValorOuTraco(AMedia.Tags)]));
-    LBuilder.AppendLine(Format('**Diretor:** %s', [ValorOuTraco(AMedia.Diretores)]));
-    LBuilder.AppendLine(Format('**Fase MCU:** %s', [AFaseMCU]));
-    LBuilder.AppendLine(Format('**Estrelas:** %s', [ValorOuTraco(AMedia.Artistas)]));
-    LBuilder.Append(Format('**Estúdio:** %s', [ValorOuTraco(AMedia.Produtoras)]));
+    LBuilder.AppendLine(Format('**Gênero:** %s', [ValorOuTraco(AGeneroBox)]));
+    LBuilder.AppendLine(Format('**Tags:** %s', [ValorOuTraco(ATagsBox)]));
+    LBuilder.AppendLine(Format('**Diretor:** %s', [ValorOuTraco(ADiretorBox)]));
+    LBuilder.AppendLine(Format('**Fase MCU:** %s', [ValorOuTraco(AMCUBox)]));
+    LBuilder.AppendLine(Format('**Estrelas:** %s', [ValorOuTraco(AArtistasBox)]));
+    LBuilder.Append(Format('**Estúdio:** %s', [ValorOuTraco(AProdutoraBox)]));
 
     Result := LBuilder.ToString;
   finally
