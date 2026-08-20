@@ -41,6 +41,8 @@ type
     SalvarButton: TButton;
     Anterior: TButton;
     ProximoButton: TButton;
+    Label15: TLabel;
+    FilmeBox: TEdit;
   private
     { Private declarations }
   public

@@ -78,35 +78,35 @@ object PrincipalMain: TPrincipalMain
     end
     object Label9: TLabel
       Left = 16
-      Top = 387
+      Top = 459
       Width = 46
       Height = 15
       Caption = 'Franquia'
     end
     object Label10: TLabel
       Left = 16
-      Top = 437
+      Top = 509
       Width = 38
       Height = 15
       Caption = 'G'#234'nero'
     end
     object Label11: TLabel
       Left = 495
-      Top = 437
+      Top = 509
       Width = 36
       Height = 15
       Caption = 'Diretor'
     end
     object Label12: TLabel
       Left = 17
-      Top = 487
+      Top = 559
       Width = 39
       Height = 15
       Caption = 'Artistas'
     end
     object Label13: TLabel
       Left = 16
-      Top = 539
+      Top = 611
       Width = 53
       Height = 15
       Caption = 'Produtora'
@@ -117,6 +117,13 @@ object PrincipalMain: TPrincipalMain
       Width = 43
       Height = 15
       Caption = 'Resumo'
+    end
+    object Label15: TLabel
+      Left = 17
+      Top = 387
+      Width = 29
+      Height = 15
+      Caption = 'Filme'
     end
     object CodigoBox: TEdit
       Left = 16
@@ -193,7 +200,7 @@ object PrincipalMain: TPrincipalMain
     end
     object FranquiaBox: TEdit
       Left = 17
-      Top = 408
+      Top = 480
       Width = 831
       Height = 23
       TabOrder = 8
@@ -201,7 +208,7 @@ object PrincipalMain: TPrincipalMain
     end
     object GeneroBox: TEdit
       Left = 17
-      Top = 458
+      Top = 530
       Width = 472
       Height = 23
       TabOrder = 9
@@ -209,7 +216,7 @@ object PrincipalMain: TPrincipalMain
     end
     object DiretorBox: TEdit
       Left = 495
-      Top = 458
+      Top = 530
       Width = 353
       Height = 23
       TabOrder = 10
@@ -217,15 +224,15 @@ object PrincipalMain: TPrincipalMain
     end
     object ArtistasBox: TEdit
       Left = 17
-      Top = 508
+      Top = 580
       Width = 831
       Height = 23
       TabOrder = 11
       TextHint = 'Artistas'
     end
     object ProdutoraBox: TEdit
-      Left = 16
-      Top = 560
+      Left = 17
+      Top = 632
       Width = 831
       Height = 23
       TabOrder = 12
@@ -269,6 +276,14 @@ object PrincipalMain: TPrincipalMain
       Height = 57
       Caption = 'Pr'#243'ximo'
       TabOrder = 17
+    end
+    object FilmeBox: TEdit
+      Left = 17
+      Top = 408
+      Width = 831
+      Height = 23
+      TabOrder = 18
+      TextHint = 'Filme'
     end
   end
 end
