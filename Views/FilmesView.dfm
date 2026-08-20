@@ -58,9 +58,9 @@ object FilmesMain: TFilmesMain
     object Label6: TLabel
       Left = 727
       Top = 287
-      Width = 54
+      Width = 77
       Height = 15
-      Caption = 'Data de Es'
+      Caption = 'Data de Estreia'
     end
     object Label7: TLabel
       Left = 16
@@ -128,9 +128,9 @@ object FilmesMain: TFilmesMain
     object Label16: TLabel
       Left = 727
       Top = 387
-      Width = 24
+      Width = 53
       Height = 15
-      Caption = 'Tags'
+      Caption = 'Fase MCU'
     end
     object CodigoBox: TEdit
       Left = 16
@@ -298,7 +298,7 @@ object FilmesMain: TFilmesMain
       Width = 120
       Height = 23
       TabOrder = 19
-      TextHint = 'Tags'
+      TextHint = 'Fase MCU'
     end
   end
 end

@@ -64,7 +64,7 @@ implementation
 procedure TFilmesMain.FormCreate(Sender: TObject);
 begin
   FMidiaEvents := TMidiaFormHelper.Create(
-    NomeBox, AudioBox, SinopseBox, OriginalBox, DataBox, AlternativoBox,
+    NomeBox, AudioBox, SinopseBox, OriginalBox, EstreiaBox, AlternativoBox,
     FilmeBox, FranquiaBox, GeneroBox, TagsBox, DiretorBox, ArtistasBox,
     ProdutoraBox, MCUBox, ResumoBox);
 end;
