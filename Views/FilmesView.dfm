@@ -20,7 +20,6 @@ object FilmesMain: TFilmesMain
     Height = 754
     Align = alClient
     TabOrder = 0
-    ExplicitHeight = 706
     object Label1: TLabel
       Left = 16
       Top = 14
@@ -59,9 +58,9 @@ object FilmesMain: TFilmesMain
     object Label6: TLabel
       Left = 727
       Top = 287
-      Width = 109
+      Width = 54
       Height = 15
-      Caption = 'Data de Lan'#231'amento'
+      Caption = 'Data de Es'
     end
     object Label7: TLabel
       Left = 16
@@ -126,6 +125,13 @@ object FilmesMain: TFilmesMain
       Height = 15
       Caption = 'Filme'
     end
+    object Label16: TLabel
+      Left = 727
+      Top = 387
+      Width = 24
+      Height = 15
+      Caption = 'Tags'
+    end
     object CodigoBox: TEdit
       Left = 16
       Top = 35
@@ -173,7 +179,7 @@ object FilmesMain: TFilmesMain
       TabOrder = 4
       TextHint = 'Nome Original'
     end
-    object DataBox: TMaskEdit
+    object EstreiaBox: TMaskEdit
       Left = 727
       Top = 308
       Width = 120
@@ -281,10 +287,18 @@ object FilmesMain: TFilmesMain
     object FilmeBox: TEdit
       Left = 17
       Top = 408
-      Width = 831
+      Width = 704
       Height = 23
       TabOrder = 18
       TextHint = 'Filme'
+    end
+    object MCUBox: TEdit
+      Left = 727
+      Top = 408
+      Width = 120
+      Height = 23
+      TabOrder = 19
+      TextHint = 'Tags'
     end
   end
 end

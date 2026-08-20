@@ -24,7 +24,7 @@ type
     AudioBox: TComboBox;
     SinopseBox: TMemo;
     OriginalBox: TEdit;
-    DataBox: TMaskEdit;
+    EstreiaBox: TMaskEdit;
     TagsBox: TEdit;
     AlternativoBox: TEdit;
     FranquiaBox: TEdit;
@@ -44,6 +44,8 @@ type
     ProximoButton: TButton;
     Label15: TLabel;
     FilmeBox: TEdit;
+    Label16: TLabel;
+    MCUBox: TEdit;
   private
     { Private declarations }
     FMidiaEvents: TMidiaFormHelper;
@@ -62,7 +64,7 @@ implementation
 procedure TFilmesMain.FormCreate(Sender: TObject);
 begin
   FMidiaEvents := TMidiaFormHelper.Create(
-    NomeBox, AudioBox, SinopseBox, OriginalBox, EstreiaBox, AlternativoBox,
+    NomeBox, AudioBox, SinopseBox, OriginalBox, DataBox, AlternativoBox,
     FilmeBox, FranquiaBox, GeneroBox, TagsBox, DiretorBox, ArtistasBox,
     ProdutoraBox, MCUBox, ResumoBox);
 end;
