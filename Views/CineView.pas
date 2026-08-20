@@ -4,7 +4,8 @@ interface
 
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
-  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.ExtCtrls;
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.ExtCtrls,
+  FilmesView, SeriesView, AnimesView;
 
 type
   TCineMain = class(TForm)
@@ -52,9 +53,13 @@ begin
 end;
 
 procedure TCineMain.Filmes_Click(Sender: TObject);
+var
+  LFormFilho: TFilmesMain;
 begin
-
+  LFormFilho := TFormCadastroFilmes.Create(Self);
+  OpenChildForm(LFormFilho);
 end;
+
 
 
 
