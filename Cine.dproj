@@ -148,6 +148,7 @@
             <Form>AnimesMain</Form>
             <FormType>dfm</FormType>
         </DCCReference>
+        <DCCReference Include="Builders\ResumoBuilder.pas"/>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
         </BuildConfiguration>

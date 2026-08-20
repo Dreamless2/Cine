@@ -9,7 +9,8 @@ uses
   TokenView in 'Views\TokenView.pas' {TokenMain},
   FilmesView in 'Views\FilmesView.pas' {PrincipalMain},
   SeriesView in 'Views\SeriesView.pas' {SeriesMain},
-  AnimesView in 'Views\AnimesView.pas' {AnimesMain};
+  AnimesView in 'Views\AnimesView.pas' {AnimesMain},
+  ResumoBuilder in 'Builders\ResumoBuilder.pas';
 
 {$R *.res}
 
