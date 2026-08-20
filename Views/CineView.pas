@@ -42,6 +42,7 @@ constructor TCineMain.Create(AOwner: TComponent);
 begin
   inherited Create(AOwner);
   FilmesButton.OnClick := Filmes_Click;
+  PanelTopBar.OnMouseDown
 end;
 
 procedure TCineMain.OpenChildForm(AChildForm: TForm);
@@ -83,7 +84,6 @@ begin
   begin
     ReleaseCapture;
     PostMessage(PanelTopBar.Handle, WM_SYSCOMMAND, $F012, 0);
-    PostMessage(PanelTopTitle.Handle, WM_SYSCOMMAND, $F012, 0);
   end;
 end;
 
