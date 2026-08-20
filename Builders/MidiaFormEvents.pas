@@ -7,22 +7,22 @@ uses
   ResumoBuilder, TMDB.MediaEngine;
 
 type
+  TCustomEditAberto = class(TCustomEdit);
+
+type
   TMidiaFormHelper = class
   private
     FNomeBox, FAudioBox, FSinopseBox, FOriginalBox, FEstreiaBox, FAlternativoBox,
       FFilmeBox, FFranquiaBox, FGeneroBox, FTagsBox, FDiretorBox, FArtistasBox,
-      FProdutoraBox, FMCUBox: TWinControl; // Mudado para TWinControl
+      FProdutoraBox, FMCUBox: TCustomEdit;
     FResumoBox: TMemo;
     procedure QualquerAlteracao(Sender: TObject);
     procedure NomeBoxChange(Sender: TObject);
-    procedure AtribuirOnChange(AControl: TWinControl; ANotifyEvent: TNotifyEvent);
-    function ObterTexto(AControl: TWinControl): string;
-    procedure DefinirTexto(AControl: TWinControl; const ATexto: string);
   public
     constructor Create(
       ANomeBox, AAudioBox, ASinopseBox, AOriginalBox, AEstreiaBox, AAlternativoBox,
       AFilmeBox, AFranquiaBox, AGeneroBox, ATagsBox, ADiretorBox, AArtistasBox,
-      AProdutoraBox, AMCUBox: TWinControl; AResumoBox: TMemo); // Mudado para TWinControl
+      AProdutoraBox, AMCUBox: TCustomEdit; AResumoBox: TMemo);
     procedure AtualizarResumo;
   end;
 
@@ -31,10 +31,10 @@ implementation
 constructor TMidiaFormHelper.Create(
   ANomeBox, AAudioBox, ASinopseBox, AOriginalBox, AEstreiaBox, AAlternativoBox,
   AFilmeBox, AFranquiaBox, AGeneroBox, ATagsBox, ADiretorBox, AArtistasBox,
-  AProdutoraBox, AMCUBox: TWinControl; AResumoBox: TMemo);
+  AProdutoraBox, AMCUBox: TCustomEdit; AResumoBox: TMemo);
 var
-  LControles: TArray<TWinControl>;
-  LCtrl: TWinControl;
+  LControles: TArray<TCustomEdit>;
+  LCtrl: TCustomEdit;
 begin
   inherited Create;
 
@@ -59,35 +59,9 @@ begin
     FProdutoraBox, FMCUBox];
 
   for LCtrl in LControles do
-     AtribuirOnChange(LCtrl, QualquerAlteracao);
+     TCustomEditAberto(LCtrl).OnChange := QualquerAlteracao;
 
-  AtribuirOnChange(FNomeBox, NomeBoxChange);
-end;
-
-procedure TMidiaFormHelper.AtribuirOnChange(AControl: TWinControl; ANotifyEvent: TNotifyEvent);
-begin
-  if AControl is TCustomEdit then
-    TCustomEdit(AControl).OnChange := ANotifyEvent
-  else if AControl is TComboBox then
-    TComboBox(AControl).OnChange := ANotifyEvent;
-end;
-
-function TMidiaFormHelper.ObterTexto(AControl: TWinControl): string;
-begin
-  if AControl is TCustomEdit then
-    Result := TCustomEdit(AControl).Text
-  else if AControl is TComboBox then
-    Result := TComboBox(AControl).Text
-  else
-    Result := '';
-end;
-
-procedure TMidiaFormHelper.DefinirTexto(AControl: TWinControl; const ATexto: string);
-begin
-  if AControl is TCustomEdit then
-    TCustomEdit(AControl).Text := ATexto
-  else if AControl is TComboBox then
-    TComboBox(AControl).Text := ATexto;
+  TCustomEditAberto(FNomeBox).OnChange := NomeBoxChange;
 end;
 
 procedure TMidiaFormHelper.QualquerAlteracao(Sender: TObject);
@@ -97,8 +71,17 @@ end;
 
 procedure TMidiaFormHelper.NomeBoxChange(Sender: TObject);
 begin
-  DefinirTexto(FFilmeBox, GerarTagFilme(ObterTexto(FNomeBox)));
+  FFilmeBox.Text := GerarTagFilme(FNomeBox.Text);
   AtualizarResumo;
+end;
+
+procedure TMidiaFormHelper.AtualizarResumo;
+begin
+  FResumoBox.Lines.Text := MontarResumo(
+    FNomeBox.Text, FAudioBox.Text, FSinopseBox.Text, FOriginalBox.Text,
+    FEstreiaBox.Text, FAlternativoBox.Text, FFilmeBox.Text, FFranquiaBox.Text,
+    FGeneroBox.Text, FTagsBox.Text, FDiretorBox.Text, FArtistasBox.Text,
+    FProdutoraBox.Text, FMCUBox.Text);
 end;
 
 end.
