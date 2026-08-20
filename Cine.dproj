@@ -137,7 +137,7 @@
             <FormType>dfm</FormType>
         </DCCReference>
         <DCCReference Include="Views\FilmesView.pas">
-            <Form>PrincipalMain</Form>
+            <Form>FilmesMain</Form>
             <FormType>dfm</FormType>
         </DCCReference>
         <DCCReference Include="Views\SeriesView.pas">

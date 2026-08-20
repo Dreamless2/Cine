@@ -4,7 +4,7 @@ interface
 
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
-  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.ExtCtrls, Vcl.Mask;
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.ExtCtrls, Vcl.Mask, ResumoBuilder;
 
 type
   TFilmesMain = class(TForm)
@@ -105,7 +105,11 @@ begin
   AtualizarResumo;
 end;
 
-procedure t
+procedure TFilmesMain.NomeBoxChange(Sender: TObject);
+begin
+  FFilmeBox.Text := GerarTagFilme(FNomeBox.Text);
+  AtualizarResumo;
+end;
 
 procedure TFilmesMain.AtualizarResumo;
 begin
