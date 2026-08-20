@@ -7,7 +7,7 @@ uses
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.ExtCtrls, Vcl.Mask;
 
 type
-  TPrincipalMain = class(TForm)
+  TFilmesMain = class(TForm)
     PanelDesktop: TPanel;
     Label1: TLabel;
     Label2: TLabel;
@@ -45,15 +45,29 @@ type
     FilmeBox: TEdit;
   private
     { Private declarations }
+    FNomeBox, FAudioBox, FSinopseBox, FOriginalBox, FEstreiaBox, FAlternativoBox,
+      FFilmeBox, FFranquiaBox, FGeneroBox, FTagsBox, FDiretorBox, FArtistasBox,
+      FProdutoraBox, FMCUBox: TCustomEdit;
+    FResumoBox: TMemo;
+    procedure QualquerAlteracao(Sender: TObject);
+    procedure NomeBoxChange(Sender: TObject);
   public
     { Public declarations }
+    constructor Create(
+      ANomeBox, AAudioBox, ASinopseBox, AOriginalBox, AEstreiaBox, AAlternativoBox,
+      AFilmeBox, AFranquiaBox, AGeneroBox, ATagsBox, ADiretorBox, AArtistasBox,
+      AProdutoraBox, AMCUBox: TCustomEdit; AResumoBox: TMemo);
+    procedure AtualizarResumo;
   end;
 
 var
-  PrincipalMain: TPrincipalMain;
+  FilmesMain: TFilmesMain;
 
 implementation
 
 {$R *.dfm}
+
+constructor TPrincipalMain
+
 
 end.

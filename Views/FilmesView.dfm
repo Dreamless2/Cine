@@ -1,4 +1,4 @@
-object PrincipalMain: TPrincipalMain
+object FilmesMain: TFilmesMain
   Left = 0
   Top = 0
   BorderStyle = bsNone
