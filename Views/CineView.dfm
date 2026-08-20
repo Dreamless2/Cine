@@ -44,6 +44,7 @@ object CineMain: TCineMain
     Height = 805
     Align = alClient
     TabOrder = 3
+    ExplicitTop = 83
     object PanelButtons: TPanel
       Left = 1
       Top = 1

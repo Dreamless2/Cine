@@ -24,7 +24,7 @@ type
     procedure OpenChildForm(AChildForm: TForm);
   public
     { Public declarations }
-    procedure FormCreate
+    procedure FormCreate(Sender: TObject);
     //procedure FormClose(Sender: TObject; var Action: TCloseAction);[
     procedure FormDestroy(Sender: TObject);
     procedure Filmes_Click(Sender: TObject);
@@ -42,20 +42,27 @@ procedure TCineMain.OpenChildForm(AChildForm: TForm);
 begin
   if Assigned(FCurrentChildForm) then
   begin
-    FCurrentChildForm.Close;
+    FCurrentChildForm.Parent := nil;
     FCurrentChildForm.Free;
     FCurrentChildForm := nil;
   end;
 
   FCurrentChildForm := AChildForm;
+
   AChildForm.BorderStyle := bsNone;
-  AChildForm.Align := alClient;
-  AChildForm.Parent := PanelDesktop;
-  AChildForm.BringToFront;
+  AChildForm.Align       := alClient;
+  AChildForm.Parent      := PanelDesktop;
   AChildForm.Show;
 end;
-
-
+procedure TCineMain.FormDestroy(Sender: TObject);
+begin
+  if Assigned(FCurrentChildForm) then
+  begin
+    FCurrentChildForm.Parent := nil;
+    FCurrentChildForm.Free;
+    FCurrentChildForm := nil;
+  end;
+end;
 
 procedure TCineMain.Filmes_Click(Sender: TObject);
 begin
