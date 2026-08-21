@@ -33,7 +33,7 @@ object CineMain: TCineMain
     ExplicitWidth = 1373
     object Label1: TLabel
       Left = 16
-      Top = 0
+      Top = 9
       Width = 63
       Height = 45
       Caption = 'Cine'
