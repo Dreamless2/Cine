@@ -21,7 +21,6 @@ object CineMain: TCineMain
     Height = 25
     Align = alTop
     TabOrder = 0
-    ExplicitWidth = 1373
   end
   object PanelTopTitle: TPanel
     Left = 0
@@ -30,8 +29,8 @@ object CineMain: TCineMain
     Height = 64
     Align = alTop
     TabOrder = 1
+    ExplicitLeft = 1
     ExplicitTop = 21
-    ExplicitWidth = 1373
     object Label1: TLabel
       Left = 16
       Top = 9
@@ -53,7 +52,6 @@ object CineMain: TCineMain
     Height = 35
     Align = alBottom
     TabOrder = 2
-    ExplicitWidth = 1373
   end
   object PanelDesktop: TPanel
     Left = 0
@@ -62,8 +60,6 @@ object CineMain: TCineMain
     Height = 805
     Align = alClient
     TabOrder = 3
-    ExplicitTop = 83
-    ExplicitWidth = 1373
     object PanelButtons: TPanel
       Left = 1
       Top = 1
