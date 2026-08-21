@@ -85,13 +85,13 @@ end;
 procedure TCineMain.Series_Click(Sender: TObject);
 begin
   //OpenChildForm(TFilmesMain.Create(Self));
-  Label1.Caption := 'Filmes';
+  Label1.Caption := 'Séries';
 end;
 
 procedure TCineMain.Animes_Click(Sender: TObject);
 begin
   //OpenChildForm(TFilmesMain.Create(Self));
-  Label1.Caption := 'Filmes';
+  Label1.Caption := 'Animes';
 end;
 
 
