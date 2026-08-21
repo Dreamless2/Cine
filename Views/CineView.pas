@@ -52,23 +52,27 @@ end;
 
 procedure TCineMain.OpenChildForm(AChildForm: TForm);
 begin
+  // Remove o formulário atual
   if Assigned(FCurrentChildForm) then
   begin
+    FCurrentChildForm.Hide;
     FCurrentChildForm.Parent := nil;
     FCurrentChildForm.Free;
     FCurrentChildForm := nil;
   end;
 
-  AChildForm.Visible     := False;          // muito importante
+  // Configura o novo formulário ANTES de mostrar
+  AChildForm.Visible := False;
   AChildForm.BorderStyle := bsNone;
-  AChildForm.DoubleBuffered := True;        // ajuda bastante
-  AChildForm.Align       := alClient;
+  AChildForm.DoubleBuffered := True;
 
   FCurrentChildForm := AChildForm;
 
+  // Evita vários realinhamentos
   PanelDesktop.DisableAlign;
   try
     AChildForm.Parent := PanelDesktop;
+    AChildForm.Align := alClient;
   finally
     PanelDesktop.EnableAlign;
   end;
