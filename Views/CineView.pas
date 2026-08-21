@@ -77,6 +77,7 @@ end;
 procedure TCineMain.Filmes_Click(Sender: TObject);
 begin
   OpenChildForm(TFilmesMain.Create(Self));
+  Label1.Caption := 'Filmes';
 end;
 
 procedure TCineMain.Panel_MouseDown(Sender: TObject; Button: TMouseButton; Shift: TShiftState; X, Y: Integer);

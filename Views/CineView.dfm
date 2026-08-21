@@ -32,14 +32,15 @@ object CineMain: TCineMain
     ExplicitTop = 21
     ExplicitWidth = 1373
     object Label1: TLabel
-      Left = 749
-      Top = 16
-      Width = 69
-      Height = 32
-      Caption = 'Label1'
+      Left = 21
+      Top = 10
+      Width = 106
+      Height = 45
+      AutoSize = False
+      Caption = 'Animes'
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWindowText
-      Font.Height = -24
+      Font.Height = -32
       Font.Name = 'Segoe UI'
       Font.Style = []
       ParentFont = False
