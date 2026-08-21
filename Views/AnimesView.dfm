@@ -322,15 +322,15 @@ object AnimesMain: TAnimesMain
       TabOrder = 18
       TextHint = 'Anime'
     end
-    object Edit1: TEdit
+    object LocalBox: TEdit
       Left = 15
       Top = 458
       Width = 434
       Height = 23
       TabOrder = 19
-      TextHint = 'Filme'
+      TextHint = 'Local de Produ'#231#227'o'
     end
-    object Edit2: TEdit
+    object IdiomaBox: TEdit
       Left = 455
       Top = 458
       Width = 393
@@ -338,21 +338,21 @@ object AnimesMain: TAnimesMain
       TabOrder = 20
       TextHint = 'IdiomaOriginal'
     end
-    object Edit3: TEdit
+    object ReferenciaBox: TEdit
       Left = 15
       Top = 508
       Width = 434
       Height = 23
       TabOrder = 21
-      TextHint = 'Filme'
+      TextHint = 'Obra de Refer'#234'ncia'
     end
-    object Edit4: TEdit
+    object AutoresBox: TEdit
       Left = 455
       Top = 508
       Width = 393
       Height = 23
       TabOrder = 22
-      TextHint = 'Filme'
+      TextHint = 'Autores'
     end
     object Edit5: TEdit
       Left = 455
@@ -360,7 +360,7 @@ object AnimesMain: TAnimesMain
       Width = 393
       Height = 23
       TabOrder = 23
-      TextHint = 'Filme'
+      TextHint = 'Showrunners'
     end
   end
 end

@@ -48,10 +48,10 @@ type
     Anterior: TButton;
     ProximoButton: TButton;
     AnimeBox: TEdit;
-    Edit1: TEdit;
-    Edit2: TEdit;
-    Edit3: TEdit;
-    Edit4: TEdit;
+    LocalBox: TEdit;
+    IdiomaBox: TEdit;
+    ReferenciaBox: TEdit;
+    AutoresBox: TEdit;
     Edit5: TEdit;
   private
     { Private declarations }
