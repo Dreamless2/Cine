@@ -195,7 +195,7 @@ object FilmesMain: TFilmesMain
       Top = 358
       Width = 120
       Height = 23
-      TabOrder = 6
+      TabOrder = 7
       TextHint = 'Tags'
     end
     object AlternativoBox: TEdit
@@ -203,7 +203,7 @@ object FilmesMain: TFilmesMain
       Top = 358
       Width = 705
       Height = 23
-      TabOrder = 7
+      TabOrder = 6
       TextHint = 'Nome Alternativo'
     end
     object FranquiaBox: TEdit
@@ -211,7 +211,7 @@ object FilmesMain: TFilmesMain
       Top = 458
       Width = 831
       Height = 23
-      TabOrder = 8
+      TabOrder = 10
       TextHint = 'Franquia'
     end
     object GeneroBox: TEdit
@@ -219,7 +219,7 @@ object FilmesMain: TFilmesMain
       Top = 508
       Width = 472
       Height = 23
-      TabOrder = 9
+      TabOrder = 11
       TextHint = 'G'#234'nero'
     end
     object DiretorBox: TEdit
@@ -227,7 +227,7 @@ object FilmesMain: TFilmesMain
       Top = 508
       Width = 353
       Height = 23
-      TabOrder = 10
+      TabOrder = 12
       TextHint = 'Diretor'
     end
     object ArtistasBox: TEdit
@@ -235,7 +235,7 @@ object FilmesMain: TFilmesMain
       Top = 558
       Width = 831
       Height = 23
-      TabOrder = 11
+      TabOrder = 13
       TextHint = 'Artistas'
     end
     object ProdutoraBox: TEdit
@@ -243,7 +243,7 @@ object FilmesMain: TFilmesMain
       Top = 608
       Width = 831
       Height = 23
-      TabOrder = 12
+      TabOrder = 14
       TextHint = 'Produtora'
     end
     object ResumoBox: TMemo
@@ -251,7 +251,7 @@ object FilmesMain: TFilmesMain
       Top = 35
       Width = 467
       Height = 596
-      TabOrder = 13
+      TabOrder = 19
     end
     object CopiarButton: TButton
       Left = 240
@@ -259,7 +259,7 @@ object FilmesMain: TFilmesMain
       Width = 203
       Height = 57
       Caption = 'Copiar'
-      TabOrder = 14
+      TabOrder = 15
     end
     object SalvarButton: TButton
       Left = 480
@@ -267,7 +267,7 @@ object FilmesMain: TFilmesMain
       Width = 203
       Height = 57
       Caption = 'Salvar/Atualizar'
-      TabOrder = 15
+      TabOrder = 16
     end
     object AnteriorButton: TButton
       Left = 712
@@ -275,7 +275,7 @@ object FilmesMain: TFilmesMain
       Width = 203
       Height = 57
       Caption = 'AnteriorButton'
-      TabOrder = 16
+      TabOrder = 17
     end
     object ProximoButton: TButton
       Left = 944
@@ -283,14 +283,14 @@ object FilmesMain: TFilmesMain
       Width = 203
       Height = 57
       Caption = 'Pr'#243'ximo'
-      TabOrder = 17
+      TabOrder = 18
     end
     object FilmeBox: TEdit
       Left = 17
       Top = 408
       Width = 704
       Height = 23
-      TabOrder = 18
+      TabOrder = 8
       TextHint = 'Filme'
     end
     object MCUBox: TEdit
@@ -298,7 +298,7 @@ object FilmesMain: TFilmesMain
       Top = 408
       Width = 120
       Height = 23
-      TabOrder = 19
+      TabOrder = 9
       TextHint = 'Fase MCU'
     end
   end
