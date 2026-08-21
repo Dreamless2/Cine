@@ -51,7 +51,7 @@ type
     FMidiaEvents: TMidiaFormHelper;
   public
     { Public declarations }
-    //procedure FormCreate(Sender: TObject);
+    procedure FormCreate(Sender: TObject);
   end;
 
 var
@@ -61,13 +61,15 @@ implementation
 
 {$R *.dfm}
 
-{procedure TFilmesMain.FormCreate(Sender: TObject);
+procedure TFilmesMain.FormCreate(Sender: TObject);
 begin
   FMidiaEvents := TMidiaFormHelper.Create(
     NomeBox, AudioBox, SinopseBox, OriginalBox, EstreiaBox, AlternativoBox,
     FilmeBox, FranquiaBox, GeneroBox, TagsBox, DiretorBox, ArtistasBox,
     ProdutoraBox, MCUBox, ResumoBox);
-end;}
+  DoubleBuffered := True;
+  PanelDesktop.DoubleBuffered := True;
+end;
 
 
 end.
