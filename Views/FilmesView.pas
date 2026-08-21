@@ -47,7 +47,6 @@ type
     FilmeBox: TEdit;
     Label16: TLabel;
     MCUBox: TEdit;
-    SpeedButton1: TSpeedButton;
   private
     { Private declarations }
     FMidiaEvents: TMidiaFormHelper;
