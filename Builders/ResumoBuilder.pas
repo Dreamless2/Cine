@@ -88,12 +88,17 @@ begin
     LBuilder.AppendLine(Format('**Título Original:** __%s__', [ValorOuTraco(AOriginalBox)]));
     LBuilder.AppendLine(Format('**Título Alternativo:** __%s__', [ValorOuTraco(AAlternativoBox)]));
     LBuilder.AppendLine(Format('**Data de Lançamento:** __%s__', [ValorOuTraco(LimparMascaraData(AEstreiaBox))]));
-    LBuilder.AppendLine(Format('**Filme:** %s', [ValorOuTraco(AFilmeBox)]));
+    LBuilder.AppendLine(Format('**Série:** %s', [ValorOuTraco(ASerieBox)]));
+    LBuilder.AppendLine(Format('**Fase MCU:** %s', [ValorOuTraco(AMCUBox)]));
+    LBuilder.AppendLine(Format('**Local de ProSérie:** %s', [ValorOuTraco(ASerieBox)]));
+    LBuilder.AppendLine(Format('**Série:** %s', [ValorOuTraco(ASerieBox)]));
+    LBuilder.AppendLine(Format('**Série:** %s', [ValorOuTraco(ASerieBox)]));
+
     LBuilder.AppendLine(Format('**Franquia:** %s', [ValorOuTraco(AFranquiaBox)]));
     LBuilder.AppendLine(Format('**Gênero:** %s', [ValorOuTraco(AGeneroBox)]));
     LBuilder.AppendLine(Format('**Tags:** %s', [ValorOuTraco(ATagsBox)]));
     LBuilder.AppendLine(Format('**Diretor:** %s', [ValorOuTraco(ADiretorBox)]));
-    LBuilder.AppendLine(Format('**Fase MCU:** %s', [ValorOuTraco(AMCUBox)]));
+
     LBuilder.AppendLine(Format('**Estrelas:** %s', [ValorOuTraco(AArtistasBox)]));
     LBuilder.Append(Format('**Estúdio:** %s', [ValorOuTraco(AProdutoraBox)]));
 
