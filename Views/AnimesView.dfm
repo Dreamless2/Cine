@@ -224,7 +224,7 @@ object AnimesMain: TAnimesMain
       Top = 358
       Width = 120
       Height = 23
-      TabOrder = 6
+      TabOrder = 7
       TextHint = 'Tags'
     end
     object AlternativoBox: TEdit
@@ -232,7 +232,7 @@ object AnimesMain: TAnimesMain
       Top = 358
       Width = 705
       Height = 23
-      TabOrder = 7
+      TabOrder = 6
       TextHint = 'Nome Alternativo'
     end
     object FranquiaBox: TEdit
@@ -240,7 +240,7 @@ object AnimesMain: TAnimesMain
       Top = 558
       Width = 432
       Height = 23
-      TabOrder = 8
+      TabOrder = 13
       TextHint = 'Franquia'
     end
     object GeneroBox: TEdit
@@ -248,7 +248,7 @@ object AnimesMain: TAnimesMain
       Top = 608
       Width = 432
       Height = 23
-      TabOrder = 9
+      TabOrder = 15
       TextHint = 'G'#234'nero'
     end
     object DiretorBox: TEdit
@@ -256,7 +256,7 @@ object AnimesMain: TAnimesMain
       Top = 608
       Width = 393
       Height = 23
-      TabOrder = 10
+      TabOrder = 16
       TextHint = 'Diretor'
     end
     object ArtistasBox: TEdit
@@ -264,7 +264,7 @@ object AnimesMain: TAnimesMain
       Top = 658
       Width = 831
       Height = 23
-      TabOrder = 11
+      TabOrder = 17
       TextHint = 'Artistas'
     end
     object ProdutoraBox: TEdit
@@ -272,7 +272,7 @@ object AnimesMain: TAnimesMain
       Top = 708
       Width = 831
       Height = 23
-      TabOrder = 12
+      TabOrder = 18
       TextHint = 'Produtora'
     end
     object ResumoBox: TMemo
@@ -280,7 +280,7 @@ object AnimesMain: TAnimesMain
       Top = 35
       Width = 467
       Height = 696
-      TabOrder = 13
+      TabOrder = 23
     end
     object CopiarButton: TButton
       Left = 196
@@ -288,7 +288,7 @@ object AnimesMain: TAnimesMain
       Width = 203
       Height = 57
       Caption = 'Copiar'
-      TabOrder = 14
+      TabOrder = 22
     end
     object SalvarButton: TButton
       Left = 444
@@ -296,7 +296,7 @@ object AnimesMain: TAnimesMain
       Width = 203
       Height = 57
       Caption = 'Salvar/Atualizar'
-      TabOrder = 15
+      TabOrder = 20
     end
     object Anterior: TButton
       Left = 693
@@ -304,7 +304,7 @@ object AnimesMain: TAnimesMain
       Width = 203
       Height = 57
       Caption = 'Anterior'
-      TabOrder = 16
+      TabOrder = 21
     end
     object ProximoButton: TButton
       Left = 942
@@ -312,14 +312,14 @@ object AnimesMain: TAnimesMain
       Width = 203
       Height = 57
       Caption = 'Pr'#243'ximo'
-      TabOrder = 17
+      TabOrder = 19
     end
     object AnimeBox: TEdit
       Left = 17
       Top = 408
       Width = 831
       Height = 23
-      TabOrder = 18
+      TabOrder = 8
       TextHint = 'Anime'
     end
     object LocalBox: TEdit
@@ -327,7 +327,7 @@ object AnimesMain: TAnimesMain
       Top = 458
       Width = 434
       Height = 23
-      TabOrder = 19
+      TabOrder = 9
       TextHint = 'Local de Produ'#231#227'o'
     end
     object IdiomaBox: TEdit
@@ -335,7 +335,7 @@ object AnimesMain: TAnimesMain
       Top = 458
       Width = 393
       Height = 23
-      TabOrder = 20
+      TabOrder = 10
       TextHint = 'IdiomaOriginal'
     end
     object ReferenciaBox: TEdit
@@ -343,7 +343,7 @@ object AnimesMain: TAnimesMain
       Top = 508
       Width = 434
       Height = 23
-      TabOrder = 21
+      TabOrder = 11
       TextHint = 'Obra de Refer'#234'ncia'
     end
     object AutoresBox: TEdit
@@ -351,7 +351,7 @@ object AnimesMain: TAnimesMain
       Top = 508
       Width = 393
       Height = 23
-      TabOrder = 22
+      TabOrder = 12
       TextHint = 'Autores'
     end
     object ShowrunnersBox: TEdit
@@ -359,7 +359,7 @@ object AnimesMain: TAnimesMain
       Top = 558
       Width = 393
       Height = 23
-      TabOrder = 23
+      TabOrder = 14
       TextHint = 'Showrunners'
     end
   end
