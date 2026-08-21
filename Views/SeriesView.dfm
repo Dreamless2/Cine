@@ -80,35 +80,35 @@ object SeriesMain: TSeriesMain
     end
     object Label9: TLabel
       Left = 17
-      Top = 437
+      Top = 565
       Width = 46
       Height = 15
       Caption = 'Franquia'
     end
     object Label10: TLabel
       Left = 16
-      Top = 487
+      Top = 615
       Width = 38
       Height = 15
       Caption = 'G'#234'nero'
     end
     object Label11: TLabel
       Left = 495
-      Top = 487
+      Top = 615
       Width = 36
       Height = 15
       Caption = 'Diretor'
     end
     object Label12: TLabel
       Left = 16
-      Top = 537
+      Top = 665
       Width = 39
       Height = 15
       Caption = 'Artistas'
     end
     object Label13: TLabel
       Left = 15
-      Top = 587
+      Top = 715
       Width = 53
       Height = 15
       Caption = 'Produtora'
@@ -209,7 +209,7 @@ object SeriesMain: TSeriesMain
     end
     object FranquiaBox: TEdit
       Left = 17
-      Top = 458
+      Top = 586
       Width = 831
       Height = 23
       TabOrder = 8
@@ -217,7 +217,7 @@ object SeriesMain: TSeriesMain
     end
     object GeneroBox: TEdit
       Left = 17
-      Top = 508
+      Top = 636
       Width = 472
       Height = 23
       TabOrder = 9
@@ -225,7 +225,7 @@ object SeriesMain: TSeriesMain
     end
     object DiretorBox: TEdit
       Left = 495
-      Top = 508
+      Top = 636
       Width = 353
       Height = 23
       TabOrder = 10
@@ -233,7 +233,7 @@ object SeriesMain: TSeriesMain
     end
     object ArtistasBox: TEdit
       Left = 17
-      Top = 558
+      Top = 686
       Width = 831
       Height = 23
       TabOrder = 11
@@ -241,7 +241,7 @@ object SeriesMain: TSeriesMain
     end
     object ProdutoraBox: TEdit
       Left = 15
-      Top = 608
+      Top = 736
       Width = 831
       Height = 23
       TabOrder = 12
