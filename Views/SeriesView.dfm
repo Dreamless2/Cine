@@ -254,15 +254,15 @@ object SeriesMain: TSeriesMain
     object GeneroBox: TEdit
       Left = 17
       Top = 608
-      Width = 472
+      Width = 432
       Height = 23
       TabOrder = 9
       TextHint = 'G'#234'nero'
     end
     object DiretorBox: TEdit
-      Left = 495
+      Left = 455
       Top = 608
-      Width = 353
+      Width = 393
       Height = 23
       TabOrder = 10
       TextHint = 'Diretor'
@@ -344,7 +344,7 @@ object SeriesMain: TSeriesMain
       Width = 434
       Height = 23
       TabOrder = 20
-      TextHint = 'Filme'
+      TextHint = 'Local de Produ'#231#227'o'
     end
     object IdiomaBox: TEdit
       Left = 455
@@ -352,7 +352,7 @@ object SeriesMain: TSeriesMain
       Width = 393
       Height = 23
       TabOrder = 21
-      TextHint = 'Filme'
+      TextHint = 'Idioma Original'
     end
     object ReferenciaBox: TEdit
       Left = 15
@@ -360,7 +360,7 @@ object SeriesMain: TSeriesMain
       Width = 434
       Height = 23
       TabOrder = 22
-      TextHint = 'Filme'
+      TextHint = 'Obra de Refer'#234'ncia'
     end
     object AutoresBox: TEdit
       Left = 455
@@ -368,15 +368,15 @@ object SeriesMain: TSeriesMain
       Width = 393
       Height = 23
       TabOrder = 23
-      TextHint = 'Filme'
+      TextHint = 'Autores'
     end
-    object Edit5: TEdit
+    object Showrunners: TEdit
       Left = 455
       Top = 558
       Width = 393
       Height = 23
       TabOrder = 24
-      TextHint = 'Filme'
+      TextHint = 'Showrunners'
     end
   end
 end
