@@ -59,14 +59,21 @@ begin
     FCurrentChildForm := nil;
   end;
 
+  AChildForm.Visible     := False;          // muito importante
+  AChildForm.BorderStyle := bsNone;
+  AChildForm.DoubleBuffered := True;        // ajuda bastante
+  AChildForm.Align       := alClient;
+
   FCurrentChildForm := AChildForm;
 
-  AChildForm.BorderStyle := bsNone;
-  AChildForm.Align       := alClient;
-  AChildForm.Parent      := PanelDesktop;
-  AChildForm.BringToFront;
+  PanelDesktop.DisableAlign;
+  try
+    AChildForm.Parent := PanelDesktop;
+  finally
+    PanelDesktop.EnableAlign;
+  end;
+
   AChildForm.Show;
-  PanelDesktop.Repaint;
 end;
 
 destructor TCineMain.Destroy;
