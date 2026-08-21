@@ -79,22 +79,22 @@ object SeriesMain: TSeriesMain
       Caption = 'Tags'
     end
     object Label9: TLabel
-      Left = 17
-      Top = 565
+      Left = 16
+      Top = 537
       Width = 46
       Height = 15
       Caption = 'Franquia'
     end
     object Label10: TLabel
-      Left = 16
-      Top = 615
+      Left = 15
+      Top = 587
       Width = 38
       Height = 15
       Caption = 'G'#234'nero'
     end
     object Label11: TLabel
       Left = 495
-      Top = 615
+      Top = 587
       Width = 36
       Height = 15
       Caption = 'Diretor'
@@ -161,6 +161,13 @@ object SeriesMain: TSeriesMain
       Width = 41
       Height = 15
       Caption = 'Autores'
+    end
+    object Label21: TLabel
+      Left = 455
+      Top = 537
+      Width = 69
+      Height = 15
+      Caption = 'Showrunners'
     end
     object CodigoBox: TEdit
       Left = 16
@@ -237,15 +244,15 @@ object SeriesMain: TSeriesMain
     end
     object FranquiaBox: TEdit
       Left = 17
-      Top = 586
-      Width = 831
+      Top = 558
+      Width = 432
       Height = 23
       TabOrder = 8
       TextHint = 'Franquia'
     end
     object GeneroBox: TEdit
       Left = 17
-      Top = 636
+      Top = 608
       Width = 472
       Height = 23
       TabOrder = 9
@@ -253,7 +260,7 @@ object SeriesMain: TSeriesMain
     end
     object DiretorBox: TEdit
       Left = 495
-      Top = 636
+      Top = 608
       Width = 353
       Height = 23
       TabOrder = 10
@@ -270,7 +277,7 @@ object SeriesMain: TSeriesMain
     object ProdutoraBox: TEdit
       Left = 15
       Top = 736
-      Width = 831
+      Width = 833
       Height = 23
       TabOrder = 12
       TextHint = 'Produtora'
@@ -355,11 +362,19 @@ object SeriesMain: TSeriesMain
       TextHint = 'Filme'
     end
     object Edit4: TEdit
-      Left = 463
-      Top = 466
+      Left = 455
+      Top = 508
       Width = 393
       Height = 23
       TabOrder = 23
+      TextHint = 'Filme'
+    end
+    object Edit5: TEdit
+      Left = 455
+      Top = 558
+      Width = 393
+      Height = 23
+      TabOrder = 24
       TextHint = 'Filme'
     end
   end
