@@ -94,7 +94,7 @@ object SeriesMain: TSeriesMain
       Caption = 'G'#234'nero'
     end
     object Label11: TLabel
-      Left = 495
+      Left = 455
       Top = 587
       Width = 36
       Height = 15
@@ -143,7 +143,7 @@ object SeriesMain: TSeriesMain
       Caption = 'Local de Produ'#231#227'o'
     end
     object Label18: TLabel
-      Left = 561
+      Left = 455
       Top = 437
       Width = 79
       Height = 15
@@ -233,7 +233,6 @@ object SeriesMain: TSeriesMain
       Width = 216
       Height = 23
       TabOrder = 6
-      Text = '#Serie #S'#233'rie #Serie2058 #S'#233'rie2058'
       TextHint = 'Tags'
     end
     object AlternativoBox: TEdit

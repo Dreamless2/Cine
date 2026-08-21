@@ -93,7 +93,7 @@ object AnimesMain: TAnimesMain
       Caption = 'G'#234'nero'
     end
     object Label11: TLabel
-      Left = 495
+      Left = 455
       Top = 587
       Width = 36
       Height = 15
