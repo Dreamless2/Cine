@@ -26,6 +26,7 @@ type
     procedure Filmes_Click(Sender: TObject);
     procedure Series_Click(Sender: TObject);
     procedure Animes_Click(Sender: TObject);
+    procedure Fechar_Click(Sender: TObject);
     procedure Panel_MouseDown(Sender: TObject; Button: TMouseButton; Shift: TShiftState; X, Y: Integer);
   public
     { Public declarations }
@@ -46,6 +47,7 @@ begin
   FilmesButton.OnClick := Filmes_Click;
   SeriesButton.OnClick := Series_Click;
   AnimesButton.OnClick := Animes_Click;
+  FecharButton.OnClick := Fechar_Click;
   PanelTopBar.OnMouseDown := Panel_MouseDown;
   PanelTopTitle.OnMouseDown := Panel_MouseDown;
 end;
