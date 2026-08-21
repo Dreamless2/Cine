@@ -117,7 +117,12 @@ end;
 
 procedure TCineMain.Fechar_Click(Sender: TObject);
 begin
-  Application.Terminate;
+  LockWindowUpdate(PanelDesktop.Handle);
+  try
+    Application.Terminate;
+  finally
+    LockWindowUpdate(0);
+  end;
 end;
 
 
