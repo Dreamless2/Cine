@@ -3,8 +3,8 @@ object SeriesMain: TSeriesMain
   Top = 0
   BorderStyle = bsNone
   Caption = 'SeriesMain'
-  ClientHeight = 914
-  ClientWidth = 1464
+  ClientHeight = 867
+  ClientWidth = 1341
   Color = clBtnFace
   DoubleBuffered = True
   Font.Charset = DEFAULT_CHARSET
@@ -16,12 +16,13 @@ object SeriesMain: TSeriesMain
   object PanelDesktop: TPanel
     Left = 0
     Top = 0
-    Width = 1464
-    Height = 914
+    Width = 1341
+    Height = 867
     Align = alClient
     TabOrder = 0
-    ExplicitWidth = 1338
-    ExplicitHeight = 754
+    ExplicitLeft = 8
+    ExplicitWidth = 1464
+    ExplicitHeight = 914
     object Label1: TLabel
       Left = 16
       Top = 14
@@ -101,14 +102,14 @@ object SeriesMain: TSeriesMain
     end
     object Label12: TLabel
       Left = 16
-      Top = 665
+      Top = 637
       Width = 39
       Height = 15
       Caption = 'Artistas'
     end
     object Label13: TLabel
-      Left = 15
-      Top = 715
+      Left = 17
+      Top = 687
       Width = 53
       Height = 15
       Caption = 'Produtora'
@@ -268,16 +269,16 @@ object SeriesMain: TSeriesMain
     end
     object ArtistasBox: TEdit
       Left = 17
-      Top = 686
+      Top = 658
       Width = 831
       Height = 23
       TabOrder = 11
       TextHint = 'Artistas'
     end
     object ProdutoraBox: TEdit
-      Left = 15
-      Top = 736
-      Width = 833
+      Left = 16
+      Top = 708
+      Width = 831
       Height = 23
       TabOrder = 12
       TextHint = 'Produtora'
@@ -286,36 +287,36 @@ object SeriesMain: TSeriesMain
       Left = 854
       Top = 35
       Width = 467
-      Height = 596
+      Height = 696
       TabOrder = 13
     end
     object CopiarButton: TButton
-      Left = 232
-      Top = 792
+      Left = 196
+      Top = 773
       Width = 203
       Height = 57
       Caption = 'Copiar'
       TabOrder = 14
     end
     object SalvarButton: TButton
-      Left = 472
-      Top = 800
+      Left = 444
+      Top = 773
       Width = 203
       Height = 57
       Caption = 'Salvar/Atualizar'
       TabOrder = 15
     end
     object Anterior: TButton
-      Left = 727
-      Top = 792
+      Left = 693
+      Top = 773
       Width = 203
       Height = 57
       Caption = 'Anterior'
       TabOrder = 16
     end
     object ProximoButton: TButton
-      Left = 984
-      Top = 800
+      Left = 942
+      Top = 773
       Width = 203
       Height = 57
       Caption = 'Pr'#243'ximo'
