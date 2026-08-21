@@ -79,11 +79,11 @@ begin
     end;
   finally
     AChildForm.Perform(WM_SETREDRAW, 1, 0); // libera
-  AChildForm.Invalidate;
-  AChildForm.Show;
+    AChildForm.Invalidate;
+    AChildForm.Show;
   end;
 
-  AChildForm.Show;
+
 end;
 
 destructor TCineMain.Destroy;
