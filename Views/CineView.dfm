@@ -21,6 +21,8 @@ object CineMain: TCineMain
     Height = 25
     Align = alTop
     BevelOuter = bvNone
+    Color = clRed
+    ParentBackground = False
     TabOrder = 0
     StyleElements = []
   end
@@ -53,6 +55,7 @@ object CineMain: TCineMain
     Width = 1568
     Height = 35
     Align = alBottom
+    BevelOuter = bvNone
     TabOrder = 2
     ExplicitTop = 894
   end
@@ -62,52 +65,67 @@ object CineMain: TCineMain
     Width = 1568
     Height = 857
     Align = alClient
+    BevelOuter = bvNone
     TabOrder = 3
     ExplicitHeight = 805
     object PanelButtons: TPanel
-      Left = 1
-      Top = 1
+      Left = 0
+      Top = 0
       Width = 224
-      Height = 855
+      Height = 857
       Align = alLeft
+      BevelOuter = bvNone
       TabOrder = 0
+      ExplicitLeft = 1
+      ExplicitTop = 1
       ExplicitHeight = 803
       object FecharButton: TButton
-        Left = 1
-        Top = 802
-        Width = 222
+        Left = 0
+        Top = 805
+        Width = 224
         Height = 52
         Align = alBottom
         Caption = 'Fechar'
         TabOrder = 0
+        ExplicitLeft = 1
         ExplicitTop = 750
+        ExplicitWidth = 222
       end
       object AnimesButton: TButton
-        Left = 1
-        Top = 193
-        Width = 222
+        Left = 0
+        Top = 192
+        Width = 224
         Height = 96
         Align = alTop
         Caption = 'Animes'
         TabOrder = 1
+        ExplicitLeft = 1
+        ExplicitTop = 193
+        ExplicitWidth = 222
       end
       object SeriesButton: TButton
-        Left = 1
-        Top = 97
-        Width = 222
+        Left = 0
+        Top = 96
+        Width = 224
         Height = 96
         Align = alTop
         Caption = 'S'#233'ries'
         TabOrder = 2
+        ExplicitLeft = 1
+        ExplicitTop = 97
+        ExplicitWidth = 222
       end
       object FilmesButton: TButton
-        Left = 1
-        Top = 1
-        Width = 222
+        Left = 0
+        Top = 0
+        Width = 224
         Height = 96
         Align = alTop
         Caption = 'Filmes'
         TabOrder = 3
+        ExplicitLeft = 1
+        ExplicitTop = 1
+        ExplicitWidth = 222
       end
     end
   end
