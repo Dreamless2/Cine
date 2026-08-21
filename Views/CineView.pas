@@ -88,6 +88,7 @@ begin
   begin
     FCurrentChildForm.Parent := nil;
     FCurrentChildForm.Free;
+    FCurrentChildForm := nil;
   end;
   inherited Destroy;
 end;
