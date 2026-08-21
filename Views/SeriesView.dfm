@@ -306,12 +306,12 @@ object SeriesMain: TSeriesMain
       Caption = 'Salvar/Atualizar'
       TabOrder = 21
     end
-    object Anterior: TButton
+    object AnteriorButton: TButton
       Left = 693
       Top = 773
       Width = 203
       Height = 57
-      Caption = 'Anterior'
+      Caption = 'AnteriorButton'
       TabOrder = 23
     end
     object ProximoButton: TButton

@@ -269,12 +269,12 @@ object FilmesMain: TFilmesMain
       Caption = 'Salvar/Atualizar'
       TabOrder = 15
     end
-    object Anterior: TButton
+    object AnteriorButton: TButton
       Left = 712
       Top = 672
       Width = 203
       Height = 57
-      Caption = 'Anterior'
+      Caption = 'AnteriorButton'
       TabOrder = 16
     end
     object ProximoButton: TButton

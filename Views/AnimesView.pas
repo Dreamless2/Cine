@@ -45,7 +45,7 @@ type
     ResumoBox: TMemo;
     CopiarButton: TButton;
     SalvarButton: TButton;
-    Anterior: TButton;
+    AnteriorButton: TButton;
     ProximoButton: TButton;
     AnimeBox: TEdit;
     LocalBox: TEdit;

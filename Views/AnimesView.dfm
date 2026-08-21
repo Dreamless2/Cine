@@ -298,12 +298,12 @@ object AnimesMain: TAnimesMain
       Caption = 'Salvar/Atualizar'
       TabOrder = 20
     end
-    object Anterior: TButton
+    object AnteriorButton: TButton
       Left = 693
       Top = 773
       Width = 203
       Height = 57
-      Caption = 'Anterior'
+      Caption = 'AnteriorButton'
       TabOrder = 21
     end
     object ProximoButton: TButton

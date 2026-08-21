@@ -40,7 +40,7 @@ type
     ResumoBox: TMemo;
     CopiarButton: TButton;
     SalvarButton: TButton;
-    Anterior: TButton;
+    AnteriorButton: TButton;
     ProximoButton: TButton;
     Label15: TLabel;
     FilmeBox: TEdit;
