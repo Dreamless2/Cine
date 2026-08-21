@@ -133,6 +133,12 @@ object FilmesMain: TFilmesMain
       Height = 15
       Caption = 'Fase MCU'
     end
+    object SpeedButton1: TSpeedButton
+      Left = 160
+      Top = 680
+      Width = 57
+      Height = 49
+    end
     object CodigoBox: TEdit
       Left = 16
       Top = 35
