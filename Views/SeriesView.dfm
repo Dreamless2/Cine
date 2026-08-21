@@ -6,6 +6,7 @@ object SeriesMain: TSeriesMain
   ClientHeight = 858
   ClientWidth = 1155
   Color = clBtnFace
+  DoubleBuffered = True
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
   Font.Height = -12

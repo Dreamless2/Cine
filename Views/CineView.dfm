@@ -6,6 +6,7 @@ object CineMain: TCineMain
   ClientHeight = 929
   ClientWidth = 1568
   Color = clBtnFace
+  DoubleBuffered = True
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
   Font.Height = -12
