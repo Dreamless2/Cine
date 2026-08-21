@@ -66,6 +66,7 @@ begin
   AChildForm.Parent      := PanelDesktop;
   AChildForm.BringToFront;
   AChildForm.Show;
+  PanelDesktop.Repaint;
 end;
 
 destructor TCineMain.Destroy;
