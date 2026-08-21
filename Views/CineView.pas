@@ -24,6 +24,8 @@ type
     FCurrentChildForm: TForm;
     procedure OpenChildForm(AChildForm: TForm);
     procedure Filmes_Click(Sender: TObject);
+    procedure Series_Click(Sender: TObject);
+    procedure Animes_Click(Sender: TObject);
     procedure Panel_MouseDown(Sender: TObject; Button: TMouseButton; Shift: TShiftState; X, Y: Integer);
   public
     { Public declarations }
@@ -79,6 +81,20 @@ begin
   OpenChildForm(TFilmesMain.Create(Self));
   Label1.Caption := 'Filmes';
 end;
+
+procedure TCineMain.Series_Click(Sender: TObject);
+begin
+  //OpenChildForm(TFilmesMain.Create(Self));
+  Label1.Caption := 'Filmes';
+end;
+
+procedure TCineMain.Animes_Click(Sender: TObject);
+begin
+  //OpenChildForm(TFilmesMain.Create(Self));
+  Label1.Caption := 'Filmes';
+end;
+
+
 
 procedure TCineMain.Panel_MouseDown(Sender: TObject; Button: TMouseButton; Shift: TShiftState; X, Y: Integer);
 begin
