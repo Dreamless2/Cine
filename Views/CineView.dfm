@@ -21,7 +21,7 @@ object CineMain: TCineMain
     Height = 25
     Align = alTop
     BevelOuter = bvNone
-    Color = clRed
+    Color = 6900229
     ParentBackground = False
     TabOrder = 0
     StyleElements = []
