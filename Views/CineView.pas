@@ -115,6 +115,11 @@ begin
   Label1.Caption := 'Animes';
 end;
 
+procedure TCineMain.Fechar_Click(Sender: TObject);
+begin
+  Application.Terminate;
+end;
+
 
 procedure TCineMain.Panel_MouseDown(Sender: TObject; Button: TMouseButton; Shift: TShiftState; X, Y: Integer);
 begin
