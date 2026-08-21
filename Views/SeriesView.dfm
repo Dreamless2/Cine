@@ -124,9 +124,9 @@ object SeriesMain: TSeriesMain
     object Label15: TLabel
       Left = 17
       Top = 387
-      Width = 29
-      Height = 15
-      Caption = 'Filme'
+      Width = 25
+      Height = 30
+      Caption = 'S'#233'rie'#13#10
     end
     object Label16: TLabel
       Left = 727

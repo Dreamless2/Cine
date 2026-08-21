@@ -123,9 +123,9 @@ object AnimesMain: TAnimesMain
     object Label15: TLabel
       Left = 17
       Top = 387
-      Width = 29
+      Width = 35
       Height = 15
-      Caption = 'Filme'
+      Caption = 'Anime'
     end
     object Label17: TLabel
       Left = 17
@@ -314,13 +314,13 @@ object AnimesMain: TAnimesMain
       Caption = 'Pr'#243'ximo'
       TabOrder = 17
     end
-    object FilmeBox: TEdit
+    object AnimeBox: TEdit
       Left = 17
       Top = 408
       Width = 831
       Height = 23
       TabOrder = 18
-      TextHint = 'Filme'
+      TextHint = 'Anime'
     end
     object Edit1: TEdit
       Left = 15
@@ -336,7 +336,7 @@ object AnimesMain: TAnimesMain
       Width = 393
       Height = 23
       TabOrder = 20
-      TextHint = 'Filme'
+      TextHint = 'IdiomaOriginal'
     end
     object Edit3: TEdit
       Left = 15

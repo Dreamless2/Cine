@@ -47,7 +47,7 @@ type
     SalvarButton: TButton;
     Anterior: TButton;
     ProximoButton: TButton;
-    FilmeBox: TEdit;
+    AnimeBox: TEdit;
     Edit1: TEdit;
     Edit2: TEdit;
     Edit3: TEdit;
