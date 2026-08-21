@@ -124,14 +124,8 @@ begin
     FCurrentChildForm.Free;
     FCurrentChildForm := nil;
   end;
-
-  // 2. Fecha a aplicação de forma normal
   Application.Terminate;
-
-  // Alternativa ainda mais limpa:
-  // Close;
 end;
-
 
 procedure TCineMain.Panel_MouseDown(Sender: TObject; Button: TMouseButton; Shift: TShiftState; X, Y: Integer);
 begin
@@ -141,10 +135,5 @@ begin
     PostMessage(Self.Handle, WM_SYSCOMMAND, $F012, 0);
   end;
 end;
-
-
-
-
-
 
 end.
