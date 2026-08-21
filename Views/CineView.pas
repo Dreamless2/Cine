@@ -117,12 +117,19 @@ end;
 
 procedure TCineMain.Fechar_Click(Sender: TObject);
 begin
-  LockWindowUpdate(PanelDesktop.Handle);
-  try
-    Application.Terminate;
-  finally
-    LockWindowUpdate(0);
+  if Assigned(FCurrentChildForm) then
+  begin
+    FCurrentChildForm.Hide;
+    FCurrentChildForm.Parent := nil;
+    FCurrentChildForm.Free;
+    FCurrentChildForm := nil;
   end;
+
+  // 2. Fecha a aplicação de forma normal
+  Application.Terminate;
+
+  // Alternativa ainda mais limpa:
+  // Close;
 end;
 
 
