@@ -34,8 +34,9 @@ object CineMain: TCineMain
     object Label1: TLabel
       Left = 21
       Top = 10
-      Width = 9
+      Width = 63
       Height = 45
+      Caption = 'Cine'
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWindowText
       Font.Height = -32
