@@ -135,7 +135,7 @@ object AnimesMain: TAnimesMain
       Caption = 'Local de Produ'#231#227'o'
     end
     object Label18: TLabel
-      Left = 561
+      Left = 455
       Top = 437
       Width = 79
       Height = 15
@@ -246,15 +246,15 @@ object AnimesMain: TAnimesMain
     object GeneroBox: TEdit
       Left = 17
       Top = 608
-      Width = 472
+      Width = 432
       Height = 23
       TabOrder = 9
       TextHint = 'G'#234'nero'
     end
     object DiretorBox: TEdit
-      Left = 495
+      Left = 455
       Top = 608
-      Width = 353
+      Width = 393
       Height = 23
       TabOrder = 10
       TextHint = 'Diretor'
@@ -354,7 +354,7 @@ object AnimesMain: TAnimesMain
       TabOrder = 22
       TextHint = 'Autores'
     end
-    object Edit5: TEdit
+    object ShowrunnersBox: TEdit
       Left = 455
       Top = 558
       Width = 393

@@ -52,7 +52,7 @@ type
     IdiomaBox: TEdit;
     ReferenciaBox: TEdit;
     AutoresBox: TEdit;
-    Edit5: TEdit;
+    ShowrunnersBox: TEdit;
   private
     { Private declarations }
   public

@@ -228,17 +228,18 @@ object SeriesMain: TSeriesMain
       Text = '  /  /    '
     end
     object TagsBox: TEdit
-      Left = 727
+      Left = 631
       Top = 358
-      Width = 120
+      Width = 216
       Height = 23
       TabOrder = 6
+      Text = '#Serie #S'#233'rie #Serie2058 #S'#233'rie2058'
       TextHint = 'Tags'
     end
     object AlternativoBox: TEdit
       Left = 16
       Top = 358
-      Width = 705
+      Width = 609
       Height = 23
       TabOrder = 7
       TextHint = 'Nome Alternativo'
