@@ -68,13 +68,19 @@ begin
 
   FCurrentChildForm := AChildForm;
 
-  // Evita vários realinhamentos
-  PanelDesktop.DisableAlign;
+  AChildForm.Perform(WM_SETREDRAW, 0, 0);
   try
-    AChildForm.Parent := PanelDesktop;
-    AChildForm.Align := alClient;
+    PanelDesktop.DisableAlign;
+    try
+      AChildForm.Parent := PanelDesktop;
+      AChildForm.Align := alClient;
+    finally
+      PanelDesktop.EnableAlign;
+    end;
   finally
-    PanelDesktop.EnableAlign;
+    AChildForm.Perform(WM_SETREDRAW, 1, 0); // libera
+  AChildForm.Invalidate;
+  AChildForm.Show;
   end;
 
   AChildForm.Show;
