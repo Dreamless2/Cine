@@ -322,13 +322,13 @@ object SeriesMain: TSeriesMain
       Caption = 'Pr'#243'ximo'
       TabOrder = 17
     end
-    object FilmeBox: TEdit
+    object SerieBox: TEdit
       Left = 17
       Top = 408
       Width = 704
       Height = 23
       TabOrder = 18
-      TextHint = 'Filme'
+      TextHint = 'S'#233'rie'
     end
     object MCUBox: TEdit
       Left = 727
@@ -338,7 +338,7 @@ object SeriesMain: TSeriesMain
       TabOrder = 19
       TextHint = 'Fase MCU'
     end
-    object Edit1: TEdit
+    object LocalBox: TEdit
       Left = 15
       Top = 458
       Width = 434
@@ -346,7 +346,7 @@ object SeriesMain: TSeriesMain
       TabOrder = 20
       TextHint = 'Filme'
     end
-    object Edit2: TEdit
+    object IdiomaBox: TEdit
       Left = 455
       Top = 458
       Width = 393
@@ -354,7 +354,7 @@ object SeriesMain: TSeriesMain
       TabOrder = 21
       TextHint = 'Filme'
     end
-    object Edit3: TEdit
+    object ReferenciaBox: TEdit
       Left = 15
       Top = 508
       Width = 434
@@ -362,7 +362,7 @@ object SeriesMain: TSeriesMain
       TabOrder = 22
       TextHint = 'Filme'
     end
-    object Edit4: TEdit
+    object AutoresBox: TEdit
       Left = 455
       Top = 508
       Width = 393

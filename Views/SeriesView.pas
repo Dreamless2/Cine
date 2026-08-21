@@ -43,16 +43,16 @@ type
     SalvarButton: TButton;
     Anterior: TButton;
     ProximoButton: TButton;
-    FilmeBox: TEdit;
+    SerieBox: TEdit;
     MCUBox: TEdit;
     Label17: TLabel;
     Label18: TLabel;
     Label19: TLabel;
     Label20: TLabel;
-    Edit1: TEdit;
-    Edit2: TEdit;
-    Edit3: TEdit;
-    Edit4: TEdit;
+    LocalBox: TEdit;
+    IdiomaBox: TEdit;
+    ReferenciaBox: TEdit;
+    AutoresBox: TEdit;
     Edit5: TEdit;
     Label21: TLabel;
   private
