@@ -45,7 +45,7 @@ begin
   inherited Create(AOwner);
   FilmesButton.OnClick := Filmes_Click;
   SeriesButton.OnClick := Series_Click;
-  AnimesButton.OnClick := An ies_Click;
+  AnimesButton.OnClick := Animes_Click;
   PanelTopBar.OnMouseDown := Panel_MouseDown;
   PanelTopTitle.OnMouseDown := Panel_MouseDown;
 end;
