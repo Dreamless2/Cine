@@ -37,16 +37,16 @@ object CineMain: TCineMain
     TabOrder = 1
     ExplicitTop = 21
     object Label1: TLabel
-      Left = 16
-      Top = 9
-      Width = 63
-      Height = 45
+      Left = 747
+      Top = 13
+      Width = 74
+      Height = 38
       Caption = 'Cine'
-      Font.Charset = DEFAULT_CHARSET
-      Font.Color = clWindowText
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clWhite
       Font.Height = -32
-      Font.Name = 'Segoe UI'
-      Font.Style = []
+      Font.Name = 'Georgia'
+      Font.Style = [fsBold]
       ParentFont = False
     end
   end
