@@ -6,6 +6,7 @@ object FilmesMain: TFilmesMain
   ClientHeight = 754
   ClientWidth = 1338
   Color = clBtnFace
+  DoubleBuffered = True
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
   Font.Height = -12
