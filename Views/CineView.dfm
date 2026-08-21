@@ -3,7 +3,7 @@ object CineMain: TCineMain
   Top = 0
   BorderStyle = bsNone
   Caption = 'CineMain'
-  ClientHeight = 979
+  ClientHeight = 981
   ClientWidth = 1568
   Color = clBtnFace
   DoubleBuffered = True
@@ -47,7 +47,7 @@ object CineMain: TCineMain
   end
   object PanelStatusBar: TPanel
     Left = 0
-    Top = 944
+    Top = 946
     Width = 1568
     Height = 35
     Align = alBottom
@@ -58,7 +58,7 @@ object CineMain: TCineMain
     Left = 0
     Top = 89
     Width = 1568
-    Height = 855
+    Height = 857
     Align = alClient
     TabOrder = 3
     ExplicitHeight = 805
@@ -66,13 +66,13 @@ object CineMain: TCineMain
       Left = 1
       Top = 1
       Width = 224
-      Height = 853
+      Height = 855
       Align = alLeft
       TabOrder = 0
       ExplicitHeight = 803
       object FecharButton: TButton
         Left = 1
-        Top = 800
+        Top = 802
         Width = 222
         Height = 52
         Align = alBottom
