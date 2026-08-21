@@ -12,7 +12,12 @@ function MontarResumo(const ANomeBox, AAudioBox, ASinopseBox, AOriginalBox, AEst
 function MontarResumo(const ANomeBox, AAudioBox, ASinopseBox, AOriginalBox, AEstreiaBox,
   AAlternativoBox, ATagsBox, ASerieBox, AMCUBox, ALocalBox, AIdiomaBox, AReferenciaBox,
   AAutoresBox, AFranquiaBox, AShowrunnersBox, AGeneroBox, ADiretorBox,
-  AArtistasBox, AProdutoraBox: string)): string; overload;
+  AArtistasBox, AProdutoraBox: string): string; overload;
+
+function MontarResumo(const ANomeBox, AAudioBox, ASinopseBox, AOriginalBox, AEstreiaBox,
+  AAlternativoBox, ATagsBox, AAnimeBox, ALocalBox, AIdiomaBox, AReferenciaBox,
+  AAutoresBox, AFranquiaBox, AShowrunnersBox, AGeneroBox, ADiretorBox,
+  AArtistasBox, AProdutoraBox: string): string; overload;
 
 
 implementation
