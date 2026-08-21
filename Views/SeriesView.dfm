@@ -3,8 +3,8 @@ object SeriesMain: TSeriesMain
   Top = 0
   BorderStyle = bsNone
   Caption = 'SeriesMain'
-  ClientHeight = 858
-  ClientWidth = 1155
+  ClientHeight = 914
+  ClientWidth = 1464
   Color = clBtnFace
   DoubleBuffered = True
   Font.Charset = DEFAULT_CHARSET

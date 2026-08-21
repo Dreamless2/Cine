@@ -52,7 +52,6 @@ end;
 
 procedure TCineMain.OpenChildForm(AChildForm: TForm);
 begin
-  // Remove o formulário atual
   if Assigned(FCurrentChildForm) then
   begin
     FCurrentChildForm.Hide;
@@ -61,11 +60,8 @@ begin
     FCurrentChildForm := nil;
   end;
 
-  // Configura o novo formulário ANTES de mostrar
-  AChildForm.Visible := False;
   AChildForm.BorderStyle := bsNone;
   AChildForm.DoubleBuffered := True;
-
   FCurrentChildForm := AChildForm;
 
   AChildForm.Perform(WM_SETREDRAW, 0, 0);
@@ -78,12 +74,10 @@ begin
       PanelDesktop.EnableAlign;
     end;
   finally
-    AChildForm.Perform(WM_SETREDRAW, 1, 0); // libera
+    AChildForm.Perform(WM_SETREDRAW, 1, 0);
     AChildForm.Invalidate;
     AChildForm.Show;
   end;
-
-
 end;
 
 destructor TCineMain.Destroy;
@@ -118,7 +112,6 @@ begin
   OpenChildForm(TAnimesMain.Create(Self));
   Label1.Caption := 'Animes';
 end;
-
 
 
 procedure TCineMain.Panel_MouseDown(Sender: TObject; Button: TMouseButton; Shift: TShiftState; X, Y: Integer);
