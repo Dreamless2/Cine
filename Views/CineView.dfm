@@ -24,7 +24,6 @@ object CineMain: TCineMain
     Color = 6900229
     ParentBackground = False
     TabOrder = 0
-    StyleElements = []
   end
   object PanelTopTitle: TPanel
     Left = 0
@@ -33,6 +32,8 @@ object CineMain: TCineMain
     Height = 64
     Align = alTop
     BevelOuter = bvNone
+    Color = 4731908
+    ParentBackground = False
     TabOrder = 1
     ExplicitTop = 21
     object Label1: TLabel
@@ -56,6 +57,8 @@ object CineMain: TCineMain
     Height = 35
     Align = alBottom
     BevelOuter = bvNone
+    Color = 4731908
+    ParentBackground = False
     TabOrder = 2
     ExplicitTop = 894
   end
