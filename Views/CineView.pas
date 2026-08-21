@@ -88,8 +88,13 @@ end;
 
 procedure TCineMain.Filmes_Click(Sender: TObject);
 begin
-  OpenChildForm(TFilmesMain.Create(nil));
-  Label1.Caption := 'Filmes';
+  LockWindowUpdate(PanelDesktop.Handle);
+  try
+    OpenChildForm(TFilmesMain.Create(nil));
+    Label1.Caption := 'Filmes';
+  finally
+    LockWindowUpdate(0);
+  end;
 end;
 
 procedure TCineMain.Series_Click(Sender: TObject);
