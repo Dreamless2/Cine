@@ -20,7 +20,9 @@ object CineMain: TCineMain
     Width = 1568
     Height = 25
     Align = alTop
+    BevelOuter = bvNone
     TabOrder = 0
+    StyleElements = []
   end
   object PanelTopTitle: TPanel
     Left = 0
@@ -28,8 +30,8 @@ object CineMain: TCineMain
     Width = 1568
     Height = 64
     Align = alTop
+    BevelOuter = bvNone
     TabOrder = 1
-    ExplicitLeft = 1
     ExplicitTop = 21
     object Label1: TLabel
       Left = 16
