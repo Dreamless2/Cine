@@ -232,7 +232,7 @@ object SeriesMain: TSeriesMain
       Top = 358
       Width = 216
       Height = 23
-      TabOrder = 6
+      TabOrder = 7
       TextHint = 'Tags'
     end
     object AlternativoBox: TEdit
@@ -240,7 +240,7 @@ object SeriesMain: TSeriesMain
       Top = 358
       Width = 609
       Height = 23
-      TabOrder = 7
+      TabOrder = 6
       TextHint = 'Nome Alternativo'
     end
     object FranquiaBox: TEdit
@@ -248,7 +248,7 @@ object SeriesMain: TSeriesMain
       Top = 558
       Width = 432
       Height = 23
-      TabOrder = 8
+      TabOrder = 14
       TextHint = 'Franquia'
     end
     object GeneroBox: TEdit
@@ -256,7 +256,7 @@ object SeriesMain: TSeriesMain
       Top = 608
       Width = 432
       Height = 23
-      TabOrder = 9
+      TabOrder = 16
       TextHint = 'G'#234'nero'
     end
     object DiretorBox: TEdit
@@ -264,7 +264,7 @@ object SeriesMain: TSeriesMain
       Top = 608
       Width = 393
       Height = 23
-      TabOrder = 10
+      TabOrder = 17
       TextHint = 'Diretor'
     end
     object ArtistasBox: TEdit
@@ -272,7 +272,7 @@ object SeriesMain: TSeriesMain
       Top = 658
       Width = 831
       Height = 23
-      TabOrder = 11
+      TabOrder = 18
       TextHint = 'Artistas'
     end
     object ProdutoraBox: TEdit
@@ -280,7 +280,7 @@ object SeriesMain: TSeriesMain
       Top = 708
       Width = 831
       Height = 23
-      TabOrder = 12
+      TabOrder = 19
       TextHint = 'Produtora'
     end
     object ResumoBox: TMemo
@@ -288,7 +288,7 @@ object SeriesMain: TSeriesMain
       Top = 35
       Width = 467
       Height = 696
-      TabOrder = 13
+      TabOrder = 24
     end
     object CopiarButton: TButton
       Left = 196
@@ -296,7 +296,7 @@ object SeriesMain: TSeriesMain
       Width = 203
       Height = 57
       Caption = 'Copiar'
-      TabOrder = 14
+      TabOrder = 20
     end
     object SalvarButton: TButton
       Left = 444
@@ -304,7 +304,7 @@ object SeriesMain: TSeriesMain
       Width = 203
       Height = 57
       Caption = 'Salvar/Atualizar'
-      TabOrder = 15
+      TabOrder = 21
     end
     object Anterior: TButton
       Left = 693
@@ -312,7 +312,7 @@ object SeriesMain: TSeriesMain
       Width = 203
       Height = 57
       Caption = 'Anterior'
-      TabOrder = 16
+      TabOrder = 23
     end
     object ProximoButton: TButton
       Left = 942
@@ -320,14 +320,14 @@ object SeriesMain: TSeriesMain
       Width = 203
       Height = 57
       Caption = 'Pr'#243'ximo'
-      TabOrder = 17
+      TabOrder = 22
     end
     object SerieBox: TEdit
       Left = 17
       Top = 408
       Width = 704
       Height = 23
-      TabOrder = 18
+      TabOrder = 8
       TextHint = 'S'#233'rie'
     end
     object MCUBox: TEdit
@@ -335,7 +335,7 @@ object SeriesMain: TSeriesMain
       Top = 408
       Width = 120
       Height = 23
-      TabOrder = 19
+      TabOrder = 9
       TextHint = 'Fase MCU'
     end
     object LocalBox: TEdit
@@ -343,7 +343,7 @@ object SeriesMain: TSeriesMain
       Top = 458
       Width = 434
       Height = 23
-      TabOrder = 20
+      TabOrder = 10
       TextHint = 'Local de Produ'#231#227'o'
     end
     object IdiomaBox: TEdit
@@ -351,7 +351,7 @@ object SeriesMain: TSeriesMain
       Top = 458
       Width = 393
       Height = 23
-      TabOrder = 21
+      TabOrder = 11
       TextHint = 'Idioma Original'
     end
     object ReferenciaBox: TEdit
@@ -359,7 +359,7 @@ object SeriesMain: TSeriesMain
       Top = 508
       Width = 434
       Height = 23
-      TabOrder = 22
+      TabOrder = 12
       TextHint = 'Obra de Refer'#234'ncia'
     end
     object AutoresBox: TEdit
@@ -367,7 +367,7 @@ object SeriesMain: TSeriesMain
       Top = 508
       Width = 393
       Height = 23
-      TabOrder = 23
+      TabOrder = 13
       TextHint = 'Autores'
     end
     object Showrunners: TEdit
@@ -375,7 +375,7 @@ object SeriesMain: TSeriesMain
       Top = 558
       Width = 393
       Height = 23
-      TabOrder = 24
+      TabOrder = 15
       TextHint = 'Showrunners'
     end
   end
