@@ -3,7 +3,7 @@ object AnimesMain: TAnimesMain
   Top = 0
   BorderStyle = bsNone
   Caption = 'AnimesMain'
-  ClientHeight = 860
+  ClientHeight = 856
   ClientWidth = 1341
   Color = clBtnFace
   DoubleBuffered = True
@@ -17,7 +17,7 @@ object AnimesMain: TAnimesMain
     Left = 0
     Top = 0
     Width = 1341
-    Height = 860
+    Height = 856
     Align = alClient
     TabOrder = 0
     ExplicitLeft = 8

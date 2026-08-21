@@ -3,7 +3,7 @@ object SeriesMain: TSeriesMain
   Top = 0
   BorderStyle = bsNone
   Caption = 'SeriesMain'
-  ClientHeight = 867
+  ClientHeight = 855
   ClientWidth = 1341
   Color = clBtnFace
   DoubleBuffered = True
@@ -17,7 +17,7 @@ object SeriesMain: TSeriesMain
     Left = 0
     Top = 0
     Width = 1341
-    Height = 867
+    Height = 855
     Align = alClient
     TabOrder = 0
     ExplicitLeft = 8
