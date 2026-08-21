@@ -134,6 +134,13 @@ object SeriesMain: TSeriesMain
       Height = 15
       Caption = 'Fase MCU'
     end
+    object Label17: TLabel
+      Left = 17
+      Top = 437
+      Width = 29
+      Height = 15
+      Caption = 'Filme'
+    end
     object CodigoBox: TEdit
       Left = 16
       Top = 35
