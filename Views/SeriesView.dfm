@@ -148,6 +148,20 @@ object SeriesMain: TSeriesMain
       Height = 15
       Caption = 'IdiomaOriginal'
     end
+    object Label19: TLabel
+      Left = 17
+      Top = 487
+      Width = 100
+      Height = 15
+      Caption = 'Obra de Refer'#234'ncia'
+    end
+    object Label20: TLabel
+      Left = 455
+      Top = 487
+      Width = 41
+      Height = 15
+      Caption = 'Autores'
+    end
     object CodigoBox: TEdit
       Left = 16
       Top = 35
@@ -315,6 +329,38 @@ object SeriesMain: TSeriesMain
       Height = 23
       TabOrder = 19
       TextHint = 'Fase MCU'
+    end
+    object Edit1: TEdit
+      Left = 15
+      Top = 458
+      Width = 434
+      Height = 23
+      TabOrder = 20
+      TextHint = 'Filme'
+    end
+    object Edit2: TEdit
+      Left = 455
+      Top = 458
+      Width = 393
+      Height = 23
+      TabOrder = 21
+      TextHint = 'Filme'
+    end
+    object Edit3: TEdit
+      Left = 15
+      Top = 508
+      Width = 434
+      Height = 23
+      TabOrder = 22
+      TextHint = 'Filme'
+    end
+    object Edit4: TEdit
+      Left = 463
+      Top = 466
+      Width = 393
+      Height = 23
+      TabOrder = 23
+      TextHint = 'Filme'
     end
   end
 end

@@ -47,6 +47,12 @@ type
     MCUBox: TEdit;
     Label17: TLabel;
     Label18: TLabel;
+    Label19: TLabel;
+    Label20: TLabel;
+    Edit1: TEdit;
+    Edit2: TEdit;
+    Edit3: TEdit;
+    Edit4: TEdit;
   private
     { Private declarations }
   public
