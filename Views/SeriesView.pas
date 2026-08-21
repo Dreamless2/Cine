@@ -46,6 +46,7 @@ type
     FilmeBox: TEdit;
     MCUBox: TEdit;
     Label17: TLabel;
+    Label18: TLabel;
   private
     { Private declarations }
   public

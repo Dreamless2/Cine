@@ -137,9 +137,16 @@ object SeriesMain: TSeriesMain
     object Label17: TLabel
       Left = 17
       Top = 437
-      Width = 29
+      Width = 98
       Height = 15
-      Caption = 'Filme'
+      Caption = 'Local de Produ'#231#227'o'
+    end
+    object Label18: TLabel
+      Left = 561
+      Top = 437
+      Width = 79
+      Height = 15
+      Caption = 'IdiomaOriginal'
     end
     object CodigoBox: TEdit
       Left = 16
