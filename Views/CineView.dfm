@@ -35,7 +35,6 @@ object CineMain: TCineMain
     Color = 4731908
     ParentBackground = False
     TabOrder = 1
-    ExplicitTop = 21
     object Label1: TLabel
       Left = 747
       Top = 13
@@ -60,7 +59,6 @@ object CineMain: TCineMain
     Color = 4731908
     ParentBackground = False
     TabOrder = 2
-    ExplicitTop = 894
   end
   object PanelDesktop: TPanel
     Left = 0
@@ -70,7 +68,6 @@ object CineMain: TCineMain
     Align = alClient
     BevelOuter = bvNone
     TabOrder = 3
-    ExplicitHeight = 805
     object PanelButtons: TPanel
       Left = 0
       Top = 0
@@ -79,9 +76,6 @@ object CineMain: TCineMain
       Align = alLeft
       BevelOuter = bvNone
       TabOrder = 0
-      ExplicitLeft = 1
-      ExplicitTop = 1
-      ExplicitHeight = 803
       object FecharButton: TButton
         Left = 0
         Top = 805
@@ -90,9 +84,6 @@ object CineMain: TCineMain
         Align = alBottom
         Caption = 'Fechar'
         TabOrder = 0
-        ExplicitLeft = 1
-        ExplicitTop = 750
-        ExplicitWidth = 222
       end
       object AnimesButton: TButton
         Left = 0
@@ -102,9 +93,6 @@ object CineMain: TCineMain
         Align = alTop
         Caption = 'Animes'
         TabOrder = 1
-        ExplicitLeft = 1
-        ExplicitTop = 193
-        ExplicitWidth = 222
       end
       object SeriesButton: TButton
         Left = 0
@@ -114,9 +102,7 @@ object CineMain: TCineMain
         Align = alTop
         Caption = 'S'#233'ries'
         TabOrder = 2
-        ExplicitLeft = 1
-        ExplicitTop = 97
-        ExplicitWidth = 222
+        ExplicitTop = 90
       end
       object FilmesButton: TButton
         Left = 0
@@ -125,10 +111,8 @@ object CineMain: TCineMain
         Height = 96
         Align = alTop
         Caption = 'Filmes'
+        Default = True
         TabOrder = 3
-        ExplicitLeft = 1
-        ExplicitTop = 1
-        ExplicitWidth = 222
       end
     end
   end
