@@ -18,9 +18,9 @@ type
     Panel1: TPanel;
     PanelDesktop: TPanel;
     FilmesButton: TStyledButton;
-    StyledButton1: TStyledButton;
-    StyledButton2: TStyledButton;
-    StyledButton3: TStyledButton;
+    SeriesButton: TStyledButton;
+    AnimesButton: TStyledButton;
+    FecharButton: TStyledButton;
   private
     { Private declarations }
     FCurrentChildForm: TForm;

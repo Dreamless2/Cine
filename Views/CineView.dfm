@@ -75,11 +75,11 @@ object CineMain: TCineMain
       Top = 0
       Width = 235
       Height = 97
-      Caption = 'FilmesButton'
+      Caption = 'Filmes'
       TabOrder = 0
       StyleFamily = 'Bootstrap'
     end
-    object StyledButton1: TStyledButton
+    object SeriesButton: TStyledButton
       Left = -6
       Top = 95
       Width = 235
@@ -87,8 +87,9 @@ object CineMain: TCineMain
       Caption = 'SeriesButton'
       TabOrder = 1
       StyleFamily = 'Bootstrap'
+      StyleClass = 'Dark'
     end
-    object StyledButton2: TStyledButton
+    object AnimesButton: TStyledButton
       Left = -6
       Top = 184
       Width = 235
@@ -96,15 +97,17 @@ object CineMain: TCineMain
       Caption = 'AnimesButton'
       TabOrder = 2
       StyleFamily = 'Bootstrap'
+      StyleClass = 'Secondary'
     end
-    object StyledButton3: TStyledButton
+    object FecharButton: TStyledButton
       Left = -6
       Top = 760
       Width = 235
       Height = 97
-      Caption = 'FecharButton'
+      Caption = 'Fechar'
       TabOrder = 3
       StyleFamily = 'Bootstrap'
+      StyleClass = 'Danger'
     end
   end
   object PanelDesktop: TPanel
