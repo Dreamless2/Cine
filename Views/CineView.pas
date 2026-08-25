@@ -137,6 +137,8 @@ begin
     FCurrentChildForm.Free;
     FCurrentChildForm := nil;
   end;
+
+
   Application.Terminate;
   Application.ProcessMessages;
   ExitProcess(0);
