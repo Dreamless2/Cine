@@ -102,10 +102,11 @@ object CineMain: TCineMain
       StyleAppearance = 'Raised'
     end
     object FecharButton: TStyledButton
-      Left = -6
-      Top = 760
+      Left = 0
+      Top = 816
       Width = 235
-      Height = 97
+      Height = 41
+      Align = alBottom
       Caption = 'Fechar'
       TabOrder = 3
       StyleFamily = 'Bootstrap'
