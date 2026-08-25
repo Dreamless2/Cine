@@ -117,8 +117,13 @@ end;
 
 procedure TCineMain.Animes_Click(Sender: TObject);
 begin
-  OpenChildForm(TAnimesMain.Create(Self));
-  Label1.Caption := 'Animes';
+  LockWindowUpdate(PanelDesktop.Handle);
+  try
+    OpenChildForm(TAnimesMain.Create(Self));
+    Label1.Caption := 'Animes';
+  finally
+    LockWindowUpdate(0);
+  end;
 end;
 
 procedure TCineMain.Fechar_Click(Sender: TObject);
