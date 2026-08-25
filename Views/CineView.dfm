@@ -114,12 +114,16 @@ object CineMain: TCineMain
         TabOrder = 3
       end
       object StyledButton1: TStyledButton
-        Left = 96
-        Top = 440
-        Width = 75
-        Height = 153
+        Left = 0
+        Top = 680
+        Width = 224
+        Height = 89
         Caption = 'StyledButton1'
         TabOrder = 4
+        Flat = True
+        StyleDrawType = btRect
+        StyleFamily = 'Basic-Colors'
+        StyleClass = 'clNavy'
       end
     end
   end
