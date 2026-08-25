@@ -89,8 +89,8 @@ object CineMain: TCineMain
       Caption = 'SeriesButton'
       TabOrder = 1
       Flat = True
-      StyleFamily = 'Angular-Light'
-      StyleClass = 'DeepPurple'
+      StyleFamily = 'SVG-Colors'
+      StyleClass = 'Indigo'
     end
     object AnimesButton: TStyledButton
       Left = -6
@@ -100,7 +100,8 @@ object CineMain: TCineMain
       Caption = 'AnimesButton'
       TabOrder = 2
       Flat = True
-      StyleFamily = 'Angular-Dark'
+      StyleFamily = 'SVG-Colors'
+      StyleClass = 'Forestgreen'
     end
     object FecharButton: TStyledButton
       Left = 0
