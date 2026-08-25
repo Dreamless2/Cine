@@ -99,9 +99,9 @@ object CineMain: TCineMain
       Height = 60
       Caption = 'AnimesButton'
       TabOrder = 2
+      StyleElements = [seFont, seBorder]
       Flat = True
-      StyleFamily = 'SVG-Colors'
-      StyleClass = 'Forestgreen'
+      StyleClass = 'Calypso SLE'
     end
     object FecharButton: TStyledButton
       Left = 0
@@ -112,9 +112,8 @@ object CineMain: TCineMain
       Caption = 'Fechar'
       TabOrder = 3
       Flat = True
-      StyleDrawType = btRect
-      StyleFamily = 'Bootstrap'
-      StyleClass = 'Danger'
+      StyleFamily = 'Angular-Dark'
+      StyleClass = 'Warn'
       ExplicitTop = 760
     end
   end
