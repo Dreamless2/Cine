@@ -74,7 +74,7 @@ object CineMain: TCineMain
       Left = -6
       Top = 0
       Width = 235
-      Height = 97
+      Height = 60
       Caption = 'Filmes'
       TabOrder = 0
       Flat = True
@@ -84,9 +84,9 @@ object CineMain: TCineMain
     end
     object SeriesButton: TStyledButton
       Left = -6
-      Top = 95
+      Top = 61
       Width = 235
-      Height = 97
+      Height = 60
       Caption = 'SeriesButton'
       TabOrder = 1
       Flat = True
@@ -98,7 +98,7 @@ object CineMain: TCineMain
       Left = -6
       Top = 184
       Width = 235
-      Height = 97
+      Height = 60
       Caption = 'AnimesButton'
       TabOrder = 2
       Flat = True
@@ -109,9 +109,9 @@ object CineMain: TCineMain
     end
     object FecharButton: TStyledButton
       Left = 0
-      Top = 792
+      Top = 797
       Width = 235
-      Height = 65
+      Height = 60
       Align = alBottom
       Caption = 'Fechar'
       TabOrder = 3
@@ -119,6 +119,7 @@ object CineMain: TCineMain
       StyleDrawType = btRect
       StyleFamily = 'Bootstrap'
       StyleClass = 'Danger'
+      ExplicitTop = 760
     end
   end
   object PanelDesktop: TPanel
