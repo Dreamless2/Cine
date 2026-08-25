@@ -78,6 +78,7 @@ object CineMain: TCineMain
       Caption = 'Filmes'
       TabOrder = 0
       StyleFamily = 'Bootstrap'
+      StyleClass = 'Success'
     end
     object SeriesButton: TStyledButton
       Left = -6
@@ -86,8 +87,8 @@ object CineMain: TCineMain
       Height = 97
       Caption = 'SeriesButton'
       TabOrder = 1
-      StyleFamily = 'Bootstrap'
-      StyleClass = 'Dark'
+      StyleFamily = 'Angular-Dark'
+      StyleClass = 'Pink'
     end
     object AnimesButton: TStyledButton
       Left = -6
@@ -96,8 +97,9 @@ object CineMain: TCineMain
       Height = 97
       Caption = 'AnimesButton'
       TabOrder = 2
-      StyleFamily = 'Bootstrap'
-      StyleClass = 'Secondary'
+      StyleFamily = 'Angular-Dark'
+      StyleClass = 'Blue-gray'
+      StyleAppearance = 'Raised'
     end
     object FecharButton: TStyledButton
       Left = -6
