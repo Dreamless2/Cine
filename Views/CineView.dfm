@@ -89,7 +89,7 @@ object CineMain: TCineMain
         StyleFamily = 'Angular-Dark'
         StyleClass = 'Warn'
         StyleAppearance = 'Raised'
-        ExplicitTop = 680
+        ExplicitTop = 770
       end
       object FilmesButton: TStyledButton
         Left = 0
