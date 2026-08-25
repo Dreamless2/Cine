@@ -7,7 +7,7 @@ uses
   Vcl.Controls, Vcl.Forms, Vcl.StdCtrls, Vcl.ExtCtrls,
   FilmesView, SeriesView, AnimesView, Vcl.ButtonStylesAttributes,
   Vcl.StyledButton, ES.BaseControls, ES.Layouts, Vcl.ButtonGroup,
-  Vcl.StyledButtonGroup;
+  Vcl.StyledButtonGroup, Vcl.Dialogs;
 
 type
   TCineMain = class(TForm)
@@ -138,13 +138,13 @@ begin
     FCurrentChildForm := nil;
   end;
 
-  if mrOK=MessageDlg('Exit?',mtConfirmation,[mbOK,mbCancel],0)
-     then begin
-               Application.Terminate;
-  Application.ProcessMessages;
-  ExitProcess(0);
-          end;
-
+  if mrOK=MessageDlg('Exit?',mtConfirmation,[mbOK,mbCancel],0) then
+  begin
+    Application.Terminate;
+    Application.ProcessMessages;
+    ExitProcess(0);
+    Exit;
+  end;
 end;
 
 procedure TCineMain.Panel_MouseDown(Sender: TObject; Button: TMouseButton; Shift: TShiftState; X, Y: Integer);
