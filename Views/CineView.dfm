@@ -78,9 +78,8 @@ object CineMain: TCineMain
       Caption = 'Filmes'
       TabOrder = 0
       Flat = True
-      StyleDrawType = btRect
-      StyleFamily = 'Bootstrap'
-      StyleClass = 'Success'
+      StyleFamily = 'SVG-Colors'
+      StyleClass = 'Seagreen'
     end
     object SeriesButton: TStyledButton
       Left = -6
@@ -90,9 +89,8 @@ object CineMain: TCineMain
       Caption = 'SeriesButton'
       TabOrder = 1
       Flat = True
-      StyleDrawType = btRect
-      StyleFamily = 'Angular-Dark'
-      StyleClass = 'Pink'
+      StyleFamily = 'Angular-Light'
+      StyleClass = 'DeepPurple'
     end
     object AnimesButton: TStyledButton
       Left = -6
@@ -102,10 +100,7 @@ object CineMain: TCineMain
       Caption = 'AnimesButton'
       TabOrder = 2
       Flat = True
-      StyleDrawType = btRect
       StyleFamily = 'Angular-Dark'
-      StyleClass = 'Blue-gray'
-      StyleAppearance = 'Raised'
     end
     object FecharButton: TStyledButton
       Left = 0
