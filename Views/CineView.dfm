@@ -67,13 +67,33 @@ object CineMain: TCineMain
     Height = 857
     Align = alLeft
     TabOrder = 3
+    object StyledButtonGroup1: TStyledButtonGroup
+      Left = 0
+      Top = 0
+      Width = 241
+      Height = 321
+      Items = <>
+      TabOrder = 0
+    end
+    object StyledButton1: TStyledButton
+      Left = 96
+      Top = 64
+      Width = 75
+      Height = 25
+      Caption = 'StyledButton1'
+      TabOrder = 1
+    end
   end
-  object Panel2: TPanel
-    Left = 616
-    Top = 376
-    Width = 185
-    Height = 41
-    Caption = 'Panel1'
+  object PanelDesktop: TPanel
+    Left = 241
+    Top = 89
+    Width = 1327
+    Height = 857
+    Align = alClient
     TabOrder = 4
+    ExplicitLeft = 616
+    ExplicitTop = 376
+    ExplicitWidth = 185
+    ExplicitHeight = 41
   end
 end

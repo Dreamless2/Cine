@@ -6,7 +6,8 @@ uses
   Winapi.Windows, Winapi.Messages, System.Classes,
   Vcl.Controls, Vcl.Forms, Vcl.StdCtrls, Vcl.ExtCtrls,
   FilmesView, SeriesView, AnimesView, Vcl.ButtonStylesAttributes,
-  Vcl.StyledButton, ES.BaseControls, ES.Layouts;
+  Vcl.StyledButton, ES.BaseControls, ES.Layouts, Vcl.ButtonGroup,
+  Vcl.StyledButtonGroup;
 
 type
   TCineMain = class(TForm)
@@ -15,7 +16,9 @@ type
     PanelStatusBar: TPanel;
     Label1: TLabel;
     Panel1: TPanel;
-    Panel2: TPanel;
+    PanelDesktop: TPanel;
+    StyledButtonGroup1: TStyledButtonGroup;
+    StyledButton1: TStyledButton;
   private
     { Private declarations }
     FCurrentChildForm: TForm;
