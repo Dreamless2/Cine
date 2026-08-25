@@ -76,13 +76,11 @@ object CineMain: TCineMain
       Align = alLeft
       BevelOuter = bvNone
       TabOrder = 0
-      ExplicitLeft = -64
-      ExplicitTop = 6
       object FecharButton: TButton
         Left = 0
-        Top = 805
+        Top = 792
         Width = 224
-        Height = 52
+        Height = 65
         Align = alBottom
         Caption = 'Fechar'
         TabOrder = 0
@@ -114,6 +112,14 @@ object CineMain: TCineMain
         Caption = 'Filmes'
         Default = True
         TabOrder = 3
+      end
+      object StyledButton1: TStyledButton
+        Left = 96
+        Top = 440
+        Width = 75
+        Height = 153
+        Caption = 'StyledButton1'
+        TabOrder = 4
       end
     end
   end

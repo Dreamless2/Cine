@@ -5,7 +5,8 @@ interface
 uses
   Winapi.Windows, Winapi.Messages, System.Classes,
   Vcl.Controls, Vcl.Forms, Vcl.StdCtrls, Vcl.ExtCtrls,
-  FilmesView, SeriesView, AnimesView;
+  FilmesView, SeriesView, AnimesView, Vcl.ButtonStylesAttributes,
+  Vcl.StyledButton;
 
 type
   TCineMain = class(TForm)
@@ -19,6 +20,7 @@ type
     SeriesButton: TButton;
     FilmesButton: TButton;
     Label1: TLabel;
+    StyledButton1: TStyledButton;
   private
     { Private declarations }
     FCurrentChildForm: TForm;
