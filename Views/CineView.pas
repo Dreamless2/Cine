@@ -20,6 +20,9 @@ type
     FilmesButton: TButton;
     Label1: TLabel;
     FecharButton: TStyledButton;
+    StyledButton1: TStyledButton;
+    StyledButton2: TStyledButton;
+    StyledButton3: TStyledButton;
   private
     { Private declarations }
     FCurrentChildForm: TForm;

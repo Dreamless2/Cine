@@ -76,6 +76,7 @@ object CineMain: TCineMain
       Align = alLeft
       BevelOuter = bvNone
       TabOrder = 0
+      ExplicitTop = -6
       object AnimesButton: TButton
         Left = 0
         Top = 192
@@ -113,9 +114,51 @@ object CineMain: TCineMain
         Caption = 'Fechar'
         TabOrder = 3
         Flat = True
-        StyleDrawType = btRect
-        StyleFamily = 'Basic-Colors'
-        StyleClass = 'clNavy'
+        StyleFamily = 'Angular-Dark'
+        StyleClass = 'Warn'
+        StyleAppearance = 'Raised'
+        ExplicitTop = 680
+      end
+      object StyledButton1: TStyledButton
+        Left = 0
+        Top = 501
+        Width = 224
+        Height = 89
+        Align = alBottom
+        Caption = 'Filmes'
+        TabOrder = 4
+        Flat = True
+        StyleFamily = 'Angular-Dark'
+        StyleClass = 'Warn'
+        StyleAppearance = 'Raised'
+        ExplicitTop = 680
+      end
+      object StyledButton2: TStyledButton
+        Left = 0
+        Top = 590
+        Width = 224
+        Height = 89
+        Align = alBottom
+        Caption = 'S'#233'ries'
+        TabOrder = 5
+        Flat = True
+        StyleFamily = 'Angular-Dark'
+        StyleClass = 'Warn'
+        StyleAppearance = 'Raised'
+        ExplicitTop = 584
+      end
+      object StyledButton3: TStyledButton
+        Left = 0
+        Top = 679
+        Width = 224
+        Height = 89
+        Align = alBottom
+        Caption = 'Animes'
+        TabOrder = 6
+        Flat = True
+        StyleFamily = 'Angular-Dark'
+        StyleClass = 'Warn'
+        StyleAppearance = 'Raised'
         ExplicitTop = 680
       end
     end
