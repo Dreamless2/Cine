@@ -79,7 +79,7 @@ object CineMain: TCineMain
       ExplicitTop = -6
       object FecharButton: TStyledButton
         Left = 0
-        Top = 779
+        Top = 777
         Width = 224
         Height = 80
         Caption = 'Fechar'
