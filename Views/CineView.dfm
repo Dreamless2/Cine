@@ -114,7 +114,7 @@ object CineMain: TCineMain
       end
       object AnimesButton: TStyledButton
         Left = 0
-        Top = 160
+        Top = 158
         Width = 224
         Height = 89
         Caption = 'Animes'
