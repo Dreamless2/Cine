@@ -104,17 +104,19 @@ object CineMain: TCineMain
         Default = True
         TabOrder = 2
       end
-      object StyledButton1: TStyledButton
+      object FecharButton: TStyledButton
         Left = 0
-        Top = 680
+        Top = 768
         Width = 224
         Height = 89
-        Caption = 'StyledButton1'
+        Align = alBottom
+        Caption = 'Fechar'
         TabOrder = 3
         Flat = True
         StyleDrawType = btRect
         StyleFamily = 'Basic-Colors'
         StyleClass = 'clNavy'
+        ExplicitTop = 680
       end
     end
   end
