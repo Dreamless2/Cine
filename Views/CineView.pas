@@ -17,7 +17,6 @@ type
     Label1: TLabel;
     Panel1: TPanel;
     PanelDesktop: TPanel;
-    StyledButtonGroup1: TStyledButtonGroup;
     StyledButton1: TStyledButton;
   private
     { Private declarations }

@@ -66,22 +66,15 @@ object CineMain: TCineMain
     Width = 241
     Height = 857
     Align = alLeft
+    BevelOuter = bvNone
     TabOrder = 3
-    object StyledButtonGroup1: TStyledButtonGroup
-      Left = 0
-      Top = 0
-      Width = 241
-      Height = 321
-      Items = <>
-      TabOrder = 0
-    end
     object StyledButton1: TStyledButton
-      Left = 96
-      Top = 64
-      Width = 75
-      Height = 25
+      Left = 0
+      Top = 6
+      Width = 235
+      Height = 105
       Caption = 'StyledButton1'
-      TabOrder = 1
+      TabOrder = 0
     end
   end
   object PanelDesktop: TPanel
