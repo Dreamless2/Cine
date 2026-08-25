@@ -63,24 +63,36 @@ object CineMain: TCineMain
   object Panel1: TPanel
     Left = 0
     Top = 89
-    Width = 241
+    Width = 235
     Height = 857
     Align = alLeft
     BevelOuter = bvNone
     TabOrder = 3
+    ExplicitLeft = -6
+    ExplicitTop = 83
+    object FilmesButton: TStyledButton
+      Left = -6
+      Top = 0
+      Width = 235
+      Height = 97
+      Caption = 'FilmesButton'
+      TabOrder = 0
+      StyleFamily = 'Bootstrap'
+    end
     object StyledButton1: TStyledButton
       Left = 0
-      Top = 6
+      Top = 8
       Width = 235
-      Height = 105
-      Caption = 'StyledButton1'
-      TabOrder = 0
+      Height = 97
+      Caption = 'FilmesButton'
+      TabOrder = 1
+      StyleFamily = 'Bootstrap'
     end
   end
   object PanelDesktop: TPanel
-    Left = 241
+    Left = 235
     Top = 89
-    Width = 1327
+    Width = 1333
     Height = 857
     Align = alClient
     TabOrder = 4
