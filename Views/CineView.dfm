@@ -79,17 +79,15 @@ object CineMain: TCineMain
       ExplicitTop = -6
       object FecharButton: TStyledButton
         Left = 0
-        Top = 768
+        Top = 779
         Width = 224
-        Height = 89
-        Align = alBottom
+        Height = 80
         Caption = 'Fechar'
         TabOrder = 0
         Flat = True
         StyleFamily = 'Angular-Dark'
         StyleClass = 'Warn'
         StyleAppearance = 'Raised'
-        ExplicitTop = 770
       end
       object FilmesButton: TStyledButton
         Left = 0
@@ -107,7 +105,7 @@ object CineMain: TCineMain
         Left = 0
         Top = 82
         Width = 224
-        Height = 89
+        Height = 78
         Caption = 'S'#233'ries'
         TabOrder = 2
         Flat = True
@@ -117,7 +115,7 @@ object CineMain: TCineMain
       end
       object AnimesButton: TStyledButton
         Left = 0
-        Top = 161
+        Top = 160
         Width = 224
         Height = 89
         Caption = 'Animes'
