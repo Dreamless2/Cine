@@ -109,9 +109,9 @@ object CineMain: TCineMain
     end
     object FecharButton: TStyledButton
       Left = 0
-      Top = 816
+      Top = 792
       Width = 235
-      Height = 41
+      Height = 65
       Align = alBottom
       Caption = 'Fechar'
       TabOrder = 3
