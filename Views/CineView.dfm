@@ -79,15 +79,6 @@ object CineMain: TCineMain
       TabOrder = 0
       StyleFamily = 'Bootstrap'
     end
-    object StyledButton1: TStyledButton
-      Left = 0
-      Top = 8
-      Width = 235
-      Height = 97
-      Caption = 'FilmesButton'
-      TabOrder = 1
-      StyleFamily = 'Bootstrap'
-    end
   end
   object PanelDesktop: TPanel
     Left = 235
