@@ -99,17 +99,19 @@ object CineMain: TCineMain
         Caption = 'Filmes'
         TabOrder = 1
         Flat = True
+        StyleDrawType = btRect
         StyleFamily = 'Bootstrap'
         StyleClass = 'Success'
       end
       object SeriesButton: TStyledButton
         Left = 0
-        Top = 66
+        Top = 82
         Width = 224
         Height = 89
         Caption = 'S'#233'ries'
         TabOrder = 2
         Flat = True
+        StyleDrawType = btRect
         StyleFamily = 'Angular-Light'
         StyleClass = 'DeepPurple'
       end
