@@ -14,8 +14,8 @@ type
     PanelTopTitle: TPanel;
     PanelStatusBar: TPanel;
     Label1: TLabel;
-    EsPanel1: TEsPanel;
-    PanelDesktop: TEsPanel;
+    Panel1: TPanel;
+    Panel2: TPanel;
   private
     { Private declarations }
     FCurrentChildForm: TForm;

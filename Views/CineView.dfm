@@ -60,27 +60,20 @@ object CineMain: TCineMain
     ParentBackground = False
     TabOrder = 2
   end
-  object EsPanel1: TEsPanel
+  object Panel1: TPanel
     Left = 0
     Top = 89
-    Width = 224
+    Width = 241
     Height = 857
     Align = alLeft
     TabOrder = 3
-    FrameStyle = None
-    ExplicitLeft = 488
-    ExplicitTop = 384
-    ExplicitHeight = 41
   end
-  object PanelDesktop: TEsPanel
-    Left = 224
-    Top = 89
-    Width = 1344
-    Height = 857
-    Align = alClient
+  object Panel2: TPanel
+    Left = 616
+    Top = 376
+    Width = 185
+    Height = 41
+    Caption = 'Panel1'
     TabOrder = 4
-    FrameStyle = None
-    ExplicitLeft = 230
-    ExplicitTop = 83
   end
 end
