@@ -138,10 +138,13 @@ begin
     FCurrentChildForm := nil;
   end;
 
-
-  Application.Terminate;
+  if mrOK=MessageDlg('Exit?',mtConfirmation,[mbOK,mbCancel],0)
+     then begin
+               Application.Terminate;
   Application.ProcessMessages;
   ExitProcess(0);
+          end;
+
 end;
 
 procedure TCineMain.Panel_MouseDown(Sender: TObject; Button: TMouseButton; Shift: TShiftState; X, Y: Integer);
