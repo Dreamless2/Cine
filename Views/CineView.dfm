@@ -76,15 +76,6 @@ object CineMain: TCineMain
       Align = alLeft
       BevelOuter = bvNone
       TabOrder = 0
-      object FecharButton: TButton
-        Left = 0
-        Top = 792
-        Width = 224
-        Height = 65
-        Align = alBottom
-        Caption = 'Fechar'
-        TabOrder = 0
-      end
       object AnimesButton: TButton
         Left = 0
         Top = 192
@@ -92,7 +83,7 @@ object CineMain: TCineMain
         Height = 96
         Align = alTop
         Caption = 'Animes'
-        TabOrder = 1
+        TabOrder = 0
       end
       object SeriesButton: TButton
         Left = 0
@@ -101,7 +92,7 @@ object CineMain: TCineMain
         Height = 96
         Align = alTop
         Caption = 'S'#233'ries'
-        TabOrder = 2
+        TabOrder = 1
       end
       object FilmesButton: TButton
         Left = 0
@@ -111,7 +102,7 @@ object CineMain: TCineMain
         Align = alTop
         Caption = 'Filmes'
         Default = True
-        TabOrder = 3
+        TabOrder = 2
       end
       object StyledButton1: TStyledButton
         Left = 0
@@ -119,7 +110,7 @@ object CineMain: TCineMain
         Width = 224
         Height = 89
         Caption = 'StyledButton1'
-        TabOrder = 4
+        TabOrder = 3
         Flat = True
         StyleDrawType = btRect
         StyleFamily = 'Basic-Colors'
