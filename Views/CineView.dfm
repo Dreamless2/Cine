@@ -84,7 +84,7 @@ object CineMain: TCineMain
     end
     object SeriesButton: TStyledButton
       Left = -6
-      Top = 61
+      Top = 60
       Width = 235
       Height = 60
       Caption = 'SeriesButton'
@@ -96,7 +96,7 @@ object CineMain: TCineMain
     end
     object AnimesButton: TStyledButton
       Left = -6
-      Top = 184
+      Top = 119
       Width = 235
       Height = 60
       Caption = 'AnimesButton'
