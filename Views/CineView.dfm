@@ -104,7 +104,7 @@ object CineMain: TCineMain
       end
       object SeriesButton: TStyledButton
         Left = 0
-        Top = 74
+        Top = 66
         Width = 224
         Height = 89
         Caption = 'S'#233'ries'
