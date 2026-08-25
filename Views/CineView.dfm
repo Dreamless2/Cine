@@ -91,7 +91,7 @@ object CineMain: TCineMain
         StyleAppearance = 'Raised'
         ExplicitTop = 680
       end
-      object StyledButton1: TStyledButton
+      object FilmesButton: TStyledButton
         Left = 0
         Top = -6
         Width = 224
@@ -102,9 +102,9 @@ object CineMain: TCineMain
         StyleFamily = 'Bootstrap'
         StyleClass = 'Success'
       end
-      object StyledButton2: TStyledButton
-        Left = -8
-        Top = 176
+      object SeriesButton: TStyledButton
+        Left = 0
+        Top = 74
         Width = 224
         Height = 89
         Caption = 'S'#233'ries'
@@ -113,9 +113,9 @@ object CineMain: TCineMain
         StyleFamily = 'Angular-Light'
         StyleClass = 'DeepPurple'
       end
-      object StyledButton3: TStyledButton
-        Left = -24
-        Top = 361
+      object AnimesButton: TStyledButton
+        Left = 0
+        Top = 161
         Width = 224
         Height = 89
         Caption = 'Animes'
