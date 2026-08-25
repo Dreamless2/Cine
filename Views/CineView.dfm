@@ -88,41 +88,6 @@ object CineMain: TCineMain
         StyleFamily = 'Angular-Dark'
         StyleClass = 'Warn'
       end
-      object FilmesButton: TStyledButton
-        Left = 0
-        Top = -6
-        Width = 224
-        Height = 89
-        Caption = 'Filmes'
-        TabOrder = 1
-        Flat = True
-        StyleDrawType = btRect
-        StyleFamily = 'Bootstrap'
-        StyleClass = 'Success'
-      end
-      object SeriesButton: TStyledButton
-        Left = 0
-        Top = 82
-        Width = 224
-        Height = 78
-        Caption = 'S'#233'ries'
-        TabOrder = 2
-        Flat = True
-        StyleDrawType = btRect
-        StyleFamily = 'Angular-Light'
-        StyleClass = 'DeepPurple'
-      end
-      object AnimesButton: TStyledButton
-        Left = 0
-        Top = 158
-        Width = 224
-        Height = 89
-        Caption = 'Animes'
-        TabOrder = 3
-        Flat = True
-        StyleFamily = 'Angular-Dark'
-        StyleClass = 'Blue-gray'
-      end
     end
   end
 end
