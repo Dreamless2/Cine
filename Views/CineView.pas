@@ -15,7 +15,7 @@ type
     PanelStatusBar: TPanel;
     Label1: TLabel;
     EsPanel1: TEsPanel;
-    EsPanel2: TEsPanel;
+    PanelDesktop: TEsPanel;
   private
     { Private declarations }
     FCurrentChildForm: TForm;
@@ -41,10 +41,10 @@ implementation
 constructor TCineMain.Create(AOwner: TComponent);
 begin
   inherited Create(AOwner);
-  FilmesButton.OnClick := Filmes_Click;
+  {FilmesButton.OnClick := Filmes_Click;
   SeriesButton.OnClick := Series_Click;
   AnimesButton.OnClick := Animes_Click;
-  FecharButton.OnClick := Fechar_Click;
+  FecharButton.OnClick := Fechar_Click;}
   PanelTopBar.OnMouseDown := Panel_MouseDown;
   PanelTopTitle.OnMouseDown := Panel_MouseDown;
 end;

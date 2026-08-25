@@ -72,7 +72,7 @@ object CineMain: TCineMain
     ExplicitTop = 384
     ExplicitHeight = 41
   end
-  object EsPanel2: TEsPanel
+  object PanelDesktop: TEsPanel
     Left = 224
     Top = 89
     Width = 1344
