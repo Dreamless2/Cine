@@ -6,17 +6,16 @@ uses
   Winapi.Windows, Winapi.Messages, System.Classes,
   Vcl.Controls, Vcl.Forms, Vcl.StdCtrls, Vcl.ExtCtrls,
   FilmesView, SeriesView, AnimesView, Vcl.ButtonStylesAttributes,
-  Vcl.StyledButton;
+  Vcl.StyledButton, ES.BaseControls, ES.Layouts;
 
 type
   TCineMain = class(TForm)
     PanelTopBar: TPanel;
     PanelTopTitle: TPanel;
     PanelStatusBar: TPanel;
-    PanelDesktop: TPanel;
-    PanelButtons: TPanel;
     Label1: TLabel;
-    FecharButton: TStyledButton;
+    EsPanel1: TEsPanel;
+    EsPanel2: TEsPanel;
   private
     { Private declarations }
     FCurrentChildForm: TForm;

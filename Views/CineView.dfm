@@ -60,34 +60,27 @@ object CineMain: TCineMain
     ParentBackground = False
     TabOrder = 2
   end
-  object PanelDesktop: TPanel
+  object EsPanel1: TEsPanel
     Left = 0
     Top = 89
-    Width = 1568
+    Width = 224
+    Height = 857
+    Align = alLeft
+    TabOrder = 3
+    FrameStyle = None
+    ExplicitLeft = 488
+    ExplicitTop = 384
+    ExplicitHeight = 41
+  end
+  object EsPanel2: TEsPanel
+    Left = 224
+    Top = 89
+    Width = 1344
     Height = 857
     Align = alClient
-    BevelOuter = bvNone
-    TabOrder = 3
-    object PanelButtons: TPanel
-      Left = 0
-      Top = 0
-      Width = 224
-      Height = 857
-      Align = alLeft
-      BevelOuter = bvNone
-      TabOrder = 0
-      ExplicitTop = -6
-      object FecharButton: TStyledButton
-        Left = 0
-        Top = 779
-        Width = 224
-        Height = 80
-        Caption = 'Fechar'
-        TabOrder = 0
-        Flat = True
-        StyleFamily = 'Angular-Dark'
-        StyleClass = 'Warn'
-      end
-    end
+    TabOrder = 4
+    FrameStyle = None
+    ExplicitLeft = 230
+    ExplicitTop = 83
   end
 end
