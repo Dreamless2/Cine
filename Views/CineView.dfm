@@ -93,36 +93,31 @@ object CineMain: TCineMain
       end
       object StyledButton1: TStyledButton
         Left = 0
-        Top = 0
+        Top = -6
         Width = 224
         Height = 89
-        Align = alTop
         Caption = 'Filmes'
         TabOrder = 1
         Flat = True
         StyleFamily = 'Bootstrap'
         StyleClass = 'Success'
-        ExplicitTop = -6
       end
       object StyledButton2: TStyledButton
-        Left = 0
-        Top = 89
+        Left = -8
+        Top = 176
         Width = 224
         Height = 89
-        Align = alTop
         Caption = 'S'#233'ries'
         TabOrder = 2
         Flat = True
         StyleFamily = 'Angular-Light'
         StyleClass = 'DeepPurple'
-        ExplicitTop = 584
       end
       object StyledButton3: TStyledButton
-        Left = 0
-        Top = 178
+        Left = -24
+        Top = 361
         Width = 224
         Height = 89
-        Align = alTop
         Caption = 'Animes'
         TabOrder = 3
         Flat = True
