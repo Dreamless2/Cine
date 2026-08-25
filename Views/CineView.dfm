@@ -77,34 +77,6 @@ object CineMain: TCineMain
       BevelOuter = bvNone
       TabOrder = 0
       ExplicitTop = -6
-      object AnimesButton: TButton
-        Left = 0
-        Top = 192
-        Width = 224
-        Height = 96
-        Align = alTop
-        Caption = 'Animes'
-        TabOrder = 0
-      end
-      object SeriesButton: TButton
-        Left = 0
-        Top = 96
-        Width = 224
-        Height = 96
-        Align = alTop
-        Caption = 'S'#233'ries'
-        TabOrder = 1
-      end
-      object FilmesButton: TButton
-        Left = 0
-        Top = 0
-        Width = 224
-        Height = 96
-        Align = alTop
-        Caption = 'Filmes'
-        Default = True
-        TabOrder = 2
-      end
       object FecharButton: TStyledButton
         Left = 0
         Top = 768
@@ -112,7 +84,7 @@ object CineMain: TCineMain
         Height = 89
         Align = alBottom
         Caption = 'Fechar'
-        TabOrder = 3
+        TabOrder = 0
         Flat = True
         StyleFamily = 'Angular-Dark'
         StyleClass = 'Warn'
@@ -121,12 +93,12 @@ object CineMain: TCineMain
       end
       object StyledButton1: TStyledButton
         Left = 0
-        Top = 501
+        Top = 0
         Width = 224
         Height = 89
-        Align = alBottom
+        Align = alTop
         Caption = 'Filmes'
-        TabOrder = 4
+        TabOrder = 1
         Flat = True
         StyleFamily = 'Angular-Dark'
         StyleClass = 'Warn'
@@ -135,12 +107,12 @@ object CineMain: TCineMain
       end
       object StyledButton2: TStyledButton
         Left = 0
-        Top = 590
+        Top = 89
         Width = 224
         Height = 89
-        Align = alBottom
+        Align = alTop
         Caption = 'S'#233'ries'
-        TabOrder = 5
+        TabOrder = 2
         Flat = True
         StyleFamily = 'Angular-Dark'
         StyleClass = 'Warn'
@@ -149,17 +121,16 @@ object CineMain: TCineMain
       end
       object StyledButton3: TStyledButton
         Left = 0
-        Top = 679
+        Top = 178
         Width = 224
         Height = 89
-        Align = alBottom
+        Align = alTop
         Caption = 'Animes'
-        TabOrder = 6
+        TabOrder = 3
+        StyleElements = [seFont, seBorder]
         Flat = True
-        StyleFamily = 'Angular-Dark'
-        StyleClass = 'Warn'
-        StyleAppearance = 'Raised'
-        ExplicitTop = 680
+        StyleClass = 'Windows10 Purple'
+        StyleAppearance = 'Outline'
       end
     end
   end

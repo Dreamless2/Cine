@@ -15,9 +15,6 @@ type
     PanelStatusBar: TPanel;
     PanelDesktop: TPanel;
     PanelButtons: TPanel;
-    AnimesButton: TButton;
-    SeriesButton: TButton;
-    FilmesButton: TButton;
     Label1: TLabel;
     FecharButton: TStyledButton;
     StyledButton1: TStyledButton;
