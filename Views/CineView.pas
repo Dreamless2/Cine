@@ -136,6 +136,8 @@ begin
     FCurrentChildForm := nil;
   end;
   Application.Terminate;
+  Application.ProcessMessages;
+  ExitProcess(0);
 end;
 
 procedure TCineMain.Panel_MouseDown(Sender: TObject; Button: TMouseButton; Shift: TShiftState; X, Y: Integer);
