@@ -100,8 +100,8 @@ object CineMain: TCineMain
         Caption = 'Filmes'
         TabOrder = 1
         Flat = True
-        StyleFamily = 'Basic-Colors'
-        StyleClass = 'clGreen'
+        StyleFamily = 'Bootstrap'
+        StyleClass = 'Success'
         ExplicitTop = -6
       end
       object StyledButton2: TStyledButton
