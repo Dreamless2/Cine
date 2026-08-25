@@ -76,6 +76,8 @@ object CineMain: TCineMain
       Align = alLeft
       BevelOuter = bvNone
       TabOrder = 0
+      ExplicitLeft = -64
+      ExplicitTop = 6
       object FecharButton: TButton
         Left = 0
         Top = 805
@@ -102,7 +104,6 @@ object CineMain: TCineMain
         Align = alTop
         Caption = 'S'#233'ries'
         TabOrder = 2
-        ExplicitTop = 90
       end
       object FilmesButton: TButton
         Left = 0
