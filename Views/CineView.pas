@@ -106,8 +106,13 @@ end;
 
 procedure TCineMain.Series_Click(Sender: TObject);
 begin
-  OpenChildForm(TSeriesMain.Create(Self));
-  Label1.Caption := 'Séries';
+  LockWindowUpdate(PanelDesktop.Handle);
+  try
+    OpenChildForm(TSeriesMain.Create(Self));
+    Label1.Caption := 'Séries';
+  finally
+    LockWindowUpdate(0);
+  end;
 end;
 
 procedure TCineMain.Animes_Click(Sender: TObject);
