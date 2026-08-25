@@ -77,6 +77,8 @@ object CineMain: TCineMain
       Height = 97
       Caption = 'Filmes'
       TabOrder = 0
+      Flat = True
+      StyleDrawType = btRect
       StyleFamily = 'Bootstrap'
       StyleClass = 'Success'
     end
@@ -87,6 +89,8 @@ object CineMain: TCineMain
       Height = 97
       Caption = 'SeriesButton'
       TabOrder = 1
+      Flat = True
+      StyleDrawType = btRect
       StyleFamily = 'Angular-Dark'
       StyleClass = 'Pink'
     end
@@ -97,6 +101,8 @@ object CineMain: TCineMain
       Height = 97
       Caption = 'AnimesButton'
       TabOrder = 2
+      Flat = True
+      StyleDrawType = btRect
       StyleFamily = 'Angular-Dark'
       StyleClass = 'Blue-gray'
       StyleAppearance = 'Raised'
@@ -109,6 +115,8 @@ object CineMain: TCineMain
       Align = alBottom
       Caption = 'Fechar'
       TabOrder = 3
+      Flat = True
+      StyleDrawType = btRect
       StyleFamily = 'Bootstrap'
       StyleClass = 'Danger'
     end
