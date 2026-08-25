@@ -100,10 +100,9 @@ object CineMain: TCineMain
         Caption = 'Filmes'
         TabOrder = 1
         Flat = True
-        StyleFamily = 'Angular-Dark'
-        StyleClass = 'Warn'
-        StyleAppearance = 'Raised'
-        ExplicitTop = 680
+        StyleFamily = 'Basic-Colors'
+        StyleClass = 'clGreen'
+        ExplicitTop = -6
       end
       object StyledButton2: TStyledButton
         Left = 0
@@ -114,9 +113,8 @@ object CineMain: TCineMain
         Caption = 'S'#233'ries'
         TabOrder = 2
         Flat = True
-        StyleFamily = 'Angular-Dark'
-        StyleClass = 'Warn'
-        StyleAppearance = 'Raised'
+        StyleFamily = 'Angular-Light'
+        StyleClass = 'DeepPurple'
         ExplicitTop = 584
       end
       object StyledButton3: TStyledButton
