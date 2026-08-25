@@ -127,10 +127,9 @@ object CineMain: TCineMain
         Align = alTop
         Caption = 'Animes'
         TabOrder = 3
-        StyleElements = [seFont, seBorder]
         Flat = True
-        StyleClass = 'Windows10 Purple'
-        StyleAppearance = 'Outline'
+        StyleFamily = 'Angular-Dark'
+        StyleClass = 'Blue-gray'
       end
     end
   end
