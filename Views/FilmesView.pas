@@ -126,9 +126,6 @@ begin
   end;
 end;
 
-
-
-
 procedure TFilmesMain.BuscarFilme(Sender: TObject; var Key: Char);
 var
   LMovieId: Integer;
