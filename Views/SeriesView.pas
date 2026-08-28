@@ -159,6 +159,7 @@ begin
     DiretorBox.Text := AMedia.Diretores;
     ArtistasBox.Text := AMedia.Artistas;
     ProdutoraBox.Text := AMedia.Produtoras;
+
   finally
     FMidiaEvents.ReativarEventos;
   end;
