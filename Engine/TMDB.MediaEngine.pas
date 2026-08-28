@@ -29,7 +29,7 @@ type
 function ProcessarMidiaTMDB(const AJsonString: string; AIsSerie: Boolean): TMediaData;
 function GerarTagDupla(const ATexto: string): string;
 function GerarTag(const ANome: string): string;
-function FormatarParaTag(const ATexto: string; ARemoverAcentos: Boolean = True): string;
+function GerarTagLocalProducao(const ANomePais: string): string;
 
 implementation
 
@@ -88,6 +88,19 @@ end;
 function GerarTag(const ANome: string): string;
 begin
   Result := GerarTagDupla(ANome);
+end;
+
+function GerarTagLocalProducao(const ANomePais: string): string;
+var
+  LTagSemAcento, LTagComAcento: string;
+begin
+  LTagSemAcento := FormatarParaTag(ANomePais, True);
+  LTagComAcento := FormatarParaTag(ANomePais, False);
+
+  if LTagSemAcento = LTagComAcento then
+    Result := LTagSemAcento
+  else
+    Result := LTagSemAcento + Char(160) + '#' + ANomePais;
 end;
 
 procedure TratarDataEAno(const ADataISO: string; out ADataPTBR, AAno: string);
