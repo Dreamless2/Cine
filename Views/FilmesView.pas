@@ -117,6 +117,26 @@ begin
   end;
 end;
 
+procedure TFilmesMain.PreencherComMedia(const AMedia: TMediaData);
+begin
+  FMidiaEvents.DesativarEventos;
+  try
+    NomeBox.Text := AMedia.Nome;
+    SinopseBox.Text := AMedia.Sinopse;
+    OriginalBox.Text := AMedia.NomeOriginal;
+    EstreiaBox.Text := AMedia.DataEstreia;
+    AlternativoBox.Text := AMedia.NomeAlternativo;
+    FilmeBox.Text := GerarTagFilme(AMedia.Nome);
+    GeneroBox.Text := AMedia.Generos;
+    TagsBox.Text := AMedia.Tags;
+    DiretorBox.Text := AMedia.Diretores;
+    ArtistasBox.Text := AMedia.Artistas;
+    ProdutoraBox.Text := AMedia.Produtoras;
+  finally
+    FMidiaEvents.ReativarEventos;
+  end;
+  FMidiaEvents.AtualizarResumo;
+end;
 
 
 
