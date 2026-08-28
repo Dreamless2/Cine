@@ -11,7 +11,6 @@ type
 
   TTMDBClient = class
   private
-    FHttpClient: THTTPClient;
     FBearerToken: string;
     const BaseUrl = 'https://api.themoviedb.org/3';
     function BuildUrl(const APath: string; const AAppendToResponse: string): string;
@@ -111,14 +110,17 @@ begin
 end;
 
 function TTMDBClient.GetTvShowAsync(const AId: Integer): IFuture<TJSONObject>;
+var
+  LToken: string;
 begin
+  LToken := FBearerToken;
   Result := TTask.Future<TJSONObject>(
     function: TJSONObject
     var
       LUrl: string;
     begin
       LUrl := BuildUrl(Format('/tv/%d', [AId]), 'credits,keywords,alternative_titles');
-      Result := ExecuteGet(LUrl);
+      Result := ExecuteGet(LUrl, LToken);
     end);
 end;
 
