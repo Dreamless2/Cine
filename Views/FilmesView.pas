@@ -56,7 +56,7 @@ type
     { Public declarations }
     procedure FormCreate(Sender: TObject);
     procedure FormDestroy(Sender: TObject);
-
+    procedure PreencherComMedia(const AMedia: TMediaData);
   end;
 
 var
