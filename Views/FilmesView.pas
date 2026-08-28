@@ -190,24 +190,22 @@ begin
         finally
           LJson.Free;
         end;
-       except
+      except
        on E: EAggregateException do
-begin
-  if E.Count > 0 then
-  begin
-    var Erros: string := '';
-    for var I := 0 to E.Count - 1 do
-    begin
-      Erros := Erros + '• ' + E.InnerExceptions[I].Message + sLineBreak;
-    end;
-
-    MessageDlg('Erros TMDB encontrados:' + sLineBreak + Erros, mtError, [mbOK], 0);
-  end
-  else
-    MessageDlg('Erro TMDB:' + sLineBreak + E.Message, mtError, [mbOK], 0);
-end;
-
-end;
+       begin
+        if E.Count > 0 then
+          begin
+            var Erros: string := '';
+            for var I := 0 to E.Count - 1 do
+            begin
+              Erros := Erros + '• ' + E.InnerExceptions[I].Message + sLineBreak;
+            end;
+            MessageDlg('Erros TMDB encontrados:' + sLineBreak + Erros, mtError, [mbOK], 0);
+        end
+        else
+          MessageDlg('Erro TMDB:' + sLineBreak + E.Message, mtError, [mbOK], 0);
+       end;
+      end;
     finally
       Screen.Cursor := crDefault;
     end;
