@@ -196,8 +196,8 @@ begin
   MapaPaises.AddOrSetValue('United Kingdom', 'Reino Unido');
   MapaPaises.AddOrSetValue('Uk', 'Reino Unido');
   MapaPaises.AddOrSetValue('United States', 'Estados Unidos');
-  MapaPaises.AddOrSetValue('United States of America', 'Estados Unidos');
-  MapaPaises.AddOrSetValue('Usa', 'Estados Unidos');
+  MapaPaises.AddOrSetValue('United States of America', 'Estados Unidos da América');
+  MapaPaises.AddOrSetValue('Usa', 'Estados Unidos da América');
   MapaPaises.AddOrSetValue('Uruguay', 'Uruguai');
   MapaPaises.AddOrSetValue('Uzbekistan', 'Uzbequistão');
   MapaPaises.AddOrSetValue('Vanuatu', 'Vanuatu');
