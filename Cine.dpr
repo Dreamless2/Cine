@@ -11,7 +11,8 @@ uses
   SeriesView in 'Views\SeriesView.pas' {SeriesMain},
   AnimesView in 'Views\AnimesView.pas' {AnimesMain},
   ResumoBuilder in 'Builders\ResumoBuilder.pas',
-  MidiaFormEvents in 'Builders\MidiaFormEvents.pas';
+  MidiaFormEvents in 'Builders\MidiaFormEvents.pas',
+  LanguageMapper in 'Mapper\LanguageMapper.pas';
 
 {$R *.res}
 

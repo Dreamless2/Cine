@@ -150,6 +150,7 @@
         </DCCReference>
         <DCCReference Include="Builders\ResumoBuilder.pas"/>
         <DCCReference Include="Builders\MidiaFormEvents.pas"/>
+        <DCCReference Include="Mapper\LanguageMapper.pas"/>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
         </BuildConfiguration>
@@ -177,6 +178,12 @@
             </Delphi.Personality>
             <Deployment Version="5">
                 <DeployFile LocalName="Win32\Debug\Cine.exe" Configuration="Debug" Class="ProjectOutput"/>
+                <DeployFile LocalName="Win32\Debug\Cine.exe" Configuration="Debug" Class="ProjectOutput">
+                    <Platform Name="Win32">
+                        <RemoteName>Cine.exe</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
                 <DeployClass Name="AdditionalDebugSymbols">
                     <Platform Name="iOSSimulator">
                         <Operation>1</Operation>
