@@ -132,7 +132,7 @@ begin
     end;
 
     Result.Sinopse := LJson.GetValue<string>('overview', '');
-    Result.TituloTag := GerarTagFilme(Result.Nome);
+    Result.TituloTag := GerarTag(Result.Nome);
 
     LArr := LJson.GetValue<TJSONArray>('genres', nil);
     if Assigned(LArr) then
