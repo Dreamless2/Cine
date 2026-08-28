@@ -216,12 +216,12 @@ begin
     begin
       LArr := LJson.GetValue<TJSONArray>('production_countries', nil);
       if Assigned(LArr) and (LArr.Count > 0) then
-        Result.LocalProducao := GerarTag(FormatarParaTag(MapearPais((LArr.Items[0] as TJSONObject).GetValue<string>('name', ''))))
+        Result.LocalProducao := MapearPais((LArr.Items[0] as TJSONObject).GetValue<string>('name', '')) +  FormatarParaTag(MapearPais((LArr.Items[0] as TJSONObject).GetValue<string>('name', '')))
       else
       begin
         LOriginArr := LJson.GetValue<TJSONArray>('origin_country', nil);
         if Assigned(LOriginArr) and (LOriginArr.Count > 0) then
-          Result.LocalProducao := GerarTag(FormatarParaTag(MapearPais(LOriginArr.Items[0].Value)));
+          Result.LocalProducao := FormatarParaTag(MapearPais(LOriginArr.Items[0].Value));
       end;
 
       LArr := LJson.GetValue<TJSONArray>('created_by', nil);
