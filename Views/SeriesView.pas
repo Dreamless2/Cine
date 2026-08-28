@@ -91,7 +91,9 @@ begin
   FMidiaEvents := TMidiaFormHelper.Create(
     [NomeBox, AudioBox, SinopseBox, OriginalBox, EstreiaBox, AlternativoBox,
       TagsBox, SerieBox, MCUBox, LocalBox, IdiomaBox, ReferenciaBox, AutoresBox,
-      FranquiaBox, ShowrunnersBox, GeneroBox, DiretorBox, ArtistasBox, ProdutoraBox ResumoBox,
+      FranquiaBox, ShowrunnersBox, GeneroBox, DiretorBox, ArtistasBox, ProdutoraBox,
+      ResumoBox
+    ]
     function: string
     begin
       Result := MontarResumo(
