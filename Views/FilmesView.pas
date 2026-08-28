@@ -86,8 +86,7 @@ begin
     begin
       Result := GerarTagFilme(ANome);
     end);
-
-
+  FMidiaEvents.AtualizarResumo;
   DoubleBuffered := True;
   CodigoBox.OnKeyPress := BuscarFilme;
   CodigoBox.OnExit := BuscarFilmeExit;
@@ -98,6 +97,29 @@ begin
   FMidiaEvents.Free;
   FTMDBClient.Free;
 end;
+
+procedure TFilmesMain.PreencherComMedia(const AMedia: TMediaData);
+begin
+  FMidiaEvents.DesativarEventos;
+  try
+    NomeBox.Text := AMedia.Nome;
+    SinopseBox.Text := AMedia.Sinopse;
+    OriginalBox.Text := AMedia.NomeOriginal;
+    EstreiaBox.Text := AMedia.DataEstreia;
+    AlternativoBox.Text := AMedia.NomeAlternativo;
+    FilmeBox.Text := GerarTagFilme(AMedia.Nome);
+    GeneroBox.Text := AMedia.Generos;
+    TagsBox.Text := AMedia.Tags;
+    DiretorBox.Text := AMedia.Diretores;
+    ArtistasBox.Text := AMedia.Artistas;
+    ProdutoraBox.Text := AMedia.Produtoras;
+  finally
+    FMidiaEvents.ReativarEventos;
+  end;
+  FMidiaEvents.AtualizarResumo;
+end;
+
+
 
 procedure TFilmesMain.BuscarFilmeExit(Sender: TObject);
 var
@@ -137,50 +159,47 @@ begin
   if Key = #13 then
   begin
     Key := #0;
-    ShowMessage('ENTER FUNCIONOU');
-    Exit;
-  end;
 
-  LMovieId := 0;
-  Screen.Cursor := crHourGlass;
-  try
-    try
-      LFuture := FTMDBClient.GetMovieAsync(LMovieId);
-      LJson := LFuture.Value;
-      try
-        LMedia := ProcessarMidiaTMDB(LJson.ToJSON, False);
-        PreencherComMedia(LMedia);
-      finally
-        LJson.Free;
-      end;
-    except
-      on E: Exception do
-        MessageDlg('Erro ao buscar filme: ' + E.Message, mtError, [mbOK], 0);
+    if not Assigned(FTMDBClient) then
+    begin
+      MessageDlg('Configure o token da API TMDB antes de buscar.', mtWarning, [mbOK], 0);
+      Exit;
     end;
-  finally
-    Screen.Cursor := crDefault;
+
+    if not TryStrToInt(CodigoBox.Text, LMovieId) then
+    begin
+      MessageDlg('Digite o código do filme no TMDB.', mtWarning, [mbOK], 0);
+      CodigoBox.SetFocus;
+      Exit;
+    end;
+
+    Screen.Cursor := crHourGlass;
+    try
+      try
+        LFuture := FTMDBClient.GetMovieAsync(LMovieId);
+        LJson := LFuture.Value;
+        try
+          LMedia := ProcessarMidiaTMDB(LJson.ToJSON, False);
+          PreencherComMedia(LMedia);
+        finally
+          LJson.Free;
+        end;
+      except
+        on E: Exception do
+          MessageDlg('Erro ao buscar filme: ' + E.Message, mtError, [mbOK], 0);
+      end;
+    finally
+      Screen.Cursor := crDefault;
+    end;
   end;
 end;
 
-procedure TFilmesMain.PreencherComMedia(const AMedia: TMediaData);
+procedure TFilmesMain.BuscarFilmeExit(Sender: TObject);
+var
+  LKey: Char;
 begin
-  FMidiaEvents.DesativarEventos;
-  try
-    NomeBox.Text := AMedia.Nome;
-    SinopseBox.Text := AMedia.Sinopse;
-    OriginalBox.Text := AMedia.NomeOriginal;
-    EstreiaBox.Text := AMedia.DataEstreia;
-    AlternativoBox.Text := AMedia.NomeAlternativo;
-    FilmeBox.Text := GerarTagFilme(AMedia.Nome);
-    GeneroBox.Text := AMedia.Generos;
-    TagsBox.Text := AMedia.Tags;
-    DiretorBox.Text := AMedia.Diretores;
-    ArtistasBox.Text := AMedia.Artistas;
-    ProdutoraBox.Text := AMedia.Produtoras;
-  finally
-    FMidiaEvents.ReativarEventos;
-  end;
-  FMidiaEvents.AtualizarResumo;
+  LKey := #13;
+  BuscarFilme(Sender, LKey);
 end;
 
 
