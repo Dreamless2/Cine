@@ -87,8 +87,7 @@ begin
     begin
       Result := GerarTagFilme(ANome);
     end);
-  FMidiaEvents.AtualizarResumo;
-  DoubleBuffered := True;
+  //FMidiaEvents.AtualizarResumo;
   {CodigoBox.OnKeyPress := BuscarFilme;
   CodigoBox.OnExit := BuscarFilmeExit;}
 end;
