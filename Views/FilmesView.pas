@@ -88,15 +88,9 @@ var
   LJson: TJSONObject;
   LMedia: TMediaData;
 begin
-  if not Assigned(FTMDBClient) then
-  begin
-    MessageDlg('Configure o token da API TMDB antes de buscar.', mtWarning, [mbOK], 0);
-    Exit;
-  end;
-
   if not TryStrToInt(CodigoBox.Text.Trim, LMovieId) then
   begin
-    MessageDlg('Digite o código (ID) do filme no TMDB.', mtWarning, [mbOK], 0);
+    MessageDlg('Digite o código do filme no TMDB.', mtWarning, [mbOK], 0);
     CodigoBox.SetFocus;
     Exit;
   end;
