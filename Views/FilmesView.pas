@@ -99,6 +99,7 @@ begin
   CodigoBox.OnKeyPress := BuscarFilme;
   CodigoBox.OnExit := BuscarFilmeExit;
   CopiarButton.OnClick := CopiarButton_Click;
+  LimparPainel(PanelDesktop);
 end;
 
 function ExceptionDetalhes(E: Exception): string;
@@ -117,6 +118,20 @@ procedure TFilmesMain.FormDestroy(Sender: TObject);
 begin
   FMidiaEvents.Free;
   FTMDBClient.Free;
+end;
+
+procedure TFilmesMain.LimparPainel(Painel: TPanel);
+var
+  i: Integer;
+begin
+  for i := 0 to Painel.ControlCount - 1 do
+  begin
+    if Painel.Controls[i] is TEdit then
+      TEdit(Painel.Controls[i]).Text := '--';
+
+    if Painel.Controls[i] is TMaskEdit then
+      TMaskEdit(Painel.Controls[i]).Text := '--';
+  end;
 end;
 
 procedure TFilmesMain.PreencherComMedia(const AMedia: TMediaData);
