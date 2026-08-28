@@ -92,7 +92,7 @@ begin
     end,
     function(ANome: string): string
     begin
-      Result := GerarTagFilme(ANome);
+      Result := GerarTagFilme(ANome).ToLower;
     end);
   FMidiaEvents.AtualizarResumo;
   CodigoBox.OnKeyPress := BuscarFilme;
