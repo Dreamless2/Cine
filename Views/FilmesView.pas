@@ -53,6 +53,7 @@ type
     FMidiaEvents: TMidiaFormHelper;
     FTMDBClient: TTMDBClient;
     procedure CopiarButton_Click(Sender: TObject);
+    procedure LimparPainel(Painel: TPanel);
   public
     { Public declarations }
     procedure FormDestroy(Sender: TObject);
