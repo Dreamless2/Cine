@@ -221,9 +221,6 @@ begin
   if NomeTratado.StartsWith('the ', True) then
     NomeTratado := Copy(NomeTratado, 5, MaxInt).Trim;
 
-  if Length(NomeTratado) > 0 then
-    NomeTratado := UpperCase(Copy(NomeTratado, 1, 1)) + LowerCase(Copy(NomeTratado, 2, MaxInt));
-
   if not MapaPaises.TryGetValue(NomeTratado, Result) then
     Result := ANomeIngles.Trim;
 end;
