@@ -71,7 +71,7 @@ implementation
 
 constructor TFilmesMain.Create(AOwner: TComponent);
 begin
-  FMidiaEvents := TMidiaFormHelper.Create(
+  {FMidiaEvents := TMidiaFormHelper.Create(
     [AudioBox, SinopseBox, OriginalBox, EstreiaBox, AlternativoBox, FilmeBox,
      FranquiaBox, GeneroBox, TagsBox, DiretorBox, ArtistasBox, ProdutoraBox, MCUBox],
     NomeBox, FilmeBox, ResumoBox,
@@ -86,8 +86,8 @@ begin
     function(ANome: string): string
     begin
       Result := GerarTagFilme(ANome);
-    end);
-  //FMidiaEvents.AtualizarResumo;
+    end);}
+  FMidiaEvents.AtualizarResumo;
   {CodigoBox.OnKeyPress := BuscarFilme;
   CodigoBox.OnExit := BuscarFilmeExit;}
 end;
