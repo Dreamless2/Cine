@@ -89,8 +89,8 @@ begin
     end);
   FMidiaEvents.AtualizarResumo;
   DoubleBuffered := True;
-  CodigoBox.OnKeyPress := BuscarFilme;
-  CodigoBox.OnExit := BuscarFilmeExit;
+  {CodigoBox.OnKeyPress := BuscarFilme;
+  CodigoBox.OnExit := BuscarFilmeExit;}
 end;
 
 
