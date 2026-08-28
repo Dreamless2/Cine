@@ -97,7 +97,7 @@ begin
     LBuilder.AppendLine(Format('**Gênero:** %s', [ValorOuTraco(AGeneroBox)]));
     LBuilder.AppendLine(Format('**Tags:** %s', [ValorOuTraco(ATagsBox)]));
     LBuilder.AppendLine(Format('**Diretor:** %s', [ValorOuTraco(ADiretorBox)]));
-    LBuilder.AppendLine(Format('**Estrelas:** %s', [ValorOuTraco(AArtistasBox)]));
+    LBuilder.AppendLine(Format('**Artistas:** %s', [ValorOuTraco(AArtistasBox)]));
     LBuilder.Append(Format('**Produtora:** %s', [ValorOuTraco(AProdutoraBox)]));
     Result := LBuilder.ToString;
   finally
@@ -135,7 +135,7 @@ begin
     LBuilder.AppendLine(Format('**Gênero:** %s', [ValorOuTraco(AGeneroBox)]));
     LBuilder.AppendLine(Format('**Tags:** %s', [ValorOuTraco(ATagsBox)]));
     LBuilder.AppendLine(Format('**Diretor:** %s', [ValorOuTraco(ADiretorBox)]));
-    LBuilder.AppendLine(Format('**Estrelas:** %s', [ValorOuTraco(AArtistasBox)]));
+    LBuilder.AppendLine(Format('**Artistas:** %s', [ValorOuTraco(AArtistasBox)]));
     LBuilder.Append(Format('**Produtora:** %s', [ValorOuTraco(AProdutoraBox)]));
     Result := LBuilder.ToString;
   finally
