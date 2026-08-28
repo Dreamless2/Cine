@@ -95,7 +95,7 @@ begin
   AtualizarResumo;
 end;
 
-procedure TMidiaFormHelper.AtualizarResumo;
+{procedure TMidiaFormHelper.AtualizarResumo;
 begin
   FResumoBox.Lines.Text := FMontarResumo();
 end;
