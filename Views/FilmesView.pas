@@ -5,7 +5,7 @@ interface
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.ExtCtrls, Vcl.Mask, MidiaFormEvents,
-  Vcl.Buttons, TMDB.ApiClient, System.JSON, MidiaFormEvents;
+  Vcl.Buttons, TMDB.ApiClient, System.JSON;
 
 
 type
@@ -94,14 +94,13 @@ begin
     Exit;
   end;
 
-  if not TryStrToInt(BuscarBox.Text.Trim, LMovieId) then
+  if not TryStrToInt(CodigoBox.Text.Trim, LMovieId) then
   begin
     MessageDlg('Digite o código (ID) do filme no TMDB.', mtWarning, [mbOK], 0);
-    BuscarBox.SetFocus;
+    CodigoBox.SetFocus;
     Exit;
   end;
 
-  BuscarButton.Enabled := False;
   Screen.Cursor := crHourGlass;
   try
     try
@@ -119,7 +118,6 @@ begin
     end;
   finally
     Screen.Cursor := crDefault;
-    BuscarButton.Enabled := True;
   end;
 end;
 
