@@ -155,7 +155,7 @@ begin
     AlternativoBox.Text := AMedia.NomeAlternativo;
     SerieBox.Text := GerarTag(AMedia.Nome);
     LocalBox.Text := AMedia.LocalProducao;
-    IdiomaBox.Text := AMedia.IdiomaOriginal;
+    IdiomaBox.Text := GerarTag(AMedia.IdiomaOriginal);
     ShowrunnersBox.Text := AMedia.Showrunners;
     GeneroBox.Text := AMedia.Generos;
     TagsBox.Text := AMedia.Tags;
