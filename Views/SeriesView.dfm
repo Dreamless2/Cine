@@ -20,9 +20,6 @@ object SeriesMain: TSeriesMain
     Height = 855
     Align = alClient
     TabOrder = 0
-    ExplicitLeft = 8
-    ExplicitWidth = 1464
-    ExplicitHeight = 914
     object Label1: TLabel
       Left = 16
       Top = 14
