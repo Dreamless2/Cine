@@ -104,7 +104,7 @@ begin
       LJson := LFuture.Value;
       try
         LMedia := ProcessarMidiaTMDB(LJson.ToJSON, False);
-        FMidiaEvents.PreencherComMedia(LMedia);
+        PreencherComMedia(LMedia);
       finally
         LJson.Free;
       end;
