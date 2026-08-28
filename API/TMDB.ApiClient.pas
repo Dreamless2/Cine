@@ -77,9 +77,7 @@ begin
     if not Assigned(LValue) or not (LValue is TJSONObject) then
     begin
       LValue.Free;
-      raise ETMDBApiError.Create(
-        'TMDB response could not be parsed as a JSON object'
-      );
+      raise ETMDBApiError.Create('TMDB response could not be parsed as a JSON object'      );
     end;
 
     Result := LValue as TJSONObject;
