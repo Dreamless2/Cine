@@ -164,11 +164,31 @@ begin
         finally
           LJson.Free;
         end;
-     except
+       except
+        on E: EAggregateException do
+        begin
+        if (E.InnerExceptions[Count] > 0) then
+        MessageDlg(
+          'Erro TMDB:' + sLineBreak +
+          E.InnerExceptions[0].ClassName + ': ' +
+          E.InnerExceptions[0].Message,
+          mtError,
+          [mbOK],
+          0
+        )
+    else
+      MessageDlg(
+        'Erro TMDB:' + sLineBreak + E.Message,
+        mtError,
+        [mbOK],
+        0
+      );
+  end;
+
   on E: Exception do
     MessageDlg(
-      'Erro ao buscar filme:' + sLineBreak +
-      ExceptionDetalhes(E),
+      'Erro ao buscar filme: ' +
+      E.ClassName + ': ' + E.Message,
       mtError,
       [mbOK],
       0
