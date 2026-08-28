@@ -108,11 +108,9 @@ begin
   begin
     E := E.InnerException;
 
-    Result := Result + sLineBreak +
-              '  -> ' + E.ClassName + ': ' + E.Message;
+    Result := Result + sLineBreak + '  -> ' + E.ClassName + ': ' + E.Message;
   end;
 end;
-
 
 procedure TFilmesMain.FormDestroy(Sender: TObject);
 begin
@@ -156,6 +154,12 @@ begin
     begin
       MessageDlg('Digite o código do filme no TMDB.', mtWarning, [mbOK], 0);
       CodigoBox.SetFocus;
+      Exit;
+    end;
+
+    if not Assigned(FTMDBClient) then
+    begin
+    MessageDlg(A chave da API do TMDB não está configurada.', mtWarning, [mbOK], 0);
       Exit;
     end;
 
