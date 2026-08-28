@@ -87,6 +87,7 @@ begin
       Result := GerarTagFilme(ANome);
     end);
 
+
   DoubleBuffered := True;
   CodigoBox.OnKeyPress := BuscarFilme;
   CodigoBox.OnExit := BuscarFilmeExit;
