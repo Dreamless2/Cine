@@ -52,9 +52,9 @@ type
     { Private declarations }
     FMidiaEvents: TMidiaFormHelper;
     FTMDBClient: TTMDBClient;
+    procedure CopiarButton_Click(Sender: TObject);
   public
     { Public declarations }
-    //procedure FormCreate(Sender: TObject);
     procedure FormDestroy(Sender: TObject);
     procedure PreencherComMedia(const AMedia: TMediaData);
     procedure BuscarFilme(Sender: TObject; var Key: Char);
@@ -97,6 +97,7 @@ begin
   FMidiaEvents.AtualizarResumo;
   CodigoBox.OnKeyPress := BuscarFilme;
   CodigoBox.OnExit := BuscarFilmeExit;
+  CopiarButton.OnClick := Cop
 end;
 
 
