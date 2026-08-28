@@ -88,9 +88,6 @@ begin
 
   DoubleBuffered := True;
   CodigoBox.OnKeyPress := BuscarFilme;
-  CodigoBox.TabStop := True;
-CodigoBox.Enabled := True;
-CodigoBox.ReadOnly := False;
 end;
 
 procedure TFilmesMain.FormDestroy(Sender: TObject);
@@ -106,9 +103,11 @@ var
   LJson: TJSONObject;
   LMedia: TMediaData;
 begin
-  if Key = #13 then begin Key := #0;
-  ShowMessage('ENTER FUNCIONOU');
-  Exit;
+  if Key = #13 then
+  begin
+    Key := #0;
+    ShowMessage('ENTER FUNCIONOU');
+    Exit;
   end;
 
   Screen.Cursor := crHourGlass;
