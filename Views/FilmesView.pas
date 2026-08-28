@@ -119,36 +119,6 @@ begin
   FMidiaEvents.AtualizarResumo;
 end;
 
-
-
-procedure TFilmesMain.BuscarFilmeExit(Sender: TObject);
-var
-  LMovieId: Integer;
-  LFuture: IFuture<TJSONObject>;
-  LJson: TJSONObject;
-  LMedia: TMediaData;
-begin
-  LMovieId := 0;
-  Screen.Cursor := crHourGlass;
-  try
-    try
-      LFuture := FTMDBClient.GetMovieAsync(LMovieId);
-      LJson := LFuture.Value;
-      try
-        LMedia := ProcessarMidiaTMDB(LJson.ToJSON, False);
-        PreencherComMedia(LMedia);
-      finally
-        LJson.Free;
-      end;
-    except
-      on E: Exception do
-        MessageDlg('Erro ao buscar filme: ' + E.Message, mtError, [mbOK], 0);
-    end;
-  finally
-    Screen.Cursor := crDefault;
-  end;
-end;
-
 procedure TFilmesMain.BuscarFilme(Sender: TObject; var Key: Char);
 var
   LMovieId: Integer;
@@ -159,12 +129,6 @@ begin
   if Key = #13 then
   begin
     Key := #0;
-
-    if not Assigned(FTMDBClient) then
-    begin
-      MessageDlg('Configure o token da API TMDB antes de buscar.', mtWarning, [mbOK], 0);
-      Exit;
-    end;
 
     if not TryStrToInt(CodigoBox.Text, LMovieId) then
     begin
