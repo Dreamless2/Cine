@@ -86,7 +86,7 @@ begin
     var
       LUrl: string;
     begin
-      LUrl := BuildUrl(Format('/movie/%d?language=pt-BR', [AId]), 'credits,keywords,alternative_titles');
+      LUrl := BuildUrl(Format('/movie/%d', [AId]), 'credits,keywords,alternative_titles');
       Result := ExecuteGet(LUrl, LToken);
     end
   );
