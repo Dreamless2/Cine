@@ -102,6 +102,8 @@ var
   LJson: TJSONObject;
   LMedia: TMediaData;
 begin
+  if Key = #13 then
+  begin
   if not TryStrToInt(CodigoBox.Text, LMovieId) then
   begin
     MessageDlg('Digite o código do filme no TMDB.', mtWarning, [mbOK], 0);
@@ -126,6 +128,7 @@ begin
     end;
   finally
     Screen.Cursor := crDefault;
+  end;
   end;
 end;
 
