@@ -3,30 +3,32 @@
 interface
 
 uses
-  System.SysUtils, System.Classes, Vcl.Controls, Vcl.StdCtrls, Vcl.ExtCtrls,
-  ResumoBuilder, TMDB.MediaEngine;
+  System.SysUtils, System.Classes, Vcl.Controls, Vcl.StdCtrls, Vcl.ExtCtrls;
 
 type
   TCustomEditAberto = class(TCustomEdit);
 
+  TMontarResumoFunc = reference to function: string;
+
   TMidiaFormHelper = class
   private
-    FNomeBox, FAudioBox, FSinopseBox, FOriginalBox, FEstreiaBox, FAlternativoBox,
-    FFilmeBox, FFranquiaBox, FGeneroBox, FTagsBox, FDiretorBox, FArtistasBox,
-    FProdutoraBox, FMCUBox: TControl;
+    FControlesObservados: TArray<TControl>;
+    FNomeBox, FFilmeBox: TControl;
     FResumoBox: TMemo;
+    FMontarResumo: TMontarResumoFunc;
+    FGerarTagNome: TFunc<string, string>;
     function GetText(AControl: TControl): string;
     procedure SetText(AControl: TControl; const AValue: string);
     procedure AssignOnChange(AControl: TControl; AEvent: TNotifyEvent);
     procedure QualquerAlteracao(Sender: TObject);
     procedure NomeBoxChange(Sender: TObject);
   public
-    constructor Create(
-      ANomeBox, AAudioBox, ASinopseBox, AOriginalBox, AEstreiaBox, AAlternativoBox,
-      AFilmeBox, AFranquiaBox, AGeneroBox, ATagsBox, ADiretorBox, AArtistasBox,
-      AProdutoraBox, AMCUBox: TControl;
-      AResumoBox: TMemo);
+    constructor Create(const AControlesObservados: TArray<TControl>;
+      ANomeBox, AFilmeBox: TControl; AResumoBox: TMemo;
+      AMontarResumo: TMontarResumoFunc; AGerarTagNome: TFunc<string, string> = nil);
     procedure AtualizarResumo;
+    procedure DesativarEventos;
+    procedure ReativarEventos;
   end;
 
 implementation
@@ -59,40 +61,26 @@ begin
     TComboBox(AControl).OnChange := AEvent;
 end;
 
-constructor TMidiaFormHelper.Create(
-  ANomeBox, AAudioBox, ASinopseBox, AOriginalBox, AEstreiaBox, AAlternativoBox,
-  AFilmeBox, AFranquiaBox, AGeneroBox, ATagsBox, ADiretorBox, AArtistasBox,
-  AProdutoraBox, AMCUBox: TControl; AResumoBox: TMemo);
+constructor TMidiaFormHelper.Create(const AControlesObservados: TArray<TControl>;
+  ANomeBox, AFilmeBox: TControl; AResumoBox: TMemo;
+  AMontarResumo: TMontarResumoFunc; AGerarTagNome: TFunc<string, string> = nil);
 var
-  LControles: TArray<TControl>;
   LCtrl: TControl;
 begin
   inherited Create;
 
-  FNomeBox       := ANomeBox;
-  FAudioBox      := AAudioBox;
-  FSinopseBox    := ASinopseBox;
-  FOriginalBox   := AOriginalBox;
-  FEstreiaBox    := AEstreiaBox;
-  FAlternativoBox:= AAlternativoBox;
-  FFilmeBox      := AFilmeBox;
-  FFranquiaBox   := AFranquiaBox;
-  FGeneroBox     := AGeneroBox;
-  FTagsBox       := ATagsBox;
-  FDiretorBox    := ADiretorBox;
-  FArtistasBox   := AArtistasBox;
-  FProdutoraBox  := AProdutoraBox;
-  FMCUBox        := AMCUBox;
-  FResumoBox     := AResumoBox;
+  FControlesObservados := AControlesObservados;
+  FNomeBox := ANomeBox;
+  FFilmeBox := AFilmeBox;
+  FResumoBox := AResumoBox;
+  FMontarResumo := AMontarResumo;
+  FGerarTagNome := AGerarTagNome;
 
-  LControles := [FAudioBox, FSinopseBox, FOriginalBox, FEstreiaBox, FAlternativoBox,
-                 FFilmeBox, FFranquiaBox, FGeneroBox, FTagsBox, FDiretorBox,
-                 FArtistasBox, FProdutoraBox, FMCUBox];
-
-  for LCtrl in LControles do
+  for LCtrl in FControlesObservados do
     AssignOnChange(LCtrl, QualquerAlteracao);
 
-  AssignOnChange(FNomeBox, NomeBoxChange);
+  if Assigned(FNomeBox) then
+    AssignOnChange(FNomeBox, NomeBoxChange);
 end;
 
 procedure TMidiaFormHelper.QualquerAlteracao(Sender: TObject);
@@ -102,27 +90,36 @@ end;
 
 procedure TMidiaFormHelper.NomeBoxChange(Sender: TObject);
 begin
-  SetText(FFilmeBox, GerarTagFilme(GetText(FNomeBox)));
+  if Assigned(FFilmeBox) and Assigned(FGerarTagNome) then
+    SetText(FFilmeBox, FGerarTagNome(GetText(FNomeBox)));
   AtualizarResumo;
 end;
 
 procedure TMidiaFormHelper.AtualizarResumo;
 begin
-  FResumoBox.Lines.Text := MontarResumo(
-    GetText(FNomeBox),
-    GetText(FAudioBox),
-    GetText(FSinopseBox),
-    GetText(FOriginalBox),
-    GetText(FEstreiaBox),
-    GetText(FAlternativoBox),
-    GetText(FFilmeBox),
-    GetText(FFranquiaBox),
-    GetText(FGeneroBox),
-    GetText(FTagsBox),
-    GetText(FDiretorBox),
-    GetText(FArtistasBox),
-    GetText(FProdutoraBox),
-    GetText(FMCUBox));
+  FResumoBox.Lines.Text := FMontarResumo();
+end;
+
+procedure TMidiaFormHelper.DesativarEventos;
+var
+  LCtrl: TControl;
+begin
+  for LCtrl in FControlesObservados do
+    AssignOnChange(LCtrl, nil);
+
+  if Assigned(FNomeBox) then
+    AssignOnChange(FNomeBox, nil);
+end;
+
+procedure TMidiaFormHelper.ReativarEventos;
+var
+  LCtrl: TControl;
+begin
+  for LCtrl in FControlesObservados do
+    AssignOnChange(LCtrl, QualquerAlteracao);
+
+  if Assigned(FNomeBox) then
+    AssignOnChange(FNomeBox, NomeBoxChange);
 end;
 
 end.

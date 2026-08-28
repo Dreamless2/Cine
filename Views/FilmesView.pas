@@ -69,12 +69,23 @@ implementation
 procedure TFilmesMain.FormCreate(Sender: TObject);
 begin
   FMidiaEvents := TMidiaFormHelper.Create(
-    NomeBox, AudioBox, SinopseBox, OriginalBox, EstreiaBox, AlternativoBox,
-    FilmeBox, FranquiaBox, GeneroBox, TagsBox, DiretorBox, ArtistasBox,
-    ProdutoraBox, MCUBox, ResumoBox);
+    [AudioBox, SinopseBox, OriginalBox, EstreiaBox, AlternativoBox, FilmeBox,
+     FranquiaBox, GeneroBox, TagsBox, DiretorBox, ArtistasBox, ProdutoraBox, MCUBox],
+    NomeBox, FilmeBox, ResumoBox,
+    function: string
+    begin
+      Result := MontarResumo(
+        NomeBox.Text, AudioBox.Text, SinopseBox.Text, OriginalBox.Text,
+        EstreiaBox.Text, AlternativoBox.Text, TagsBox.Text, FilmeBox.Text,
+        MCUBox.Text, FranquiaBox.Text, GeneroBox.Text, DiretorBox.Text,
+        ArtistasBox.Text, ProdutoraBox.Text);
+    end,
+    function(ANome: string): string
+    begin
+      Result := GerarTagFilme(ANome);
+    end);
+
   DoubleBuffered := True;
-  PanelDesktop.DoubleBuffered := True;
-  CodigoBox.OnKeyPress := BuscarFilme;
 end;
 
 procedure TFilmesMain.FormDestroy(Sender: TObject);
