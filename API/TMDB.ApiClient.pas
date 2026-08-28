@@ -15,7 +15,7 @@ type
     FBearerToken: string;
     const BaseUrl = 'https://api.themoviedb.org/3';
     function BuildUrl(const APath: string; const AAppendToResponse: string): string;
-    function ExecuteGet(const AUrl: string): TJSONObject;
+    function ExecuteGet(const AUrl, ABearerToken: string): TJSONObject;
   public
     constructor Create(const ABearerToken: string);
     destructor Destroy; override;
@@ -45,8 +45,7 @@ begin
   Result := Format('%s%s?append_to_response=%s', [BaseUrl, APath, AAppendToResponse]);
 end;
 
-function TTMDBClient.ExecuteGet(
-  const AUrl, ABearerToken: string): TJSONObject;
+function TTMDBClient.ExecuteGet(const AUrl, ABearerToken: string): TJSONObject;
 var
   LHttpClient: THTTPClient;
   LResponse: IHTTPResponse;
@@ -89,16 +88,26 @@ begin
   end;
 end;
 
-function TTMDBClient.GetMovieAsync(const AId: Integer): IFuture<TJSONObject>;
+function TTMDBClient.GetMovieAsync(
+  const AId: Integer): IFuture<TJSONObject>;
+var
+  LToken: string;
 begin
+  LToken := FBearerToken;
+
   Result := TTask.Future<TJSONObject>(
     function: TJSONObject
     var
       LUrl: string;
     begin
-      LUrl := BuildUrl(Format('/movie/%d', [AId]), 'credits,keywords,alternative_titles');
-      Result := ExecuteGet(LUrl);
-    end);
+      LUrl := BuildUrl(
+        Format('/movie/%d', [AId]),
+        'credits,keywords,alternative_titles'
+      );
+
+      Result := ExecuteGet(LUrl, LToken);
+    end
+  );
 end;
 
 function TTMDBClient.GetTvShowAsync(const AId: Integer): IFuture<TJSONObject>;
