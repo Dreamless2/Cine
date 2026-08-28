@@ -3,7 +3,8 @@ unit TMDB.MediaEngine;
 interface
 
 uses
-  System.SysUtils, System.JSON, System.Character, System.Math, System.Generics.Collections, LanguageMapper;
+  System.SysUtils, System.JSON, System.Character, System.Math, System.Generics.Collections,
+  LanguageMapper;
 
 type
   TMediaData = record
