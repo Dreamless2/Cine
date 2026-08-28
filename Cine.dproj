@@ -151,6 +151,7 @@
         <DCCReference Include="Builders\ResumoBuilder.pas"/>
         <DCCReference Include="Builders\MidiaFormEvents.pas"/>
         <DCCReference Include="Mapper\LanguageMapper.pas"/>
+        <DCCReference Include="Mapper\CountryMapper.pas"/>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
         </BuildConfiguration>

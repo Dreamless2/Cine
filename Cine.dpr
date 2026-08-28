@@ -12,7 +12,8 @@ uses
   AnimesView in 'Views\AnimesView.pas' {AnimesMain},
   ResumoBuilder in 'Builders\ResumoBuilder.pas',
   MidiaFormEvents in 'Builders\MidiaFormEvents.pas',
-  LanguageMapper in 'Mapper\LanguageMapper.pas';
+  LanguageMapper in 'Mapper\LanguageMapper.pas',
+  CountryMapper in 'Mapper\CountryMapper.pas';
 
 {$R *.res}
 
