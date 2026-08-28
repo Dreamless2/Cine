@@ -167,7 +167,7 @@ begin
        except
         on E: EAggregateException do
         begin
-        if (E.InnerExceptions[Count] > 0) then
+        if (E.InnerExceptions.Count > 0) then
         MessageDlg(
           'Erro TMDB:' + sLineBreak +
           E.InnerExceptions[0].ClassName + ': ' +
