@@ -54,6 +54,7 @@ type
   public
     { Public declarations }
     procedure FormCreate(Sender: TObject);
+    procedure FormDestroy(Sender: TObject);
   end;
 
 var
@@ -71,6 +72,12 @@ begin
     ProdutoraBox, MCUBox, ResumoBox);
   DoubleBuffered := True;
   PanelDesktop.DoubleBuffered := True;
+end;
+
+procedure TFilmesMain.FormDestroy(Sender: TObject);
+begin
+  FMidiaEvents.Free;
+  FTMDBClient.Free;
 end;
 
 
