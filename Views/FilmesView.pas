@@ -90,6 +90,7 @@ begin
   DoubleBuffered := True;
   CodigoBox.OnKeyPress := BuscarFilme;
   CodigoBox.OnExit := BuscarFilmeExit;}
+  ShowMessage('FORM CREATE');
   FMidiaEvents := TMidiaFormHelper.Create(
   [AudioBox, SinopseBox, OriginalBox, EstreiaBox, AlternativoBox, FilmeBox,
    FranquiaBox, GeneroBox, TagsBox, DiretorBox, ArtistasBox, ProdutoraBox, MCUBox],
@@ -107,6 +108,11 @@ begin
     Result := GerarTagFilme(ANome);
   end
 );
+ShowMessage('HELPER CRIADO');
+
+  FMidiaEvents.AtualizarResumo;
+
+  ShowMessage('ATUALIZAR CHAMADO');
 
 FMidiaEvents.AtualizarResumo;
 end;
