@@ -5,7 +5,7 @@ interface
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.ExtCtrls, Vcl.Mask, MidiaFormEvents,
-  Vcl.Buttons;
+  Vcl.Buttons, TMDB.ApiClient;
 
 
 type
@@ -50,6 +50,7 @@ type
   private
     { Private declarations }
     FMidiaEvents: TMidiaFormHelper;
+    FTMDBClient: TTMDBClient;
   public
     { Public declarations }
     procedure FormCreate(Sender: TObject);
