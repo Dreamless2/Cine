@@ -98,6 +98,15 @@ end;
 {procedure TMidiaFormHelper.AtualizarResumo;
 begin
   FResumoBox.Lines.Text := FMontarResumo();
+end;}
+
+procedure TMidiaFormHelper.AtualizarResumo;
+var
+  LResumo: string;
+begin
+  LResumo := FMontarResumo();
+
+  FResumoBox.Lines.Text := LResumo;
 end;
 
 procedure TMidiaFormHelper.DesativarEventos;
