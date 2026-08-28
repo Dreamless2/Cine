@@ -79,7 +79,7 @@ implementation
 
 {$R *.dfm}
 
-constructor TFilmesMain.Create(AOwner: TComponent);
+constructor TSeriesMain.Create(AOwner: TComponent);
 begin
   inherited Create(AOwner);
 
@@ -123,13 +123,13 @@ begin
   end;
 end;
 
-procedure TFilmesMain.FormDestroy(Sender: TObject);
+procedure TSeriesMain.FormDestroy(Sender: TObject);
 begin
   FMidiaEvents.Free;
   FTMDBClient.Free;
 end;
 
-procedure TFilmesMain.LimparPainel(Painel: TPanel);
+procedure TSeriesMain.LimparPainel(Painel: TPanel);
 var
   i: Integer;
 begin
@@ -143,7 +143,7 @@ begin
   end;
 end;
 
-procedure TFilmesMain.PreencherComMedia(const AMedia: TMediaData);
+procedure TSeriesMain.PreencherComMedia(const AMedia: TMediaData);
 begin
   FMidiaEvents.DesativarEventos;
   try
@@ -152,7 +152,7 @@ begin
     OriginalBox.Text := AMedia.NomeOriginal;
     EstreiaBox.Text := AMedia.DataEstreia;
     AlternativoBox.Text := AMedia.NomeAlternativo;
-    FilmeBox.Text := GerarTagFilme(AMedia.Nome);
+    SerieBox.Text := GerarTagFilme(AMedia.Nome);
     GeneroBox.Text := AMedia.Generos;
     TagsBox.Text := AMedia.Tags;
     DiretorBox.Text := AMedia.Diretores;
@@ -164,7 +164,7 @@ begin
   FMidiaEvents.AtualizarResumo;
 end;
 
-procedure TFilmesMain.BuscarFilme(Sender: TObject; var Key: Char);
+procedure TSeriesMain.BuscarFilme(Sender: TObject; var Key: Char);
 var
   LMovieId: Integer;
   LFuture: IFuture<TJSONObject>;
@@ -221,7 +221,7 @@ begin
   end;
 end;
 
-procedure TFilmesMain.BuscarFilmeExit(Sender: TObject);
+procedure TSeriesMain.BuscarFilmeExit(Sender: TObject);
 var
   LKey: Char;
 begin
@@ -229,7 +229,7 @@ begin
   BuscarFilme(Sender, LKey);
 end;
 
-procedure TFilmesMain.CopiarButton_Click(Sender: TObject);
+procedure TSeriesMain.CopiarButton_Click(Sender: TObject);
 begin
   ResumoBox.SelectAll;
   ResumoBox.CopyToClipboard;
