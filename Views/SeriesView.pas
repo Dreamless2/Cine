@@ -92,8 +92,7 @@ begin
     [AudioBox, SinopseBox, OriginalBox, EstreiaBox, AlternativoBox, SerieBox,
     MCUBox, LocalBox, IdiomaBox, ReferenciaBox, AutoresBox, FranquiaBox, ShowrunnersBox,
     GeneroBox, TagsBox, DiretorBox, ArtistasBox, ProdutoraBox],
-      ResumoBox
-    ]
+    NomeBox, SerieBox, ResumoBox,
     function: string
     begin
       Result := MontarResumo(
