@@ -103,15 +103,15 @@ var
   LJson: TJSONObject;
   LMedia: TMediaData;
 begin
-  if Key = #13 then
+  if Key <> #13 then
+  Exit;
+
+  if not TryStrToInt(Trim(CodigoBox.Text), LMovieId) then
   begin
-    Key := #0;
-    if not TryStrToInt(Trim(CodigoBox.Text), LMovieId) then
-    begin
-      MessageDlg('Digite o código do filme no TMDB.', mtWarning, [mbOK], 0);
-      CodigoBox.SetFocus;
-      Exit;
-    end;
+    MessageDlg('Digite o código do filme no TMDB.', mtWarning, [mbOK], 0);
+    CodigoBox.SetFocus;
+    Exit;
+  end;
 
     Screen.Cursor := crHourGlass;
     try
@@ -131,7 +131,6 @@ begin
     finally
       Screen.Cursor := crDefault;
     end;
-  end;
 end;
 
 procedure TFilmesMain.PreencherComMedia(const AMedia: TMediaData);
