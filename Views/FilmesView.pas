@@ -59,6 +59,7 @@ type
     procedure PreencherComMedia(const AMedia: TMediaData);
     procedure BuscarFilme(Sender: TObject; var Key: Char);
     procedure BuscarFilmeExit(Sender: TObject);
+    constructor Create(AOwner: TComponent);
   end;
 
 var
