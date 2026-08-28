@@ -104,6 +104,7 @@ var
 begin
   if Key = #13 then
   begin
+    Key := #0;
     if not TryStrToInt(CodigoBox.Text, LMovieId) then
     begin
       MessageDlg('Digite o código do filme no TMDB.', mtWarning, [mbOK], 0);
