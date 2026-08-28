@@ -55,6 +55,7 @@ type
     { Public declarations }
     procedure FormCreate(Sender: TObject);
     procedure FormDestroy(Sender: TObject);
+    procedure BuscarFilme;
   end;
 
 var
@@ -79,6 +80,8 @@ begin
   FMidiaEvents.Free;
   FTMDBClient.Free;
 end;
+
+
 
 
 end.
