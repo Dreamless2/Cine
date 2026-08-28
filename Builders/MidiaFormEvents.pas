@@ -7,30 +7,25 @@ uses
   ResumoBuilder, TMDB.MediaEngine;
 
 type
-  // Helper to access protected OnChange of TCustomEdit
   TCustomEditAberto = class(TCustomEdit);
 
   TMidiaFormHelper = class
   private
     FNomeBox, FAudioBox, FSinopseBox, FOriginalBox, FEstreiaBox, FAlternativoBox,
     FFilmeBox, FFranquiaBox, FGeneroBox, FTagsBox, FDiretorBox, FArtistasBox,
-    FProdutoraBox, FMCUBox: TControl;   // ← changed to TControl
-
+    FProdutoraBox, FMCUBox: TControl;
     FResumoBox: TMemo;
-
     function GetText(AControl: TControl): string;
     procedure SetText(AControl: TControl; const AValue: string);
     procedure AssignOnChange(AControl: TControl; AEvent: TNotifyEvent);
-
     procedure QualquerAlteracao(Sender: TObject);
     procedure NomeBoxChange(Sender: TObject);
   public
     constructor Create(
       ANomeBox, AAudioBox, ASinopseBox, AOriginalBox, AEstreiaBox, AAlternativoBox,
       AFilmeBox, AFranquiaBox, AGeneroBox, ATagsBox, ADiretorBox, AArtistasBox,
-      AProdutoraBox, AMCUBox: TControl;   // ← changed to TControl
+      AProdutoraBox, AMCUBox: TControl;
       AResumoBox: TMemo);
-
     procedure AtualizarResumo;
   end;
 
