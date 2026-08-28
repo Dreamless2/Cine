@@ -115,7 +115,7 @@ begin
 
   try
     LLang := LJson.GetValue<string>('original_language', '').ToLower;
-    Result.IdiomaOriginal := MapearIdioma(LLang);
+    Result.IdiomaOriginal := MapearIdioma(LLang).ToLower;
     LIsAnimacao := False;
 
     if not AIsSerie then
