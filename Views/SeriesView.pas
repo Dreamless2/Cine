@@ -95,10 +95,10 @@ begin
     function: string
     begin
       Result := MontarResumo(
-        NomeBox.Text, AudioBox.Text, SinopseBox.Text, OriginalBox.Text,
-        EstreiaBox.Text, AlternativoBox.Text, TagsBox.Text, FilmeBox.Text,
-        MCUBox.Text, FranquiaBox.Text, GeneroBox.Text, DiretorBox.Text,
-        ArtistasBox.Text, ProdutoraBox.Text);
+        NomeBox.Text, AudioBox.Text, SinopseBox.Text, OriginalBox.Text, EstreiaBox.Text, AlternativoBox.Text,
+        TagsBox.Text, SerieBox.Text, MCUBox.Text, LocalBox.Text, IdiomaBox.Text, ReferenciaBox.Text, AutoresBox.Text,
+        FranquiaBox.Text, ShowrunnersBox.Text, GeneroBox.Text, DiretorBox.Text, ArtistasBox.Text, ProdutoraBox.Text
+      );
     end,
     function(ANome: string): string
     begin
