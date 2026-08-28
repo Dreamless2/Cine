@@ -11,6 +11,7 @@ type
 
   TTMDBClient = class
   private
+    FHttpClient: THTTPClient;
     FBearerToken: string;
     const BaseUrl = 'https://api.themoviedb.org/3';
     function BuildUrl(const APath: string; const AAppendToResponse: string): string;
@@ -35,7 +36,7 @@ end;
 
 destructor TTMDBClient.Destroy;
 begin
-  FHttpClient.Free;
+  //FHttpClient.Free;
   inherited Destroy;
 end;
 
