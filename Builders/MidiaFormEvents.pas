@@ -95,11 +95,6 @@ begin
   AtualizarResumo;
 end;
 
-{procedure TMidiaFormHelper.AtualizarResumo;
-begin
-  FResumoBox.Lines.Text := FMontarResumo();
-end;}
-
 procedure TMidiaFormHelper.AtualizarResumo;
 begin
   if not Assigned(FResumoBox) then
