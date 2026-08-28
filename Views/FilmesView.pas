@@ -88,6 +88,9 @@ begin
 
   DoubleBuffered := True;
   CodigoBox.OnKeyPress := BuscarFilme;
+  CodigoBox.TabStop := True;
+CodigoBox.Enabled := True;
+CodigoBox.ReadOnly := False;
 end;
 
 procedure TFilmesMain.FormDestroy(Sender: TObject);
