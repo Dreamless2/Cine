@@ -45,25 +45,48 @@ begin
   Result := Format('%s%s?append_to_response=%s', [BaseUrl, APath, AAppendToResponse]);
 end;
 
-function TTMDBClient.ExecuteGet(const AUrl: string): TJSONObject;
+function TTMDBClient.ExecuteGet(
+  const AUrl, ABearerToken: string): TJSONObject;
 var
+  LHttpClient: THTTPClient;
   LResponse: IHTTPResponse;
   LValue: TJSONValue;
 begin
-  LResponse := FHttpClient.Get(AUrl);
+  LHttpClient := THTTPClient.Create;
+  try
+    LHttpClient.CustomHeaders['Authorization'] :=
+      'Bearer ' + ABearerToken;
 
-  if LResponse.StatusCode <> 200 then
-    raise ETMDBApiError.CreateFmt('TMDB request failed with status %d: %s',
-      [LResponse.StatusCode, LResponse.ContentAsString]);
+    LHttpClient.CustomHeaders['Accept'] :=
+      'application/json';
 
-  LValue := TJSONObject.ParseJSONValue(LResponse.ContentAsString(TEncoding.UTF8));
-  if not Assigned(LValue) or not (LValue is TJSONObject) then
-  begin
-    LValue.Free;
-    raise ETMDBApiError.Create('TMDB response could not be parsed as a JSON object');
+    LResponse := LHttpClient.Get(AUrl);
+
+    if LResponse.StatusCode <> 200 then
+      raise ETMDBApiError.CreateFmt(
+        'TMDB request failed with status %d: %s',
+        [
+          LResponse.StatusCode,
+          LResponse.ContentAsString
+        ]
+      );
+
+    LValue := TJSONObject.ParseJSONValue(
+      LResponse.ContentAsString(TEncoding.UTF8)
+    );
+
+    if not Assigned(LValue) or not (LValue is TJSONObject) then
+    begin
+      LValue.Free;
+      raise ETMDBApiError.Create(
+        'TMDB response could not be parsed as a JSON object'
+      );
+    end;
+
+    Result := LValue as TJSONObject;
+  finally
+    LHttpClient.Free;
   end;
-
-  Result := LValue as TJSONObject;
 end;
 
 function TTMDBClient.GetMovieAsync(const AId: Integer): IFuture<TJSONObject>;
