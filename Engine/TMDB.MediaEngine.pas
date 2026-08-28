@@ -85,7 +85,7 @@ end;
 
 function GerarTagFilme(const ANome: string): string;
 begin
-  Result := GerarTagDupla(ANome).ToLower;
+  Result := GerarTagDupla(ANome);
 end;
 
 procedure TratarDataEAno(const ADataISO: string; out ADataPTBR, AAno: string);
@@ -143,7 +143,7 @@ begin
         if LItem.GetValue<Integer>('id', 0) = 16 then
           LIsAnimacao := True;
 
-        Result.Generos := (Result.Generos + ' ' + GerarTagDupla(LItem.GetValue<string>('name', ''))).Trim;
+        Result.Generos := (Result.Generos + ' ' + GerarTagDupla(LItem.GetValue<string>('name', ''))).Trim.ToLower;
       end;
     end;
 
