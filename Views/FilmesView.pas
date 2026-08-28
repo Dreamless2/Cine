@@ -5,7 +5,7 @@ interface
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.ExtCtrls, Vcl.Mask, MidiaFormEvents,
-  Vcl.Buttons, TMDB.ApiClient;
+  Vcl.Buttons, TMDB.ApiClient, System.JSON, MidiaFormEvents;
 
 
 type
@@ -79,6 +79,48 @@ procedure TFilmesMain.FormDestroy(Sender: TObject);
 begin
   FMidiaEvents.Free;
   FTMDBClient.Free;
+end;
+
+procedure TFilmesMain.BuscarFilme;
+var
+  LMovieId: Integer;
+  LFuture: IFuture<TJSONObject>;
+  LJson: TJSONObject;
+  LMedia: TMediaData;
+begin
+  if not Assigned(FTMDBClient) then
+  begin
+    MessageDlg('Configure o token da API TMDB antes de buscar.', mtWarning, [mbOK], 0);
+    Exit;
+  end;
+
+  if not TryStrToInt(BuscarBox.Text.Trim, LMovieId) then
+  begin
+    MessageDlg('Digite o código (ID) do filme no TMDB.', mtWarning, [mbOK], 0);
+    BuscarBox.SetFocus;
+    Exit;
+  end;
+
+  BuscarButton.Enabled := False;
+  Screen.Cursor := crHourGlass;
+  try
+    try
+      LFuture := FTMDBClient.GetMovieAsync(LMovieId);
+      LJson := LFuture.Value;
+      try
+        LMedia := ProcessarMidiaTMDB(LJson.ToJSON, False);
+        FMidiaEvents.PreencherComMedia(LMedia);
+      finally
+        LJson.Free;
+      end;
+    except
+      on E: Exception do
+        MessageDlg('Erro ao buscar filme: ' + E.Message, mtError, [mbOK], 0);
+    end;
+  finally
+    Screen.Cursor := crDefault;
+    BuscarButton.Enabled := True;
+  end;
 end;
 
 
