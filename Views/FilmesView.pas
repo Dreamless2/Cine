@@ -97,9 +97,8 @@ begin
   FMidiaEvents.AtualizarResumo;
   CodigoBox.OnKeyPress := BuscarFilme;
   CodigoBox.OnExit := BuscarFilmeExit;
-  CopiarButton.OnClick := Cop
+  CopiarButton.OnClick := CopiarButton_Click;
 end;
-
 
 function ExceptionDetalhes(E: Exception): string;
 begin
@@ -207,6 +206,10 @@ begin
   BuscarFilme(Sender, LKey);
 end;
 
+procedure TFilmesMain.CopiarButton_Click(Sender: TObject);
+begin
+  ResumoBox
+end;
 
 
 end.
