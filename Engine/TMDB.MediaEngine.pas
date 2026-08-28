@@ -29,6 +29,7 @@ type
 function ProcessarMidiaTMDB(const AJsonString: string; AIsSerie: Boolean): TMediaData;
 function GerarTagDupla(const ATexto: string): string;
 function GerarTag(const ANome: string): string;
+function FormatarParaTag(const ATexto: string; ARemoverAcentos: Boolean = True): string;
 
 implementation
 
