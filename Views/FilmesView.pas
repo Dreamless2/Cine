@@ -5,7 +5,7 @@ interface
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.ExtCtrls, Vcl.Mask, MidiaFormEvents,
-  Vcl.Buttons, TMDB.ApiClient, System.JSON, TMDB.MediaEngine, System.Threading;
+  Vcl.Buttons, TMDB.ApiClient, System.JSON, TMDB.MediaEngine, System.Threading, ResumoBuilder;
 
 
 type
@@ -86,6 +86,7 @@ begin
     end);
 
   DoubleBuffered := True;
+  CodigoBox.OnKeyPress := BuscarFilme;
 end;
 
 procedure TFilmesMain.FormDestroy(Sender: TObject);
