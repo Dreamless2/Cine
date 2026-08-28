@@ -20,8 +20,6 @@ begin
     Exit;
 
   MapaPaises := TDictionary<string, string>.Create;
-
-  // Lista de Países (Inglês Capitalizado -> Português Capitalizado)
   MapaPaises.AddOrSetValue('Afghanistan', 'Afeganistão');
   MapaPaises.AddOrSetValue('Albania', 'Albânia');
   MapaPaises.AddOrSetValue('Algeria', 'Argélia');
