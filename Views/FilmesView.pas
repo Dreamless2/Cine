@@ -69,7 +69,7 @@ implementation
 
 {$R *.dfm}
 
-constructor TFilmesMain.FormCreate(Sender: TObject);
+constructor TFilmesMain.Create(AOwner: TComponent);
 begin
   {FMidiaEvents := TMidiaFormHelper.Create(
     [AudioBox, SinopseBox, OriginalBox, EstreiaBox, AlternativoBox, FilmeBox,
