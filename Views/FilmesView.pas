@@ -58,6 +58,7 @@ type
     procedure FormDestroy(Sender: TObject);
     procedure PreencherComMedia(const AMedia: TMediaData);
     procedure BuscarFilme(Sender: TObject; var Key: Char);
+    procedure BuscarFilmeExit(Sender: TObject);
   end;
 
 var
@@ -95,6 +96,44 @@ begin
   FMidiaEvents.Free;
   FTMDBClient.Free;
 end;
+
+procedure TFilmesMain.BuscarFilmeExit(Sender: TObject);
+var
+  LMovieId: Integer;
+  LFuture: IFuture<TJSONObject>;
+  LJson: TJSONObject;
+  LMedia: TMediaData;
+begin
+  if Key = #13 then
+  begin
+    Key := #0;
+    ShowMessage('ENTER FUNCIONOU');
+    Exit;
+  end;
+
+  LMovieId := 0;
+  Screen.Cursor := crHourGlass;
+  try
+    try
+      LFuture := FTMDBClient.GetMovieAsync(LMovieId);
+      LJson := LFuture.Value;
+      try
+        LMedia := ProcessarMidiaTMDB(LJson.ToJSON, False);
+        PreencherComMedia(LMedia);
+      finally
+        LJson.Free;
+      end;
+    except
+      on E: Exception do
+        MessageDlg('Erro ao buscar filme: ' + E.Message, mtError, [mbOK], 0);
+    end;
+  finally
+    Screen.Cursor := crDefault;
+  end;
+end;
+
+
+
 
 procedure TFilmesMain.BuscarFilme(Sender: TObject; var Key: Char);
 var
