@@ -220,7 +220,7 @@ begin
     NomeTratado := Copy(NomeTratado, 5, MaxInt).Trim;
 
   if not MapaPaises.TryGetValue(NomeTratado, Result) then
-    Result := Formatar ANomeIngles.Trim;
+    Result := FormatarParaTag) ANomeIngles.Trim;
 end;
 
 initialization
