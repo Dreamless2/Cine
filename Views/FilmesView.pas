@@ -6,7 +6,7 @@ uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.ExtCtrls, Vcl.Mask, MidiaFormEvents,
   Vcl.Buttons, TMDB.ApiClient, System.JSON, TMDB.MediaEngine, System.Threading, ResumoBuilder,
-  System.UITypes;
+  System.UITypes, TMDB.KeyStore;
 
 
 type
@@ -73,7 +73,10 @@ constructor TFilmesMain.Create(AOwner: TComponent);
 begin
   inherited Create(AOwner);
 
-  FTMDBClient := TTMDBClient.Create(FTMDBBearerToken);
+  if HasStoredApiKey then
+    FTMDBClient := TTMDBClient.Create(LoadApiKey)
+  else
+    FTMDBClient := nil;
 
   FMidiaEvents := TMidiaFormHelper.Create(
     [AudioBox, SinopseBox, OriginalBox, EstreiaBox, AlternativoBox, FilmeBox,
