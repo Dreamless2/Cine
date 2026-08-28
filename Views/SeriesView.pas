@@ -89,9 +89,9 @@ begin
     FTMDBClient := nil;
 
   FMidiaEvents := TMidiaFormHelper.Create(
-    [NomeBox, AudioBox, SinopseBox, OriginalBox, EstreiaBox, AlternativoBox,
-      TagsBox, SerieBox, MCUBox, LocalBox, IdiomaBox, ReferenciaBox, AutoresBox,
-      FranquiaBox, ShowrunnersBox, GeneroBox, DiretorBox, ArtistasBox, ProdutoraBox,
+    [AudioBox, SinopseBox, OriginalBox, EstreiaBox, AlternativoBox, SerieBox,
+    MCUBox, LocalBox, IdiomaBox, ReferenciaBox, AutoresBox, FranquiaBox, ShowrunnersBox,
+    GeneroBox, TagsBox, DiretorBox, ArtistasBox, ProdutoraBox],
       ResumoBox
     ]
     function: string
