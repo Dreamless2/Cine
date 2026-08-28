@@ -54,7 +54,7 @@ type
     FTMDBClient: TTMDBClient;
   public
     { Public declarations }
-    procedure FormCreate(Sender: TObject);
+    //procedure FormCreate(Sender: TObject);
     procedure FormDestroy(Sender: TObject);
     procedure PreencherComMedia(const AMedia: TMediaData);
     procedure BuscarFilme(Sender: TObject; var Key: Char);
@@ -69,7 +69,7 @@ implementation
 
 {$R *.dfm}
 
-procedure TFilmesMain.FormCreate(Sender: TObject);
+constructor TFilmesMain.FormCreate(Sender: TObject);
 begin
   {FMidiaEvents := TMidiaFormHelper.Create(
     [AudioBox, SinopseBox, OriginalBox, EstreiaBox, AlternativoBox, FilmeBox,
@@ -91,6 +91,7 @@ begin
   DoubleBuffered := True;
   CodigoBox.OnKeyPress := BuscarFilme;
   CodigoBox.OnExit := BuscarFilmeExit;}
+  inherited Create(AOwner);
   ShowMessage('FORM CREATE');
   FMidiaEvents := TMidiaFormHelper.Create(
   [AudioBox, SinopseBox, OriginalBox, EstreiaBox, AlternativoBox, FilmeBox,
