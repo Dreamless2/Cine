@@ -27,7 +27,7 @@ type
 
 function ProcessarMidiaTMDB(const AJsonString: string; AIsSerie: Boolean): TMediaData;
 function GerarTagDupla(const ATexto: string): string;
-function GerarTagFilme(const ANome: string): string;
+function GerarTag(const ANome: string): string;
 
 implementation
 
@@ -83,7 +83,7 @@ begin
     Result := LSemAcento + ' ' + LComAcento;
 end;
 
-function GerarTagFilme(const ANome: string): string;
+function GerarTag(const ANome: string): string;
 begin
   Result := GerarTagDupla(ANome);
 end;

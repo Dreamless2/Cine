@@ -143,7 +143,7 @@ begin
     OriginalBox.Text := AMedia.NomeOriginal;
     EstreiaBox.Text := AMedia.DataEstreia;
     AlternativoBox.Text := AMedia.NomeAlternativo;
-    FilmeBox.Text := GerarTagFilme(AMedia.Nome);
+    FilmeBox.Text := GerarTag(AMedia.Nome);
     GeneroBox.Text := AMedia.Generos;
     TagsBox.Text := AMedia.Tags;
     DiretorBox.Text := AMedia.Diretores;
