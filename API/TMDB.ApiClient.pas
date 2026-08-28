@@ -53,31 +53,25 @@ var
 begin
   LHttpClient := THTTPClient.Create;
   try
-    LHttpClient.CustomHeaders['Authorization'] :=
-      'Bearer ' + ABearerToken;
-
-    LHttpClient.CustomHeaders['Accept'] :=
-      'application/json';
-
+    LHttpClient.CustomHeaders['Authorization'] := 'Bearer ' + ABearerToken;
+    LHttpClient.CustomHeaders['Accept'] := 'application/json';
     LResponse := LHttpClient.Get(AUrl);
 
     if LResponse.StatusCode <> 200 then
-      raise ETMDBApiError.CreateFmt(
-        'TMDB request failed with status %d: %s',
+      raise ETMDBApiError.CreateFmt('TMDB request failed with status %d: %s',
         [
           LResponse.StatusCode,
           LResponse.ContentAsString
         ]
       );
 
-    LValue := TJSONObject.ParseJSONValue(
-      LResponse.ContentAsString(TEncoding.UTF8)
+    LValue := TJSONObject.ParseJSONValue(LResponse.ContentAsString(TEncoding.UTF8)
     );
 
     if not Assigned(LValue) or not (LValue is TJSONObject) then
     begin
       LValue.Free;
-      raise ETMDBApiError.Create('TMDB response could not be parsed as a JSON object'      );
+      raise ETMDBApiError.Create('TMDB response could not be parsed as a JSON object');
     end;
 
     Result := LValue as TJSONObject;
@@ -97,11 +91,7 @@ begin
     var
       LUrl: string;
     begin
-      LUrl := BuildUrl(
-        Format('/movie/%d', [AId]),
-        'credits,keywords,alternative_titles'
-      );
-
+      LUrl := BuildUrl(Format('/movie/%d', [AId]), 'credits,keywords,alternative_titles');
       Result := ExecuteGet(LUrl, LToken);
     end
   );
