@@ -164,18 +164,19 @@ begin
         finally
           LJson.Free;
         end;
-       except
-        on E: EAggregateException do
-        begin
-        if (E.InnerExceptions.Count > 0) then
-        MessageDlg(
-          'Erro TMDB:' + sLineBreak +
-          E.InnerExceptions[0].ClassName + ': ' +
-          E.InnerExceptions[0].Message,
-          mtError,
-          [mbOK],
-          0
-        )
+except
+  on E: EAggregateException do
+  begin
+    // CORREÇÃO: Usa-se E.Count em vez de E.InnerExceptions.Count
+    if (E.Count > 0) then
+      MessageDlg(
+        'Erro TMDB:' + sLineBreak +
+        E.InnerExceptions[0].ClassName + ': ' +
+        E.InnerExceptions[0].Message,
+        mtError,
+        [mbOK],
+        0
+      )
     else
       MessageDlg(
         'Erro TMDB:' + sLineBreak + E.Message,
@@ -194,6 +195,7 @@ begin
       0
     );
 end;
+
     finally
       Screen.Cursor := crDefault;
     end;
