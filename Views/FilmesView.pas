@@ -113,24 +113,24 @@ begin
     Exit;
   end;
 
-    Screen.Cursor := crHourGlass;
+  Screen.Cursor := crHourGlass;
+  try
     try
+      LFuture := FTMDBClient.GetMovieAsync(LMovieId);
+      LJson := LFuture.Value;
       try
-        LFuture := FTMDBClient.GetMovieAsync(LMovieId);
-        LJson := LFuture.Value;
-        try
-          LMedia := ProcessarMidiaTMDB(LJson.ToJSON, False);
-          PreencherComMedia(LMedia);
-        finally
-          LJson.Free;
-        end;
-      except
-        on E: Exception do
-          MessageDlg('Erro ao buscar filme: ' + E.Message, mtError, [mbOK], 0);
+        LMedia := ProcessarMidiaTMDB(LJson.ToJSON, False);
+        PreencherComMedia(LMedia);
+      finally
+        LJson.Free;
       end;
-    finally
-      Screen.Cursor := crDefault;
+    except
+      on E: Exception do
+        MessageDlg('Erro ao buscar filme: ' + E.Message, mtError, [mbOK], 0);
     end;
+  finally
+    Screen.Cursor := crDefault;
+  end;
 end;
 
 procedure TFilmesMain.PreencherComMedia(const AMedia: TMediaData);
