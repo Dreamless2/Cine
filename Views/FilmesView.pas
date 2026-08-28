@@ -104,31 +104,31 @@ var
 begin
   if Key = #13 then
   begin
-  if not TryStrToInt(CodigoBox.Text, LMovieId) then
-  begin
-    MessageDlg('Digite o código do filme no TMDB.', mtWarning, [mbOK], 0);
-    CodigoBox.SetFocus;
-    Exit;
-  end;
-
-  Screen.Cursor := crHourGlass;
-  try
-    try
-      LFuture := FTMDBClient.GetMovieAsync(LMovieId);
-      LJson := LFuture.Value;
-      try
-        LMedia := ProcessarMidiaTMDB(LJson.ToJSON, False);
-        PreencherComMedia(LMedia);
-      finally
-        LJson.Free;
-      end;
-    except
-      on E: Exception do
-        MessageDlg('Erro ao buscar filme: ' + E.Message, mtError, [mbOK], 0);
+    if not TryStrToInt(CodigoBox.Text, LMovieId) then
+    begin
+      MessageDlg('Digite o código do filme no TMDB.', mtWarning, [mbOK], 0);
+      CodigoBox.SetFocus;
+      Exit;
     end;
-  finally
-    Screen.Cursor := crDefault;
-  end;
+
+    Screen.Cursor := crHourGlass;
+    try
+      try
+        LFuture := FTMDBClient.GetMovieAsync(LMovieId);
+        LJson := LFuture.Value;
+        try
+          LMedia := ProcessarMidiaTMDB(LJson.ToJSON, False);
+          PreencherComMedia(LMedia);
+        finally
+          LJson.Free;
+        end;
+      except
+        on E: Exception do
+          MessageDlg('Erro ao buscar filme: ' + E.Message, mtError, [mbOK], 0);
+      end;
+    finally
+      Screen.Cursor := crDefault;
+    end;
   end;
 end;
 
