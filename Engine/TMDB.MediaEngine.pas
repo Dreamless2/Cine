@@ -154,9 +154,8 @@ begin
     begin
       if LIsAnimacao and ((LLang = 'ja') or (LLang = 'ko') or (LLang = 'zh')) then
       begin
-        if LLang = 'ja' then Result.Tags := '#Anime ' + FormatarParaTag('Anime' + LAno)
-        else if LLang = 'ko' then Result.Tags := '#Manhwa ' + FormatarParaTag('Manhwa' + LAno)
-        else if LLang = 'zh' then Result.Tags := '#Donghua ' + FormatarParaTag('Donghua' + LAno);
+        if (LLang = 'ja') or (LLang = 'ko') or (LLang = 'zh') then
+          Result.Tags := '#Anime ' + FormatarParaTag('Anime' + LAno)
       end
       else
       begin
