@@ -51,11 +51,12 @@ type
     { Private declarations }
     FMidiaEvents: TMidiaFormHelper;
     FTMDBClient: TTMDBClient;
+    procedure BuscarFilme(Sender: TObject; var Key: Char);
   public
     { Public declarations }
     procedure FormCreate(Sender: TObject);
     procedure FormDestroy(Sender: TObject);
-    procedure BuscarFilme;
+
   end;
 
 var
@@ -73,7 +74,7 @@ begin
     ProdutoraBox, MCUBox, ResumoBox);
   DoubleBuffered := True;
   PanelDesktop.DoubleBuffered := True;
-  CodigoBox.OnKeyPress := Buscarilme;
+  CodigoBox.OnKeyPress := BuscarFilme;
 end;
 
 procedure TFilmesMain.FormDestroy(Sender: TObject);
@@ -82,14 +83,14 @@ begin
   FTMDBClient.Free;
 end;
 
-procedure TFilmesMain.BuscarFilme;
+procedure TFilmesMain.BuscarFilme(Sender: TObject; var Key: Char);
 var
   LMovieId: Integer;
   LFuture: IFuture<TJSONObject>;
   LJson: TJSONObject;
   LMedia: TMediaData;
 begin
-  if not TryStrToInt(CodigoBox.Text.Trim, LMovieId) then
+  if not TryStrToInt(CodigoBox.Text, LMovieId) then
   begin
     MessageDlg('Digite o código do filme no TMDB.', mtWarning, [mbOK], 0);
     CodigoBox.SetFocus;
