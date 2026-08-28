@@ -52,12 +52,12 @@ type
     { Private declarations }
     FMidiaEvents: TMidiaFormHelper;
     FTMDBClient: TTMDBClient;
-    procedure BuscarFilme(Sender: TObject; var Key: Char);
   public
     { Public declarations }
     procedure FormCreate(Sender: TObject);
     procedure FormDestroy(Sender: TObject);
     procedure PreencherComMedia(const AMedia: TMediaData);
+    procedure BuscarFilme(Sender: TObject; var Key: Char);
   end;
 
 var
