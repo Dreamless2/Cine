@@ -73,6 +73,7 @@ begin
     ProdutoraBox, MCUBox, ResumoBox);
   DoubleBuffered := True;
   PanelDesktop.DoubleBuffered := True;
+  CodigoBox.OnKeyPress := Buscarilme;
 end;
 
 procedure TFilmesMain.FormDestroy(Sender: TObject);
