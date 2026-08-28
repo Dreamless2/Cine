@@ -59,7 +59,7 @@ begin
     LBuilder.AppendLine(Format('**Diretor:** %s', [ValorOuTraco(ADiretorBox)]));
     LBuilder.AppendLine(Format('**Fase MCU:** %s', [ValorOuTraco(AMCUBox)]));
     LBuilder.AppendLine(Format('**Estrelas:** %s', [ValorOuTraco(AArtistasBox)]));
-    LBuilder.Append(Format('**Estúdio:** %s', [ValorOuTraco(AProdutoraBox)]));
+    LBuilder.Append(Format('**Produtora:** %s', [ValorOuTraco(AProdutoraBox)]));
     Result := LBuilder.ToString;
   finally
     LBuilder.Free;
