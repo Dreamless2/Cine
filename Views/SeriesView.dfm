@@ -367,7 +367,7 @@ object SeriesMain: TSeriesMain
       TabOrder = 13
       TextHint = 'Autores'
     end
-    object Showrunners: TEdit
+    object ShowrunnersBox: TEdit
       Left = 455
       Top = 558
       Width = 393

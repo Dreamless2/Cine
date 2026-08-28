@@ -55,7 +55,7 @@ type
     IdiomaBox: TEdit;
     ReferenciaBox: TEdit;
     AutoresBox: TEdit;
-    Showrunners: TEdit;
+    ShowrunnersBox: TEdit;
     Label21: TLabel;
   private
     { Private declarations }
