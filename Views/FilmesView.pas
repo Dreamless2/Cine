@@ -151,9 +151,19 @@ begin
           LJson.Free;
         end;
       except
-        on E: Exception do
-          MessageDlg('Erro ao buscar filme: ' + E.Message, mtError, [mbOK], 0);
-      end;
+  on E: Exception do
+  begin
+    var LMsg := 'Classe: ' + E.ClassName + sLineBreak +
+                'Mensagem: ' + E.Message;
+
+    if Assigned(E.InnerException) then
+      LMsg := LMsg + sLineBreak +
+              'Inner: ' + E.InnerException.ClassName + ' - ' +
+              E.InnerException.Message;
+
+    MessageDlg(LMsg, mtError, [mbOK], 0);
+  end;
+end;
     finally
       Screen.Cursor := crDefault;
     end;
