@@ -102,10 +102,13 @@ end;}
 
 procedure TMidiaFormHelper.AtualizarResumo;
 begin
-  FResumoBox.Text := 'TESTE - AtualizarResumo executou';
+  if not Assigned(FResumoBox) then
+    Exit;
 
-  if Assigned(FMontarResumo) then
-    FResumoBox.Text := FMontarResumo();
+  if not Assigned(FMontarResumo) then
+    Exit;
+
+  FResumoBox.Text := FMontarResumo();
 end;
 
 procedure TMidiaFormHelper.DesativarEventos;
