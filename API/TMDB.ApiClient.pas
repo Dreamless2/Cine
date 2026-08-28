@@ -36,7 +36,7 @@ end;
 
 destructor TTMDBClient.Destroy;
 begin
-  //FHttpClient.Free;
+  FHttpClient.Free;
   inherited Destroy;
 end;
 
