@@ -85,7 +85,7 @@ end;
 
 function GerarTagFilme(const ANome: string): string;
 begin
-  Result := GerarTagDupla(ANome);
+  Result := GerarTagDupla(ANome).ToLower;
 end;
 
 procedure TratarDataEAno(const ADataISO: string; out ADataPTBR, AAno: string);
