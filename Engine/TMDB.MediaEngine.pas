@@ -221,7 +221,7 @@ begin
       begin
         LOriginArr := LJson.GetValue<TJSONArray>('origin_country', nil);
         if Assigned(LOriginArr) and (LOriginArr.Count > 0) then
-          Result.LocalProducao := LOriginArr.Items[0].Value;
+          Result.LocalProducao := MapearPais(LOriginArr.Items[0].Value);
       end;
 
       LArr := LJson.GetValue<TJSONArray>('created_by', nil);
