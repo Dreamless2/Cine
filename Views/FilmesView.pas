@@ -5,7 +5,8 @@ interface
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.ExtCtrls, Vcl.Mask, MidiaFormEvents,
-  Vcl.Buttons, TMDB.ApiClient, System.JSON, TMDB.MediaEngine, System.Threading, ResumoBuilder;
+  Vcl.Buttons, TMDB.ApiClient, System.JSON, TMDB.MediaEngine, System.Threading, ResumoBuilder,
+  System.UITypes;
 
 
 type
@@ -105,7 +106,7 @@ begin
   if Key = #13 then
   begin
     Key := #0;
-    if not TryStrToInt(CodigoBox.Text, LMovieId) then
+    if not TryStrToInt(Trim(CodigoBox.Text), LMovieId) then
     begin
       MessageDlg('Digite o código do filme no TMDB.', mtWarning, [mbOK], 0);
       CodigoBox.SetFocus;
