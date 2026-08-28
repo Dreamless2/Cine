@@ -103,8 +103,10 @@ var
   LJson: TJSONObject;
   LMedia: TMediaData;
 begin
-  if Key <> #13 then
+  if Key = #13 then begin Key := #0;
+  ShowMessage('ENTER FUNCIONOU');
   Exit;
+  end;
 
   Screen.Cursor := crHourGlass;
   try
