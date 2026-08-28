@@ -88,8 +88,7 @@ begin
   end;
 end;
 
-function TTMDBClient.GetMovieAsync(
-  const AId: Integer): IFuture<TJSONObject>;
+function TTMDBClient.GetMovieAsync(const AId: Integer): IFuture<TJSONObject>;
 var
   LToken: string;
 begin
