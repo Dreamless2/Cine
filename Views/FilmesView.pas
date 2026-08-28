@@ -72,6 +72,9 @@ implementation
 constructor TFilmesMain.Create(AOwner: TComponent);
 begin
   inherited Create(AOwner);
+
+  FTMDBClient := TTMDBClient.Create(FTMDBBearerToken);
+
   FMidiaEvents := TMidiaFormHelper.Create(
     [AudioBox, SinopseBox, OriginalBox, EstreiaBox, AlternativoBox, FilmeBox,
      FranquiaBox, GeneroBox, TagsBox, DiretorBox, ArtistasBox, ProdutoraBox, MCUBox],
