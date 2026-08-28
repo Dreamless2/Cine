@@ -208,7 +208,8 @@ end;
 
 procedure TFilmesMain.CopiarButton_Click(Sender: TObject);
 begin
-  ResumoBox
+  ResumoBox.SelectAll;
+  ResumoBox.CopyToClipboard;
 end;
 
 
