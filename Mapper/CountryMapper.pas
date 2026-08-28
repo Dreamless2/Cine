@@ -7,9 +7,7 @@ function MapearPais(const ANomeIngles: string): string;
 implementation
 
 uses
-  System.SysUtils,
-  System.StrUtils,
-  System.Generics.Collections;
+  System.SysUtils, System.StrUtils, System.Generics.Collections, TMDB.MediaEngine;
 
 var
   MapaPaises: TDictionary<string, string>;
@@ -222,7 +220,7 @@ begin
     NomeTratado := Copy(NomeTratado, 5, MaxInt).Trim;
 
   if not MapaPaises.TryGetValue(NomeTratado, Result) then
-    Result := ANomeIngles.Trim;
+    Result := Formatar ANomeIngles.Trim;
 end;
 
 initialization
