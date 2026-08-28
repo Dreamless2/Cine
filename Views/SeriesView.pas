@@ -154,19 +154,14 @@ begin
     EstreiaBox.Text := AMedia.DataEstreia;
     AlternativoBox.Text := AMedia.NomeAlternativo;
     SerieBox.Text := GerarTagFilme(AMedia.Nome);
+    LocalBox.Text := AMedia.LocalProducao;
+    IdiomaBox.Text := AMedia.IdiomaOriginal;
+    ShowrunnersBox.Text := AMedia.Showrunners;
     GeneroBox.Text := AMedia.Generos;
     TagsBox.Text := AMedia.Tags;
     DiretorBox.Text := AMedia.Diretores;
     ArtistasBox.Text := AMedia.Artistas;
     ProdutoraBox.Text := AMedia.Produtoras;
-    LocalBox.Text := AMedia.LocalProducao;
-    IdiomaBox.Text := AMedia.IdiomaOriginal;
-    ReferenciaBox
-    AutoresBox.Box
-    FranquiaBox.Text
-    ShowrunnersBox.Text
-
-
   finally
     FMidiaEvents.ReativarEventos;
   end;
