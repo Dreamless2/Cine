@@ -90,20 +90,21 @@ end;
 
 function TTMDBClient.GetMovieAsync(const AId: Integer): IFuture<TJSONObject>;
 var
-  LUrl: string;
-  LJson: TJSONObject;
+  LToken: string;
 begin
-  LUrl := BuildUrl(
-    Format('/movie/%d', [AId]),
-    'credits,keywords,alternative_titles'
-  );
-
-  LJson := ExecuteGet(LUrl);
+  LToken := FBearerToken;
 
   Result := TTask.Future<TJSONObject>(
     function: TJSONObject
+    var
+      LUrl: string;
     begin
-      Result := LJson;
+      LUrl := BuildUrl(
+        Format('/movie/%d', [AId]),
+        'credits,keywords,alternative_titles'
+      );
+
+      Result := ExecuteGet(LUrl, LToken);
     end
   );
 end;
