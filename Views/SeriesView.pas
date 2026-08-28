@@ -192,7 +192,7 @@ begin
     Screen.Cursor := crHourGlass;
     try
       try
-        LFuture := FTMDBClient.GetMovieAsync(LMovieId);
+        LFuture := FTMDBClient.GetTvShowAsync(LMovieId);
         LJson := LFuture.Value;
         try
           LMedia := ProcessarMidiaTMDB(LJson.ToJSON, False);
@@ -227,7 +227,7 @@ var
   LKey: Char;
 begin
   LKey := #13;
-  Buscare(Sender, LKey);
+  Buscar(Sender, LKey);
 end;
 
 procedure TSeriesMain.CopiarButton_Click(Sender: TObject);
