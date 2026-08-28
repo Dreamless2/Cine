@@ -110,6 +110,7 @@ begin
     Exit;
   end;
 
+  LMovieId := 0;
   Screen.Cursor := crHourGlass;
   try
     try
