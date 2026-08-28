@@ -159,7 +159,7 @@ begin
 
     if not Assigned(FTMDBClient) then
     begin
-    MessageDlg(A chave da API do TMDB não está configurada.', mtWarning, [mbOK], 0);
+    MessageDlg('A chave da API do TMDB não está configurada.', mtWarning, [mbOK], 0);
       Exit;
     end;
 
