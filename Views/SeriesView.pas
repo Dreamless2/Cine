@@ -67,8 +67,8 @@ type
     { Public declarations }
     procedure FormDestroy(Sender: TObject);
     procedure PreencherComMedia(const AMedia: TMediaData);
-    procedure BuscarFilme(Sender: TObject; var Key: Char);
-    procedure BuscarFilmeExit(Sender: TObject);
+    procedure Buscar(Sender: TObject; var Key: Char);
+    procedure BuscarExit(Sender: TObject);
     constructor Create(AOwner: TComponent);
   end;
 
@@ -106,8 +106,8 @@ begin
       Result := GerarTagFilme(ANome).ToLower;
     end);
   FMidiaEvents.AtualizarResumo;
-  CodigoBox.OnKeyPress := BuscarFilme;
-  CodigoBox.OnExit := BuscarFilmeExit;
+  CodigoBox.OnKeyPress := Buscar;
+  CodigoBox.OnExit := BuscarExit;
   CopiarButton.OnClick := CopiarButton_Click;
   LimparPainel(PanelDesktop);
 end;
@@ -165,7 +165,7 @@ begin
   FMidiaEvents.AtualizarResumo;
 end;
 
-procedure TSeriesMain.BuscarFilme(Sender: TObject; var Key: Char);
+procedure TSeriesMain.Buscar(Sender: TObject; var Key: Char);
 var
   LMovieId: Integer;
   LFuture: IFuture<TJSONObject>;
@@ -222,12 +222,12 @@ begin
   end;
 end;
 
-procedure TSeriesMain.BuscarFilmeExit(Sender: TObject);
+procedure TSeriesMain.BuscarExit(Sender: TObject);
 var
   LKey: Char;
 begin
   LKey := #13;
-  BuscarFilme(Sender, LKey);
+  Buscare(Sender, LKey);
 end;
 
 procedure TSeriesMain.CopiarButton_Click(Sender: TObject);
