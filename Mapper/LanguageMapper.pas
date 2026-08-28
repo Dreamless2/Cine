@@ -8,7 +8,7 @@ implementation
 
 function MapearIdioma(const ACodigo: string): string;
 begin
-  case ACodigo.Trim.ToLower of
+  case ACodigo of
     'en': Result := 'Inglês';
     'pt': Result := 'Português';
     'es': Result := 'Espanhol';
