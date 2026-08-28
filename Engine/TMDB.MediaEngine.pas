@@ -161,7 +161,7 @@ begin
       else
       begin
         if not AIsSerie then Result.Tags := '#Filme ' + FormatarParaTag('Filme' + LAno)
-        else Result.Tags := GerarTag('#Serie ' + FormatarParaTag('Serie' + LAno));
+        else Result.Tags := '#Serie ' + FormatarParaTag('Serie' + LAno) + '#Série' + FormatarParaTag('Série' + LAno);
       end;
     end;
 
