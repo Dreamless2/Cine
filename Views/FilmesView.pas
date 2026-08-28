@@ -94,6 +94,20 @@ begin
 end;
 
 
+function ExceptionDetalhes(E: Exception): string;
+begin
+  Result := E.ClassName + ': ' + E.Message;
+
+  while Assigned(E.InnerException) do
+  begin
+    E := E.InnerException;
+
+    Result := Result + sLineBreak +
+              '  -> ' + E.ClassName + ': ' + E.Message;
+  end;
+end;
+
+
 procedure TFilmesMain.FormDestroy(Sender: TObject);
 begin
   FMidiaEvents.Free;
@@ -150,19 +164,15 @@ begin
         finally
           LJson.Free;
         end;
-      except
+     except
   on E: Exception do
-  begin
-    var LMsg := 'Classe: ' + E.ClassName + sLineBreak +
-                'Mensagem: ' + E.Message;
-
-    if Assigned(E.InnerException) then
-      LMsg := LMsg + sLineBreak +
-              'Inner: ' + E.InnerException.ClassName + ' - ' +
-              E.InnerException.Message;
-
-    MessageDlg(LMsg, mtError, [mbOK], 0);
-  end;
+    MessageDlg(
+      'Erro ao buscar filme:' + sLineBreak +
+      ExceptionDetalhes(E),
+      mtError,
+      [mbOK],
+      0
+    );
 end;
     finally
       Screen.Cursor := crDefault;
