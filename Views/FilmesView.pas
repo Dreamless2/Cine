@@ -275,20 +275,10 @@ begin
      HistoricoDataModule.HistoricoTable.IsEmpty then
     Exit;
 
-  CodigoBox.Text      := HistoricoDataModule.HistoricoTable.FieldByName('Codigo').AsString;
-  NomeBox.Text        := HistoricoDataModule.HistoricoTable.FieldByName('Nome').AsString;
-  AudioBox.Text       := HistoricoDataModule.HistoricoTable.FieldByName('Audio').AsString;
-  SinopseBox.Text     := HistoricoDataModule.HistoricoTable.FieldByName('Sinopse').AsString;
-  OriginalBox.Text    := HistoricoDataModule.HistoricoTable.FieldByName('Original').AsString;
-  EstreiaBox.Text     := HistoricoDataModule.HistoricoTable.FieldByName('Estreia').AsString;
-  AlternativoBox.Text := HistoricoDataModule.HistoricoTable.FieldByName('Alternativo').AsString;
-  TagsBox.Text        := HistoricoDataModule.HistoricoTable.FieldByName('Tags').AsString;
-  MCUBox.Text         := HistoricoDataModule.HistoricoTable.FieldByName('MCU').AsString;
-  FranquiaBox.Text    := HistoricoDataModule.HistoricoTable.FieldByName('Franquia').AsString;
-  GeneroBox.Text      := HistoricoDataModule.HistoricoTable.FieldByName('Genero').AsString;
-  DiretorBox.Text     := HistoricoDataModule.HistoricoTable.FieldByName('Diretor').AsString;
-  ArtistasBox.Text    := HistoricoDataModule.HistoricoTable.FieldByName('Artistas').AsString;
-  ProdutoraBox.Text   := HistoricoDataModule.HistoricoTable.FieldByName('Produtora').AsString;
+  if FCarregandoHistorico then
+    Exit;
+
+  CarregarHistoricoNaTela;
 end;
 
 procedure TFilmesMain.CopiarButton_Click(Sender: TObject);
