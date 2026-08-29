@@ -90,9 +90,17 @@ end;
 
 constructor THistoricoDataModule.Create(AOwner: TComponent);
 begin
+  ShowMessage('CREATE 1');
+
   FArquivoJSON := ResolverCaminhoArquivo;
+
+  ShowMessage('CREATE 2');
+
   DefinirEstrutura;
-  CarregarDados;
+
+  ShowMessage('CREATE 3');
+
+  // NÃO chama CarregarDados ainda
 end;
 
 procedure THistoricoDataModule.CarregarDados;
