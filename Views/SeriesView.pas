@@ -180,6 +180,11 @@ begin
     AlternativoBox.Text := ValorOuPadrao(AMedia.NomeAlternativo);
     SerieBox.Text := GerarTag(ValorOuPadrao(AMedia.Nome));
     FranquiaBox.Text := ValorOuPadrao(AMedia.Franquia);
+    LocalBox.Text;
+    IdiomaBox.Text;
+    ReferenciaBox.Text;
+    AutoresBox.Text;
+    Showrunners
     GeneroBox.Text := ValorOuPadrao(AMedia.Generos);
     TagsBox.Text := ValorOuPadrao(AMedia.Tags);
     DiretorBox.Text := ValorOuPadrao(AMedia.Diretores);
