@@ -37,10 +37,8 @@ implementation
 procedure THistoricoDataModule.DataModuleCreate(Sender: TObject);
 begin
   FArquivoJSON := TPath.Combine(TPath.GetDocumentsPath, 'historico_midias.json');
-
-  // 1. Define a estrutura unificada para o JSON / MemTable
   HistoricoTable.FieldDefs.Clear;
-  HistoricoTable.FieldDefs.Add('TipoMidia', ftString, 20); // 'Série', 'Anime' ou 'Filme/Outro'
+  HistoricoTable.FieldDefs.Add('TipoMidia', ftString, 20);
   HistoricoTable.FieldDefs.Add('Codigo', ftString, 20);
   HistoricoTable.FieldDefs.Add('Nome', ftString, 100);
   HistoricoTable.FieldDefs.Add('Audio', ftString, 50);
@@ -63,11 +61,7 @@ begin
   HistoricoTable.FieldDefs.Add('Produtora', ftString, 100);
   HistoricoTable.FieldDefs.Add('DataHora_Cadastro', ftDateTime);
   HistoricoTable.FieldDefs.Add('DataHora_Update', ftDateTime);
-
-  // 2. Cria a tabela em memória
   HistoricoTable.CreateDataSet;
-
-  // 3. Carrega os dados se o arquivo JSON já existir
   CarregarDados;
 end;
 
