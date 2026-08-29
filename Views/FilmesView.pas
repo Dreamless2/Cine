@@ -110,7 +110,7 @@ begin
   ProximoButton.OnClick := ProximoButton_Click;
   HistoricoDataSource.OnDataChange := HistoricoDataSource_Changed;
   LimparPainel(PanelDesktop);
-  CarregarHistoricoNaTela;
+  //CarregarHistoricoNaTela;
 end;
 
 function ExceptionDetalhes(E: Exception): string;
