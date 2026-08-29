@@ -331,12 +331,16 @@ end;
 
 procedure TFilmesMain.AnteriorButton_Click(Sender: TObject);
 begin
-  {BUTTON}
+  HistoricoDataModule.HistoricoTable.Prior;
+  if HistoricoDataModule.HistoricoTable.Bof then
+    ShowMessage('Chegou no primeiro');
 end;
 
 procedure TFilmesMain.ProximoButton_Click(Sender: TObject);
 begin
-  {BUTTON}
+  HistoricoDataModule.HistoricoTable.Prior;
+  if HistoricoDataModule.HistoricoTable.Eof then
+    ShowMessage('Chegou no primeiro');
 end;
 
 
