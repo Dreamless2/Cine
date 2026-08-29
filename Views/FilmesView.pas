@@ -232,10 +232,10 @@ begin
               MsgErro := 'O recurso solicitado não foi encontrado.';
             end;
             MessageDlg('Erro: ' + MsgErro, mtError, [mbOK], 0);
-            Application.MessageBox(PChar('Erro: ' + MsgErro), 'Cine - Filmes', MB_YESNO + MB_ICONERROR);
+            Application.MessageBox(PChar('Erro: ' + MsgErro), 'Cine - Filmes', MB_OK + MB_ICONERROR);
           end
           else
-          Application.MessageBox(PChar('Erro: ' + E.Message), 'Cine - Filmes', MB_YESNO + MB_ICONERROR);
+          Application.MessageBox(PChar('Erro: ' + E.Message), 'Cine - Filmes', MB_OK + MB_ICONERROR);
         end;
       end;
     finally
@@ -293,7 +293,7 @@ procedure TFilmesMain.CopiarButton_Click(Sender: TObject);
 begin
   ResumoBox.SelectAll;
   ResumoBox.CopyToClipboard;
-  Application.MessageBox('Copiado com sucesso.', 'Cine - Filmes', MB_YESNO + MB_ICONINFORMATION);
+  Application.MessageBox('Copiado com sucesso.', 'Cine - Filmes', MB_OK + MB_ICONINFORMATION);
 end;
 
 procedure TFilmesMain.SalvarButton_Click(Sender: TObject);
