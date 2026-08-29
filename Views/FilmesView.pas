@@ -314,7 +314,7 @@ begin
 
     HistoricoDataModule.SalvarDados;
 
-    ShowMessage('Filme salvo no histórico com sucesso!');
+    Application.MessageBox('Filme ' +  + ' .', 'Cine - Filmes', MB_YESNO + MB_ICONINFORMATION);
   except
     on E: Exception do
       ShowMessage('Erro ao salvar filme:' + sLineBreak + E.Message);
@@ -327,14 +327,14 @@ procedure TFilmesMain.AnteriorButton_Click(Sender: TObject);
 begin
     HistoricoDataModule.HistoricoTable.Prior;
     if HistoricoDataModule.HistoricoTable.Bof then
-      Application.MessageBox('Chegou no primeiro registroalterações?', 'Confirmação', MB_YESNO + MB_ICONQUESTION);
+      Application.MessageBox('Chegou no primeiro registro.', 'Cine - Filmes', MB_YESNO + MB_ICONINFORMATION);
 end;
 
 procedure TFilmesMain.ProximoButton_Click(Sender: TObject);
 begin
   HistoricoDataModule.HistoricoTable.Next;
   if HistoricoDataModule.HistoricoTable.Eof then
-    ShowMessage('Chegou no último registro');
+    Application.MessageBox('Chegou no último registro.', 'Cine - Filmes', MB_YESNO + MB_ICONINFORMATION);
 
 
 end;
