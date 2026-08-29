@@ -62,6 +62,7 @@ type
     procedure ProximoButton_Click(Sender: TObject);
     procedure LimparPainel(Painel: TPanel);
     procedure CarregarHistoricoNaTela;
+    procedure AtualizarCamposComRegistroAtual;
   public
     { Public declarations }
     procedure FormDestroy(Sender: TObject);
@@ -277,6 +278,27 @@ begin
   end;
 end;
 
+procedure TFilmesMain.AtualizarCamposComRegistroAtual;
+begin
+  with HistoricoDataModule.HistoricoTable do
+  begin
+    CodigoBox.Text := FieldByName('Codigo').AsString;
+    NomeBox.Text := FieldByName('Nome').AsString;
+    AudioBox.Text := FieldByName('Audio').AsString;
+    SinopseBox.Text := FieldByName('Sinopse').AsString;
+    OriginalBox.Text := FieldByName('Original').AsString;
+    EstreiaBox.Text := FieldByName('Estreia').AsString;
+    AlternativoBox.Text := FieldByName('Alternativo').AsString;
+    TagsBox.Text := FieldByName('Tags').AsString;
+    MCUBox.Text := FieldByName('MCU').AsString;
+    FranquiaBox.Text := FieldByName('Franquia').AsString;
+    GeneroBox.Text := FieldByName('Genero').AsString;
+    DiretorBox.Text := FieldByName('Diretor').AsString;
+    ArtistasBox.Text := FieldByName('Artistas').AsString;
+    ProdutoraBox.Text := FieldByName('Produtora').AsString;
+  end;
+end;
+
 procedure TFilmesMain.CopiarButton_Click(Sender: TObject);
 begin
   ResumoBox.SelectAll;
@@ -298,7 +320,6 @@ begin
       else
         Edit;
 
-      NovoRegistro
       FieldByName('Codigo').AsString := CodigoBox.Text;
       FieldByName('Nome').AsString := NomeBox.Text;
       FieldByName('Audio').AsString := AudioBox.Text;
