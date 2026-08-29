@@ -76,8 +76,6 @@ implementation
 
 {$R *.dfm}
 
-uses System.StrUtils;
-
 constructor TAnimesMain.Create(AOwner: TComponent);
 begin
   inherited Create(AOwner);
