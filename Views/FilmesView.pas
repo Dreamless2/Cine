@@ -327,7 +327,7 @@ procedure TFilmesMain.AnteriorButton_Click(Sender: TObject);
 begin
     HistoricoDataModule.HistoricoTable.Prior;
     if HistoricoDataModule.HistoricoTable.Bof then
-    ShowMessage('Chegou no primeiro registro');
+      e('Chegou no primeiro registro');
 end;
 
 procedure TFilmesMain.ProximoButton_Click(Sender: TObject);
