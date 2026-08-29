@@ -143,13 +143,13 @@ begin
 end;
 
 procedure TSeriesMain.PreencherComMedia(const AMedia: TMediaData);
-  function ValorOuPadrao(const Valor: string): string;
-  begin
-    if Valor <> '' then
-      Result := Valor
-    else
-      Result := '--';
-  end;
+function ValorOuPadrao(const Valor: string): string;
+begin
+  if Valor <> '' then
+    Result := Valor
+  else
+    Result := '--';
+end;
 
 begin
   FMidiaEvents.DesativarEventos;
