@@ -78,10 +78,25 @@ begin
     HistoricoTable.SaveToFile(FArquivoJSON, sfJSON);
 end;
 
-procedure THistoricoDataModule.DataModuleDestroy(Sender: TObject);
+procedure THistoricoDataModule.CarregarDados;
+var
+  LBackup: string;
 begin
-  if HistoricoTable.Active and (HistoricoTable.RecordCount > 0) then
-    HistoricoTable.SaveToFile(FArquivoJSON, sfJSON);
+  if TFile.Exists(FArquivoJSON) and (TFile.GetSize(FArquivoJSON) > 0) then
+  begin
+    try
+      HistoricoTable.LoadFromFile(FArquivoJSON, sfJSON);
+    except
+      on E: Exception do
+      begin
+        LBackup := FArquivoJSON + '.corrompido_' + FormatDateTime('yyyymmdd_hhnnss', Now);
+        TFile.Copy(FArquivoJSON, LBackup, True);
+        DefinirEstrutura;
+      end;
+    end;
+  end;
+  if not HistoricoTable.Active then
+    DefinirEstrutura;
 end;
 
 procedure THistoricoDataModule.SalvarDados;
@@ -94,14 +109,14 @@ procedure THistoricoDataModule.NovoRegistro(const ATipoTela: string);
 var
   I: Integer;
 begin
+  if not HistoricoTable.Active then
+    DefinirEstrutura;
   HistoricoTable.Append;
-
   for I := 0 to HistoricoTable.FieldCount - 1 do
   begin
     if HistoricoTable.Fields[I].DataType in [ftString, ftMemo] then
       HistoricoTable.Fields[I].AsString := '--';
   end;
-
   HistoricoTable.FieldByName('TipoMidia').AsString := ATipoTela;
   HistoricoTable.FieldByName('DataHora_Cadastro').AsDateTime := Now;
   HistoricoTable.FieldByName('DataHora_Update').AsDateTime := Now;
