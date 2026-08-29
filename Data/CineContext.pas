@@ -53,7 +53,7 @@ end;
 procedure THistoricoDataModule.CriarEstruturaSeNecessaria;
 begin
   FConexao.ExecSQL(
-    'CREATE TABLE IF NOT EXISTS Filmes (' +
+    'CREATE TABLE IF NOT EXISTS Midias (' +
     '  Codigo TEXT PRIMARY KEY,' +
     '  TipoMidia TEXT,' +
     '  Nome TEXT,' +
