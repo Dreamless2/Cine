@@ -12,8 +12,7 @@ type
   THistoricoDataModule = class(TDataModule)
     HistoricoTable: TFDMemTable;
     FDStanStorageJSONLink1: TFDStanStorageJSONLink;
-    constructor DataModuleCreate(Sender: TObject);
-    destructorprocedure DataModuleDestroy(Sender: TObject);
+
   private
     FArquivoJSON: string;
     procedure DefinirEstrutura;
@@ -22,6 +21,8 @@ type
     procedure CarregarDados;
     procedure SalvarDados;
     procedure NovoRegistro(const ATipoTela: string);
+    constructor DataModuleCreate(AOwner: TComponent);
+    destructor DataModuleDestroy(Sender: TObject);
   end;
 
 var
@@ -33,8 +34,10 @@ implementation
 
 {$R *.dfm}
 
-procedure THistoricoDataModule.DefinirEstrutura;
+constructor  DefinirEstrutura(AOwner: TComponent);
 begin
+  inherited Create(AOwner);
+
   if HistoricoTable.Active then
     HistoricoTable.Close;
   HistoricoTable.FieldDefs.Clear;
