@@ -81,6 +81,10 @@ end;
 procedure THistoricoDataModule.DataModuleCreate(Sender: TObject);
 begin
   FArquivoJSON := ResolverCaminhoArquivo;
+  ShowMessage(
+    'FArquivoJSON = [' + FArquivoJSON + ']'
+  );
+
   DefinirEstrutura;
   CarregarDados;
 end;
