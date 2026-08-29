@@ -6,7 +6,8 @@ uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.ExtCtrls, Vcl.Mask, Vcl.Buttons,
   TMDB.ApiClient, System.JSON, TMDB.MediaEngine, System.Threading, ResumoBuilder,
-  System.UITypes, TMDB.KeyStore, MidiaFormEvents, System.Math, CineContext;
+  System.UITypes, TMDB.KeyStore, MidiaFormEvents, System.Math, CineContext,
+  Data.DB;
 
 
 type
@@ -48,6 +49,7 @@ type
     FilmeBox: TEdit;
     Label16: TLabel;
     MCUBox: TEdit;
+    HistoricoDataSource: TDataSource;
   private
     { Private declarations }
     FMidiaEvents: TMidiaFormHelper;
@@ -100,7 +102,7 @@ begin
   CodigoBox.OnKeyPress := Buscar;
   CopiarButton.OnClick := CopiarButton_Click;
   AnteriorButton.OnClick := AnteriorButton_Click;
-  ProximoButton.OnClick := Proximo
+  ProximoButton.OnClick := ProximoButton_Click;
   LimparPainel(PanelDesktop);
 end;
 
@@ -232,5 +234,7 @@ begin
   ResumoBox.SelectAll;
   ResumoBox.CopyToClipboard;
 end;
+
+procedure T
 
 end.

@@ -302,4 +302,9 @@ object FilmesMain: TFilmesMain
       TextHint = 'Fase MCU'
     end
   end
+  object HistoricoDataSource: TDataSource
+    DataSet = HistoricoDataModule.HistoricoTable
+    Left = 72
+    Top = 688
+  end
 end
