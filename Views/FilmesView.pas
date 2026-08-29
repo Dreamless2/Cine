@@ -297,39 +297,44 @@ begin
 end;
 
 procedure TFilmesMain.SalvarButton_Click(Sender: TObject);
+var
+  LEhNovoRegistro: Boolean;
 begin
   FSalvandoHistorico := True;
   try
     with HistoricoDataModule.HistoricoTable do
     begin
-      if Locate('Codigo', CodigoBox.Text, []) then
-        Edit
+      LEhNovoRegistro := not Locate('Codigo', CodigoBox.Text, []);
+      if LEhNovoRegistro then
+        Append
       else
-        Append;
-        FieldByName('Codigo').AsString := CodigoBox.Text;
-        FieldByName('Nome').AsString := NomeBox.Text;
-        FieldByName('Audio').AsString := AudioBox.Text;
-        FieldByName('Sinopse').AsString := SinopseBox.Text;
-        FieldByName('Original').AsString := OriginalBox.Text;
-        FieldByName('Estreia').AsString := EstreiaBox.Text;
-        FieldByName('Alternativo').AsString := AlternativoBox.Text;
-        FieldByName('Tags').AsString := TagsBox.Text;
-        FieldByName('MCU').AsString := MCUBox.Text;
-        FieldByName('Franquia').AsString := FranquiaBox.Text;
-        FieldByName('Genero').AsString := GeneroBox.Text;
-        FieldByName('Diretor').AsString := DiretorBox.Text;
-        FieldByName('Artistas').AsString := ArtistasBox.Text;
-        FieldByName('Produtora').AsString := ProdutoraBox.Text;
-        Post;
+        Edit;
+      FieldByName('Codigo').AsString := CodigoBox.Text;
+      FieldByName('Nome').AsString := NomeBox.Text;
+      FieldByName('Audio').AsString := AudioBox.Text;
+      FieldByName('Sinopse').AsString := SinopseBox.Text;
+      FieldByName('Original').AsString := OriginalBox.Text;
+      FieldByName('Estreia').AsString := EstreiaBox.Text;
+      FieldByName('Alternativo').AsString := AlternativoBox.Text;
+      FieldByName('Tags').AsString := TagsBox.Text;
+      FieldByName('MCU').AsString := MCUBox.Text;
+      FieldByName('Franquia').AsString := FranquiaBox.Text;
+      FieldByName('Genero').AsString := GeneroBox.Text;
+      FieldByName('Diretor').AsString := DiretorBox.Text;
+      FieldByName('Artistas').AsString := ArtistasBox.Text;
+      FieldByName('Produtora').AsString := ProdutoraBox.Text;
+      Post;
     end;
     HistoricoDataModule.SalvarDados;
-    Application.MessageBox(PChar('Filme ' + NomeBox.Text + ' cadastrado/atualizado com sucesso.'), 'Cine - Filmes', MB_OK + MB_ICONINFORMATION);
+    if LEhNovoRegistro then
+      Application.MessageBox(PChar('Filme ' + NomeBox.Text + ' cadastrado com sucesso.'), 'Cine - Filmes', MB_OK + MB_ICONINFORMATION)
+    else
+      Application.MessageBox(PChar('Filme ' + NomeBox.Text + ' atualizado com sucesso.'), 'Cine - Filmes', MB_OK + MB_ICONINFORMATION);
   except
     on E: Exception do
     begin
       if HistoricoDataModule.HistoricoTable.State in dsEditModes then
           HistoricoDataModule.HistoricoTable.Cancel;
-
       Application.MessageBox(PChar('Erro ao Salvar: ' + E.Message), 'Cine - Filmes', MB_OK + MB_ICONERROR);
     end;
   end;
