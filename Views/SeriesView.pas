@@ -185,11 +185,11 @@ begin
     ReferenciaBox.Text := ValorOuPadrao(AMedia.ObraReferencia);
     AutoresBox.Text := ValorOuPadrao(AMedia.Autores);
     ShowrunnersBox.Text := ValorOuPadrao(AMedia.Showrunners);
-    GeneroBox.Text := ValorOuPadrao(AMedia.Generos);
+    GeneroBox.Text := ValorOuPadrao(AMedia.Genero);
     TagsBox.Text := ValorOuPadrao(AMedia.Tags);
-    DiretorBox.Text := ValorOuPadrao(AMedia.Diretores);
-    ArtistasBox.Text := ValorOuPadrao(AMedia.Artistas);
-    ProdutoraBox.Text := ValorOuPadrao(AMedia.Produtoras);
+    DiretorBox.Text := ValorOuPadrao(AMedia.Diretor);
+    ArtistasBox.Text := ValorOuPadrao(AMedia.Artista);
+    ProdutoraBox.Text := ValorOuPadrao(AMedia.Produtora);
   finally
     FMidiaEvents.ReativarEventos;
   end;
@@ -283,9 +283,14 @@ begin
     TagsBox.Text        := T.FieldByName('Tags').AsString;
     MCUBox.Text         := T.FieldByName('MCU').AsString;
     FranquiaBox.Text    := T.FieldByName('Franquia').AsString;
+    LocalBox.Text       := ValorOuPadrao(AMedia.LocalProducao);
+    IdiomaBox.Text  := ValorOuPadrao(AMedia.IdiomaOriginal);
+    ReferenciaBox.Text := ValorOuPadrao(AMedia.ObraReferencia);
+    AutoresBox.Text := ValorOuPadrao(AMedia.Autores);
+    ShowrunnersBox.Text := ValorOuPadrao(AMedia.Showrunners);
     GeneroBox.Text      := T.FieldByName('Genero').AsString;
     DiretorBox.Text     := T.FieldByName('Diretor').AsString;
-    ArtistasBox.Text    := T.FieldByName('Artistas').AsString;
+    ArtistasBox.Text    := T.FieldByName('Artista').AsString;
     ProdutoraBox.Text   := T.FieldByName('Produtora').AsString;
   finally
     FCarregandoHistorico := False;

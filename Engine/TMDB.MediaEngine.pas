@@ -16,7 +16,7 @@ type
     NomeAlternativo: string;
     Franquia: string;
     Genero: string;
-    Diretors: string;
+    Diretor: string;
     Artista: string;
     Produtora: string;
     Tags: string;
