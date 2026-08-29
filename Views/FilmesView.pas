@@ -261,8 +261,7 @@ begin
   HistoricoDataModule.HistoricoTable.FieldByName('Arstitas').AsString := ArtistasBox.Text;
   HistoricoDataModule.HistoricoTable.FieldByName('Produtora').AsString := ProdutoraBox.Text;
   HistoricoDataModule.HistoricoTable.Post;
-
-
+  HistoricoDataModule.SalvarDados;
 end;
 
 
