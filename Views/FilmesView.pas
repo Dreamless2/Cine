@@ -329,6 +329,12 @@ begin
   FSalvandoHistorico := False;
 end;
 
+procedure AnteriorButton_Click(Sender: TObject);
+begin
+
+end;
+  procedure ProximoButton_Click(Sender: TObject);
+
 
 
 
