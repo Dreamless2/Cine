@@ -70,7 +70,7 @@ type
     procedure Buscar(Sender: TObject; var Key: Char);
     constructor Create(AOwner: TComponent); override;
   protected
-    procedure DoShow; override;
+    //procedure DoShow; override;
   end;
 
 var
@@ -107,15 +107,16 @@ begin
     end);
   FMidiaEvents.AtualizarResumo;
   CodigoBox.OnKeyPress := Buscar;
-  CopiarButton.OnClick := CopiarButton_Click;
-  SalvarButton.OnClick := SalvarButton_Click;
+  //CopiarButton.OnClick := CopiarButton_Click;
+  //SalvarButton.OnClick := SalvarButton_Click;
   LimparPainel(PanelDesktop);
 end;
 
-procedure TFilmesMain.DoShow;
+{procedure TFilmesMain.DoShow;
 begin
   CarregarHistoricoNaTela;
 end;
+}
 
 function ExceptionDetalhes(E: Exception): string;
 begin
