@@ -250,16 +250,18 @@ begin
   HistoricoDataModule.HistoricoTable.FieldByName('Nome').AsString := NomeBox.Text;
   HistoricoDataModule.HistoricoTable.FieldByName('Audio').AsString := AudioBox.Text;
   HistoricoDataModule.HistoricoTable.FieldByName('Sinopse').AsString := SinopseBox.Text;
-  HistoricoDataModule.HistoricoTable.FieldByName('Origin').AsString := OriginalBox.Text;
-  HistoricoDataModule.HistoricoTable.FieldByName('Codigo').AsString := EstreiaBox.Text;
-  HistoricoDataModule.HistoricoTable.FieldByName('Codigo').AsString := AlternativoBox.Text;
-  HistoricoDataModule.HistoricoTable.FieldByName('Codigo').AsString := TagsBox.Text;
-  HistoricoDataModule.HistoricoTable.FieldByName('Codigo').AsString := MCUBox.Text;
-  HistoricoDataModule.HistoricoTable.FieldByName('Codigo').AsString := FranquiaBox.Text;
-  HistoricoDataModule.HistoricoTable.FieldByName('Codigo').AsString := GeneroBox.Text;
-  HistoricoDataModule.HistoricoTable.FieldByName('Codigo').AsString := DiretorBox.Text;
-  HistoricoDataModule.HistoricoTable.FieldByName('Codigo').AsString := ArtistasBox.Text;
-  HistoricoDataModule.HistoricoTable.FieldByName('Codigo').AsString := ProdutoraBox.Text;
+  HistoricoDataModule.HistoricoTable.FieldByName('Original').AsString := OriginalBox.Text;
+  HistoricoDataModule.HistoricoTable.FieldByName('Estrelas').AsString := EstreiaBox.Text;
+  HistoricoDataModule.HistoricoTable.FieldByName('Alternativo').AsString := AlternativoBox.Text;
+  HistoricoDataModule.HistoricoTable.FieldByName('Tags').AsString := TagsBox.Text;
+  HistoricoDataModule.HistoricoTable.FieldByName('MCU').AsString := MCUBox.Text;
+  HistoricoDataModule.HistoricoTable.FieldByName('Franquia').AsString := FranquiaBox.Text;
+  HistoricoDataModule.HistoricoTable.FieldByName('Genero').AsString := GeneroBox.Text;
+  HistoricoDataModule.HistoricoTable.FieldByName('Diretor').AsString := DiretorBox.Text;
+  HistoricoDataModule.HistoricoTable.FieldByName('Arstitas').AsString := ArtistasBox.Text;
+  HistoricoDataModule.HistoricoTable.FieldByName('Produtora').AsString := ProdutoraBox.Text;
+  HistoricoDataModule.HistoricoTable.Post;
+
 
 end;
 
