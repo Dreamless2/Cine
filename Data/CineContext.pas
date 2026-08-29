@@ -34,10 +34,10 @@ implementation
 
 {$R *.dfm}
 
-
-procedure THistoricoDataModule.DataModuleCreate(Sender: TObject);
+procedure THistoricoDataModule.DefinirEstrutura;
 begin
-  FArquivoJSON := TPath.Combine(TPath.GetDocumentsPath, 'historico_midias.json');
+  if HistoricoTable.Active then
+    HistoricoTable.Close;
   HistoricoTable.FieldDefs.Clear;
   HistoricoTable.FieldDefs.Add('TipoMidia', ftString, 20);
   HistoricoTable.FieldDefs.Add('Codigo', ftString, 20);
@@ -63,7 +63,12 @@ begin
   HistoricoTable.FieldDefs.Add('DataHora_Cadastro', ftDateTime);
   HistoricoTable.FieldDefs.Add('DataHora_Update', ftDateTime);
   HistoricoTable.CreateDataSet;
-  HistoricoTable.Open;
+end;
+
+procedure THistoricoDataModule.DataModuleCreate(Sender: TObject);
+begin
+  FArquivoJSON := TPath.Combine(TPath.GetDocumentsPath, 'historico_midias.json');
+  DefinirEstrutura;
   CarregarDados;
 end;
 
@@ -73,19 +78,10 @@ begin
     HistoricoTable.SaveToFile(FArquivoJSON, sfJSON);
 end;
 
-procedure THistoricoDataModule.CarregarDados;
+procedure THistoricoDataModule.DataModuleDestroy(Sender: TObject);
 begin
-  if TFile.Exists(FArquivoJSON) and (TFile.GetSize(FArquivoJSON) > 0) then
-  begin
-    try
-      HistoricoTable.LoadFromFile(FArquivoJSON, sfJSON);
-    except
-      HistoricoTable.Active := False;
-    end;
-  end;
-
-  if not HistoricoTable.Active then
-    HistoricoTable.Open;
+  if HistoricoTable.Active and (HistoricoTable.RecordCount > 0) then
+    HistoricoTable.SaveToFile(FArquivoJSON, sfJSON);
 end;
 
 procedure THistoricoDataModule.SalvarDados;
