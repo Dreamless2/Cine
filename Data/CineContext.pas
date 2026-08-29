@@ -59,7 +59,7 @@ begin
   HistoricoTable.FieldDefs.Add('Showrunners', ftString, 100);
   HistoricoTable.FieldDefs.Add('Genero', ftString, 50);
   HistoricoTable.FieldDefs.Add('Diretor', ftString, 100);
-  HistoricoTable.FieldDefs.Add('Artistas', ftMemo);
+  HistoricoTable.FieldDefs.Add('Artistas', ftString, 100);
   HistoricoTable.FieldDefs.Add('Produtora', ftString, 100);
   HistoricoTable.FieldDefs.Add('DataHora_Cadastro', ftDateTime);
   HistoricoTable.FieldDefs.Add('DataHora_Update', ftDateTime);
