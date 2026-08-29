@@ -74,13 +74,22 @@ end;
 
 procedure THistoricoDataModule.CarregarDados;
 begin
-  if TFile.Exists(FArquivoJSON) then
-    HistoricoTable.LoadFromFile(FArquivoJSON, sfJSON);
+  if TFile.Exists(FArquivoJSON) and (TFile.GetSize(FArquivoJSON) > 0) then
+  begin
+    try
+      HistoricoTable.LoadFromFile(FArquivoJSON, sfJSON);
+    except
+      HistoricoTable.Active := False;
+    end;
+  end;
+
+  if not HistoricoTable.Active then
+    HistoricoTable.Open;
 end;
 
 procedure THistoricoDataModule.SalvarDados;
 begin
-  //TDirectory.CreateDirectory(TPath.GetDirectoryName(FArquivoJSON));
+  TDirectory.CreateDirectory(TPath.GetDirectoryName(FArquivoJSON));
   HistoricoTable.SaveToFile(FArquivoJSON, sfJSON);
 end;
 
