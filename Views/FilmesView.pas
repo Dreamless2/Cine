@@ -198,7 +198,9 @@ begin
         end;
       except
         on E: EAggregateException do
+
             MessageDlg('Erro TMDB:' + sLineBreak + E.Message, mtError, [mbOK], 0);
+
       end;
     finally
       Screen.Cursor := crDefault;
