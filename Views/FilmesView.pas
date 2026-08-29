@@ -338,10 +338,14 @@ begin
       Refresh;
     end;
     if LEhNovoRegistro then
-      Application.MessageBox(PChar('Filme ' + NomeBox.Text + ' cadastrado com sucesso.'), 'Cine - Filmes', MB_OK + MB_ICONINFORMATION)
-      HistoricoDataModule.HistoricoTable.Frist
+    begin
+      Application.MessageBox(PChar('Filme ' + NomeBox.Text + ' cadastrado com sucesso.'), 'Cine - Filmes', MB_OK + MB_ICONINFORMATION);
+      HistoricoDataModule.HistoricoTable.First
+    end
     else
+    begin
       Application.MessageBox(PChar('Filme ' + NomeBox.Text + ' atualizado com sucesso.'), 'Cine - Filmes', MB_OK + MB_ICONINFORMATION);
+    end;
   except
     on E: Exception do
     begin
