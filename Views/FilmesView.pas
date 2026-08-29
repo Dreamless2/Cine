@@ -323,7 +323,7 @@ begin
         Post;
     end;
     HistoricoDataModule.SalvarDados;
-    Application.MessageBox(PChar('Filme ' + NomeBox.Text + 'cadastrado/atualizado com sucesso.'), 'Cine - Filmes', MB_OK + MB_ICONINFORMATION);
+    Application.MessageBox(PChar('Filme ' + NomeBox.Text + ' cadastrado/atualizado com sucesso.'), 'Cine - Filmes', MB_OK + MB_ICONINFORMATION);
   except
     on E: Exception do
     begin
