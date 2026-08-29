@@ -8,12 +8,13 @@ uses
   FireDAC.DApt.Intf, FireDAC.Stan.StorageJSON, Data.DB, FireDAC.Comp.DataSet,
   FireDAC.Comp.Client, System.IOUtils, Vcl.Dialogs, FireDAC.Stan.ExprFuncs,
   FireDAC.Phys.SQLiteWrapper.Stat, FireDAC.Phys.SQLiteDef, FireDAC.Phys,
-  FireDAC.Phys.SQLite;
+  FireDAC.Phys.SQLite, FireDAC.UI.Intf, FireDAC.Stan.Def, FireDAC.Stan.Pool,
+  FireDAC.Stan.Async, FireDAC.VCLUI.Wait;
 
 type
   THistoricoDataModule = class(TDataModule)
     HistoricoTable: TFDMemTable;
-    FDPhysSQLiteDriverLink1: TFDPhysSQLiteDriverLink;
+    FDConnection1: TFDConnection;
   private
     { Private declarations }
     FArquivoJSON: string;

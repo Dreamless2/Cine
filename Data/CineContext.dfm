@@ -12,8 +12,8 @@ object HistoricoDataModule: THistoricoDataModule
     Left = 152
     Top = 80
   end
-  object FDPhysSQLiteDriverLink1: TFDPhysSQLiteDriverLink
-    Left = 160
-    Top = 264
+  object FDConnection1: TFDConnection
+    Left = 352
+    Top = 280
   end
 end
