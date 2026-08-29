@@ -80,19 +80,7 @@ begin
   Result := TPath.Combine(LPasta, 'historico_midias.json');
 end;
 
-{constructor THistoricoDataModule.DataModuleCreate(AOwner: TComponent);
-begin
-  inherited Create(AOwner);
-  FArquivoJSON := ResolverCaminhoArquivo;
-
-  ShowMessage(
-    'FArquivoJSON = [' + FArquivoJSON + ']'
-  );
-
-  DefinirEstrutura;
-  CarregarDados;
-end;
-
+{
 procedure THistoricoDataModule.DataModuleDestroy(Sender: TObject);
 begin
   if HistoricoTable.Active and (HistoricoTable.RecordCount > 0) then
@@ -102,13 +90,15 @@ end;
 
 constructor THistoricoDataModule.Create(AOwner: TComponent);
 begin
-  ShowMessage('ENTROU NO CONSTRUCTOR');
+  FArquivoJSON := ResolverCaminhoArquivo;
 
-  inherited Create(AOwner);
+  ShowMessage(
+    'FArquivoJSON = [' + FArquivoJSON + ']'
+  );
 
-  ShowMessage('DEPOIS DO INHERITED');
+  DefinirEstrutura;
+  CarregarDados;
 end;
-
 
 procedure THistoricoDataModule.CarregarDados;
 var
