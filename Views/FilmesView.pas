@@ -244,7 +244,7 @@ end;
 
 procedure TFilmesMain.CarregarHistoricoNaTela;
 var
-  T: TFDMemTable;
+  T: TFDTable;
 begin
   if FCarregandoHistorico then
     Exit;
