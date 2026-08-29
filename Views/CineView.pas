@@ -14,7 +14,7 @@ type
     PanelTopBar: TPanel;
     PanelTopTitle: TPanel;
     PanelStatusBar: TPanel;
-    Label1: TLabel;
+    LabelHome: TLabel;
     Panel1: TPanel;
     PanelDesktop: TPanel;
     FilmesButton: TStyledButton;
@@ -100,7 +100,7 @@ begin
   LockWindowUpdate(PanelDesktop.Handle);
   try
     OpenChildForm(TFilmesMain.Create(nil));
-    Label1.Caption := 'Filmes';
+    LabelHome.Caption := 'Cine - Filmes';
   finally
     LockWindowUpdate(0);
   end;
@@ -111,7 +111,7 @@ begin
   LockWindowUpdate(PanelDesktop.Handle);
   try
     OpenChildForm(TSeriesMain.Create(Self));
-    Label1.Caption := 'Séries';
+    LabelHome.Caption := 'Cine - Séries';
   finally
     LockWindowUpdate(0);
   end;
@@ -122,7 +122,7 @@ begin
   LockWindowUpdate(PanelDesktop.Handle);
   try
     OpenChildForm(TAnimesMain.Create(Self));
-    Label1.Caption := 'Animes';
+    LabelHome.Caption := 'Cine - Animes';
   finally
     LockWindowUpdate(0);
   end;
