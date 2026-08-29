@@ -87,15 +87,15 @@ begin
     FTMDBClient := nil;
 
   FMidiaEvents := TMidiaFormHelper.Create(
-    [AudioBox, SinopseBox, OriginalBox, EstreiaBox, AlternativoBox, SerieBox,
-    MCUBox, LocalBox, IdiomaBox, ReferenciaBox, AutoresBox, FranquiaBox, ShowrunnersBox,
+    [AudioBox, SinopseBox, OriginalBox, EstreiaBox, AlternativoBox, AnimeBox,
+    LocalBox, IdiomaBox, ReferenciaBox, AutoresBox, FranquiaBox, ShowrunnersBox,
     GeneroBox, TagsBox, DiretorBox, ArtistasBox, ProdutoraBox],
-    NomeBox, SerieBox, ResumoBox,
+    NomeBox, AnimeBox, ResumoBox,
     function: string
     begin
       Result := MontarResumo(
         NomeBox.Text, AudioBox.Text, SinopseBox.Text, OriginalBox.Text, EstreiaBox.Text, AlternativoBox.Text,
-        TagsBox.Text, SerieBox.Text, MCUBox.Text, LocalBox.Text, IdiomaBox.Text, ReferenciaBox.Text, AutoresBox.Text,
+        TagsBox.Text, AnimeBox.Text, LocalBox.Text, IdiomaBox.Text, ReferenciaBox.Text, AutoresBox.Text,
         FranquiaBox.Text, ShowrunnersBox.Text, GeneroBox.Text, DiretorBox.Text, ArtistasBox.Text, ProdutoraBox.Text
       );
     end,
@@ -105,7 +105,6 @@ begin
     end);
   FMidiaEvents.AtualizarResumo;
   CodigoBox.OnKeyPress := Buscar;
-  CodigoBox.OnExit := BuscarExit;
   CopiarButton.OnClick := CopiarButton_Click;
   LimparPainel(PanelDesktop);
 end;
@@ -221,14 +220,6 @@ begin
       Screen.Cursor := crDefault;
     end;
   end;
-end;
-
-procedure TAnimesMain.BuscarExit(Sender: TObject);
-var
-  LKey: Char;
-begin
-  LKey := #13;
-  Buscar(Sender, LKey);
 end;
 
 procedure TAnimesMain.CopiarButton_Click(Sender: TObject);
