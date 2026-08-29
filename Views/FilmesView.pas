@@ -300,6 +300,14 @@ procedure TFilmesMain.SalvarButton_Click(Sender: TObject);
 begin
   FSalvandoHistorico := True;
   try
+    with HistoricoDataModule.HistoricoTable do
+    begin
+      if True then
+      
+
+    end;
+
+
     HistoricoDataModule.NovoRegistro('Filmes');
     HistoricoDataModule.HistoricoTable.FieldByName('Codigo').AsString := CodigoBox.Text;
     HistoricoDataModule.HistoricoTable.FieldByName('Nome').AsString := NomeBox.Text;
