@@ -138,7 +138,7 @@ begin
     FCurrentChildForm := nil;
   end;
 
-  if mrOK=MessageDlg('Exit?', mtConfirmation, [mbOK, mbCancel], 0) then
+  if mrOK=MessageDlg('Fechar?', mtConfirmation, [mbOK, mbCancel], 0) then
   begin
     Application.Terminate;
     Application.ProcessMessages;
