@@ -82,8 +82,8 @@ end;
 constructor THistoricoDataModule.DataModuleCreate(AOwner: TComponent);
 begin
   inherited Create(AOwner);
-
   FArquivoJSON := ResolverCaminhoArquivo;
+
   ShowMessage(
     'FArquivoJSON = [' + FArquivoJSON + ']'
   );
