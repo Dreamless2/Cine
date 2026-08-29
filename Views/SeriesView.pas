@@ -6,7 +6,8 @@ uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.Mask, Vcl.ExtCtrls,
   TMDB.ApiClient, System.JSON, TMDB.MediaEngine, System.Threading, ResumoBuilder,
-  System.UITypes, TMDB.KeyStore, MidiaFormEvents, System.Math;
+  System.UITypes, TMDB.KeyStore, MidiaFormEvents, System.Math, CineContext,
+  Data.DB, FireDAC.Stan.Intf, FireDAC.Stan.Option, FireDAC.Comp.Client;
 
 type
   TSeriesMain = class(TForm)
@@ -177,7 +178,7 @@ begin
     OriginalBox.Text := ValorOuPadrao(AMedia.NomeOriginal);
     EstreiaBox.Text := ValorOuPadrao(AMedia.DataEstreia);
     AlternativoBox.Text := ValorOuPadrao(AMedia.NomeAlternativo);
-    FilmeBox.Text := GerarTag(ValorOuPadrao(AMedia.Nome));
+    SerieBox.Text := GerarTag(ValorOuPadrao(AMedia.Nome));
     FranquiaBox.Text := ValorOuPadrao(AMedia.Franquia);
     GeneroBox.Text := ValorOuPadrao(AMedia.Generos);
     TagsBox.Text := ValorOuPadrao(AMedia.Tags);
