@@ -330,7 +330,10 @@ end;
 
 procedure TFilmesMain.ProximoButton_Click(Sender: TObject);
 begin
-    HistoricoDataModule.HistoricoTable.Next;
+  if HistoricoDataModule.HistoricoTable.Next < 0 then
+    ShowMessage('Chegou no último');
+
+
 end;
 
 end.
