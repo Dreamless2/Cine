@@ -80,7 +80,7 @@ end;
 
 procedure THistoricoDataModule.SalvarDados;
 begin
-  TDirectory.CreateDirectory(TPath.GetDirectoryName(FArquivoJSON));
+  //TDirectory.CreateDirectory(TPath.GetDirectoryName(FArquivoJSON));
   HistoricoTable.SaveToFile(FArquivoJSON, sfJSON);
 end;
 
