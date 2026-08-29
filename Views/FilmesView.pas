@@ -235,7 +235,6 @@ end;
 procedure TFilmesMain.HistoricoDataSource_Changed(Sender: TObject; Field: TField);
 begin
   if HistoricoDataModule.HistoricoTable.IsEmpty then Exit;
-
 end;
 
 procedure TFilmesMain.CopiarButton_Click(Sender: TObject);
