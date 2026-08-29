@@ -9,12 +9,13 @@ uses
   FireDAC.Comp.Client, System.IOUtils, Vcl.Dialogs, FireDAC.Stan.ExprFuncs,
   FireDAC.Phys.SQLiteWrapper.Stat, FireDAC.Phys.SQLiteDef, FireDAC.Phys,
   FireDAC.Phys.SQLite, FireDAC.UI.Intf, FireDAC.Stan.Def, FireDAC.Stan.Pool,
-  FireDAC.Stan.Async, FireDAC.VCLUI.Wait;
+  FireDAC.Stan.Async, FireDAC.VCLUI.Wait, FireDAC.DApt;
 
 type
   THistoricoDataModule = class(TDataModule)
     HistoricoTable: TFDMemTable;
-    FDConnection1: TFDConnection;
+    FConexao: TFDConnection;
+    FHistoricoTable: TFDTable;
   private
     { Private declarations }
     FArquivoJSON: string;

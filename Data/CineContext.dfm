@@ -12,8 +12,15 @@ object HistoricoDataModule: THistoricoDataModule
     Left = 152
     Top = 80
   end
-  object FDConnection1: TFDConnection
+  object FConexao: TFDConnection
+    Params.Strings = (
+      'DriverID=SQLite')
     Left = 352
     Top = 280
+  end
+  object FHistoricoTable: TFDTable
+    Connection = FConexao
+    Left = 184
+    Top = 248
   end
 end
