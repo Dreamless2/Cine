@@ -197,29 +197,26 @@ begin
           LJson.Free;
         end;
       except
-  on E: EAggregateException do
-  begin
-    if E.Count > 0 then
-    begin
-      var MsgErro := E.InnerExceptions[0].Message; // Pega o primeiro erro da lista
-
-      // Se for o erro do TMDB, extrai apenas o texto relevante
-      if MsgErro.Contains('"status_message":') then
-      begin
-        var PosInicio := MsgErro.IndexOf('"status_message":') + 18;
-        MsgErro := MsgErro.Substring(PosInicio).Replace('"', '').Replace('}', '').Trim;
-      end
-      else if MsgErro.Contains('404') then
-      begin
-        MsgErro := 'O recurso solicitado não foi encontrado.';
+        on E: EAggregateException do
+        begin
+          if E.Count > 0 then
+          begin
+            var MsgErro := E.InnerExceptions[0].Message;
+            if MsgErro.Contains('"status_message":') then
+            begin
+              var PosInicio := MsgErro.IndexOf('"status_message":') + 18;
+              MsgErro := MsgErro.Substring(PosInicio).Replace('"', '').Replace('}', '').Trim;
+            end
+            else if MsgErro.Contains('404') then
+            begin
+              MsgErro := 'O recurso solicitado não foi encontrado.';
+            end;
+            MessageDlg('Erro TMDB: ' + MsgErro, mtError, [mbOK], 0);
+          end
+          else
+          MessageDlg('Erro TMDB: ' + E.Message, mtError, [mbOK], 0);
+        end;
       end;
-
-      MessageDlg('Erro TMDB: ' + MsgErro, mtError, [mbOK], 0);
-    end
-    else
-      MessageDlg('Erro TMDB: ' + E.Message, mtError, [mbOK], 0);
-  end;
-end;
     finally
       Screen.Cursor := crDefault;
     end;
