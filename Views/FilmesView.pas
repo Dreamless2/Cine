@@ -106,11 +106,11 @@ begin
       Result := GerarTag(ANome);
     end);
   FMidiaEvents.AtualizarResumo;
-  CodigoBox.OnKeyPress := Buscar;
-  CopiarButton.OnClick := CopiarButton_Click;
-  SalvarButton.OnClick := SalvarButton_Click;
+  CodigoBox.OnKeyPress   := Buscar;
+  CopiarButton.OnClick   := CopiarButton_Click;
+  SalvarButton.OnClick   := SalvarButton_Click;
   AnteriorButton.OnClick := AnteriorButton_Click;
-  ProximoButton.OnClick := ProximoButton_Click;
+  ProximoButton.OnClick  := ProximoButton_Click;
   LimparPainel(PanelDesktop);
 end;
 

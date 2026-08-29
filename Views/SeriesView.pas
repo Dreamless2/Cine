@@ -115,11 +115,11 @@ begin
       Result := GerarTag(ANome);
     end);
   FMidiaEvents.AtualizarResumo;
-  CodigoBox.OnKeyPress := Buscar;
-  CopiarButton.OnClick := CopiarButton_Click;
-  SalvarButton.OnClick := SalvarButton_Click;
+  CodigoBox.OnKeyPress   := Buscar;
+  CopiarButton.OnClick   := CopiarButton_Click;
+  SalvarButton.OnClick   := SalvarButton_Click;
   AnteriorButton.OnClick := AnteriorButton_Click;
-  ProximoButton.OnClick := ProximoButton_Click;
+  ProximoButton.OnClick  := ProximoButton_Click;
   LimparPainel(PanelDesktop);
 end;
 
@@ -173,23 +173,23 @@ end;
 begin
   FMidiaEvents.DesativarEventos;
   try
-    NomeBox.Text := ValorOuPadrao(AMedia.Nome);
-    SinopseBox.Text := ValorOuPadrao(AMedia.Sinopse);
-    OriginalBox.Text := ValorOuPadrao(AMedia.NomeOriginal);
-    EstreiaBox.Text := ValorOuPadrao(AMedia.DataEstreia);
+    NomeBox.Text        := ValorOuPadrao(AMedia.Nome);
+    SinopseBox.Text     := ValorOuPadrao(AMedia.Sinopse);
+    OriginalBox.Text    := ValorOuPadrao(AMedia.NomeOriginal);
+    EstreiaBox.Text     := ValorOuPadrao(AMedia.DataEstreia);
     AlternativoBox.Text := ValorOuPadrao(AMedia.NomeAlternativo);
-    SerieBox.Text := GerarTag(ValorOuPadrao(AMedia.Nome));
-    FranquiaBox.Text  := ValorOuPadrao(AMedia.Franquia);
+    SerieBox.Text       := GerarTag(ValorOuPadrao(AMedia.Nome));
+    FranquiaBox.Text    := ValorOuPadrao(AMedia.Franquia);
     LocalBox.Text       := ValorOuPadrao(AMedia.LocalProducao);
     IdiomaBox.Text      := ValorOuPadrao(AMedia.IdiomaOriginal);
     ReferenciaBox.Text  := ValorOuPadrao(AMedia.ObraReferencia);
     AutoresBox.Text     := ValorOuPadrao(AMedia.Autores);
     ShowrunnersBox.Text := ValorOuPadrao(AMedia.Showrunners);
-    GeneroBox.Text := ValorOuPadrao(AMedia.Genero);
-    TagsBox.Text := ValorOuPadrao(AMedia.Tags);
-    DiretorBox.Text := ValorOuPadrao(AMedia.Diretor);
-    ArtistasBox.Text := ValorOuPadrao(AMedia.Artista);
-    ProdutoraBox.Text := ValorOuPadrao(AMedia.Produtora);
+    GeneroBox.Text      := ValorOuPadrao(AMedia.Genero);
+    TagsBox.Text        := ValorOuPadrao(AMedia.Tags);
+    DiretorBox.Text     := ValorOuPadrao(AMedia.Diretor);
+    ArtistasBox.Text    := ValorOuPadrao(AMedia.Artista);
+    ProdutoraBox.Text   := ValorOuPadrao(AMedia.Produtora);
   finally
     FMidiaEvents.ReativarEventos;
   end;
