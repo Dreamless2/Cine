@@ -187,8 +187,7 @@ begin
 
     if not TryStrToInt(CodigoBox.Text, LMovieId) then
     begin
-      MessageDlg('Informe o código do TMDB.', mtWarning, [mbOK], 0);
-      Application.MessageBox('Informe o código do TMDB.', 'Cine - Filmes',  MB_OK + MB_ICONWARNING);
+      Application.MessageBox('Informe o código do TMDB.', 'Cine - Filmes',  MB_OK + MB_ICONQUESTION);
       CodigoBox.SetFocus;
       Exit;
     end;
