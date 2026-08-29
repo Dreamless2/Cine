@@ -81,7 +81,7 @@ begin
 
   FConexao.ExecSQL(
     'CREATE TRIGGER IF NOT EXISTS trg_Midias_Insert ' +
-    'AFTER INSERT ON MIDIASJ M LOOU UIIIUUUUUUUUUUUUU9Filmes ' +
+    'AFTER INSERT ON Midias ' +
     'BEGIN ' +
     '  UPDATE Midias SET DataHora_Cadastro = datetime(''now'',''localtime''), ' +
     '                    DataHora_Update = datetime(''now'',''localtime'') ' +
@@ -89,7 +89,7 @@ begin
     'END');
 
   FConexao.ExecSQL(
-    'CREATE TRIGGER IF NOT EXISTS trg_Filmes_Update ' +
+    'CREATE TRIGGER IF NOT EXISTS trg_Midias_Update ' +
     'AFTER UPDATE ON Filmes ' +
     'WHEN NEW.DataHora_Update = OLD.DataHora_Update ' +
     'BEGIN ' +
