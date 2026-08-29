@@ -120,7 +120,7 @@ begin
   HistoricoTable.Append;
   for I := 0 to HistoricoTable.FieldCount - 1 do
   begin
-    if HistoricoTable.Fields[I].DataType in [ftWideString, ftMemo] then
+    if HistoricoTable.Fields[I].DataType in [ftString, ftMemo] then
       HistoricoTable.Fields[I].AsString := '--';
   end;
   HistoricoTable.FieldByName('TipoMidia').AsString := ATipoTela;
