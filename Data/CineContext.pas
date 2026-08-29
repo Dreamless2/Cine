@@ -9,7 +9,7 @@ uses
   FireDAC.Comp.Client;
 
 type
-  TDataModule1 = class(TDataModule)
+  THistoricoDataModule = class(TDataModule)
     HistoricoTable: TFDMemTable;
     FDStanStorageJSONLink1: TFDStanStorageJSONLink;
     procedure DataModuleCreate(Sender: TObject);
@@ -23,7 +23,7 @@ type
   end;
 
 var
-  DataModule1: TDataModule1;
+  HistoricoDataModule: THistoricoDataModule;
 
 implementation
 
