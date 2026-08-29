@@ -62,6 +62,7 @@ begin
   HistoricoTable.FieldDefs.Add('DataHora_Cadastro', ftDateTime);
   HistoricoTable.FieldDefs.Add('DataHora_Update', ftDateTime);
   HistoricoTable.CreateDataSet;
+  HistoricoTable.Open;
   CarregarDados;
 end;
 
