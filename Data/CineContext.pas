@@ -63,7 +63,6 @@ begin
     '  Estreia TEXT,' +
     '  Alternativo TEXT,' +
     '  Tags TEXT,' +
-    '  Serie TEXT,' +
     '  MCU TEXT,' +
     '  Local TEXT,' +
     '  Idioma TEXT,' +
