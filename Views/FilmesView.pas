@@ -246,6 +246,23 @@ end;
 procedure TFilmesMain.SalvarButton_Click(Sender: TObject);
 begin
   HistoricoDataModule.NovoRegistro('Filmes');
+  HistoricoDataModule.HistoricoTable.FieldByName('Codigo').AsString := CodigoBox.Text;
+  HistoricoDataModule.HistoricoTable.FieldByName('Codigo').AsString := CodigoBox.Text;
+  HistoricoDataModule.HistoricoTable.FieldByName('Codigo').AsString := CodigoBox.Text;
+  HistoricoDataModule.HistoricoTable.FieldByName('Codigo').AsString := CodigoBox.Text;
+  HistoricoDataModule.HistoricoTable.FieldByName('Codigo').AsString := CodigoBox.Text;
+  HistoricoDataModule.HistoricoTable.FieldByName('Codigo').AsString := CodigoBox.Text;
+  HistoricoDataModule.HistoricoTable.FieldByName('Codigo').AsString := CodigoBox.Text;
+  HistoricoDataModule.HistoricoTable.FieldByName('Codigo').AsString := CodigoBox.Text;
+  HistoricoDataModule.HistoricoTable.FieldByName('Codigo').AsString := CodigoBox.Text;
+  HistoricoDataModule.HistoricoTable.FieldByName('Codigo').AsString := CodigoBox.Text;
+  HistoricoDataModule.HistoricoTable.FieldByName('Codigo').AsString := CodigoBox.Text;
+  HistoricoDataModule.HistoricoTable.FieldByName('Codigo').AsString := CodigoBox.Text;
+  HistoricoDataModule.HistoricoTable.FieldByName('Codigo').AsString := CodigoBox.Text;
+  HistoricoDataModule.HistoricoTable.FieldByName('Codigo').AsString := CodigoBox.Text;
+  HistoricoDataModule.HistoricoTable.FieldByName('Codigo').AsString := CodigoBox.Text;
+  HistoricoDataModule.HistoricoTable.FieldByName('Codigo').AsString := CodigoBox.Text;
+  HistoricoDataModule.HistoricoTable.FieldByName('Codigo').AsString := CodigoBox.Text;
 
 end;
 
