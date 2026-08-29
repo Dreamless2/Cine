@@ -214,8 +214,9 @@ begin
         begin
          if E.Count > 0 then
             begin
+              var MaxExibicao := Min(E.Count - 1, 5);
               var Erros: string := '';
-              for var I := 0 to E.Count - 1 do
+              for var I := 0 to MaxExibicao do
               begin
                 Erros := Erros + '• ' + E.InnerExceptions[I].Message + sLineBreak;
               end;
