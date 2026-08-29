@@ -7,7 +7,7 @@ uses
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.ExtCtrls, Vcl.Mask, Vcl.Buttons,
   TMDB.ApiClient, System.JSON, TMDB.MediaEngine, System.Threading, ResumoBuilder,
   System.UITypes, TMDB.KeyStore, MidiaFormEvents, System.Math, CineContext,
-  Data.DB, FireDAC.ST;
+  Data.DB, FireDAC.Stan.Intf, FireDAC.Stan.Option, FireDAC.Comp.Client;
 
 
 type
@@ -108,6 +108,7 @@ begin
   SalvarButton.OnClick := SalvarButton_Click;
   AnteriorButton.OnClick := AnteriorButton_Click;
   ProximoButton.OnClick := ProximoButton_Click;
+  HistoricoData
   LimparPainel(PanelDesktop);
 end;
 
