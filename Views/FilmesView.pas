@@ -326,12 +326,15 @@ end;
 procedure TFilmesMain.AnteriorButton_Click(Sender: TObject);
 begin
     HistoricoDataModule.HistoricoTable.Prior;
+    if HistoricoDataModule.HistoricoTable. then
+    ShowMessage('Chegou no último registro');
 end;
 
 procedure TFilmesMain.ProximoButton_Click(Sender: TObject);
 begin
-  if HistoricoDataModule.HistoricoTable.Next < 0 then
-    ShowMessage('Chegou no último');
+  HistoricoDataModule.HistoricoTable.Next;
+  if HistoricoDataModule.HistoricoTable.Eof then
+    ShowMessage('Chegou no último registro');
 
 
 end;
