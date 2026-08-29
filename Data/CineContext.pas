@@ -19,7 +19,9 @@ type
     FArquivoJSON: string;
   public
     { Public declarations }
-    procedure AdicionarRegistro(const AAcao, ADetalhe: string);
+    procedure CarregarDados;
+    procedure SalvarDados;
+    procedure NovoRegistro(const ATipoTela: string);
   end;
 
 var
@@ -34,17 +36,39 @@ implementation
 
 procedure THistoricoDataModule.DataModuleCreate(Sender: TObject);
 begin
-  FArquivoJSON := TPath.Combine(TPath.GetDocumentsPath, 'historico_sistema.json');
+  FArquivoJSON := TPath.Combine(TPath.GetDocumentsPath, 'historico_midias.json');
 
-  // Configura a estrutura uma única vez para o sistema inteiro
+  // 1. Define a estrutura unificada para o JSON / MemTable
   HistoricoTable.FieldDefs.Clear;
-  HistoricoTable.FieldDefs.Add('DataHora', ftDateTime);
-  HistoricoTable.FieldDefs.Add('Acao', ftString, 50);
-  HistoricoTable.FieldDefs.Add('Detalhe', ftString, 250);
+  HistoricoTable.FieldDefs.Add('TipoMidia', ftString, 20); // 'Série', 'Anime' ou 'Filme/Outro'
+  HistoricoTable.FieldDefs.Add('Codigo', ftString, 20);
+  HistoricoTable.FieldDefs.Add('Nome', ftString, 100);
+  HistoricoTable.FieldDefs.Add('Audio', ftString, 50);
+  HistoricoTable.FieldDefs.Add('Sinopse', ftMemo);
+  HistoricoTable.FieldDefs.Add('Original', ftString, 100);
+  HistoricoTable.FieldDefs.Add('Estreia', ftString, 30);
+  HistoricoTable.FieldDefs.Add('Alternativo', ftString, 100);
+  HistoricoTable.FieldDefs.Add('Tags', ftString, 150);
+  HistoricoTable.FieldDefs.Add('Serie', ftString, 100);
+  HistoricoTable.FieldDefs.Add('MCU', ftString, 50);
+  HistoricoTable.FieldDefs.Add('Local', ftString, 100);
+  HistoricoTable.FieldDefs.Add('Idioma', ftString, 50);
+  HistoricoTable.FieldDefs.Add('Referencia', ftString, 100);
+  HistoricoTable.FieldDefs.Add('Autores', ftString, 100);
+  HistoricoTable.FieldDefs.Add('Franquia', ftString, 100);
+  HistoricoTable.FieldDefs.Add('Showrunners', ftString, 100);
+  HistoricoTable.FieldDefs.Add('Genero', ftString, 50);
+  HistoricoTable.FieldDefs.Add('Diretor', ftString, 100);
+  HistoricoTable.FieldDefs.Add('Artistas', ftMemo);
+  HistoricoTable.FieldDefs.Add('Produtora', ftString, 100);
+  HistoricoTable.FieldDefs.Add('DataHora_Cadastro', ftDateTime);
+  HistoricoTable.FieldDefs.Add('DataHora_Update', ftDateTime);
+
+  // 2. Cria a tabela em memória
   HistoricoTable.CreateDataSet;
 
-  if TFile.Exists(FArquivoJSON) then
-    HistoricoTable.LoadFromFile(FArquivoJSON, sfJSON);
+  // 3. Carrega os dados se o arquivo JSON já existir
+  CarregarDados;
 end;
 
 procedure THistoricoDataModule.AdicionarRegistro(const AAcao, ADetalhe: string);
