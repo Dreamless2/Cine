@@ -22,7 +22,7 @@ type
     procedure SalvarDados;
     procedure NovoRegistro(const ATipoTela: string);
     constructor DataModuleCreate(AOwner: TComponent);
-    destructor DataModuleDestroy(Sender: TObject);
+    //destructor DataModuleDestroy(Sender: TObject);
   end;
 
 var
@@ -92,11 +92,13 @@ begin
   CarregarDados;
 end;
 
+{
 procedure THistoricoDataModule.DataModuleDestroy(Sender: TObject);
 begin
   if HistoricoTable.Active and (HistoricoTable.RecordCount > 0) then
     HistoricoTable.SaveToFile(FArquivoJSON, sfJSON);
 end;
+}
 
 procedure THistoricoDataModule.CarregarDados;
 var
