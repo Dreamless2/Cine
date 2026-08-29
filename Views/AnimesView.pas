@@ -155,7 +155,7 @@ begin
     ShowrunnersBox.Text := AMedia.Showrunners;
     GeneroBox.Text := AMedia.Generos;
     TagsBox.Text := AMedia.Tags;
-    DiretorBox.Text := AMedia.Diretores;
+    DiretorBox.Text := AMedia.Diretores ? '--';
     ArtistasBox.Text := AMedia.Artistas;
     ProdutoraBox.Text := AMedia.Produtoras;
   finally
