@@ -57,7 +57,7 @@ type
     procedure CopiarButton_Click(Sender: TObject);
     procedure AnteriorButton_Click(Sender: TObject);
     procedure ProximoButton_Click(Sender: TObject);
-    p
+    procedure HistoricoDataSource_Changed(Sender: TObject; Field: TField);
     procedure LimparPainel(Painel: TPanel);
   public
     { Public declarations }
@@ -228,6 +228,12 @@ begin
       Screen.Cursor := crDefault;
     end;
   end;
+end;
+
+procedure TFilmesMain.HistoricoDataSource_Changed(Sender: TObject; Field: TField);
+begin
+  if historico then
+  
 end;
 
 procedure TFilmesMain.CopiarButton_Click(Sender: TObject);
