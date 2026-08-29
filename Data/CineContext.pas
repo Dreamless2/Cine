@@ -63,23 +63,6 @@ begin
   HistoricoTable.CreateDataSet;
 end;}
 
-procedure THistoricoDataModule.DefinirEstrutura;
-begin
-  ShowMessage('EST 1');
-
-  if not Assigned(HistoricoTable) then
-    raise Exception.Create('HistoricoTable NIL');
-
-  ShowMessage('EST 1.1');
-
-  HistoricoTable.Close;
-
-  ShowMessage('EST 1.2');
-
-  // NÃO mexer em FieldDefs
-end;
-
-
 function THistoricoDataModule.ResolverCaminhoArquivo: string;
 var
   LPasta: string;
