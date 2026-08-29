@@ -34,9 +34,9 @@ implementation
 
 {$R *.dfm}
 
-{procedure THistoricoDataModule.DefinirEstrutura;
+procedure THistoricoDataModule.DefinirEstrutura;
 begin
-  //HistoricoTable.FieldDefs.Clear;
+  HistoricoTable.FieldDefs.Clear;
   HistoricoTable.FieldDefs.Add('TipoMidia', ftString, 20);
   HistoricoTable.FieldDefs.Add('Codigo', ftString, 20);
   HistoricoTable.FieldDefs.Add('Nome', ftString, 100);
@@ -61,23 +61,6 @@ begin
   HistoricoTable.FieldDefs.Add('DataHora_Cadastro', ftDateTime);
   HistoricoTable.FieldDefs.Add('DataHora_Update', ftDateTime);
   HistoricoTable.CreateDataSet;
-end;}
-
-procedure THistoricoDataModule.DefinirEstrutura;
-begin
-  ShowMessage('EST 1');
-
-  HistoricoTable.Close;
-
-  ShowMessage('EST 2');
-
-  HistoricoTable.FieldDefs.Add('Teste', ftString, 10);
-
-  ShowMessage('EST 3');
-
-  HistoricoTable.CreateDataSet;
-
-  ShowMessage('EST 4');
 end;
 
 function THistoricoDataModule.ResolverCaminhoArquivo: string;
@@ -107,7 +90,7 @@ begin
   inherited Create(AOwner);
   FArquivoJSON := ResolverCaminhoArquivo;
   DefinirEstrutura;
-  //CarregarDados;
+  CarregarDados;
 end;
 
 procedure THistoricoDataModule.CarregarDados;
