@@ -306,23 +306,21 @@ begin
         Edit
       else
       Append;
-
-
-    HistoricoDataModule.NovoRegistro('Filmes');
-    HistoricoDataModule.HistoricoTable.FieldByName('Codigo').AsString := CodigoBox.Text;
-    HistoricoDataModule.HistoricoTable.FieldByName('Nome').AsString := NomeBox.Text;
-    HistoricoDataModule.HistoricoTable.FieldByName('Audio').AsString := AudioBox.Text;
-    HistoricoDataModule.HistoricoTable.FieldByName('Sinopse').AsString := SinopseBox.Text;
-    HistoricoDataModule.HistoricoTable.FieldByName('Original').AsString := OriginalBox.Text;
-    HistoricoDataModule.HistoricoTable.FieldByName('Estreia').AsString := EstreiaBox.Text;
-    HistoricoDataModule.HistoricoTable.FieldByName('Alternativo').AsString := AlternativoBox.Text;
-    HistoricoDataModule.HistoricoTable.FieldByName('Tags').AsString := TagsBox.Text;
-    HistoricoDataModule.HistoricoTable.FieldByName('MCU').AsString := MCUBox.Text;
-    HistoricoDataModule.HistoricoTable.FieldByName('Franquia').AsString := FranquiaBox.Text;
-    HistoricoDataModule.HistoricoTable.FieldByName('Genero').AsString := GeneroBox.Text;
-    HistoricoDataModule.HistoricoTable.FieldByName('Diretor').AsString := DiretorBox.Text;
-    HistoricoDataModule.HistoricoTable.FieldByName('Artistas').AsString := ArtistasBox.Text;
-    HistoricoDataModule.HistoricoTable.FieldByName('Produtora').AsString := ProdutoraBox.Text;
+      NovoRegistro('Filmes');
+      FieldByName('Codigo').AsString := CodigoBox.Text;
+      FieldByName('Nome').AsString := NomeBox.Text;
+      FieldByName('Audio').AsString := AudioBox.Text;
+      FieldByName('Sinopse').AsString := SinopseBox.Text;
+      FieldByName('Original').AsString := OriginalBox.Text;
+      FieldByName('Estreia').AsString := EstreiaBox.Text;
+      FieldByName('Alternativo').AsString := AlternativoBox.Text;
+      FieldByName('Tags').AsString := TagsBox.Text;
+      FieldByName('MCU').AsString := MCUBox.Text;
+      FieldByName('Franquia').AsString := FranquiaBox.Text;
+      FieldByName('Genero').AsString := GeneroBox.Text;
+      FieldByName('Diretor').AsString := DiretorBox.Text;
+      FieldByName('Artistas').AsString := ArtistasBox.Text;
+      FieldByName('Produtora').AsString := ProdutoraBox.Text;
       Post;
     end;
     HistoricoDataModule.SalvarDados;
