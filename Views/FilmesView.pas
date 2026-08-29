@@ -108,9 +108,8 @@ begin
   SalvarButton.OnClick := SalvarButton_Click;
   AnteriorButton.OnClick := AnteriorButton_Click;
   ProximoButton.OnClick := ProximoButton_Click;
-  //HistoricoDataSource.OnDataChange := HistoricoDataSource_Changed;
+  HistoricoDataSource.OnDataChange := HistoricoDataSource_Changed;
   LimparPainel(PanelDesktop);
-
 end;
 
 function ExceptionDetalhes(E: Exception): string;
