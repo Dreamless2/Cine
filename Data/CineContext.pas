@@ -36,27 +36,27 @@ implementation
 procedure THistoricoDataModule.DefinirEstrutura;
 begin
   HistoricoTable.FieldDefs.Clear;
-  HistoricoTable.FieldDefs.Add('TipoMidia', ftString, 20);
-  HistoricoTable.FieldDefs.Add('Codigo', ftString, 20);
-  HistoricoTable.FieldDefs.Add('Nome', ftString, 100);
-  HistoricoTable.FieldDefs.Add('Audio', ftString, 50);
+  HistoricoTable.FieldDefs.Add('TipoMidia', ftWideString, 20);
+  HistoricoTable.FieldDefs.Add('Codigo', ftWideString, 20);
+  HistoricoTable.FieldDefs.Add('Nome', ftWideString, 100);
+  HistoricoTable.FieldDefs.Add('Audio', ftWideString, 50);
   HistoricoTable.FieldDefs.Add('Sinopse', ftMemo);
-  HistoricoTable.FieldDefs.Add('Original', ftString, 100);
-  HistoricoTable.FieldDefs.Add('Estreia', ftString, 30);
-  HistoricoTable.FieldDefs.Add('Alternativo', ftString, 100);
-  HistoricoTable.FieldDefs.Add('Tags', ftString, 150);
-  HistoricoTable.FieldDefs.Add('Serie', ftString, 100);
-  HistoricoTable.FieldDefs.Add('MCU', ftString, 50);
-  HistoricoTable.FieldDefs.Add('Local', ftString, 100);
-  HistoricoTable.FieldDefs.Add('Idioma', ftString, 50);
-  HistoricoTable.FieldDefs.Add('Referencia', ftString, 100);
-  HistoricoTable.FieldDefs.Add('Autores', ftString, 100);
-  HistoricoTable.FieldDefs.Add('Franquia', ftString, 100);
-  HistoricoTable.FieldDefs.Add('Showrunners', ftString, 100);
-  HistoricoTable.FieldDefs.Add('Genero', ftString, 50);
-  HistoricoTable.FieldDefs.Add('Diretor', ftString, 100);
-  HistoricoTable.FieldDefs.Add('Artistas', ftString, 100);
-  HistoricoTable.FieldDefs.Add('Produtora', ftString, 100);
+  HistoricoTable.FieldDefs.Add('Original', ftWideString, 100);
+  HistoricoTable.FieldDefs.Add('Estreia', ftWideString, 30);
+  HistoricoTable.FieldDefs.Add('Alternativo', ftWideString, 100);
+  HistoricoTable.FieldDefs.Add('Tags', ftWideString, 150);
+  HistoricoTable.FieldDefs.Add('Serie', ftWideString, 100);
+  HistoricoTable.FieldDefs.Add('MCU', ftWideString, 50);
+  HistoricoTable.FieldDefs.Add('Local', ftWideString, 100);
+  HistoricoTable.FieldDefs.Add('Idioma', ftWideString, 50);
+  HistoricoTable.FieldDefs.Add('Referencia', ftWideString, 100);
+  HistoricoTable.FieldDefs.Add('Autores', ftWideString, 100);
+  HistoricoTable.FieldDefs.Add('Franquia', ftWideString, 100);
+  HistoricoTable.FieldDefs.Add('Showrunners', ftWideString, 100);
+  HistoricoTable.FieldDefs.Add('Genero', ftWideString, 50);
+  HistoricoTable.FieldDefs.Add('Diretor', ftWideString, 100);
+  HistoricoTable.FieldDefs.Add('Artistas', ftWideString, 100);
+  HistoricoTable.FieldDefs.Add('Produtora', ftWideString, 100);
   HistoricoTable.FieldDefs.Add('DataHora_Cadastro', ftDateTime);
   HistoricoTable.FieldDefs.Add('DataHora_Update', ftDateTime);
   HistoricoTable.CreateDataSet;
@@ -120,7 +120,7 @@ begin
   HistoricoTable.Append;
   for I := 0 to HistoricoTable.FieldCount - 1 do
   begin
-    if HistoricoTable.Fields[I].DataType in [ftString, ftMemo] then
+    if HistoricoTable.Fields[I].DataType in [ftWideString, ftMemo] then
       HistoricoTable.Fields[I].AsString := '--';
   end;
   HistoricoTable.FieldByName('TipoMidia').AsString := ATipoTela;
