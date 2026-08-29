@@ -145,16 +145,16 @@ begin
   FMidiaEvents.DesativarEventos;
   try
     NomeBox.Text := ValorOuPadrao(AMedia.Nome);
-    SinopseBox.Text := ValorOuPadrao(AMedia.Sinopse;
-    OriginalBox.Text := ValorOuPadrao(AMedia.NomeOriginal;
-    EstreiaBox.Text := ValorOuPadrao(AMedia.DataEstreia;
-    AlternativoBox.Text := ValorOuPadrao(AMedia.NomeAlternativo;
-    FilmeBox.Text := G(erarTag(AMedia.Nome);
-    GeneroBox.Text := ValorOuPadrao(AMedia.Generos;
-    TagsBox.Text := ValorOuPadrao(AMedia.Tags;
-    DiretorBox.Text := ValorOuPadrao(AMedia.Diretores;
-    ArtistasBox.Text := ValorOuPadrao(AMedia.Artistas;
-    ProdutoraBox.Text := ValorOuPadrao(AMedia.Produtoras;
+    SinopseBox.Text := ValorOuPadrao(AMedia.Sinopse);
+    OriginalBox.Text := ValorOuPadrao(AMedia.NomeOriginal);
+    EstreiaBox.Text := ValorOuPadrao(AMedia.DataEstreia);
+    AlternativoBox.Text := ValorOuPadrao(AMedia.NomeAlternativo);
+    FilmeBox.Text := GerarTag(ValorOuPadrao(AMedia.Nome));
+    GeneroBox.Text := ValorOuPadrao(AMedia.Generos);
+    TagsBox.Text := ValorOuPadrao(AMedia.Tags);
+    DiretorBox.Text := ValorOuPadrao(AMedia.Diretores);
+    ArtistasBox.Text := ValorOuPadrao(AMedia.Artistas);
+    ProdutoraBox.Text := ValorOuPadrao(AMedia.Produtoras);
   finally
     FMidiaEvents.ReativarEventos;
   end;
