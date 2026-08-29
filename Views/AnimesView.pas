@@ -6,7 +6,7 @@ uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.Mask, Vcl.ExtCtrls,
   TMDB.ApiClient, System.JSON, TMDB.MediaEngine, System.Threading, ResumoBuilder,
-  System.UITypes, TMDB.KeyStore, MidiaFormEvents;
+  System.UITypes, TMDB.KeyStore, MidiaFormEvents, System.Math;
 
 type
   TAnimesMain = class(TForm)
