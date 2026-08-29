@@ -340,10 +340,12 @@ begin
     if LEhNovoRegistro then
     begin
       Application.MessageBox(PChar('Filme ' + NomeBox.Text + ' cadastrado com sucesso.'), 'Cine - Filmes', MB_OK + MB_ICONINFORMATION);
+      AtualizarCamposComRegistroAtual;
     end
     else
     begin
       Application.MessageBox(PChar('Filme ' + NomeBox.Text + ' atualizado com sucesso.'), 'Cine - Filmes', MB_OK + MB_ICONINFORMATION);
+      AtualizarCamposComRegistroAtual;
     end;
   except
     on E: Exception do
