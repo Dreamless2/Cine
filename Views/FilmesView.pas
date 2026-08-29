@@ -6,7 +6,7 @@ uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.ExtCtrls, Vcl.Mask, Vcl.Buttons,
   TMDB.ApiClient, System.JSON, TMDB.MediaEngine, System.Threading, ResumoBuilder,
-  System.UITypes, TMDB.KeyStore, MidiaFormEvents, System.Math;
+  System.UITypes, TMDB.KeyStore, MidiaFormEvents, System.Math, CineContext;
 
 
 type
@@ -53,6 +53,7 @@ type
     FMidiaEvents: TMidiaFormHelper;
     FTMDBClient: TTMDBClient;
     procedure CopiarButton_Click(Sender: TObject);
+
     procedure LimparPainel(Painel: TPanel);
   public
     { Public declarations }
