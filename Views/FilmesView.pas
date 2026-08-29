@@ -108,7 +108,7 @@ begin
   FMidiaEvents.AtualizarResumo;
   CodigoBox.OnKeyPress := Buscar;
   //CopiarButton.OnClick := CopiarButton_Click;
-  //SalvarButton.OnClick := SalvarButton_Click;
+  SalvarButton.OnClick := SalvarButton_Click;
   LimparPainel(PanelDesktop);
 end;
 
