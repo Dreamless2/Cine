@@ -11,17 +11,16 @@ uses
 type
   THistoricoDataModule = class(TDataModule)
     HistoricoTable: TFDMemTable;
-
   private
+    { private }
     FArquivoJSON: string;
     procedure DefinirEstrutura;
     function ResolverCaminhoArquivo: string;
   public
+    { public }
     procedure CarregarDados;
     procedure SalvarDados;
     procedure NovoRegistro(const ATipoTela: string);
-    //constructor DataModuleCreate(AOwner: TComponent); override;
-    //destructor DataModuleDestroy(Sender: TObject);
     constructor Create(AOwner: TComponent); override;
   end;
 
@@ -76,14 +75,6 @@ begin
     LPasta := TPath.Combine(TPath.GetTempPath, 'CineContext');
   Result := TPath.Combine(LPasta, 'historico_midias.json');
 end;
-
-{
-procedure THistoricoDataModule.DataModuleDestroy(Sender: TObject);
-begin
-  if HistoricoTable.Active and (HistoricoTable.RecordCount > 0) then
-    HistoricoTable.SaveToFile(FArquivoJSON, sfJSON);
-end;
-}
 
 constructor THistoricoDataModule.Create(AOwner: TComponent);
 begin
