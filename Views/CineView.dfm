@@ -35,8 +35,9 @@ object CineMain: TCineMain
     Color = 4731908
     ParentBackground = False
     TabOrder = 1
+    ExplicitTop = 19
     object LabelHome: TLabel
-      Left = 747
+      Left = 671
       Top = 13
       Width = 74
       Height = 38
