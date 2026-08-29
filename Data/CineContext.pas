@@ -55,26 +55,26 @@ begin
   FConexao.ExecSQL(
     'CREATE TABLE IF NOT EXISTS Midias (' +
     '  ID INTEGER PRIMARY KEY,' +
-    '  Codigo TEXT DEFAULT ''-'',' +
-    '  TipoMidia TEXT DEFAULT ''-'',' +
-    '  Nome TEXT DEFAULT ''-'',' +
-    '  Audio TEXT DEFAULT ''-'',' +
-    '  Sinopse TEXT DEFAULT ''-'',' +
-    '  Original TEXT DEFAULT ''-'',' +
-    '  Estreia TEXT DEFAULT ''-'',' +
-    '  Alternativo TEXT DEFAULT ''-'',' +
-    '  Tags TEXT DEFAULT ''-'',' +
-    '  MCU TEXT DEFAULT ''-'',' +
-    '  Local TEXT DEFAULT ''-'',' +
-    '  Idioma TEXT DEFAULT ''-'',' +
-    '  Referencia TEXT DEFAULT ''-'',' +
-    '  Autores TEXT DEFAULT ''-'',' +
-    '  Franquia TEXT DEFAULT ''-'',' +
-    '  Showrunners TEXT DEFAULT ''-'',' +
-    '  Genero TEXT DEFAULT ''-'',' +
-    '  Diretor TEXT DEFAULT ''-'',' +
-    '  Artistas TEXT DEFAULT ''-'',' +
-    '  Produtora TEXT DEFAULT ''-'',' +
+    '  Codigo TEXT DEFAULT ''--'',' +
+    '  TipoMidia TEXT DEFAULT ''--'',' +
+    '  Nome TEXT DEFAULT ''--'',' +
+    '  Audio TEXT DEFAULT ''--'',' +
+    '  Sinopse TEXT DEFAULT ''--'',' +
+    '  Original TEXT DEFAULT ''--'',' +
+    '  Estreia TEXT DEFAULT ''--'',' +
+    '  Alternativo TEXT DEFAULT ''--'',' +
+    '  Tags TEXT DEFAULT ''--'',' +
+    '  MCU TEXT DEFAULT ''--'',' +
+    '  Local TEXT DEFAULT ''--'',' +
+    '  Idioma TEXT DEFAULT ''--'',' +
+    '  Referencia TEXT DEFAULT ''--'',' +
+    '  Autores TEXT DEFAULT ''--'',' +
+    '  Franquia TEXT DEFAULT ''--'',' +
+    '  Showrunners TEXT DEFAULT ''--'',' +
+    '  Genero TEXT DEFAULT ''--'',' +
+    '  Diretor TEXT DEFAULT ''--'',' +
+    '  Artistas TEXT DEFAULT ''--'',' +
+    '  Produtora TEXT DEFAULT ''--'',' +
     '  DataHora_Cadastro TEXT,' +
     '  DataHora_Update TEXT' +
     ')');
