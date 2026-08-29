@@ -68,7 +68,6 @@ type
     procedure FormDestroy(Sender: TObject);
     procedure PreencherComMedia(const AMedia: TMediaData);
     procedure Buscar(Sender: TObject; var Key: Char);
-    procedure BuscarExit(Sender: TObject);
     constructor Create(AOwner: TComponent);
   end;
 
@@ -107,7 +106,6 @@ begin
     end);
   FMidiaEvents.AtualizarResumo;
   CodigoBox.OnKeyPress := Buscar;
-  CodigoBox.OnExit := BuscarExit;
   CopiarButton.OnClick := CopiarButton_Click;
   LimparPainel(PanelDesktop);
 end;
@@ -223,14 +221,6 @@ begin
       Screen.Cursor := crDefault;
     end;
   end;
-end;
-
-procedure TSeriesMain.BuscarExit(Sender: TObject);
-var
-  LKey: Char;
-begin
-  LKey := #13;
-  Buscar(Sender, LKey);
 end;
 
 procedure TSeriesMain.CopiarButton_Click(Sender: TObject);
