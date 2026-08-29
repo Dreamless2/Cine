@@ -54,7 +54,8 @@ procedure THistoricoDataModule.CriarEstruturaSeNecessaria;
 begin
   FConexao.ExecSQL(
     'CREATE TABLE IF NOT EXISTS Midias (' +
-    '  Codigo TEXT PRIMARY KEY,' +
+    '  ID INTEGER PRIMARY KEY,' +
+    '  Codigo TEXT,' +
     '  TipoMidia TEXT,' +
     '  Nome TEXT,' +
     '  Audio TEXT,' +
@@ -79,10 +80,10 @@ begin
     ')');
 
   FConexao.ExecSQL(
-    'CREATE TRIGGER IF NOT EXISTS trg_Filmes_Insert ' +
+    'CREATE TRIGGER IF NOT EXISTS trg_Midias_Insert ' +
     'AFTER INSERT ON Filmes ' +
     'BEGIN ' +
-    '  UPDATE Filmes SET DataHora_Cadastro = datetime(''now'',''localtime''), ' +
+    '  UPDATE MidiasSET DataHora_Cadastro = datetime(''now'',''localtime''), ' +
     '                    DataHora_Update = datetime(''now'',''localtime'') ' +
     '  WHERE Codigo = NEW.Codigo; ' +
     'END');
