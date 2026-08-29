@@ -67,17 +67,16 @@ procedure THistoricoDataModule.DefinirEstrutura;
 begin
   ShowMessage('EST 1');
 
+  if not Assigned(HistoricoTable) then
+    raise Exception.Create('HistoricoTable NIL');
+
+  ShowMessage('EST 1.1');
+
   HistoricoTable.Close;
 
-  ShowMessage('EST 2');
+  ShowMessage('EST 1.2');
 
-  HistoricoTable.FieldDefs.Add('TipoMidia', ftString, 20);
-
-  ShowMessage('EST 3');
-
-  HistoricoTable.CreateDataSet;
-
-  ShowMessage('EST 4');
+  // NÃO mexer em FieldDefs
 end;
 
 
