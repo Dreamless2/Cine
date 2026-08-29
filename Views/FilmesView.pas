@@ -305,7 +305,6 @@ begin
   ResumoBox.CopyToClipboard;
 end;
 
-
 procedure TFilmesMain.SalvarButton_Click(Sender: TObject);
 var
   LEhNovoRegistro: Boolean;
