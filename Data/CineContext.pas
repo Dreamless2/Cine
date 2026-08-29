@@ -63,6 +63,23 @@ begin
   HistoricoTable.CreateDataSet;
 end;}
 
+procedure THistoricoDataModule.DefinirEstrutura;
+begin
+  ShowMessage('EST 1');
+
+  HistoricoTable.Close;
+
+  ShowMessage('EST 2');
+
+  HistoricoTable.FieldDefs.Add('Teste', ftString, 10);
+
+  ShowMessage('EST 3');
+
+  HistoricoTable.CreateDataSet;
+
+  ShowMessage('EST 4');
+end;
+
 function THistoricoDataModule.ResolverCaminhoArquivo: string;
 var
   LPasta: string;
