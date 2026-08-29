@@ -235,6 +235,9 @@ begin
   ResumoBox.CopyToClipboard;
 end;
 
-procedure T
+procedure TFilmesMain.AnteriorButton_Click(Sender: TObject);
+begin
+  HistoricoDataModule.HistoricoTable.Prior;
+end;
 
 end.
