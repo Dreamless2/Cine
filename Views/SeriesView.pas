@@ -283,14 +283,14 @@ begin
     TagsBox.Text        := T.FieldByName('Tags').AsString;
     MCUBox.Text         := T.FieldByName('MCU').AsString;
     FranquiaBox.Text    := T.FieldByName('Franquia').AsString;
-    LocalBox.Text       := T.FieldByName('Franquia').AsString;
-    IdiomaBox.Text      := T.FieldByName('Franquia').AsString;
-    ReferenciaBox.Text  := T.FieldByName('Franquia').AsString;
-    AutoresBox.Text     := T.FieldByName('Franquia').AsString;
+    LocalBox.Text       := T.FieldByName('Local').AsString;
+    IdiomaBox.Text      := T.FieldByName('Idioma').AsString;
+    ReferenciaBox.Text  := T.FieldByName('Referencia').AsString;
+    AutoresBox.Text     := T.FieldByName('Aranquia').AsString;
     ShowrunnersBox.Text := T.FieldByName('Franquia').AsString;
     GeneroBox.Text      := T.FieldByName('Genero').AsString;
     DiretorBox.Text     := T.FieldByName('Diretor').AsString;
-    ArtistasBox.Text    := T.FieldByName('Artista').AsString;
+    ArtistasBox.Text    := T.FieldByName('Artistas').AsString;
     ProdutoraBox.Text   := T.FieldByName('Produtora').AsString;
   finally
     FCarregandoHistorico := False;

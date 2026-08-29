@@ -73,7 +73,7 @@ begin
     '  Showrunners TEXT DEFAULT ''--'',' +
     '  Genero TEXT DEFAULT ''--'',' +
     '  Diretor TEXT DEFAULT ''--'',' +
-    '  Artista TEXT DEFAULT ''--'',' +
+    '  Artistas TEXT DEFAULT ''--'',' +
     '  Produtora TEXT DEFAULT ''--'',' +
     '  DataHora_Cadastro TEXT,' +
     '  DataHora_Update TEXT' +
