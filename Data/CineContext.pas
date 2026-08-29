@@ -17,6 +17,7 @@ type
   private
     { Private declarations }
     FArquivoJSON: string;
+    procedure DefinirEstrutura;
   public
     { Public declarations }
     procedure CarregarDados;
