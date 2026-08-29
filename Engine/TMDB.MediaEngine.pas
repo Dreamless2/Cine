@@ -15,14 +15,15 @@ type
     DataEstreia: string;
     NomeAlternativo: string;
     Franquia: string;
-    Generos: string;
-    Diretores: string;
-    Artistas: string;
-    Produtoras: string;
+    Genero: string;
+    Diretors: string;
+    Artista: string;
+    Produtora: string;
     Tags: string;
     LocalProducao: string;
     IdiomaOriginal: string;
     ObraReferencia: string;
+    Ref
     Showrunners: string;
     TituloTag: string;
   end;
