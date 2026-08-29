@@ -297,6 +297,8 @@ begin
         Append
       else
         Edit;
+
+      NovoRegistro
       FieldByName('Codigo').AsString := CodigoBox.Text;
       FieldByName('Nome').AsString := NomeBox.Text;
       FieldByName('Audio').AsString := AudioBox.Text;
