@@ -60,7 +60,6 @@ type
     procedure SalvarButton_Click(Sender: TObject);
     procedure AnteriorButton_Click(Sender: TObject);
     procedure ProximoButton_Click(Sender: TObject);
-    procedure HistoricoDataSource_Changed(Sender: TObject; Field: TField);
     procedure LimparPainel(Painel: TPanel);
     procedure CarregarHistoricoNaTela;
   public
@@ -109,9 +108,6 @@ begin
   CodigoBox.OnKeyPress := Buscar;
   CopiarButton.OnClick := CopiarButton_Click;
   SalvarButton.OnClick := SalvarButton_Click;
-  AnteriorButton.OnClick := AnteriorButton_Click;
-  ProximoButton.OnClick := ProximoButton_Click;
-  HistoricoDataSource.OnDataChange := HistoricoDataSource_Changed;
   LimparPainel(PanelDesktop);
 end;
 
@@ -245,7 +241,7 @@ begin
   end;
 end;
 
-procedure TFilmesMain.CarregarHistoricoNaTela;
+{procedure TFilmesMain.CarregarHistoricoNaTela;
 var
   T: TFDMemTable;
 begin
@@ -276,26 +272,8 @@ begin
   finally
     FCarregandoHistorico := False;
   end;
-end;
+end;}
 
-procedure TFilmesMain.HistoricoDataSource_Changed(Sender: TObject;
-  Field: TField);
-begin
-  if (HistoricoDataModule = nil) or (not HistoricoDataModule.HistoricoTable.Active) or HistoricoDataModule.HistoricoTable.IsEmpty then
-    Exit;
-
-  if FCarregandoHistorico or FSalvandoHistorico then
-    Exit;
-
-  CarregarHistoricoNaTela;
-end;
-
-procedure TFilmesMain.CopiarButton_Click(Sender: TObject);
-begin
-  ResumoBox.SelectAll;
-  ResumoBox.CopyToClipboard;
-  Application.MessageBox('Copiado com sucesso.', 'Cine - Filmes', MB_OK + MB_ICONINFORMATION);
-end;
 
 procedure TFilmesMain.SalvarButton_Click(Sender: TObject);
 var
@@ -342,18 +320,5 @@ begin
   FSalvandoHistorico := False;
 end;
 
-procedure TFilmesMain.AnteriorButton_Click(Sender: TObject);
-begin
-    HistoricoDataModule.HistoricoTable.Prior;
-    if HistoricoDataModule.HistoricoTable.Bof then
-      Application.MessageBox('Sem mais registros para consultar.', 'Cine - Filmes', MB_OK + MB_ICONINFORMATION);
-end;
-
-procedure TFilmesMain.ProximoButton_Click(Sender: TObject);
-begin
-  HistoricoDataModule.HistoricoTable.Next;
-  if HistoricoDataModule.HistoricoTable.Eof then
-    Application.MessageBox('Sem mais registros para consultar.', 'Cine - Filmes', MB_OK + MB_ICONINFORMATION);
-end;
 
 end.
