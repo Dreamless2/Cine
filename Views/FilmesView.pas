@@ -188,14 +188,14 @@ begin
     if not TryStrToInt(CodigoBox.Text, LMovieId) then
     begin
       MessageDlg('Informe o código do TMDB.', mtWarning, [mbOK], 0);
+      Application.MessageBox('Informe o código do TMDB.', 'Cine - Filmes',  MB_OK + MB_ICONWARNING);
       CodigoBox.SetFocus;
       Exit;
     end;
 
     if not Assigned(FTMDBClient) then
     begin
-    MessageDlg('A chave da API do TMDB não está configurada.', mtWarning, [mbOK], 0);
-    Application.MessageBox(PChar('Erro: ' + MsgErro), 'Cine - Filmes', MB_YESNO + MB_ICONERROR);
+      Application.MessageBox('A chave da API do TMDB não está configurada.', 'Cine - Filmes',  MB_OK + MB_ICONWARNING);
       Exit;
     end;
 
