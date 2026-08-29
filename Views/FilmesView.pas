@@ -237,7 +237,7 @@ end;
 
 procedure TFilmesMain.AnteriorButton_Click(Sender: TObject);
 begin
-  THistoricoDataModule.
+    HistoricoDataModule.HistoricoTable.Prior;
 end;
 
 end.
