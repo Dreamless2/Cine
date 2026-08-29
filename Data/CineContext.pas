@@ -88,6 +88,21 @@ begin
   HistoricoTable.SaveToFile(FArquivoJSON, sfJSON);
 end;
 
-procedure thi
+procedure THistoricoDataModule.NovoRegistro(const ATipoTela: string);
+var
+  I: Integer;
+begin
+  HistoricoTable.Append;
+
+  for I := 0 to HistoricoTable.FieldCount - 1 do
+  begin
+    if HistoricoTable.Fields[I].DataType in [ftString, ftMemo] then
+      HistoricoTable.Fields[I].AsString := '--';
+  end;
+
+  HistoricoTable.FieldByName('TipoMidia').AsString := ATipoTela;
+  HistoricoTable.FieldByName('DataHora_Cadastro').AsDateTime := Now;
+  HistoricoTable.FieldByName('DataHora_Update').AsDateTime := Now;
+end;
 
 end.
