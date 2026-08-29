@@ -273,9 +273,7 @@ end;
 procedure TFilmesMain.HistoricoDataSource_Changed(Sender: TObject;
   Field: TField);
 begin
-  if (HistoricoDataModule = nil) or
-     (not HistoricoDataModule.HistoricoTable.Active) or
-     HistoricoDataModule.HistoricoTable.IsEmpty then
+  if (HistoricoDataModule = nil) or (not HistoricoDataModule.HistoricoTable.Active) or HistoricoDataModule.HistoricoTable.IsEmpty then
     Exit;
 
   if FCarregandoHistorico or FSalvandoHistorico then
@@ -288,6 +286,7 @@ procedure TFilmesMain.CopiarButton_Click(Sender: TObject);
 begin
   ResumoBox.SelectAll;
   ResumoBox.CopyToClipboard;
+  Application.MessageBox('Copiado com sucesso.'), 'Cine - Filmes', MB_YESNO + MB_ICONINFORMATION);
 end;
 
 procedure TFilmesMain.SalvarButton_Click(Sender: TObject);
