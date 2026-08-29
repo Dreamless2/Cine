@@ -302,10 +302,10 @@ begin
   try
     with HistoricoDataModule.HistoricoTable do
     begin
-      if True then
-      
-
-    end;
+      if Locate('Codigo', CodigoBox.Text, []) then
+        Edit
+      else
+      Append;
 
 
     HistoricoDataModule.NovoRegistro('Filmes');
@@ -323,7 +323,8 @@ begin
     HistoricoDataModule.HistoricoTable.FieldByName('Diretor').AsString := DiretorBox.Text;
     HistoricoDataModule.HistoricoTable.FieldByName('Artistas').AsString := ArtistasBox.Text;
     HistoricoDataModule.HistoricoTable.FieldByName('Produtora').AsString := ProdutoraBox.Text;
-    HistoricoDataModule.HistoricoTable.Post;
+  Post;
+    end;
     HistoricoDataModule.SalvarDados;
     Application.MessageBox(PChar('Filme ' + NomeBox.Text + 'cadastrado com sucesso.'), 'Cine - Filmes', MB_YESNO + MB_ICONINFORMATION);
   except
