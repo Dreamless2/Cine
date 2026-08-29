@@ -12,12 +12,12 @@ type
   THistoricoDataModule = class(TDataModule)
     HistoricoTable: TFDMemTable;
   private
-    { private }
+    { Private declarations }
     FArquivoJSON: string;
     procedure DefinirEstrutura;
     function ResolverCaminhoArquivo: string;
   public
-    { public }
+    { Public declarations }
     procedure CarregarDados;
     procedure SalvarDados;
     procedure NovoRegistro(const ATipoTela: string);

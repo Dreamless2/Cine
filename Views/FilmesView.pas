@@ -53,6 +53,7 @@ type
   private
     { Private declarations }
     FMidiaEvents: TMidiaFormHelper;
+    FCarregandoHistorico: Boolean;
     FTMDBClient: TTMDBClient;
     procedure CopiarButton_Click(Sender: TObject);
     procedure SalvarButton_Click(Sender: TObject);
@@ -60,7 +61,6 @@ type
     procedure ProximoButton_Click(Sender: TObject);
     procedure HistoricoDataSource_Changed(Sender: TObject; Field: TField);
     procedure LimparPainel(Painel: TPanel);
-    FCarregandoHistorico: Boolean;
     procedure CarregarHistoricoNaTela;
   public
     { Public declarations }
@@ -231,6 +231,39 @@ begin
     finally
       Screen.Cursor := crDefault;
     end;
+  end;
+end;
+
+procedure TFilmesMain.CarregarHistoricoNaTela;
+var
+  T: TFDMemTable;
+begin
+  if FCarregandoHistorico then
+    Exit;
+
+  T := HistoricoDataModule.HistoricoTable;
+
+  if not T.Active or T.IsEmpty then
+    Exit;
+
+  FCarregandoHistorico := True;
+  try
+    CodigoBox.Text      := T.FieldByName('Codigo').AsString;
+    NomeBox.Text        := T.FieldByName('Nome').AsString;
+    AudioBox.Text       := T.FieldByName('Audio').AsString;
+    SinopseBox.Text     := T.FieldByName('Sinopse').AsString;
+    OriginalBox.Text    := T.FieldByName('Original').AsString;
+    EstreiaBox.Text     := T.FieldByName('Estreia').AsString;
+    AlternativoBox.Text := T.FieldByName('Alternativo').AsString;
+    TagsBox.Text        := T.FieldByName('Tags').AsString;
+    MCUBox.Text         := T.FieldByName('MCU').AsString;
+    FranquiaBox.Text    := T.FieldByName('Franquia').AsString;
+    GeneroBox.Text      := T.FieldByName('Genero').AsString;
+    DiretorBox.Text     := T.FieldByName('Diretor').AsString;
+    ArtistasBox.Text    := T.FieldByName('Artistas').AsString;
+    ProdutoraBox.Text   := T.FieldByName('Produtora').AsString;
+  finally
+    FCarregandoHistorico := False;
   end;
 end;
 
