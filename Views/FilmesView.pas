@@ -153,7 +153,7 @@ begin
   FMidiaEvents.AtualizarResumo;
 end;
 
-procedure TFilmesMain.BuscarFilme(Sender: TObject; var Key: Char);
+procedure TFilmesMain.Buscar(Sender: TObject; var Key: Char);
 var
   LMovieId: Integer;
   LFuture: IFuture<TJSONObject>;
