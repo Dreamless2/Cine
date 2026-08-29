@@ -368,11 +368,11 @@ begin
     end;
     if LEhNovoRegistro then
     begin
-      Application.MessageBox(PChar('Série ' + NomeBox.Text + ' cadastrado com sucesso.'), 'Cine - Séries', MB_OK + MB_ICONINFORMATION);
+      Application.MessageBox(PChar('Série ' + NomeBox.Text + ' cadastrada com sucesso.'), 'Cine - Séries', MB_OK + MB_ICONINFORMATION);
     end
     else
     begin
-      Application.MessageBox(PChar('Série ' + NomeBox.Text + ' atualizado com sucesso.'), 'Cine - Séries', MB_OK + MB_ICONINFORMATION);
+      Application.MessageBox(PChar('Série ' + NomeBox.Text + ' atualizada com sucesso.'), 'Cine - Séries', MB_OK + MB_ICONINFORMATION);
     end;
   except
     on E: Exception do
