@@ -195,6 +195,7 @@ begin
     if not Assigned(FTMDBClient) then
     begin
     MessageDlg('A chave da API do TMDB não está configurada.', mtWarning, [mbOK], 0);
+    Application.MessageBox(PChar('Erro: ' + MsgErro), 'Cine - Filmes', MB_YESNO + MB_ICONERROR);
       Exit;
     end;
 
@@ -225,9 +226,10 @@ begin
               MsgErro := 'O recurso solicitado não foi encontrado.';
             end;
             MessageDlg('Erro: ' + MsgErro, mtError, [mbOK], 0);
+            Application.MessageBox(PChar('Erro: ' + MsgErro), 'Cine - Filmes', MB_YESNO + MB_ICONERROR);
           end
           else
-          MessageDlg('Erro: ' + E.Message, mtError, [mbOK], 0);
+          Application.MessageBox(PChar('Erro: ' + E.Message), 'Cine - Filmes', MB_YESNO + MB_ICONERROR);
         end;
       end;
     finally
