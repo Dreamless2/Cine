@@ -12,8 +12,8 @@ type
   THistoricoDataModule = class(TDataModule)
     HistoricoTable: TFDMemTable;
     FDStanStorageJSONLink1: TFDStanStorageJSONLink;
-    procedure DataModuleCreate(Sender: TObject);
-    procedure DataModuleDestroy(Sender: TObject);
+    constructor DataModuleCreate(Sender: TObject);
+    destructorprocedure DataModuleDestroy(Sender: TObject);
   private
     FArquivoJSON: string;
     procedure DefinirEstrutura;
