@@ -12,8 +12,4 @@ object HistoricoDataModule: THistoricoDataModule
     Left = 152
     Top = 80
   end
-  object FDStanStorageJSONLink1: TFDStanStorageJSONLink
-    Left = 368
-    Top = 304
-  end
 end

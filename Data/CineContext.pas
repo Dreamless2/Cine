@@ -11,7 +11,6 @@ uses
 type
   THistoricoDataModule = class(TDataModule)
     HistoricoTable: TFDMemTable;
-    FDStanStorageJSONLink1: TFDStanStorageJSONLink;
 
   private
     FArquivoJSON: string;
