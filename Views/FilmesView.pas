@@ -291,7 +291,6 @@ end;
 
 procedure TFilmesMain.SalvarButton_Click(Sender: TObject);
 begin
-  //try
     HistoricoDataModule.NovoRegistro('Filmes');
     HistoricoDataModule.HistoricoTable.FieldByName('Codigo').AsString := CodigoBox.Text;
     HistoricoDataModule.HistoricoTable.FieldByName('Nome').AsString := NomeBox.Text;
@@ -310,12 +309,6 @@ begin
     HistoricoDataModule.HistoricoTable.Post;
     HistoricoDataModule.SalvarDados;
     ShowMessage('Filme salvo no histórico com sucesso!');
-  {except
-    on E: Exception do
-    begin
-      ShowMessage('Não foi possível salvar o filme:' + sLineBreak + E.Message);
-    end;
-  end;}
 end;
 
 procedure TFilmesMain.AnteriorButton_Click(Sender: TObject);
