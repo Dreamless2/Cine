@@ -53,7 +53,8 @@ type
     FMidiaEvents: TMidiaFormHelper;
     FTMDBClient: TTMDBClient;
     procedure CopiarButton_Click(Sender: TObject);
-
+    procedure AnteriorButton_Click(Sender: TObject);
+    procedure ProximoButton_Click(Sender: TObject);
     procedure LimparPainel(Painel: TPanel);
   public
     { Public declarations }
@@ -98,6 +99,8 @@ begin
   FMidiaEvents.AtualizarResumo;
   CodigoBox.OnKeyPress := Buscar;
   CopiarButton.OnClick := CopiarButton_Click;
+  AnteriorButton.OnClick := AnteriorButton_Click;
+  ProximoButton.OnClick := Proximo
   LimparPainel(PanelDesktop);
 end;
 
