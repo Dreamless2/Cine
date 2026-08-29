@@ -340,7 +340,7 @@ procedure TFilmesMain.ProximoButton_Click(Sender: TObject);
 begin
   HistoricoDataModule.HistoricoTable.Next;
   if HistoricoDataModule.HistoricoTable.Eof then
-    ShowMessage('Chegou no primeiro');
+    ShowMessage('Chegou no ú');
 end;
 
 
