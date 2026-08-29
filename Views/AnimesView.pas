@@ -210,19 +210,23 @@ begin
       except
         on E: EAggregateException do
         begin
-         if E.Count > 0 then
+          if E.Count > 0 then
+          begin
+            var MsgErro := E.InnerExceptions[0].Message;
+            if MsgErro.Contains('"status_message":') then
             begin
-              var MaxExibicao := Min(E.Count - 1, 5);
-              var Erros: string := '';
-              for var I := 0 to MaxExibicao do
-              begin
-                Erros := Erros + '• ' + E.InnerExceptions[I].Message + sLineBreak;
-              end;
-              MessageDlg('Erros TMDB encontrados:' + sLineBreak + Erros, mtError, [mbOK], 0);
+              var PosInicio := MsgErro.IndexOf('"status_message":') + 18;
+              MsgErro := MsgErro.Substring(PosInicio).Replace('"', '').Replace('}', '').Trim;
+            end
+            else if MsgErro.Contains('404') then
+            begin
+              MsgErro := 'O recurso solicitado não foi encontrado.';
+            end;
+            MessageDlg('Erro TMDB: ' + MsgErro, mtError, [mbOK], 0);
           end
           else
-            MessageDlg('Erro TMDB:' + sLineBreak + E.Message, mtError, [mbOK], 0);
-         end;
+          MessageDlg('Erro TMDB: ' + E.Message, mtError, [mbOK], 0);
+        end;
       end;
     finally
       Screen.Cursor := crDefault;
