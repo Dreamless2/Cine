@@ -170,6 +170,7 @@ begin
     EstreiaBox.Text := ValorOuPadrao(AMedia.DataEstreia);
     AlternativoBox.Text := ValorOuPadrao(AMedia.NomeAlternativo);
     FilmeBox.Text := GerarTag(ValorOuPadrao(AMedia.Nome));
+    FranquiaBox.Text := ValorOuPadrao(A);
     GeneroBox.Text := ValorOuPadrao(AMedia.Generos);
     TagsBox.Text := ValorOuPadrao(AMedia.Tags);
     DiretorBox.Text := ValorOuPadrao(AMedia.Diretores);
