@@ -107,7 +107,7 @@ end;
 constructor THistoricoDataModule.Create(AOwner: TComponent);
 begin
   FArquivoJSON := ResolverCaminhoArquivo;
-  //DefinirEstrutura;
+  DefinirEstrutura;
   //CarregarDados;
 end;
 
