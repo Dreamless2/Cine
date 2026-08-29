@@ -339,6 +339,7 @@ begin
     end;
     if LEhNovoRegistro then
       Application.MessageBox(PChar('Filme ' + NomeBox.Text + ' cadastrado com sucesso.'), 'Cine - Filmes', MB_OK + MB_ICONINFORMATION)
+      HistoricoDataModule.HistoricoTable.Frist
     else
       Application.MessageBox(PChar('Filme ' + NomeBox.Text + ' atualizado com sucesso.'), 'Cine - Filmes', MB_OK + MB_ICONINFORMATION);
   except
