@@ -12,12 +12,14 @@ type
   TDataModule1 = class(TDataModule)
     HistoricoTable: TFDMemTable;
     FDStanStorageJSONLink1: TFDStanStorageJSONLink;
-  private
-    { Private declarations }
     procedure DataModuleCreate(Sender: TObject);
     procedure DataModuleDestroy(Sender: TObject);
+  private
+    { Private declarations }
+    FArquivoJSON: string;
   public
     { Public declarations }
+    procedure AdicionarRegistro(const AAcao, ADetalhe: string);
   end;
 
 var
