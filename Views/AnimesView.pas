@@ -66,7 +66,6 @@ type
     procedure FormDestroy(Sender: TObject);
     procedure PreencherComMedia(const AMedia: TMediaData);
     procedure Buscar(Sender: TObject; var Key: Char);
-    procedure BuscarExit(Sender: TObject);
     constructor Create(AOwner: TComponent);
   end;
 
