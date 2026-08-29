@@ -14,7 +14,7 @@ uses
   MidiaFormEvents in 'Builders\MidiaFormEvents.pas',
   LanguageMapper in 'Mapper\LanguageMapper.pas',
   CountryMapper in 'Mapper\CountryMapper.pas',
-  CineContext in 'Data\CineContext.pas' {DataModule1: TDataModule};
+  CineContext in 'Data\CineContext.pas' {HistoricoDataModule: TDataModule};
 
 {$R *.res}
 
@@ -27,7 +27,7 @@ begin
   Application.CreateForm(TFilmesMain, FilmesMain);
   Application.CreateForm(TSeriesMain, SeriesMain);
   Application.CreateForm(TAnimesMain, AnimesMain);
-  Application.CreateForm(TDataModule1, DataModule1);
+  Application.CreateForm(THistoricoDataModule, HistoricoDataModule);
   if HasStoredApiKey then
   begin
     Application.ShowMainForm := True;

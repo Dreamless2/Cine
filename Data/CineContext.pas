@@ -47,4 +47,21 @@ begin
     HistoricoTable.LoadFromFile(FArquivoJSON, sfJSON);
 end;
 
+procedure THistoricoDataModule.AdicionarRegistro(const AAcao, ADetalhe: string);
+begin
+  HistoricoTable.Append;
+  HistoricoTable.FieldByName('DataHora').AsDateTime := Now;
+  HistoricoTable.FieldByName('Acao').AsString := AAcao;
+  HistoricoTable.FieldByName('Detalhe').AsString := ADetalhe;
+  HistoricoTable.Post;
+
+  HistoricoTable.SaveToFile(FArquivoJSON, sfJSON);
+end;
+
+procedure THistoricoDataModule.DataModuleDestroy(Sender: TObject);
+begin
+  if HistoricoTable.Active and (HistoricoTable.RecordCount > 0) then
+    HistoricoTable.SaveToFile(FArquivoJSON, sfJSON);
+end;
+
 end.
