@@ -323,19 +323,16 @@ begin
         Post;
     end;
     HistoricoDataModule.SalvarDados;
-    Application.MessageBox(PChar('Filme ' + NomeBox.Text + 'cadastrado/atualizado com sucesso.'), 'Cine - Filmes', MB_YESNO + MB_ICONINFORMATION);
+    Application.MessageBox(PChar('Filme ' + NomeBox.Text + 'cadastrado/atualizado com sucesso.'), 'Cine - Filmes', MB_OK + MB_ICONINFORMATION);
   except
     on E: Exception do
     begin
       if HistoricoDataModule.HistoricoTable.State in dsEditModes then
           HistoricoDataModule.HistoricoTable.Cancel;
-      Application.MessageBox(PChar('Erro ao Salvar: ' + NomeBox.Text + 'cadastrado com sucesso.'), 'Cine - Filmes', MB_YESNO + MB_ICONINFORMATION);
-  ShowMessage(
-    'Erro ao salvar filme:' + sLineBreak + E.Message
-  );
-end;
 
-end;
+      Application.MessageBox(PChar('Erro ao Salvar: ' + E.Message), 'Cine - Filmes', MB_OK + MB_ICONERROR);
+    end;
+  end;
   FSalvandoHistorico := False;
 end;
 
