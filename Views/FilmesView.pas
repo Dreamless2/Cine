@@ -96,6 +96,7 @@ begin
     end);
   FMidiaEvents.AtualizarResumo;
   CodigoBox.OnKeyPress := Buscar;
+  CodigoBox.SetFocus;
   CopiarButton.OnClick := CopiarButton_Click;
   LimparPainel(PanelDesktop);
 end;
