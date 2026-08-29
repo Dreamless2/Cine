@@ -329,11 +329,15 @@ begin
   FSalvandoHistorico := False;
 end;
 
-procedure AnteriorButton_Click(Sender: TObject);
+procedure TFilmesMain.AnteriorButton_Click(Sender: TObject);
 begin
-
+  {BUTTON}
 end;
-  procedure ProximoButton_Click(Sender: TObject);
+
+procedure TFilmesMain.ProximoButton_Click(Sender: TObject);
+begin
+  {BUTTON}
+end;
 
 
 
