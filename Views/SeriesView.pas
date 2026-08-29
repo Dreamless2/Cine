@@ -286,8 +286,8 @@ begin
     LocalBox.Text       := T.FieldByName('Local').AsString;
     IdiomaBox.Text      := T.FieldByName('Idioma').AsString;
     ReferenciaBox.Text  := T.FieldByName('Referencia').AsString;
-    AutoresBox.Text     := T.FieldByName('Aranquia').AsString;
-    ShowrunnersBox.Text := T.FieldByName('Franquia').AsString;
+    AutoresBox.Text     := T.FieldByName('Autores').AsString;
+    ShowrunnersBox.Text := T.FieldByName('Showrunners').AsString;
     GeneroBox.Text      := T.FieldByName('Genero').AsString;
     DiretorBox.Text     := T.FieldByName('Diretor').AsString;
     ArtistasBox.Text    := T.FieldByName('Artistas').AsString;
@@ -311,9 +311,14 @@ begin
     TagsBox.Text := FieldByName('Tags').AsString;
     MCUBox.Text := FieldByName('MCU').AsString;
     FranquiaBox.Text := FieldByName('Franquia').AsString;
-    GeneroBox.Text := FieldByName('Genero').AsString;
-    DiretorBox.Text := FieldByName('Diretor').AsString;
-    ArtistasBox.Text := FieldByName('Artistas').AsString;
+     LocalBox.Text := FieldByName('Local').AsString;
+    IdiomaBox.Text := FieldByName('Idioma').AsString;
+    ReferenciaBox.Text  := FieldByName('Referencia').AsString;
+    AutoresBox.Text     := FieldByName('Autores').AsString;
+    ShowrunnersBox.Text := FieldByName('Showrunners').AsString;
+    GeneroBox.Text   := FieldByName('Genero').AsString;
+    DiretorBox.Text   := FieldByName('Diretor').AsString;
+    ArtistasBox.Text  := FieldByName('Artistas').AsString;
     ProdutoraBox.Text := FieldByName('Produtora').AsString;
   end;
 end;
