@@ -311,7 +311,7 @@ begin
     TagsBox.Text        := FieldByName('Tags').AsString;
     MCUBox.Text         := FieldByName('MCU').AsString;
     FranquiaBox.Text    := FieldByName('Franquia').AsString;
-     LocalBox.Text      := FieldByName('Local').AsString;
+    LocalBox.Text       := FieldByName('Local').AsString;
     IdiomaBox.Text      := FieldByName('Idioma').AsString;
     ReferenciaBox.Text  := FieldByName('Referencia').AsString;
     AutoresBox.Text     := FieldByName('Autores').AsString;
@@ -354,6 +354,11 @@ begin
       FieldByName('Tags').AsString        := TagsBox.Text;
       FieldByName('MCU').AsString         := MCUBox.Text;
       FieldByName('Franquia').AsString    := FranquiaBox.Text;
+             := FieldByName('Local').AsString;     LocalBox.Text
+    IdiomaBox.Text      := FieldByName('Idioma').AsString;
+    ReferenciaBox.Text  := FieldByName('Referencia').AsString;
+    AutoresBox.Text     := FieldByName('Autores').AsString;
+    ShowrunnersBox.Text := FieldByName('Showrunners').AsString;
       FieldByName('Genero').AsString      := GeneroBox.Text;
       FieldByName('Diretor').AsString     := DiretorBox.Text;
       FieldByName('Artistas').AsString    := ArtistasBox.Text;
