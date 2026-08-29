@@ -346,14 +346,14 @@ procedure TFilmesMain.AnteriorButton_Click(Sender: TObject);
 begin
     HistoricoDataModule.HistoricoTable.Prior;
     if HistoricoDataModule.HistoricoTable.Bof then
-      Application.MessageBox('Chegou no primeiro registro.', 'Cine - Filmes', MB_OK + MB_ICONINFORMATION);
+      Application.MessageBox('Sem mais registros para consultar.', 'Cine - Filmes', MB_OK + MB_ICONINFORMATION);
 end;
 
 procedure TFilmesMain.ProximoButton_Click(Sender: TObject);
 begin
   HistoricoDataModule.HistoricoTable.Next;
   if HistoricoDataModule.HistoricoTable.Eof then
-    Application.MessageBox('Chegou no último registro.', 'Cine - Filmes', MB_OK + MB_ICONINFORMATION);
+    Application.MessageBox('Sem mais registros para consultar.', 'Cine - Filmes', MB_OK + MB_ICONINFORMATION);
 end;
 
 end.
