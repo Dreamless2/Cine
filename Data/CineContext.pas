@@ -13,7 +13,6 @@ uses
 
 type
   THistoricoDataModule = class(TDataModule)
-    HistoricoDataTable: TFDMemTable;
   private
     FArquivoDB: string;
     function ResolverCaminhoArquivo: string;
