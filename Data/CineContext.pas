@@ -37,14 +37,14 @@ begin
   FArquivoJSON := TPath.Combine(TPath.GetDocumentsPath, 'historico_sistema.json');
 
   // Configura a estrutura uma única vez para o sistema inteiro
-  Historico.FieldDefs.Clear;
-  cdsHistorico.FieldDefs.Add('DataHora', ftDateTime);
-  cdsHistorico.FieldDefs.Add('Acao', ftString, 50);
-  cdsHistorico.FieldDefs.Add('Detalhe', ftString, 250);
-  cdsHistorico.CreateDataSet;
+  HistoricoTable.FieldDefs.Clear;
+  HistoricoTable.FieldDefs.Add('DataHora', ftDateTime);
+  HistoricoTable.FieldDefs.Add('Acao', ftString, 50);
+  HistoricoTable.FieldDefs.Add('Detalhe', ftString, 250);
+  HistoricoTable.CreateDataSet;
 
   if TFile.Exists(FArquivoJSON) then
-    cdsHistorico.LoadFromFile(FArquivoJSON, sfJSON);
+    HistoricoTable.LoadFromFile(FArquivoJSON, sfJSON);
 end;
 
 end.
