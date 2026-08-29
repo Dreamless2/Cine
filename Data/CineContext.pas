@@ -37,7 +37,7 @@ implementation
 
 procedure THistoricoDataModule.DefinirEstrutura;
 begin
-  HistoricoTable.FieldDefs.Clear;
+  //HistoricoTable.FieldDefs.Clear;
   HistoricoTable.FieldDefs.Add('TipoMidia', ftString, 20);
   HistoricoTable.FieldDefs.Add('Codigo', ftString, 20);
   HistoricoTable.FieldDefs.Add('Nome', ftString, 100);
