@@ -5,28 +5,25 @@ interface
 uses
   System.SysUtils, System.Classes, FireDAC.Stan.Intf, FireDAC.Stan.Option,
   FireDAC.Stan.Param, FireDAC.Stan.Error, FireDAC.DatS, FireDAC.Phys.Intf,
-  FireDAC.DApt.Intf, FireDAC.Stan.StorageJSON, Data.DB, FireDAC.Comp.DataSet,
-  FireDAC.Comp.Client, System.IOUtils, Vcl.Dialogs, FireDAC.Stan.ExprFuncs,
-  FireDAC.Phys.SQLiteWrapper.Stat, FireDAC.Phys.SQLiteDef, FireDAC.Phys,
-  FireDAC.Phys.SQLite, FireDAC.UI.Intf, FireDAC.Stan.Def, FireDAC.Stan.Pool,
-  FireDAC.Stan.Async, FireDAC.VCLUI.Wait, FireDAC.DApt;
+  FireDAC.DApt.Intf, Data.DB, FireDAC.Comp.DataSet, FireDAC.Comp.Client,
+  FireDAC.Phys.SQLite, FireDAC.Phys.SQLiteDef, FireDAC.Phys.SQLiteWrapper.Stat,
+  FireDAC.Stan.Async, FireDAC.DApt, System.IOUtils, FireDAC.UI.Intf,
+  FireDAC.Stan.Def, FireDAC.Stan.Pool, FireDAC.Phys, FireDAC.Stan.ExprFuncs,
+  FireDAC.VCLUI.Wait;
 
 type
   THistoricoDataModule = class(TDataModule)
-    HistoricoTable: TFDMemTable;
+  private
     FConexao: TFDConnection;
     FHistoricoTable: TFDTable;
-  private
-    { Private declarations }
-    FArquivoJSON: string;
-    procedure DefinirEstrutura;
+    FArquivoDB: string;
     function ResolverCaminhoArquivo: string;
+    procedure CriarEstruturaSeNecessaria;
   public
-    { Public declarations }
-    procedure CarregarDados;
-    procedure SalvarDados;
-    procedure NovoRegistro(const ATipoTela: string);
     constructor Create(AOwner: TComponent); override;
+    destructor Destroy; override;
+    procedure NovoRegistro(const ATipoTela: string);
+    property HistoricoTable: TFDTable read FHistoricoTable;
   end;
 
 var
@@ -37,35 +34,6 @@ implementation
 {%CLASSGROUP 'Vcl.Controls.TControl'}
 
 {$R *.dfm}
-
-procedure THistoricoDataModule.DefinirEstrutura;
-begin
-  HistoricoTable.FieldDefs.Clear;
-  HistoricoTable.FieldDefs.Add('TipoMidia', ftWideString, 20);
-  HistoricoTable.FieldDefs.Add('Codigo', ftWideString, 20);
-  HistoricoTable.FieldDefs.Add('Nome', ftWideString, 100);
-  HistoricoTable.FieldDefs.Add('Audio', ftWideString, 50);
-  HistoricoTable.FieldDefs.Add('Sinopse', ftMemo);
-  HistoricoTable.FieldDefs.Add('Original', ftWideString, 100);
-  HistoricoTable.FieldDefs.Add('Estreia', ftWideString, 30);
-  HistoricoTable.FieldDefs.Add('Alternativo', ftWideString, 100);
-  HistoricoTable.FieldDefs.Add('Tags', ftWideString, 150);
-  HistoricoTable.FieldDefs.Add('Serie', ftWideString, 100);
-  HistoricoTable.FieldDefs.Add('MCU', ftWideString, 50);
-  HistoricoTable.FieldDefs.Add('Local', ftWideString, 100);
-  HistoricoTable.FieldDefs.Add('Idioma', ftWideString, 50);
-  HistoricoTable.FieldDefs.Add('Referencia', ftWideString, 100);
-  HistoricoTable.FieldDefs.Add('Autores', ftWideString, 100);
-  HistoricoTable.FieldDefs.Add('Franquia', ftWideString, 100);
-  HistoricoTable.FieldDefs.Add('Showrunners', ftWideString, 100);
-  HistoricoTable.FieldDefs.Add('Genero', ftWideString, 50);
-  HistoricoTable.FieldDefs.Add('Diretor', ftWideString, 100);
-  HistoricoTable.FieldDefs.Add('Artistas', ftWideString, 100);
-  HistoricoTable.FieldDefs.Add('Produtora', ftWideString, 100);
-  HistoricoTable.FieldDefs.Add('DataHora_Cadastro', ftDateTime);
-  HistoricoTable.FieldDefs.Add('DataHora_Update', ftDateTime);
-  HistoricoTable.CreateDataSet;
-end;
 
 function THistoricoDataModule.ResolverCaminhoArquivo: string;
 var
@@ -78,59 +46,101 @@ begin
     LPasta := TPath.GetDirectoryName(ParamStr(0));
   if LPasta.Trim.IsEmpty then
     LPasta := TPath.Combine(TPath.GetTempPath, 'CineContext');
-  Result := TPath.Combine(LPasta, 'historico_midias.json');
+  TDirectory.CreateDirectory(LPasta);
+  Result := TPath.Combine(LPasta, 'historico_midias.db');
+end;
+
+procedure THistoricoDataModule.CriarEstruturaSeNecessaria;
+begin
+  FConexao.ExecSQL(
+    'CREATE TABLE IF NOT EXISTS Filmes (' +
+    '  Codigo TEXT PRIMARY KEY,' +
+    '  TipoMidia TEXT,' +
+    '  Nome TEXT,' +
+    '  Audio TEXT,' +
+    '  Sinopse TEXT,' +
+    '  Original TEXT,' +
+    '  Estreia TEXT,' +
+    '  Alternativo TEXT,' +
+    '  Tags TEXT,' +
+    '  Serie TEXT,' +
+    '  MCU TEXT,' +
+    '  Local TEXT,' +
+    '  Idioma TEXT,' +
+    '  Referencia TEXT,' +
+    '  Autores TEXT,' +
+    '  Franquia TEXT,' +
+    '  Showrunners TEXT,' +
+    '  Genero TEXT,' +
+    '  Diretor TEXT,' +
+    '  Artistas TEXT,' +
+    '  Produtora TEXT,' +
+    '  DataHora_Cadastro TEXT,' +
+    '  DataHora_Update TEXT' +
+    ')');
+
+  FConexao.ExecSQL(
+    'CREATE TRIGGER IF NOT EXISTS trg_Filmes_Insert ' +
+    'AFTER INSERT ON Filmes ' +
+    'BEGIN ' +
+    '  UPDATE Filmes SET DataHora_Cadastro = datetime(''now'',''localtime''), ' +
+    '                    DataHora_Update = datetime(''now'',''localtime'') ' +
+    '  WHERE Codigo = NEW.Codigo; ' +
+    'END');
+
+  FConexao.ExecSQL(
+    'CREATE TRIGGER IF NOT EXISTS trg_Filmes_Update ' +
+    'AFTER UPDATE ON Filmes ' +
+    'WHEN NEW.DataHora_Update = OLD.DataHora_Update ' +
+    'BEGIN ' +
+    '  UPDATE Filmes SET DataHora_Update = datetime(''now'',''localtime'') ' +
+    '  WHERE Codigo = NEW.Codigo; ' +
+    'END');
 end;
 
 constructor THistoricoDataModule.Create(AOwner: TComponent);
 begin
   inherited Create(AOwner);
-  FArquivoJSON := ResolverCaminhoArquivo;
-  DefinirEstrutura;
-  CarregarDados;
+  FArquivoDB := ResolverCaminhoArquivo;
+
+  FConexao := TFDConnection.Create(Self);
+  FConexao.DriverName := 'SQLite';
+  FConexao.Params.Add('DriverID=SQLite');
+  FConexao.Params.Add('Database=' + FArquivoDB);
+  FConexao.LoginPrompt := False;
+  FConexao.Connected := True;
+
+  CriarEstruturaSeNecessaria;
+
+  FHistoricoTable := TFDTable.Create(Self);
+  FHistoricoTable.Connection := FConexao;
+  FHistoricoTable.TableName := 'Filmes';
+  FHistoricoTable.IndexFieldNames := 'Codigo';
+  FHistoricoTable.Open;
 end;
 
-procedure THistoricoDataModule.CarregarDados;
-var
-  LBackup: string;
+destructor THistoricoDataModule.Destroy;
 begin
-  if TFile.Exists(FArquivoJSON) and (TFile.GetSize(FArquivoJSON) > 0) then
-  begin
-    try
-      HistoricoTable.LoadFromFile(FArquivoJSON, sfJSON);
-    except
-      on E: Exception do
-      begin
-        LBackup := FArquivoJSON + '.corrompido_' + FormatDateTime('yyyymmdd_hhnnss', Now);
-        TFile.Copy(FArquivoJSON, LBackup, True);
-        DefinirEstrutura;
-      end;
-    end;
-  end;
-  if not HistoricoTable.Active then
-    DefinirEstrutura;
-end;
-
-procedure THistoricoDataModule.SalvarDados;
-begin
-  TDirectory.CreateDirectory(TPath.GetDirectoryName(FArquivoJSON));
-  HistoricoTable.SaveToFile(FArquivoJSON, sfJSON);
+  if Assigned(FConexao) then
+    FConexao.Connected := False;
+  inherited Destroy;
 end;
 
 procedure THistoricoDataModule.NovoRegistro(const ATipoTela: string);
 var
   I: Integer;
 begin
-  if not HistoricoTable.Active then
-    DefinirEstrutura;
-  HistoricoTable.Append;
-  for I := 0 to HistoricoTable.FieldCount - 1 do
+  if not FHistoricoTable.Active then
+    FHistoricoTable.Open;
+  FHistoricoTable.Append;
+  for I := 0 to FHistoricoTable.FieldCount - 1 do
   begin
-    if HistoricoTable.Fields[I].DataType in [ftString, ftMemo] then
-      HistoricoTable.Fields[I].AsString := '--';
+    if (FHistoricoTable.Fields[I].DataType in [ftWideString, ftWideMemo, ftString, ftMemo])
+      and (FHistoricoTable.Fields[I].FieldName <> 'DataHora_Cadastro')
+      and (FHistoricoTable.Fields[I].FieldName <> 'DataHora_Update') then
+      FHistoricoTable.Fields[I].AsString := '--';
   end;
-  HistoricoTable.FieldByName('TipoMidia').AsString := ATipoTela;
-  HistoricoTable.FieldByName('DataHora_Cadastro').AsDateTime := Now;
-  HistoricoTable.FieldByName('DataHora_Update').AsDateTime := Now;
+  FHistoricoTable.FieldByName('TipoMidia').AsString := ATipoTela;
 end;
 
 end.
