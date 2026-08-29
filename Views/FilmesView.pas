@@ -232,9 +232,28 @@ begin
   end;
 end;
 
-procedure TFilmesMain.HistoricoDataSource_Changed(Sender: TObject; Field: TField);
+procedure TFilmesMain.HistoricoDataSource_Changed(Sender: TObject;
+  Field: TField);
 begin
-  if HistoricoDataModule.HistoricoTable.IsEmpty then Exit;
+  if (HistoricoDataModule = nil) or
+     (not HistoricoDataModule.HistoricoTable.Active) or
+     HistoricoDataModule.HistoricoTable.IsEmpty then
+    Exit;
+
+  CodigoBox.Text      := HistoricoDataModule.HistoricoTable.FieldByName('Codigo').AsString;
+  NomeBox.Text        := HistoricoDataModule.HistoricoTable.FieldByName('Nome').AsString;
+  AudioBox.Text       := HistoricoDataModule.HistoricoTable.FieldByName('Audio').AsString;
+  SinopseBox.Text     := HistoricoDataModule.HistoricoTable.FieldByName('Sinopse').AsString;
+  OriginalBox.Text    := HistoricoDataModule.HistoricoTable.FieldByName('Original').AsString;
+  EstreiaBox.Text     := HistoricoDataModule.HistoricoTable.FieldByName('Estreia').AsString;
+  AlternativoBox.Text := HistoricoDataModule.HistoricoTable.FieldByName('Alternativo').AsString;
+  TagsBox.Text        := HistoricoDataModule.HistoricoTable.FieldByName('Tags').AsString;
+  MCUBox.Text         := HistoricoDataModule.HistoricoTable.FieldByName('MCU').AsString;
+  FranquiaBox.Text    := HistoricoDataModule.HistoricoTable.FieldByName('Franquia').AsString;
+  GeneroBox.Text      := HistoricoDataModule.HistoricoTable.FieldByName('Genero').AsString;
+  DiretorBox.Text     := HistoricoDataModule.HistoricoTable.FieldByName('Diretor').AsString;
+  ArtistasBox.Text    := HistoricoDataModule.HistoricoTable.FieldByName('Artistas').AsString;
+  ProdutoraBox.Text   := HistoricoDataModule.HistoricoTable.FieldByName('Produtora').AsString;
 end;
 
 procedure TFilmesMain.CopiarButton_Click(Sender: TObject);
