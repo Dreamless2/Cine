@@ -73,7 +73,7 @@ object CineMain: TCineMain
       Left = -6
       Top = 0
       Width = 235
-      Height = 73
+      Height = 80
       Caption = 'Filmes'
       TabOrder = 0
       StyleFamily = 'SVG-Colors'
@@ -83,7 +83,7 @@ object CineMain: TCineMain
       Left = -6
       Top = 79
       Width = 235
-      Height = 76
+      Height = 80
       Caption = 'SeriesButton'
       TabOrder = 1
       StyleFamily = 'SVG-Colors'
@@ -91,9 +91,9 @@ object CineMain: TCineMain
     end
     object AnimesButton: TStyledButton
       Left = -6
-      Top = 175
+      Top = 159
       Width = 235
-      Height = 60
+      Height = 80
       Caption = 'AnimesButton'
       TabOrder = 2
       StyleElements = [seFont, seBorder]
@@ -101,15 +101,17 @@ object CineMain: TCineMain
     end
     object FecharButton: TStyledButton
       Left = 0
-      Top = 797
+      Top = 777
       Width = 235
-      Height = 60
+      Height = 80
       Align = alBottom
       Caption = 'Fechar'
       TabOrder = 3
       Flat = True
       StyleFamily = 'Angular-Dark'
       StyleClass = 'Warn'
+      StyleAppearance = 'Stroked'
+      ExplicitTop = 797
     end
   end
   object PanelDesktop: TPanel
