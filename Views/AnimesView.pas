@@ -142,6 +142,7 @@ begin
   end;
 end;
 
+procedure TAnimesMain.PreencherComMedia(const AMedia: TMediaData);
 function ValorOuPadrao(const Valor: string): string;
 begin
   if Valor <> '' then
@@ -150,9 +151,6 @@ begin
     Result := '--';
 end;
 
-
-
-procedure TAnimesMain.PreencherComMedia(const AMedia: TMediaData);
 begin
   FMidiaEvents.DesativarEventos;
   try

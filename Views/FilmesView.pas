@@ -133,20 +133,28 @@ begin
 end;
 
 procedure TFilmesMain.PreencherComMedia(const AMedia: TMediaData);
+function ValorOuPadrao(const Valor: string): string;
+begin
+  if Valor <> '' then
+    Result := Valor
+  else
+    Result := '--';
+end;
+
 begin
   FMidiaEvents.DesativarEventos;
   try
-    NomeBox.Text := AMedia.Nome;
-    SinopseBox.Text := AMedia.Sinopse;
-    OriginalBox.Text := AMedia.NomeOriginal;
-    EstreiaBox.Text := AMedia.DataEstreia;
-    AlternativoBox.Text := AMedia.NomeAlternativo;
-    FilmeBox.Text := GerarTag(AMedia.Nome);
-    GeneroBox.Text := AMedia.Generos;
-    TagsBox.Text := AMedia.Tags;
-    DiretorBox.Text := AMedia.Diretores;
-    ArtistasBox.Text := AMedia.Artistas;
-    ProdutoraBox.Text := AMedia.Produtoras;
+    NomeBox.Text := ValorOuPadrao(AMedia.Nome);
+    SinopseBox.Text := ValorOuPadrao(AMedia.Sinopse;
+    OriginalBox.Text := ValorOuPadrao(AMedia.NomeOriginal;
+    EstreiaBox.Text := ValorOuPadrao(AMedia.DataEstreia;
+    AlternativoBox.Text := ValorOuPadrao(AMedia.NomeAlternativo;
+    FilmeBox.Text := G(erarTag(AMedia.Nome);
+    GeneroBox.Text := ValorOuPadrao(AMedia.Generos;
+    TagsBox.Text := ValorOuPadrao(AMedia.Tags;
+    DiretorBox.Text := ValorOuPadrao(AMedia.Diretores;
+    ArtistasBox.Text := ValorOuPadrao(AMedia.Artistas;
+    ProdutoraBox.Text := ValorOuPadrao(AMedia.Produtoras;
   finally
     FMidiaEvents.ReativarEventos;
   end;
