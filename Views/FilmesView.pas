@@ -69,6 +69,8 @@ type
     procedure PreencherComMedia(const AMedia: TMediaData);
     procedure Buscar(Sender: TObject; var Key: Char);
     constructor Create(AOwner: TComponent); override;
+  protected
+    procedure DoShow; override;
   end;
 
 var
