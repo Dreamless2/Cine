@@ -56,9 +56,9 @@ type
     FCarregandoHistorico: Boolean;
     FTMDBClient: TTMDBClient;
     FSalvandoHistorico: Boolean;
-    {procedure CopiarButton_Click(Sender: TObject);
+    {procedure CopiarButton_Click(Sender: TObject);}
     procedure SalvarButton_Click(Sender: TObject);
-    procedure AnteriorButton_Click(Sender: TObject);
+    {procedure AnteriorButton_Click(Sender: TObject);
     procedure ProximoButton_Click(Sender: TObject);
     }
     procedure LimparPainel(Painel: TPanel);
