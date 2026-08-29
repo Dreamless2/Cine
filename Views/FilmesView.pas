@@ -247,22 +247,19 @@ procedure TFilmesMain.SalvarButton_Click(Sender: TObject);
 begin
   HistoricoDataModule.NovoRegistro('Filmes');
   HistoricoDataModule.HistoricoTable.FieldByName('Codigo').AsString := CodigoBox.Text;
-  HistoricoDataModule.HistoricoTable.FieldByName('Codigo').AsString := NomeBox.Text;
-  HistoricoDataModule.HistoricoTable.FieldByName('Codigo').AsString := AudioBox.Text;
-  HistoricoDataModule.HistoricoTable.FieldByName('Codigo').AsString := SinopseBox.Text;
-  HistoricoDataModule.HistoricoTable.FieldByName('Codigo').AsString := OriginalBox.Text;
+  HistoricoDataModule.HistoricoTable.FieldByName('Nome').AsString := NomeBox.Text;
+  HistoricoDataModule.HistoricoTable.FieldByName('Audio').AsString := AudioBox.Text;
+  HistoricoDataModule.HistoricoTable.FieldByName('Sinopse').AsString := SinopseBox.Text;
+  HistoricoDataModule.HistoricoTable.FieldByName('Origin').AsString := OriginalBox.Text;
   HistoricoDataModule.HistoricoTable.FieldByName('Codigo').AsString := EstreiaBox.Text;
   HistoricoDataModule.HistoricoTable.FieldByName('Codigo').AsString := AlternativoBox.Text;
-  HistoricoDataModule.HistoricoTable.FieldByName('Codigo').AsString := CodigoBox.Text;
-  HistoricoDataModule.HistoricoTable.FieldByName('Codigo').AsString := CodigoBox.Text;
-  HistoricoDataModule.HistoricoTable.FieldByName('Codigo').AsString := CodigoBox.Text;
-  HistoricoDataModule.HistoricoTable.FieldByName('Codigo').AsString := CodigoBox.Text;
-  HistoricoDataModule.HistoricoTable.FieldByName('Codigo').AsString := CodigoBox.Text;
-  HistoricoDataModule.HistoricoTable.FieldByName('Codigo').AsString := CodigoBox.Text;
-  HistoricoDataModule.HistoricoTable.FieldByName('Codigo').AsString := CodigoBox.Text;
-  HistoricoDataModule.HistoricoTable.FieldByName('Codigo').AsString := CodigoBox.Text;
-  HistoricoDataModule.HistoricoTable.FieldByName('Codigo').AsString := CodigoBox.Text;
-  HistoricoDataModule.HistoricoTable.FieldByName('Codigo').AsString := CodigoBox.Text;
+  HistoricoDataModule.HistoricoTable.FieldByName('Codigo').AsString := TagsBox.Text;
+  HistoricoDataModule.HistoricoTable.FieldByName('Codigo').AsString := MCUBox.Text;
+  HistoricoDataModule.HistoricoTable.FieldByName('Codigo').AsString := FranquiaBox.Text;
+  HistoricoDataModule.HistoricoTable.FieldByName('Codigo').AsString := GeneroBox.Text;
+  HistoricoDataModule.HistoricoTable.FieldByName('Codigo').AsString := DiretorBox.Text;
+  HistoricoDataModule.HistoricoTable.FieldByName('Codigo').AsString := ArtistasBox.Text;
+  HistoricoDataModule.HistoricoTable.FieldByName('Codigo').AsString := ProdutoraBox.Text;
 
 end;
 
