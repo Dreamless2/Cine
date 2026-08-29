@@ -23,7 +23,7 @@ type
     LocalProducao: string;
     IdiomaOriginal: string;
     ObraReferencia: string;
-    Ref
+    Autores: string;
     Showrunners: string;
     TituloTag: string;
   end;
@@ -160,7 +160,7 @@ begin
         if LItem.GetValue<Integer>('id', 0) = 16 then
           LIsAnimacao := True;
 
-        Result.Generos := (Result.Generos + ' ' + GerarTagDupla(LItem.GetValue<string>('name', ''))).Trim.ToLower;
+        Result.Genero := (Result.Genero + ' ' + GerarTagDupla(LItem.GetValue<string>('name', ''))).Trim.ToLower;
       end;
     end;
 
@@ -198,7 +198,7 @@ begin
         for I := 0 to Min(4, LCastArr.Count - 1) do
         begin
           LItem := LCastArr.Items[I] as TJSONObject;
-          Result.Artistas := (Result.Artistas + ' ' + FormatarParaTag(LItem.GetValue<string>('name', ''))).Trim;
+          Result.Artista := (Result.Artista + ' ' + FormatarParaTag(LItem.GetValue<string>('name', ''))).Trim;
         end;
       end;
 
@@ -211,7 +211,7 @@ begin
           begin
             LItem := LCrewArr.Items[I] as TJSONObject;
             if LItem.GetValue<string>('job', '') = 'Director' then
-              Result.Diretores := (Result.Diretores + ' ' + FormatarParaTag(LItem.GetValue<string>('name', ''))).Trim;
+              Result.Diretor := (Result.Diretor + ' ' + FormatarParaTag(LItem.GetValue<string>('name', ''))).Trim;
           end;
         end;
       end;
@@ -223,7 +223,7 @@ begin
       for I := 0 to Min(2, LArr.Count - 1) do
       begin
         LItem := LArr.Items[I] as TJSONObject;
-        Result.Produtoras := (Result.Produtoras + ' ' + FormatarParaTag(LItem.GetValue<string>('name', ''))).Trim;
+        Result.Produtora := (Result.Produtora + ' ' + FormatarParaTag(LItem.GetValue<string>('name', ''))).Trim;
       end;
     end;
 
