@@ -60,6 +60,8 @@ type
     procedure ProximoButton_Click(Sender: TObject);
     procedure HistoricoDataSource_Changed(Sender: TObject; Field: TField);
     procedure LimparPainel(Painel: TPanel);
+    FCarregandoHistorico: Boolean;
+    procedure CarregarHistoricoNaTela;
   public
     { Public declarations }
     procedure FormDestroy(Sender: TObject);
