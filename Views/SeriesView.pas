@@ -60,15 +60,24 @@ type
   private
     { Private declarations }
     FMidiaEvents: TMidiaFormHelper;
+    FCarregandoHistorico: Boolean;
     FTMDBClient: TTMDBClient;
+    FSalvandoHistorico: Boolean;
     procedure CopiarButton_Click(Sender: TObject);
+    procedure SalvarButton_Click(Sender: TObject);
+    procedure AnteriorButton_Click(Sender: TObject);
+    procedure ProximoButton_Click(Sender: TObject);
     procedure LimparPainel(Painel: TPanel);
+    procedure CarregarHistoricoNaTela;
+    procedure AtualizarCamposComRegistroAtual;
   public
     { Public declarations }
-    procedure FormDestroy(Sender: TObject);
+   procedure FormDestroy(Sender: TObject);
     procedure PreencherComMedia(const AMedia: TMediaData);
     procedure Buscar(Sender: TObject; var Key: Char);
     constructor Create(AOwner: TComponent); override;
+  protected
+    procedure DoShow; override;
   end;
 
 var
@@ -107,10 +116,13 @@ begin
   FMidiaEvents.AtualizarResumo;
   CodigoBox.OnKeyPress := Buscar;
   CopiarButton.OnClick := CopiarButton_Click;
+  SalvarButton.OnClick := SalvarButton_Click;
+  AnteriorButton.OnClick := AnteriorButton_Click;
+  ProximoButton.OnClick := ProximoButton_Click;
   LimparPainel(PanelDesktop);
 end;
 
-procedure TFilmesMain.DoShow;
+procedure TSeriesMain.DoShow;
 begin
   CarregarHistoricoNaTela;
 end;
@@ -128,13 +140,13 @@ begin
   end;
 end;
 
-procedure TFilmesMain.FormDestroy(Sender: TObject);
+procedure TSeriesMain.FormDestroy(Sender: TObject);
 begin
   FMidiaEvents.Free;
   FTMDBClient.Free;
 end;
 
-procedure TFilmesMain.LimparPainel(Painel: TPanel);
+procedure TSeriesMain.LimparPainel(Painel: TPanel);
 var
   i: Integer;
 begin
@@ -148,7 +160,7 @@ begin
   end;
 end;
 
-procedure TFilmesMain.PreencherComMedia(const AMedia: TMediaData);
+procedure TSeriesMain.PreencherComMedia(const AMedia: TMediaData);
 function ValorOuPadrao(const Valor: string): string;
 begin
   if Valor <> '' then
@@ -178,7 +190,7 @@ begin
   FMidiaEvents.AtualizarResumo;
 end;
 
-procedure TFilmesMain.Buscar(Sender: TObject; var Key: Char);
+procedure TSeriesMain.Buscar(Sender: TObject; var Key: Char);
 var
   LMovieId: Integer;
   LFuture: IFuture<TJSONObject>;
@@ -191,14 +203,14 @@ begin
 
     if not TryStrToInt(CodigoBox.Text, LMovieId) then
     begin
-      Application.MessageBox('Informe o código do TMDB.', 'Cine - Filmes',  MB_OK + MB_ICONQUESTION);
+      Application.MessageBox('Informe o código do TMDB.', 'Cine - Series',  MB_OK + MB_ICONQUESTION);
       CodigoBox.SetFocus;
       Exit;
     end;
 
     if not Assigned(FTMDBClient) then
     begin
-      Application.MessageBox('A chave da API do TMDB não está configurada.', 'Cine - Filmes',  MB_OK + MB_ICONWARNING);
+      Application.MessageBox('A chave da API do TMDB não está configurada.', 'Cine - Series',  MB_OK + MB_ICONWARNING);
       Exit;
     end;
 
@@ -229,10 +241,10 @@ begin
               MsgErro := 'O recurso solicitado não foi encontrado.';
             end;
             MessageDlg('Erro: ' + MsgErro, mtError, [mbOK], 0);
-            Application.MessageBox(PChar('Erro: ' + MsgErro), 'Cine - Filmes', MB_OK + MB_ICONERROR);
+            Application.MessageBox(PChar('Erro: ' + MsgErro), 'Cine - Series', MB_OK + MB_ICONERROR);
           end
           else
-          Application.MessageBox(PChar('Erro: ' + E.Message), 'Cine - Filmes', MB_OK + MB_ICONERROR);
+          Application.MessageBox(PChar('Erro: ' + E.Message), 'Cine - Series', MB_OK + MB_ICONERROR);
         end;
       end;
     finally
@@ -241,7 +253,7 @@ begin
   end;
 end;
 
-procedure TFilmesMain.CarregarHistoricoNaTela;
+procedure TSeriesMain.CarregarHistoricoNaTela;
 var
   T: TFDTable;
 begin
@@ -274,7 +286,7 @@ begin
   end;
 end;
 
-procedure TFilmesMain.AtualizarCamposComRegistroAtual;
+procedure TSeriesMain.AtualizarCamposComRegistroAtual;
 begin
   with HistoricoDataModule.HistoricoTable do
   begin
@@ -295,13 +307,13 @@ begin
   end;
 end;
 
-procedure TFilmesMain.CopiarButton_Click(Sender: TObject);
+procedure TSeriesMain.CopiarButton_Click(Sender: TObject);
 begin
   ResumoBox.SelectAll;
   ResumoBox.CopyToClipboard;
 end;
 
-procedure TFilmesMain.SalvarButton_Click(Sender: TObject);
+procedure TSeriesMain.SalvarButton_Click(Sender: TObject);
 var
   LEhNovoRegistro: Boolean;
 begin
@@ -335,24 +347,24 @@ begin
     end;
     if LEhNovoRegistro then
     begin
-      Application.MessageBox(PChar('Filme ' + NomeBox.Text + ' cadastrado com sucesso.'), 'Cine - Filmes', MB_OK + MB_ICONINFORMATION);
+      Application.MessageBox(PChar('Filme ' + NomeBox.Text + ' cadastrado com sucesso.'), 'Cine - Series', MB_OK + MB_ICONINFORMATION);
     end
     else
     begin
-      Application.MessageBox(PChar('Filme ' + NomeBox.Text + ' atualizado com sucesso.'), 'Cine - Filmes', MB_OK + MB_ICONINFORMATION);
+      Application.MessageBox(PChar('Filme ' + NomeBox.Text + ' atualizado com sucesso.'), 'Cine - Series', MB_OK + MB_ICONINFORMATION);
     end;
   except
     on E: Exception do
     begin
       if HistoricoDataModule.HistoricoTable.State in dsEditModes then
           HistoricoDataModule.HistoricoTable.Cancel;
-      Application.MessageBox(PChar('Erro ao Salvar: ' + E.Message), 'Cine - Filmes', MB_OK + MB_ICONERROR);
+      Application.MessageBox(PChar('Erro ao Salvar: ' + E.Message), 'Cine - Series', MB_OK + MB_ICONERROR);
     end;
   end;
   FSalvandoHistorico := False;
 end;
 
-procedure TFilmesMain.AnteriorButton_Click(Sender: TObject);
+procedure TSeriesMain.AnteriorButton_Click(Sender: TObject);
 begin
   HistoricoDataModule.HistoricoTable.Prior;
   AnteriorButton.Enabled := not HistoricoDataModule.HistoricoTable.Bof;
@@ -360,7 +372,7 @@ begin
   AtualizarCamposComRegistroAtual;
 end;
 
-procedure TFilmesMain.ProximoButton_Click(Sender: TObject);
+procedure TSeriesMain.ProximoButton_Click(Sender: TObject);
 begin
   HistoricoDataModule.HistoricoTable.Next;
   ProximoButton.Enabled := not HistoricoDataModule.HistoricoTable.Eof;
