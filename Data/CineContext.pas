@@ -6,7 +6,7 @@ uses
   System.SysUtils, System.Classes, FireDAC.Stan.Intf, FireDAC.Stan.Option,
   FireDAC.Stan.Param, FireDAC.Stan.Error, FireDAC.DatS, FireDAC.Phys.Intf,
   FireDAC.DApt.Intf, FireDAC.Stan.StorageJSON, Data.DB, FireDAC.Comp.DataSet,
-  FireDAC.Comp.Client;
+  FireDAC.Comp.Client, System.IOUtils;
 
 type
   THistoricoDataModule = class(TDataModule)
@@ -30,5 +30,21 @@ implementation
 {%CLASSGROUP 'Vcl.Controls.TControl'}
 
 {$R *.dfm}
+
+
+procedure THistoricoDataModule.DataModuleCreate(Sender: TObject);
+begin
+  FArquivoJSON := TPath.Combine(TPath.GetDocumentsPath, 'historico_sistema.json');
+
+  // Configura a estrutura uma única vez para o sistema inteiro
+  Historico.FieldDefs.Clear;
+  cdsHistorico.FieldDefs.Add('DataHora', ftDateTime);
+  cdsHistorico.FieldDefs.Add('Acao', ftString, 50);
+  cdsHistorico.FieldDefs.Add('Detalhe', ftString, 250);
+  cdsHistorico.CreateDataSet;
+
+  if TFile.Exists(FArquivoJSON) then
+    cdsHistorico.LoadFromFile(FArquivoJSON, sfJSON);
+end;
 
 end.
