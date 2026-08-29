@@ -57,6 +57,7 @@ type
     procedure CopiarButton_Click(Sender: TObject);
     procedure AnteriorButton_Click(Sender: TObject);
     procedure ProximoButton_Click(Sender: TObject);
+    p
     procedure LimparPainel(Painel: TPanel);
   public
     { Public declarations }

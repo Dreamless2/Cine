@@ -274,7 +274,7 @@ object FilmesMain: TFilmesMain
       Top = 672
       Width = 203
       Height = 57
-      Caption = 'AnteriorButton'
+      Caption = 'Anterior'
       TabOrder = 17
     end
     object ProximoButton: TButton
