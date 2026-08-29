@@ -34,10 +34,8 @@ implementation
 
 {$R *.dfm}
 
-constructor  DefinirEstrutura(AOwner: TComponent);
+procedure THistoricoDataModule.DefinirEstrutura;
 begin
-  inherited Create(AOwner);
-
   if HistoricoTable.Active then
     HistoricoTable.Close;
   HistoricoTable.FieldDefs.Clear;
@@ -81,8 +79,10 @@ begin
   Result := TPath.Combine(LPasta, 'historico_midias.json');
 end;
 
-procedure THistoricoDataModule.DataModuleCreate(Sender: TObject);
+constructor THistoricoDataModule.DataModuleCreate(AOwner: TComponent);
 begin
+  inherited Create(AOwner);
+
   FArquivoJSON := ResolverCaminhoArquivo;
   ShowMessage(
     'FArquivoJSON = [' + FArquivoJSON + ']'
