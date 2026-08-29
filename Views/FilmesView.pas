@@ -276,6 +276,8 @@ begin
      HistoricoDataModule.HistoricoTable.IsEmpty then
     Exit;
 
+
+
   if FCarregandoHistorico then
     Exit;
 
