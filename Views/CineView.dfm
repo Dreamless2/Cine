@@ -68,39 +68,35 @@ object CineMain: TCineMain
     Align = alLeft
     BevelOuter = bvNone
     TabOrder = 3
-    ExplicitLeft = -6
     ExplicitTop = 83
     object FilmesButton: TStyledButton
       Left = -6
       Top = 0
       Width = 235
-      Height = 60
+      Height = 73
       Caption = 'Filmes'
       TabOrder = 0
-      Flat = True
       StyleFamily = 'SVG-Colors'
       StyleClass = 'Seagreen'
     end
     object SeriesButton: TStyledButton
       Left = -6
-      Top = 60
+      Top = 79
       Width = 235
-      Height = 60
+      Height = 76
       Caption = 'SeriesButton'
       TabOrder = 1
-      Flat = True
       StyleFamily = 'SVG-Colors'
       StyleClass = 'Indigo'
     end
     object AnimesButton: TStyledButton
       Left = -6
-      Top = 119
+      Top = 175
       Width = 235
       Height = 60
       Caption = 'AnimesButton'
       TabOrder = 2
       StyleElements = [seFont, seBorder]
-      Flat = True
       StyleClass = 'Calypso SLE'
     end
     object FecharButton: TStyledButton
@@ -114,7 +110,6 @@ object CineMain: TCineMain
       Flat = True
       StyleFamily = 'Angular-Dark'
       StyleClass = 'Warn'
-      ExplicitTop = 760
     end
   end
   object PanelDesktop: TPanel
@@ -124,9 +119,5 @@ object CineMain: TCineMain
     Height = 857
     Align = alClient
     TabOrder = 4
-    ExplicitLeft = 616
-    ExplicitTop = 376
-    ExplicitWidth = 185
-    ExplicitHeight = 41
   end
 end
