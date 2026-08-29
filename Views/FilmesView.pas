@@ -55,6 +55,7 @@ type
     FMidiaEvents: TMidiaFormHelper;
     FCarregandoHistorico: Boolean;
     FTMDBClient: TTMDBClient;
+    FSalvandoHistorico: Boolean;
     procedure CopiarButton_Click(Sender: TObject);
     procedure SalvarButton_Click(Sender: TObject);
     procedure AnteriorButton_Click(Sender: TObject);
@@ -276,9 +277,7 @@ begin
      HistoricoDataModule.HistoricoTable.IsEmpty then
     Exit;
 
-
-
-  if FCarregandoHistorico then
+  if FCarregandoHistorico or FSalvandoHistorico then
     Exit;
 
   CarregarHistoricoNaTela;
@@ -292,24 +291,36 @@ end;
 
 procedure TFilmesMain.SalvarButton_Click(Sender: TObject);
 begin
-  HistoricoDataModule.NovoRegistro('Filmes');
-  HistoricoDataModule.HistoricoTable.FieldByName('Codigo').AsString := CodigoBox.Text;
-  HistoricoDataModule.HistoricoTable.FieldByName('Nome').AsString := NomeBox.Text;
-  HistoricoDataModule.HistoricoTable.FieldByName('Audio').AsString := AudioBox.Text;
-  HistoricoDataModule.HistoricoTable.FieldByName('Sinopse').AsString := SinopseBox.Text;
-  HistoricoDataModule.HistoricoTable.FieldByName('Original').AsString := OriginalBox.Text;
-  HistoricoDataModule.HistoricoTable.FieldByName('Estreia').AsString := EstreiaBox.Text;
-  HistoricoDataModule.HistoricoTable.FieldByName('Alternativo').AsString := AlternativoBox.Text;
-  HistoricoDataModule.HistoricoTable.FieldByName('Tags').AsString := TagsBox.Text;
-  HistoricoDataModule.HistoricoTable.FieldByName('MCU').AsString := MCUBox.Text;
-  HistoricoDataModule.HistoricoTable.FieldByName('Franquia').AsString := FranquiaBox.Text;
-  HistoricoDataModule.HistoricoTable.FieldByName('Genero').AsString := GeneroBox.Text;
-  HistoricoDataModule.HistoricoTable.FieldByName('Diretor').AsString := DiretorBox.Text;
-  HistoricoDataModule.HistoricoTable.FieldByName('Artistas').AsString := ArtistasBox.Text;
-  HistoricoDataModule.HistoricoTable.FieldByName('Produtora').AsString := ProdutoraBox.Text;
-  HistoricoDataModule.HistoricoTable.Post;
-  HistoricoDataModule.SalvarDados;
-  ShowMessage('Filme salvo e arquivo JSON criado com sucesso!');
+  FSalvandoHistorico := True;
+  try
+    HistoricoDataModule.NovoRegistro('Filmes');
+
+    HistoricoDataModule.HistoricoTable.FieldByName('Codigo').AsString := CodigoBox.Text;
+    HistoricoDataModule.HistoricoTable.FieldByName('Nome').AsString := NomeBox.Text;
+    HistoricoDataModule.HistoricoTable.FieldByName('Audio').AsString := AudioBox.Text;
+    HistoricoDataModule.HistoricoTable.FieldByName('Sinopse').AsString := SinopseBox.Text;
+    HistoricoDataModule.HistoricoTable.FieldByName('Original').AsString := OriginalBox.Text;
+    HistoricoDataModule.HistoricoTable.FieldByName('Estreia').AsString := EstreiaBox.Text;
+    HistoricoDataModule.HistoricoTable.FieldByName('Alternativo').AsString := AlternativoBox.Text;
+    HistoricoDataModule.HistoricoTable.FieldByName('Tags').AsString := TagsBox.Text;
+    HistoricoDataModule.HistoricoTable.FieldByName('MCU').AsString := MCUBox.Text;
+    HistoricoDataModule.HistoricoTable.FieldByName('Franquia').AsString := FranquiaBox.Text;
+    HistoricoDataModule.HistoricoTable.FieldByName('Genero').AsString := GeneroBox.Text;
+    HistoricoDataModule.HistoricoTable.FieldByName('Diretor').AsString := DiretorBox.Text;
+    HistoricoDataModule.HistoricoTable.FieldByName('Artistas').AsString := ArtistasBox.Text;
+    HistoricoDataModule.HistoricoTable.FieldByName('Produtora').AsString := ProdutoraBox.Text;
+
+    HistoricoDataModule.HistoricoTable.Post;
+
+    HistoricoDataModule.SalvarDados;
+
+    ShowMessage('Filme salvo no histórico com sucesso!');
+  except
+    on E: Exception do
+      ShowMessage('Erro ao salvar filme:' + sLineBreak + E.Message);
+  end;
+
+  FSalvandoHistorico := False;
 end;
 
 procedure TFilmesMain.AnteriorButton_Click(Sender: TObject);
