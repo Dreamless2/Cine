@@ -115,6 +115,11 @@ begin
   LimparPainel(PanelDesktop);
 end;
 
+procedure TFilmesMain.DoShow;
+begin
+  CarregarHistoricoNaTela;
+end;
+
 function ExceptionDetalhes(E: Exception): string;
 begin
   Result := E.ClassName + ': ' + E.Message;
