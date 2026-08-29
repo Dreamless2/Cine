@@ -239,7 +239,6 @@ procedure TFilmesMain.CarregarHistoricoNaTela;
 var
   T: TFDMemTable;
 begin
-  T := HistoricoDataModule.HistoricoTable;
   if FCarregandoHistorico then
     Exit;
 
