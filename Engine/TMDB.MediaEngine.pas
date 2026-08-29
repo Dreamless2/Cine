@@ -14,7 +14,7 @@ type
     NomeOriginal: string;
     DataEstreia: string;
     NomeAlternativo: string;
-    Franquia: S
+    Franquia: string;
     Generos: string;
     Diretores: string;
     Artistas: string;
