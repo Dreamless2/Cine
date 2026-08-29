@@ -222,10 +222,10 @@ begin
             begin
               MsgErro := 'O recurso solicitado não foi encontrado.';
             end;
-            MessageDlg('Erro TMDB: ' + MsgErro, mtError, [mbOK], 0);
+            MessageDlg('Erro: ' + MsgErro, mtError, [mbOK], 0);
           end
           else
-          MessageDlg('Erro TMDB: ' + E.Message, mtError, [mbOK], 0);
+          MessageDlg('Erro: ' + E.Message, mtError, [mbOK], 0);
         end;
       end;
     finally
