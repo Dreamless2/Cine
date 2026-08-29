@@ -90,10 +90,10 @@ begin
 
   FConexao.ExecSQL(
     'CREATE TRIGGER IF NOT EXISTS trg_Midias_Update ' +
-    'AFTER UPDATE ON Filmes ' +
+    'AFTER UPDATE ON Midias ' +
     'WHEN NEW.DataHora_Update = OLD.DataHora_Update ' +
     'BEGIN ' +
-    '  UPDATE Filmes SET DataHora_Update = datetime(''now'',''localtime'') ' +
+    '  UPDATE Midias SET DataHora_Update = datetime(''now'',''localtime'') ' +
     '  WHERE Codigo = NEW.Codigo; ' +
     'END');
 end;
@@ -114,7 +114,7 @@ begin
 
   FHistoricoTable := TFDTable.Create(Self);
   FHistoricoTable.Connection := FConexao;
-  FHistoricoTable.TableName := 'Filmes';
+  FHistoricoTable.TableName := 'Midias';
   FHistoricoTable.IndexFieldNames := 'Codigo';
   FHistoricoTable.Open;
 end;
