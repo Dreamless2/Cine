@@ -22,6 +22,7 @@ type
     procedure SalvarDados;
     procedure NovoRegistro(const ATipoTela: string);
     constructor Create(AOwner: TComponent); override;
+    procedure DoShow; override;
   end;
 
 var
