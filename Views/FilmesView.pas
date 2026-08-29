@@ -286,7 +286,7 @@ procedure TFilmesMain.CopiarButton_Click(Sender: TObject);
 begin
   ResumoBox.SelectAll;
   ResumoBox.CopyToClipboard;
-  Application.MessageBox('Copiado com sucesso.'), 'Cine - Filmes', MB_YESNO + MB_ICONINFORMATION);
+  Application.MessageBox('Copiado com sucesso.', 'Cine - Filmes', MB_YESNO + MB_ICONINFORMATION);
 end;
 
 procedure TFilmesMain.SalvarButton_Click(Sender: TObject);
