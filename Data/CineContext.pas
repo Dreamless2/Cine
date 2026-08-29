@@ -35,10 +35,8 @@ implementation
 
 {$R *.dfm}
 
-{procedure THistoricoDataModule.DefinirEstrutura;
+procedure THistoricoDataModule.DefinirEstrutura;
 begin
-  if HistoricoTable.Active then
-    HistoricoTable.Close;
   HistoricoTable.FieldDefs.Clear;
   HistoricoTable.FieldDefs.Add('TipoMidia', ftString, 20);
   HistoricoTable.FieldDefs.Add('Codigo', ftString, 20);
@@ -64,26 +62,8 @@ begin
   HistoricoTable.FieldDefs.Add('DataHora_Cadastro', ftDateTime);
   HistoricoTable.FieldDefs.Add('DataHora_Update', ftDateTime);
   HistoricoTable.CreateDataSet;
-end;    }
-
-procedure THistoricoDataModule.DefinirEstrutura;
-begin
-  ShowMessage('EST 1');
-
-  HistoricoTable.FieldDefs.Clear;
-
-  ShowMessage('EST 2');
-
-  HistoricoTable.FieldDefs.Add('TipoMidia', ftString, 20);
-  HistoricoTable.FieldDefs.Add('Codigo', ftString, 20);
-  HistoricoTable.FieldDefs.Add('Nome', ftString, 100);
-
-  ShowMessage('EST 3');
-
-  HistoricoTable.CreateDataSet;
-
-  ShowMessage('EST 4');
 end;
+
 
 function THistoricoDataModule.ResolverCaminhoArquivo: string;
 var
@@ -109,17 +89,9 @@ end;
 
 constructor THistoricoDataModule.Create(AOwner: TComponent);
 begin
-  ShowMessage('CREATE 1');
-
   FArquivoJSON := ResolverCaminhoArquivo;
-
-  ShowMessage('CREATE 2');
-
   DefinirEstrutura;
-
-  ShowMessage('CREATE 3');
-
-  // NÃO chama CarregarDados ainda
+  CarregarDados;
 end;
 
 procedure THistoricoDataModule.CarregarDados;
