@@ -55,7 +55,7 @@ begin
   FConexao.ExecSQL(
     'CREATE TABLE IF NOT EXISTS Midias (' +
     '  ID INTEGER PRIMARY KEY,' +
-    '  Codigo TEXT,' +
+    '  Codigo TEXT DEFAULT --,' +
     '  TipoMidia TEXT,' +
     '  Nome TEXT,' +
     '  Audio TEXT,' +
