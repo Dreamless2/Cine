@@ -55,6 +55,7 @@ type
     FMidiaEvents: TMidiaFormHelper;
     FTMDBClient: TTMDBClient;
     procedure CopiarButton_Click(Sender: TObject);
+    procedure SalvarButton_Click(Sender: TObject);
     procedure AnteriorButton_Click(Sender: TObject);
     procedure ProximoButton_Click(Sender: TObject);
     procedure HistoricoDataSource_Changed(Sender: TObject; Field: TField);
@@ -242,7 +243,12 @@ begin
   ResumoBox.CopyToClipboard;
 end;
 
-procedure TFilmesMain.SalvarButton_Click(Sender: Data.Bind.ObjectScope);
+procedure TFilmesMain.SalvarButton_Click(Sender: TObject);
+begin
+  HistoricoDataModule.NovoRegistro('Filmes');
+
+end;
+
 
 procedure TFilmesMain.AnteriorButton_Click(Sender: TObject);
 begin
