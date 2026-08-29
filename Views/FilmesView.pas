@@ -275,6 +275,12 @@ begin
   end;
 end;
 
+procedure TFilmesMain.CopiarButton_Click(Sender: TObject);
+begin
+  ResumoBox.SelectAll;
+  ResumoBox.CopyToClipboard;
+end;
+
 
 procedure TFilmesMain.SalvarButton_Click(Sender: TObject);
 var
@@ -320,6 +326,9 @@ begin
   end;
   FSalvandoHistorico := False;
 end;
+
+
+
 
 
 end.
