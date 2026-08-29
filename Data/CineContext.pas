@@ -6,11 +6,14 @@ uses
   System.SysUtils, System.Classes, FireDAC.Stan.Intf, FireDAC.Stan.Option,
   FireDAC.Stan.Param, FireDAC.Stan.Error, FireDAC.DatS, FireDAC.Phys.Intf,
   FireDAC.DApt.Intf, FireDAC.Stan.StorageJSON, Data.DB, FireDAC.Comp.DataSet,
-  FireDAC.Comp.Client, System.IOUtils, Vcl.Dialogs;
+  FireDAC.Comp.Client, System.IOUtils, Vcl.Dialogs, FireDAC.Stan.ExprFuncs,
+  FireDAC.Phys.SQLiteWrapper.Stat, FireDAC.Phys.SQLiteDef, FireDAC.Phys,
+  FireDAC.Phys.SQLite;
 
 type
   THistoricoDataModule = class(TDataModule)
     HistoricoTable: TFDMemTable;
+    FDPhysSQLiteDriverLink1: TFDPhysSQLiteDriverLink;
   private
     { Private declarations }
     FArquivoJSON: string;
