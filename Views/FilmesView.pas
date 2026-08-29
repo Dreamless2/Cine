@@ -240,4 +240,9 @@ begin
     HistoricoDataModule.HistoricoTable.Prior;
 end;
 
+procedure TFilmesMain.ProximoButton_Click(Sender: TObject);
+begin
+    HistoricoDataModule.HistoricoTable.Next;
+end;
+
 end.
