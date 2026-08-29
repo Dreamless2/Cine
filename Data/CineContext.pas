@@ -15,11 +15,10 @@ type
     procedure DataModuleCreate(Sender: TObject);
     procedure DataModuleDestroy(Sender: TObject);
   private
-    { Private declarations }
     FArquivoJSON: string;
     procedure DefinirEstrutura;
+    function ResolverCaminhoArquivo: string;
   public
-    { Public declarations }
     procedure CarregarDados;
     procedure SalvarDados;
     procedure NovoRegistro(const ATipoTela: string);
@@ -65,9 +64,23 @@ begin
   HistoricoTable.CreateDataSet;
 end;
 
+function THistoricoDataModule.ResolverCaminhoArquivo: string;
+var
+  LPasta: string;
+begin
+  LPasta := TPath.GetDocumentsPath;
+  if LPasta.Trim.IsEmpty then
+    LPasta := TPath.Combine(TPath.GetHomePath, 'Documents');
+  if LPasta.Trim.IsEmpty then
+    LPasta := TPath.GetDirectoryName(ParamStr(0));
+  if LPasta.Trim.IsEmpty then
+    LPasta := TPath.Combine(TPath.GetTempPath, 'CineContext');
+  Result := TPath.Combine(LPasta, 'historico_midias.json');
+end;
+
 procedure THistoricoDataModule.DataModuleCreate(Sender: TObject);
 begin
-  FArquivoJSON := TPath.Combine(TPath.GetDocumentsPath, 'historico_midias.json');
+  FArquivoJSON := ResolverCaminhoArquivo;
   DefinirEstrutura;
   CarregarDados;
 end;
