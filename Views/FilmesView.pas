@@ -340,7 +340,6 @@ begin
     if LEhNovoRegistro then
     begin
       Application.MessageBox(PChar('Filme ' + NomeBox.Text + ' cadastrado com sucesso.'), 'Cine - Filmes', MB_OK + MB_ICONINFORMATION);
-      HistoricoDataModule.HistoricoTable.First
     end
     else
     begin
