@@ -323,14 +323,22 @@ begin
     HistoricoDataModule.HistoricoTable.FieldByName('Diretor').AsString := DiretorBox.Text;
     HistoricoDataModule.HistoricoTable.FieldByName('Artistas').AsString := ArtistasBox.Text;
     HistoricoDataModule.HistoricoTable.FieldByName('Produtora').AsString := ProdutoraBox.Text;
-  Post;
+      Post;
     end;
     HistoricoDataModule.SalvarDados;
     Application.MessageBox(PChar('Filme ' + NomeBox.Text + 'cadastrado com sucesso.'), 'Cine - Filmes', MB_YESNO + MB_ICONINFORMATION);
   except
-    on E: Exception do
-      ShowMessage('Erro ao salvar filme:' + sLineBreak + E.Message);
-  end;
+on E: Exception do
+begin
+if HistoricoDataModule.HistoricoTable.State in dsEditModes then
+HistoricoDataModule.HistoricoTable.Cancel;
+
+  ShowMessage(
+    'Erro ao salvar filme:' + sLineBreak + E.Message
+  );
+end;
+
+end;
   FSalvandoHistorico := False;
 end;
 
