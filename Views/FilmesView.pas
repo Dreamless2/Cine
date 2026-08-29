@@ -232,7 +232,7 @@ end;
 
 procedure TFilmesMain.HistoricoDataSource_Changed(Sender: TObject; Field: TField);
 begin
-  if historico then
+  if HistoricoDataModule.HistoricoTable.IsEmpty then Exit;
   
 end;
 
