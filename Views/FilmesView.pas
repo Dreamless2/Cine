@@ -242,7 +242,7 @@ begin
   end;
 end;
 
-{procedure TFilmesMain.CarregarHistoricoNaTela;
+procedure TFilmesMain.CarregarHistoricoNaTela;
 var
   T: TFDMemTable;
 begin
@@ -273,7 +273,7 @@ begin
   finally
     FCarregandoHistorico := False;
   end;
-end;}
+end;
 
 
 procedure TFilmesMain.SalvarButton_Click(Sender: TObject);
