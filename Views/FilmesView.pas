@@ -229,5 +229,4 @@ begin
   ResumoBox.CopyToClipboard;
 end;
 
-
 end.
