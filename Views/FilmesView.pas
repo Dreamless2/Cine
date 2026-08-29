@@ -354,8 +354,6 @@ begin
   HistoricoDataModule.HistoricoTable.Next;
   if HistoricoDataModule.HistoricoTable.Eof then
     Application.MessageBox('Chegou no último registro.', 'Cine - Filmes', MB_OK + MB_ICONINFORMATION);
-
-
 end;
 
 end.
