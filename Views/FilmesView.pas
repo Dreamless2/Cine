@@ -314,7 +314,7 @@ begin
 
     HistoricoDataModule.SalvarDados;
 
-    Application.MessageBox('Filme ' +  + ' .', 'Cine - Filmes', MB_YESNO + MB_ICONINFORMATION);
+    Application.MessageBox('Filme ' + PWideChar(NomeBox.Text) + 'cadastrado com sucesso.', 'Cine - Filmes', MB_YESNO + MB_ICONINFORMATION);
   except
     on E: Exception do
       ShowMessage('Erro ao salvar filme:' + sLineBreak + E.Message);
