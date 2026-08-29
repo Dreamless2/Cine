@@ -283,11 +283,11 @@ begin
     TagsBox.Text        := T.FieldByName('Tags').AsString;
     MCUBox.Text         := T.FieldByName('MCU').AsString;
     FranquiaBox.Text    := T.FieldByName('Franquia').AsString;
-    LocalBox.Text       := ValorOuPadrao(AMedia.LocalProducao);
-    IdiomaBox.Text  := ValorOuPadrao(AMedia.IdiomaOriginal);
-    ReferenciaBox.Text := ValorOuPadrao(AMedia.ObraReferencia);
-    AutoresBox.Text := ValorOuPadrao(AMedia.Autores);
-    ShowrunnersBox.Text := ValorOuPadrao(AMedia.Showrunners);
+    LocalBox.Text       := T.FieldByName('Franquia').AsString;
+    IdiomaBox.Text      := T.FieldByName('Franquia').AsString;
+    ReferenciaBox.Text  := T.FieldByName('Franquia').AsString;
+    AutoresBox.Text     := T.FieldByName('Franquia').AsString;
+    ShowrunnersBox.Text := T.FieldByName('Franquia').AsString;
     GeneroBox.Text      := T.FieldByName('Genero').AsString;
     DiretorBox.Text     := T.FieldByName('Diretor').AsString;
     ArtistasBox.Text    := T.FieldByName('Artista').AsString;
