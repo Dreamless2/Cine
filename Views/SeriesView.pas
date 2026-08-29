@@ -301,25 +301,25 @@ procedure TSeriesMain.AtualizarCamposComRegistroAtual;
 begin
   with HistoricoDataModule.HistoricoTable do
   begin
-    CodigoBox.Text := FieldByName('Codigo').AsString;
-    NomeBox.Text := FieldByName('Nome').AsString;
-    AudioBox.Text := FieldByName('Audio').AsString;
-    SinopseBox.Text := FieldByName('Sinopse').AsString;
-    OriginalBox.Text := FieldByName('Original').AsString;
-    EstreiaBox.Text := FieldByName('Estreia').AsString;
+    CodigoBox.Text      := FieldByName('Codigo').AsString;
+    NomeBox.Text        := FieldByName('Nome').AsString;
+    AudioBox.Text       := FieldByName('Audio').AsString;
+    SinopseBox.Text     := FieldByName('Sinopse').AsString;
+    OriginalBox.Text    := FieldByName('Original').AsString;
+    EstreiaBox.Text     := FieldByName('Estreia').AsString;
     AlternativoBox.Text := FieldByName('Alternativo').AsString;
-    TagsBox.Text := FieldByName('Tags').AsString;
-    MCUBox.Text := FieldByName('MCU').AsString;
-    FranquiaBox.Text := FieldByName('Franquia').AsString;
-     LocalBox.Text := FieldByName('Local').AsString;
-    IdiomaBox.Text := FieldByName('Idioma').AsString;
+    TagsBox.Text        := FieldByName('Tags').AsString;
+    MCUBox.Text         := FieldByName('MCU').AsString;
+    FranquiaBox.Text    := FieldByName('Franquia').AsString;
+     LocalBox.Text      := FieldByName('Local').AsString;
+    IdiomaBox.Text      := FieldByName('Idioma').AsString;
     ReferenciaBox.Text  := FieldByName('Referencia').AsString;
     AutoresBox.Text     := FieldByName('Autores').AsString;
     ShowrunnersBox.Text := FieldByName('Showrunners').AsString;
-    GeneroBox.Text   := FieldByName('Genero').AsString;
-    DiretorBox.Text   := FieldByName('Diretor').AsString;
-    ArtistasBox.Text  := FieldByName('Artistas').AsString;
-    ProdutoraBox.Text := FieldByName('Produtora').AsString;
+    GeneroBox.Text      := FieldByName('Genero').AsString;
+    DiretorBox.Text     := FieldByName('Diretor').AsString;
+    ArtistasBox.Text    := FieldByName('Artistas').AsString;
+    ProdutoraBox.Text   := FieldByName('Produtora').AsString;
   end;
 end;
 
@@ -343,11 +343,11 @@ begin
       else
         Edit;
 
-      FieldByName('TipoMidia').AsString := 'Filme';
-      FieldByName('Codigo').AsString := CodigoBox.Text;
-      FieldByName('Nome').AsString := NomeBox.Text;
-      FieldByName('Audio').AsString := AudioBox.Text;
-      FieldByName('Sinopse').AsString := SinopseBox.Text;
+      FieldByName('TipoMidia').AsString   := 'Filme';
+      FieldByName('Codigo').AsString      := CodigoBox.Text;
+      FieldByName('Nome').AsString        := NomeBox.Text;
+      FieldByName('Audio').AsString       := AudioBox.Text;
+      FieldByName('Sinopse').AsString     := SinopseBox.Text;
       FieldByName('Original').AsString := OriginalBox.Text;
       FieldByName('Estreia').AsString := EstreiaBox.Text;
       FieldByName('Alternativo').AsString := AlternativoBox.Text;
