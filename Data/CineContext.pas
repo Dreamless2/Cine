@@ -21,8 +21,9 @@ type
     procedure CarregarDados;
     procedure SalvarDados;
     procedure NovoRegistro(const ATipoTela: string);
-    constructor DataModuleCreate(AOwner: TComponent);
+    //constructor DataModuleCreate(AOwner: TComponent); override;
     //destructor DataModuleDestroy(Sender: TObject);
+    constructor Create(AOwner: TComponent); override;
   end;
 
 var
@@ -79,7 +80,7 @@ begin
   Result := TPath.Combine(LPasta, 'historico_midias.json');
 end;
 
-constructor THistoricoDataModule.DataModuleCreate(AOwner: TComponent);
+{constructor THistoricoDataModule.DataModuleCreate(AOwner: TComponent);
 begin
   inherited Create(AOwner);
   FArquivoJSON := ResolverCaminhoArquivo;
@@ -92,13 +93,22 @@ begin
   CarregarDados;
 end;
 
-{
 procedure THistoricoDataModule.DataModuleDestroy(Sender: TObject);
 begin
   if HistoricoTable.Active and (HistoricoTable.RecordCount > 0) then
     HistoricoTable.SaveToFile(FArquivoJSON, sfJSON);
 end;
 }
+
+constructor THistoricoDataModule.Create(AOwner: TComponent);
+begin
+  ShowMessage('ENTROU NO CONSTRUCTOR');
+
+  inherited Create(AOwner);
+
+  ShowMessage('DEPOIS DO INHERITED');
+end;
+
 
 procedure THistoricoDataModule.CarregarDados;
 var
