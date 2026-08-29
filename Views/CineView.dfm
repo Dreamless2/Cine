@@ -110,8 +110,8 @@ object CineMain: TCineMain
       Flat = True
       StyleFamily = 'Angular-Dark'
       StyleClass = 'Warn'
-      StyleAppearance = 'Stroked'
-      ExplicitTop = 797
+      ExplicitLeft = -6
+      ExplicitTop = 785
     end
   end
   object PanelDesktop: TPanel
