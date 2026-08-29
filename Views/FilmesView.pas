@@ -325,8 +325,8 @@ begin
       FieldByName('Artistas').AsString := ArtistasBox.Text;
       FieldByName('Produtora').AsString := ProdutoraBox.Text;
       Post;
+      Refresh;
     end;
-    HistoricoDataModule.SalvarDados;
     if LEhNovoRegistro then
       Application.MessageBox(PChar('Filme ' + NomeBox.Text + ' cadastrado com sucesso.'), 'Cine - Filmes', MB_OK + MB_ICONINFORMATION)
     else

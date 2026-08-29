@@ -14,8 +14,6 @@ uses
 type
   THistoricoDataModule = class(TDataModule)
   private
-    FConexao: TFDConnection;
-    FHistoricoTable: TFDTable;
     FArquivoDB: string;
     function ResolverCaminhoArquivo: string;
     procedure CriarEstruturaSeNecessaria;

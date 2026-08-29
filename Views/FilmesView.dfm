@@ -303,7 +303,6 @@ object FilmesMain: TFilmesMain
     end
   end
   object HistoricoDataSource: TDataSource
-    DataSet = HistoricoDataModule.HistoricoTable
     Left = 72
     Top = 688
   end
