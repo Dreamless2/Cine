@@ -357,6 +357,7 @@ begin
   HistoricoDataModule.HistoricoTable.Prior;
   AnteriorButton.Enabled := not HistoricoDataModule.HistoricoTable.Bof;
   ProximoButton.Enabled := True;
+  AtualizarCamposComRegistroAtual;
 end;
 
 procedure TFilmesMain.ProximoButton_Click(Sender: TObject);
@@ -364,6 +365,7 @@ begin
   HistoricoDataModule.HistoricoTable.Next;
   ProximoButton.Enabled := not HistoricoDataModule.HistoricoTable.Eof;
   AnteriorButton.Enabled := True;
+  AtualizarCamposComRegistroAtual;
 end;
 
 
