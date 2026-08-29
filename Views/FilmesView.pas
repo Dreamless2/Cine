@@ -164,18 +164,18 @@ end;
 begin
   FMidiaEvents.DesativarEventos;
   try
-    NomeBox.Text := ValorOuPadrao(AMedia.Nome);
-    SinopseBox.Text := ValorOuPadrao(AMedia.Sinopse);
-    OriginalBox.Text := ValorOuPadrao(AMedia.NomeOriginal);
-    EstreiaBox.Text := ValorOuPadrao(AMedia.DataEstreia);
+    NomeBox.Text        := ValorOuPadrao(AMedia.Nome);
+    SinopseBox.Text     := ValorOuPadrao(AMedia.Sinopse);
+    OriginalBox.Text    := ValorOuPadrao(AMedia.NomeOriginal);
+    EstreiaBox.Text     := ValorOuPadrao(AMedia.DataEstreia);
     AlternativoBox.Text := ValorOuPadrao(AMedia.NomeAlternativo);
-    FilmeBox.Text := GerarTag(ValorOuPadrao(AMedia.Nome));
-    FranquiaBox.Text := ValorOuPadrao(AMedia.Franquia);
-    GeneroBox.Text := ValorOuPadrao(AMedia.Generos);
-    TagsBox.Text := ValorOuPadrao(AMedia.Tags);
-    DiretorBox.Text := ValorOuPadrao(AMedia.Diretores);
-    ArtistasBox.Text := ValorOuPadrao(AMedia.Artistas);
-    ProdutoraBox.Text := ValorOuPadrao(AMedia.Produtoras);
+    FilmeBox.Text       := GerarTag(ValorOuPadrao(AMedia.Nome));
+    FranquiaBox.Text    := ValorOuPadrao(AMedia.Franquia);
+    GeneroBox.Text      := ValorOuPadrao(AMedia.Genero);
+    TagsBox.Text        := ValorOuPadrao(AMedia.Tags);
+    DiretorBox.Text     := ValorOuPadrao(AMedia.Diretor);
+    ArtistasBox.Text    := ValorOuPadrao(AMedia.Artista);
+    ProdutoraBox.Text   := ValorOuPadrao(AMedia.Produtora);
   finally
     FMidiaEvents.ReativarEventos;
   end;
@@ -284,10 +284,10 @@ begin
   begin
     CodigoBox.Text := FieldByName('Codigo').AsString;
     NomeBox.Text := FieldByName('Nome').AsString;
-    AudioBox.Text := FieldByName('Audio').AsString;
-    SinopseBox.Text := FieldByName('Sinopse').AsString;
-    OriginalBox.Text := FieldByName('Original').AsString;
-    EstreiaBox.Text := FieldByName('Estreia').AsString;
+    AudioBox.Text       := FieldByName('Audio').AsString;
+    SinopseBox.Text     := FieldByName('Sinopse').AsString;
+    OriginalBox.Text    := FieldByName('Original').AsString;
+    EstreiaBox.Text     := FieldByName('Estreia').AsString;
     AlternativoBox.Text := FieldByName('Alternativo').AsString;
     TagsBox.Text := FieldByName('Tags').AsString;
     MCUBox.Text := FieldByName('MCU').AsString;
