@@ -55,8 +55,17 @@ type
     ShowrunnersBox: TEdit;
   private
     { Private declarations }
+    FMidiaEvents: TMidiaFormHelper;
+    FTMDBClient: TTMDBClient;
+    procedure CopiarButton_Click(Sender: TObject);
+    procedure LimparPainel(Painel: TPanel);
   public
     { Public declarations }
+    procedure FormDestroy(Sender: TObject);
+    procedure PreencherComMedia(const AMedia: TMediaData);
+    procedure Buscar(Sender: TObject; var Key: Char);
+    procedure BuscarExit(Sender: TObject);
+    constructor Create(AOwner: TComponent);
   end;
 
 var
