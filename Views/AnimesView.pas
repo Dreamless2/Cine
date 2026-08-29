@@ -76,6 +76,8 @@ implementation
 
 {$R *.dfm}
 
+uses System.StrUtils;
+
 constructor TAnimesMain.Create(AOwner: TComponent);
 begin
   inherited Create(AOwner);
@@ -155,7 +157,7 @@ begin
     ShowrunnersBox.Text := AMedia.Showrunners;
     GeneroBox.Text := AMedia.Generos;
     TagsBox.Text := AMedia.Tags;
-    DiretorBox.Text := AMedia.Diretores ? '--';
+    DiretorBox.Text := IfThen(AMedia.Diretores <> '', AMedia.Diretores, '--');
     ArtistasBox.Text := AMedia.Artistas;
     ProdutoraBox.Text := AMedia.Produtoras;
   finally
