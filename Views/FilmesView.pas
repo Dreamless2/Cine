@@ -103,6 +103,7 @@ begin
   FMidiaEvents.AtualizarResumo;
   CodigoBox.OnKeyPress := Buscar;
   CopiarButton.OnClick := CopiarButton_Click;
+  SalvarButton.OnClick := SalvarButton_Click;
   AnteriorButton.OnClick := AnteriorButton_Click;
   ProximoButton.OnClick := ProximoButton_Click;
   LimparPainel(PanelDesktop);
@@ -263,7 +264,6 @@ begin
   HistoricoDataModule.HistoricoTable.Post;
   HistoricoDataModule.SalvarDados;
 end;
-
 
 procedure TFilmesMain.AnteriorButton_Click(Sender: TObject);
 begin
