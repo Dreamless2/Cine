@@ -294,7 +294,6 @@ begin
   FSalvandoHistorico := True;
   try
     HistoricoDataModule.NovoRegistro('Filmes');
-
     HistoricoDataModule.HistoricoTable.FieldByName('Codigo').AsString := CodigoBox.Text;
     HistoricoDataModule.HistoricoTable.FieldByName('Nome').AsString := NomeBox.Text;
     HistoricoDataModule.HistoricoTable.FieldByName('Audio').AsString := AudioBox.Text;
@@ -309,17 +308,13 @@ begin
     HistoricoDataModule.HistoricoTable.FieldByName('Diretor').AsString := DiretorBox.Text;
     HistoricoDataModule.HistoricoTable.FieldByName('Artistas').AsString := ArtistasBox.Text;
     HistoricoDataModule.HistoricoTable.FieldByName('Produtora').AsString := ProdutoraBox.Text;
-
     HistoricoDataModule.HistoricoTable.Post;
-
     HistoricoDataModule.SalvarDados;
-
     Application.MessageBox(PChar('Filme ' + NomeBox.Text + 'cadastrado com sucesso.'), 'Cine - Filmes', MB_YESNO + MB_ICONINFORMATION);
   except
     on E: Exception do
       ShowMessage('Erro ao salvar filme:' + sLineBreak + E.Message);
   end;
-
   FSalvandoHistorico := False;
 end;
 
@@ -327,14 +322,14 @@ procedure TFilmesMain.AnteriorButton_Click(Sender: TObject);
 begin
     HistoricoDataModule.HistoricoTable.Prior;
     if HistoricoDataModule.HistoricoTable.Bof then
-      Application.MessageBox('Chegou no primeiro registro.', 'Cine - Filmes', MB_YESNO + MB_ICONINFORMATION);
+      Application.MessageBox('Chegou no primeiro registro.', 'Cine - Filmes', MB_OK + MB_ICONINFORMATION);
 end;
 
 procedure TFilmesMain.ProximoButton_Click(Sender: TObject);
 begin
   HistoricoDataModule.HistoricoTable.Next;
   if HistoricoDataModule.HistoricoTable.Eof then
-    Application.MessageBox('Chegou no último registro.', 'Cine - Filmes', MB_YESNO + MB_ICONINFORMATION);
+    Application.MessageBox('Chegou no último registro.', 'Cine - Filmes', MB_OK + MB_ICONINFORMATION);
 
 
 end;
