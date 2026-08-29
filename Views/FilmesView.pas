@@ -319,6 +319,7 @@ begin
       else
         Edit;
 
+      FieldByName('Codigo').AsString := 'Filme;
       FieldByName('Codigo').AsString := CodigoBox.Text;
       FieldByName('Nome').AsString := NomeBox.Text;
       FieldByName('Audio').AsString := AudioBox.Text;
