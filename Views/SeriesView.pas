@@ -146,20 +146,20 @@ procedure TSeriesMain.PreencherComMedia(const AMedia: TMediaData);
 begin
   FMidiaEvents.DesativarEventos;
   try
-    NomeBox.Text := AMedia.Nome;
-    SinopseBox.Text := AMedia.Sinopse;
-    OriginalBox.Text := AMedia.NomeOriginal;
-    EstreiaBox.Text := AMedia.DataEstreia;
-    AlternativoBox.Text := AMedia.NomeAlternativo;
-    SerieBox.Text := GerarTag(AMedia.Nome);
-    LocalBox.Text := AMedia.LocalProducao;
-    IdiomaBox.Text := GerarTag(AMedia.IdiomaOriginal);
-    ShowrunnersBox.Text := AMedia.Showrunners;
-    GeneroBox.Text := AMedia.Generos;
-    TagsBox.Text := AMedia.Tags;
-    DiretorBox.Text := AMedia.Diretores;
-    ArtistasBox.Text := AMedia.Artistas;
-    ProdutoraBox.Text := AMedia.Produtoras;
+    NomeBox.Text := ValorOuPadrao(AMedia.Nome);
+  SinopseBox.Text := ValorOuPadrao(AMedia.Sinopse);
+  OriginalBox.Text := ValorOuPadrao(AMedia.NomeOriginal);
+  EstreiaBox.Text := ValorOuPadrao(AMedia.DataEstreia);
+  AlternativoBox.Text := ValorOuPadrao(AMedia.NomeAlternativo);
+  SerieBox.Text := ValorOuPadrao(GerarTag(AMedia.Nome));
+  LocalBox.Text := ValorOuPadrao(AMedia.LocalProducao);
+  IdiomaBox.Text := ValorOuPadrao(GerarTag(AMedia.IdiomaOriginal));
+  ShowrunnersBox.Text := ValorOuPadrao(AMedia.Showrunners);
+  GeneroBox.Text := ValorOuPadrao(AMedia.Generos);
+  TagsBox.Text := ValorOuPadrao(AMedia.Tags);
+  DiretorBox.Text := ValorOuPadrao(AMedia.Diretores);
+  ArtistasBox.Text := ValorOuPadrao(AMedia.Artistas);
+  ProdutoraBox.Text := ValorOuPadrao(AMedia.Produtoras);
   finally
     FMidiaEvents.ReativarEventos;
   end;
