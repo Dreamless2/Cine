@@ -209,14 +209,14 @@ begin
 
     if not TryStrToInt(CodigoBox.Text, LMovieId) then
     begin
-      Application.MessageBox('Informe o código do TMDB.', 'Cine - Series',  MB_OK + MB_ICONQUESTION);
+      Application.MessageBox('Informe o código do TMDB.', 'Cine - Séries',  MB_OK + MB_ICONQUESTION);
       CodigoBox.SetFocus;
       Exit;
     end;
 
     if not Assigned(FTMDBClient) then
     begin
-      Application.MessageBox('A chave da API do TMDB não está configurada.', 'Cine - Series',  MB_OK + MB_ICONWARNING);
+      Application.MessageBox('A chave da API do TMDB não está configurada.', 'Cine - Séries',  MB_OK + MB_ICONWARNING);
       Exit;
     end;
 
@@ -247,10 +247,10 @@ begin
               MsgErro := 'O recurso solicitado não foi encontrado.';
             end;
             MessageDlg('Erro: ' + MsgErro, mtError, [mbOK], 0);
-            Application.MessageBox(PChar('Erro: ' + MsgErro), 'Cine - Series', MB_OK + MB_ICONERROR);
+            Application.MessageBox(PChar('Erro: ' + MsgErro), 'Cine - Séries', MB_OK + MB_ICONERROR);
           end
           else
-          Application.MessageBox(PChar('Erro: ' + E.Message), 'Cine - Series', MB_OK + MB_ICONERROR);
+          Application.MessageBox(PChar('Erro: ' + E.Message), 'Cine - Séries', MB_OK + MB_ICONERROR);
         end;
       end;
     finally
@@ -343,7 +343,7 @@ begin
       else
         Edit;
 
-      FieldByName('TipoMidia').AsString   := 'Filme';
+      FieldByName('TipoMidia').AsString   := 'Série';
       FieldByName('Codigo').AsString      := CodigoBox.Text;
       FieldByName('Nome').AsString        := NomeBox.Text;
       FieldByName('Audio').AsString       := AudioBox.Text;
@@ -354,11 +354,11 @@ begin
       FieldByName('Tags').AsString        := TagsBox.Text;
       FieldByName('MCU').AsString         := MCUBox.Text;
       FieldByName('Franquia').AsString    := FranquiaBox.Text;
-      FieldByName('Local').AsString;     LocalBox.Text
-      FieldByName('Idioma').AsString;     :=    IdiomaBox.Text
-      FieldByName('Referencia').AsString  := ReferenciaBox.Text
-      FieldByName('Autores').AsString     := AutoresBox.Text
-      FieldByName('Showrunners').AsString := ShowrunnersBox.Text
+      FieldByName('Local').AsString       := LocalBox.Text;
+      FieldByName('Idioma').AsString      := IdiomaBox.Text;
+      FieldByName('Referencia').AsString  := ReferenciaBox.Text;
+      FieldByName('Autores').AsString     := AutoresBox.Text;
+      FieldByName('Showrunners').AsString := ShowrunnersBox.Text;
       FieldByName('Genero').AsString      := GeneroBox.Text;
       FieldByName('Diretor').AsString     := DiretorBox.Text;
       FieldByName('Artistas').AsString    := ArtistasBox.Text;
@@ -368,18 +368,18 @@ begin
     end;
     if LEhNovoRegistro then
     begin
-      Application.MessageBox(PChar('Filme ' + NomeBox.Text + ' cadastrado com sucesso.'), 'Cine - Series', MB_OK + MB_ICONINFORMATION);
+      Application.MessageBox(PChar('Série ' + NomeBox.Text + ' cadastrado com sucesso.'), 'Cine - Séries', MB_OK + MB_ICONINFORMATION);
     end
     else
     begin
-      Application.MessageBox(PChar('Filme ' + NomeBox.Text + ' atualizado com sucesso.'), 'Cine - Series', MB_OK + MB_ICONINFORMATION);
+      Application.MessageBox(PChar('Série ' + NomeBox.Text + ' atualizado com sucesso.'), 'Cine - Séries', MB_OK + MB_ICONINFORMATION);
     end;
   except
     on E: Exception do
     begin
       if HistoricoDataModule.HistoricoTable.State in dsEditModes then
           HistoricoDataModule.HistoricoTable.Cancel;
-      Application.MessageBox(PChar('Erro ao Salvar: ' + E.Message), 'Cine - Series', MB_OK + MB_ICONERROR);
+      Application.MessageBox(PChar('Erro ao Salvar: ' + E.Message), 'Cine - Séries', MB_OK + MB_ICONERROR);
     end;
   end;
   FSalvandoHistorico := False;
