@@ -73,7 +73,7 @@ end;
   TTimer(Sender).Enabled := False;
 
   try
-    LabelTime.Caption :=
+    LabelTime.Caption :=  LabelTime.Caption := FormatDateTime('hh:nn:ss', Now);
   finally
 
   end;
