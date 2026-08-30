@@ -21,6 +21,7 @@ type
     SeriesButton: TStyledButton;
     AnimesButton: TStyledButton;
     FecharButton: TStyledButton;
+    Label1: TLabel;
   private
     { Private declarations }
     FCurrentChildForm: TForm;
