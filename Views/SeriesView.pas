@@ -126,7 +126,7 @@ end;
 procedure TSeriesMain.DoShow;
 begin
   HistoricoDataModule.HistoricoTable.Filtered := False;
-  HistoricoDataModule.HistoricoTable.Filter := 'TipoMidia = ''Série''';
+  HistoricoDataModule.HistoricoTable.Filter := 'TipoMidia = ''Serie''';
   HistoricoDataModule.HistoricoTable.Filtered := True;
   HistoricoDataModule.HistoricoTable.First;
   CarregarHistoricoNaTela;
