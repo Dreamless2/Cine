@@ -226,7 +226,7 @@ begin
         LFuture := FTMDBClient.GetTvShowAsync(LMovieId);
         LJson := LFuture.Value;
         try
-          LMedia := ProcessarMidiaTMDB(LJson.ToJSON, False);
+          LMedia := ProcessarMidiaTMDB(LJson.ToJSON, );
           PreencherComMedia(LMedia);
         finally
           LJson.Free;
