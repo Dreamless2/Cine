@@ -179,16 +179,6 @@ begin
       end;
     end;
 
-    {LAltTitlesCollection := LJson.GetValue<TJSONObject>('alternative_titles', nil);
-    if Assigned(LAltTitlesCollection) then
-    begin
-      if not AIsSerie then LArr := LAltTitlesCollection.GetValue<TJSONArray>('titles', nil)
-      else LArr := LAltTitlesCollection.GetValue<TJSONArray>('results', nil);
-
-      if Assigned(LArr) and (LArr.Count > 0) then
-        Result.NomeAlternativo := (LArr.Items[0] as TJSONObject).GetValue<string>('title', '');
-    end;}
-
     LAltTitlesCollection := LJson.GetValue<TJSONObject>('alternative_titles', nil);
     if Assigned(LAltTitlesCollection) then
     begin
@@ -206,8 +196,18 @@ begin
             Break;
           end;
         end;
-        if Result.NomeAlternativo.IsEmpty and (LArr.Count > 0) then
-          Result.NomeAlternativo := (LArr.Items[0] as TJSONObject).GetValue<string>('title', '');
+        if Result.NomeAlternativo.IsEmpty then
+        begin
+          for I := 0 to LArr.Count - 1 do
+          begin
+            LItem := LArr.Items[I] as TJSONObject;
+            if LItem.GetValue<string>('iso_3166_1', '') = 'GB' then
+            begin
+              Result.NomeAlternativo := LItem.GetValue<string>('title', '');
+              Break;
+            end;
+          end;
+        end;
       end;
     end;
 
