@@ -160,7 +160,7 @@ begin
       TEdit(Painel.Controls[i]).Text := '--';
 
     if Painel.Controls[i] is TMaskEdit then
-      TMaskEdit(Painel.Controls[i]).Text := '--';
+      TMaskEdit(Painel.Controls[i]).Text := '';
   end;
 end;
 
