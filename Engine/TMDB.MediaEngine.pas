@@ -84,7 +84,7 @@ begin
   if LSemAcento = LComAcento then
     Result := LSemAcento
   else
-    Result := LSemAcento + Char(160) + '#' + ATexto;
+    Result := LSemAcento + Char(160) + '#' + LComAcento;
 end;
 
 function GerarTag(const ANome: string): string;
