@@ -69,16 +69,17 @@ begin
 end;
 
  procedure TCineMain.TimerTempoTimer(Sender: TObject);
- begin
-  TTimer(Sender).Enabled := False;
+ var
+  FS: TFormatSettings;
+begin
+  FS := TFormatSettings.Create('pt-BR');
 
-  try
-    LabelTime.Caption :=  LabelTime.Caption := FormatDateTime('hh:nn:ss', Now);
-  finally
-
-  end;
-
- end;
+  LabelTime.Caption := FormatDateTime(
+    'dddd, dd "de" mmmm "de" yyyy | hh:nn',
+    Now,
+    FS
+  );
+end;
 
 procedure TCineMain.OpenChildForm(AChildForm: TForm);
 begin
