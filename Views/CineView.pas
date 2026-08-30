@@ -61,7 +61,8 @@ procedure DoShow;
 var
   TimerTempo: TTimer;
 begin
-  TimerTempo := TTimer.Create(Self);
+  TimerTempo := TTimer.Create(Self
+  TimerTempo.Parent
 
 
 end;
