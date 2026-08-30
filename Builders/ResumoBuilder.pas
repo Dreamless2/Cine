@@ -23,17 +23,10 @@ function MontarResumo(const ANomeBox, AAudioBox, ASinopseBox, AOriginalBox, AEst
 implementation
 
 function ValorOuTraco(const AValor: string): string;
-var
-  LValor: string;
 begin
-  LValor := AValor.Trim;
-
-  if LValor.IsEmpty or
-     (LValor = '__/__/____') then
-    Result := '--'
-  else
-    Result := LValor;
+  if AValor.Trim.IsEmpty then Result := '--' else Result := AValor;
 end;
+
 
 function LimparMascaraData(const AValor: string): string;
 begin
