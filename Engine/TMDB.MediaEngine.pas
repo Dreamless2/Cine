@@ -81,10 +81,10 @@ begin
   LComAcento := FormatarParaTag(ATexto, False);
   LSemAcento := FormatarParaTag(ATexto, True);
 
-  if LComAcento = LSemAcento then
-    Result := LComAcento
+  if LSemAcento = LComAcento then
+    Result := LSemAcento
   else
-    Result := LSemAcento + Char(160) + '#' + LComAcento;
+    Result := LSemAcento + Char(160) + '#' + ATexto;
 end;
 
 function GerarTag(const ANome: string): string;
