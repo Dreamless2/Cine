@@ -57,8 +57,12 @@ begin
   PanelTopTitle.OnMouseDown := Panel_MouseDown;
 end;
 
-procedure DoShow; override;
+procedure DoShow;
+var
+  TimerTempo: TTimer;
 begin
+  TimerTempo := TTimer.Create(Self);
+
 
 end;
 
