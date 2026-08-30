@@ -27,6 +27,14 @@ begin
   if AValor.Trim.IsEmpty then Result := '--' else Result := AValor;
 end;
 
+function ValorOuPadraoData(const Valor: string): string;
+begin
+  if Valor.Trim <> '' then
+    Result := Valor
+  else
+    Result := '';
+end;
+
 function MontarResumo(const ANomeBox, AAudioBox, ASinopseBox, AOriginalBox, AEstreiaBox,
   AAlternativoBox, ATagsBox, AFilmeBox, AMCUBox,
   AFranquiaBox, AGeneroBox, ADiretorBox,
@@ -46,7 +54,7 @@ begin
     LBuilder.AppendLine;
     LBuilder.AppendLine(Format('**Título Original:** __%s__', [ValorOuTraco(AOriginalBox)]));
     LBuilder.AppendLine(Format('**Título Alternativo:** __%s__', [ValorOuTraco(AAlternativoBox)]));
-    LBuilder.AppendLine(Format('**Data de Estreia:** __%s__', [AEstreiaBox]));
+    LBuilder.AppendLine(Format('**Data de Estreia:** __%s__', [ ValorOuPadraoData(AEstreiaBox)]));
     LBuilder.AppendLine(Format('**Filme:** %s', [ValorOuTraco(AFilmeBox)]));
     LBuilder.AppendLine(Format('**Franquia:** %s', [ValorOuTraco(AFranquiaBox)]));
     LBuilder.AppendLine(Format('**Gênero:** %s', [ValorOuTraco(AGeneroBox)]));
@@ -80,7 +88,7 @@ begin
     LBuilder.AppendLine;
     LBuilder.AppendLine(Format('**Título Original:** __%s__', [ValorOuTraco(AOriginalBox)]));
     LBuilder.AppendLine(Format('**Título Alternativo:** __%s__', [ValorOuTraco(AAlternativoBox)]));
-    LBuilder.AppendLine(Format('**Data de Lançamento:** __%s__', [AEstreiaBox]));
+    LBuilder.AppendLine(Format('**Data de Lançamento:** __%s__', [ ValorOuPadraoData(AEstreiaBox)]));
     LBuilder.AppendLine(Format('**Série:** %s', [ValorOuTraco(ASerieBox)]));
     LBuilder.AppendLine(Format('**Fase MCU:** %s', [ValorOuTraco(AMCUBox)]));
     LBuilder.AppendLine(Format('**Local de Produção:** %s', [ValorOuTraco(ALocalBox)]));
@@ -119,7 +127,7 @@ begin
     LBuilder.AppendLine;
     LBuilder.AppendLine(Format('**Título Original:** __%s__', [ValorOuTraco(AOriginalBox)]));
     LBuilder.AppendLine(Format('**Título Alternativo:** __%s__', [ValorOuTraco(AAlternativoBox)]));
-    LBuilder.AppendLine(Format('**Data de Lançamento:** __%s__', [AEstreiaBox]));
+    LBuilder.AppendLine(Format('**Data de Lançamento:** __%s__', [ ValorOuPadraoData(AEstreiaBox)]));
     LBuilder.AppendLine(Format('**Anime:** %s', [ValorOuTraco(AAnimeBox)]));
     LBuilder.AppendLine(Format('**Local de Produção:** %s', [ValorOuTraco(ALocalBox)]));
     LBuilder.AppendLine(Format('**Idioma Original:** %s', [ValorOuTraco(AIdiomaBox)]));
