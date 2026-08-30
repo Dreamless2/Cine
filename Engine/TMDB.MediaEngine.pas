@@ -132,7 +132,7 @@ begin
 
   try
     LLang := LJson.GetValue<string>('original_language', '').ToLower;
-    Result.IdiomaOriginal := '#' + MapearIdioma(LLang).ToLower;
+    Result.IdiomaOriginal := GerarTag(MapearIdioma(LLang)).ToLower;
     LIsAnimacao := False;
 
     if not AIsSerie then
