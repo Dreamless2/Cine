@@ -119,11 +119,17 @@ object CineMain: TCineMain
     Align = alClient
     TabOrder = 4
     object Label1: TLabel
-      Left = 280
-      Top = 296
-      Width = 34
-      Height = 15
-      Caption = 'Label1'
+      Left = 237
+      Top = 363
+      Width = 860
+      Height = 130
+      Caption = 'domingo, 30 de agosto de 202 | 12:48:50'#13#10
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -48
+      Font.Name = 'Segoe UI'
+      Font.Style = []
+      ParentFont = False
     end
   end
 end
