@@ -253,7 +253,7 @@ begin
     begin
       LArr := LJson.GetValue<TJSONArray>('production_countries', nil);
       if Assigned(LArr) and (LArr.Count > 0) then
-        Result.LocalProducao := GerarTagLocalProducao(MapearPais((LArr.Items[0] as TJSONObject).GetValue<string>('name', '')))
+        Result.LocalProducao := GerarTag(GerarTagLocalProducao(MapearPais((LArr.Items[0] as TJSONObject).GetValue<string>('name', ''))))
       else
       begin
         LOriginArr := LJson.GetValue<TJSONArray>('origin_country', nil);
