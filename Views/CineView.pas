@@ -37,7 +37,7 @@ type
     constructor Create(AOwner: TComponent); override;
     destructor Destroy; override;
   protected
-    procedure DoShow(AOwner: TComponent); override;
+    procedure DoShow; override;
   end;
 
 var
