@@ -120,13 +120,26 @@ object CineMain: TCineMain
     TabOrder = 4
     object LabelTime: TLabel
       Left = 237
-      Top = 363
+      Top = 369
       Width = 860
-      Height = 130
-      Caption = 'domingo, 30 de agosto de 202 | 12:48:50'#13#10
+      Height = 118
+      AutoSize = False
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWindowText
       Font.Height = -48
+      Font.Name = 'Segoe UI'
+      Font.Style = []
+      ParentFont = False
+    end
+    object Label1: TLabel
+      Left = 573
+      Top = 111
+      Width = 186
+      Height = 128
+      Caption = 'Cine'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -96
       Font.Name = 'Segoe UI'
       Font.Style = []
       ParentFont = False
