@@ -118,31 +118,5 @@ object CineMain: TCineMain
     Height = 857
     Align = alClient
     TabOrder = 4
-    object LabelTime: TLabel
-      Left = 217
-      Top = 369
-      Width = 900
-      Height = 118
-      AutoSize = False
-      Font.Charset = DEFAULT_CHARSET
-      Font.Color = clWindowText
-      Font.Height = -48
-      Font.Name = 'Segoe UI'
-      Font.Style = []
-      ParentFont = False
-    end
-    object Label1: TLabel
-      Left = 573
-      Top = 199
-      Width = 186
-      Height = 128
-      Caption = 'Cine'
-      Font.Charset = DEFAULT_CHARSET
-      Font.Color = clWindowText
-      Font.Height = -96
-      Font.Name = 'Segoe UI'
-      Font.Style = []
-      ParentFont = False
-    end
   end
 end

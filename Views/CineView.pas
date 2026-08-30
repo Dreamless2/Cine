@@ -21,8 +21,6 @@ type
     SeriesButton: TStyledButton;
     AnimesButton: TStyledButton;
     FecharButton: TStyledButton;
-    LabelTime: TLabel;
-    Label1: TLabel;
   private
     { Private declarations }
     FCurrentChildForm: TForm;
@@ -32,13 +30,10 @@ type
     procedure Animes_Click(Sender: TObject);
     procedure Fechar_Click(Sender: TObject);
     procedure Panel_MouseDown(Sender: TObject; Button: TMouseButton; Shift: TShiftState; X, Y: Integer);
-    procedure TimerTempoTimer(Sender: TObject);
   public
     { Public declarations }
     constructor Create(AOwner: TComponent); override;
     destructor Destroy; override;
-  protected
-    procedure DoShow; override;
   end;
 
 var
@@ -57,29 +52,6 @@ begin
   FecharButton.OnClick := Fechar_Click;
   PanelTopBar.OnMouseDown := Panel_MouseDown;
   PanelTopTitle.OnMouseDown := Panel_MouseDown;
-end;
-
-procedure TCineMain.DoShow;
-var
-  TimerTempo: TTimer;
-begin
-  TimerTempo := TTimer.Create(Self);
-  TimerTempo.Interval := 1000;
-  TimerTempo.OnTimer  := TimerTempoTimer;
-  TimerTempo.Enabled  := True;
-end;
-
- procedure TCineMain.TimerTempoTimer(Sender: TObject);
- var
-  FS: TFormatSettings;
-begin
-  FS := TFormatSettings.Create('pt-BR');
-
-  LabelTime.Caption := FormatDateTime(
-    'dddd, dd "de" mmmm "de" yyyy | hh:nn:ss',
-    Now,
-    FS
-  );
 end;
 
 procedure TCineMain.OpenChildForm(AChildForm: TForm);
