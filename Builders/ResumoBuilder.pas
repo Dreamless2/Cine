@@ -51,7 +51,7 @@ begin
     LBuilder.AppendLine;
     LBuilder.AppendLine(Format('**Título Original:** __%s__', [ValorOuTraco(AOriginalBox)]));
     LBuilder.AppendLine(Format('**Título Alternativo:** __%s__', [ValorOuTraco(AAlternativoBox)]));
-    LBuilder.AppendLine(Format('**Data de Estreia:** __%s__', [ValorOuTraco(LimparMascaraData(AEstreiaBox))]));
+    LBuilder.AppendLine(Format('**Data de Estreia:** __%s__', LimparMascaraData(AEstreiaBox))));
     LBuilder.AppendLine(Format('**Filme:** %s', [ValorOuTraco(AFilmeBox)]));
     LBuilder.AppendLine(Format('**Franquia:** %s', [ValorOuTraco(AFranquiaBox)]));
     LBuilder.AppendLine(Format('**Gênero:** %s', [ValorOuTraco(AGeneroBox)]));
