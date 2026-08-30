@@ -75,7 +75,7 @@ begin
   FS := TFormatSettings.Create('pt-BR');
 
   LabelTime.Caption := FormatDateTime(
-    'dddd, dd "de" mmmm "de" yyyy | hh:nn',
+    'dddd, dd "de" mmmm "de" yyyy | hh:nn:ss',
     Now,
     FS
   );
