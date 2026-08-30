@@ -102,7 +102,7 @@ begin
   if LTagSemAcento = LTagComAcento then
     Result := LTagSemAcento
   else
-    Result := LTagSemAcento + Char(160) + '#' + LTagComAcento;
+    Result := LTagSemAcento + Char(160) + LTagComAcento;
 end;
 
 procedure TratarDataEAno(const ADataISO: string; out ADataPTBR, AAno: string);
