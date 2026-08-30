@@ -125,7 +125,7 @@ begin
     LBuilder.AppendLine;
     LBuilder.AppendLine(Format('**Título Original:** __%s__', [ValorOuTraco(AOriginalBox)]));
     LBuilder.AppendLine(Format('**Título Alternativo:** __%s__', [ValorOuTraco(AAlternativoBox)]));
-    LBuilder.AppendLine(Format('**Data de Lançamento:** __%s__', [ValorOuTraco(AEstreiaBox)]));
+    LBuilder.AppendLine(Format('**Data de Lançamento:** __%s__', [AEstreiaBox]));
     LBuilder.AppendLine(Format('**Anime:** %s', [ValorOuTraco(AAnimeBox)]));
     LBuilder.AppendLine(Format('**Local de Produção:** %s', [ValorOuTraco(ALocalBox)]));
     LBuilder.AppendLine(Format('**Idioma Original:** %s', [ValorOuTraco(AIdiomaBox)]));
