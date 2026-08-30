@@ -119,9 +119,9 @@ object CineMain: TCineMain
     Align = alClient
     TabOrder = 4
     object LabelTime: TLabel
-      Left = 237
+      Left = 217
       Top = 369
-      Width = 860
+      Width = 900
       Height = 118
       AutoSize = False
       Font.Charset = DEFAULT_CHARSET
