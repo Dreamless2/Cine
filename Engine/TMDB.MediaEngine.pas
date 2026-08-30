@@ -167,7 +167,7 @@ begin
     TratarDataEAno(LDataISO, Result.DataEstreia, LAno);
     if not LAno.IsEmpty then
     begin
-      if LIsAnimacao and ((LLang = 'ja') or (LLang = 'ko') or (LLang = 'zh')) and AIsSerie then
+      if LIsAnimacao and AIsSerie and ((LLang = 'ja') or (LLang = 'ko') or (LLang = 'zh'))  then
       begin
         if (LLang = 'ja') or (LLang = 'ko') or (LLang = 'zh') then
           Result.Tags := '#Anime ' + FormatarParaTag('Anime' + LAno)
