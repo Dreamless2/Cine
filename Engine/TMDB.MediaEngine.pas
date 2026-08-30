@@ -190,25 +190,25 @@ begin
     end;}
     LAltTitlesCollection := LJson.GetValue<TJSONObject>('alternative_titles', nil);
     if Assigned(LAltTitlesCollection) then
-begin
-  if not AIsSerie then LArr := LAltTitlesCollection.GetValue<TJSONArray>('titles', nil)
-  else LArr := LAltTitlesCollection.GetValue<TJSONArray>('results', nil);
-  if Assigned(LArr) then
-  begin
-    Result.NomeAlternativo := '';
-    for I := 0 to LArr.Count - 1 do
     begin
-      LItem := LArr.Items[I] as TJSONObject;
-      if LItem.GetValue<string>('iso_3166_1', '') = 'US' then
+      if not AIsSerie then LArr := LAltTitlesCollection.GetValue<TJSONArray>('titles', nil)
+      else LArr := LAltTitlesCollection.GetValue<TJSONArray>('results', nil);
+      if Assigned(LArr) then
       begin
-        Result.NomeAlternativo := LItem.GetValue<string>('title', '');
-        Break;
+        Result.NomeAlternativo := '';
+        for I := 0 to LArr.Count - 1 do
+        begin
+          LItem := LArr.Items[I] as TJSONObject;
+          if LItem.GetValue<string>('iso_3166_1', '') = 'US' then
+          begin
+            Result.NomeAlternativo := LItem.GetValue<string>('title', '');
+            Break;
+          end;
+        end;
+        if Result.NomeAlternativo.IsEmpty and (LArr.Count > 0) then
+          Result.NomeAlternativo := (LArr.Items[0] as TJSONObject).GetValue<string>('title', '');
       end;
     end;
-    if Result.NomeAlternativo.IsEmpty and (LArr.Count > 0) then
-      Result.NomeAlternativo := (LArr.Items[0] as TJSONObject).GetValue<string>('title', '');
-  end;
-end;
 
     LCredits := LJson.GetValue<TJSONObject>('credits', nil);
     if Assigned(LCredits) then
