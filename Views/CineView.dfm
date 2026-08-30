@@ -133,7 +133,7 @@ object CineMain: TCineMain
     end
     object Label1: TLabel
       Left = 573
-      Top = 111
+      Top = 199
       Width = 186
       Height = 128
       Caption = 'Cine'
