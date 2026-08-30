@@ -118,7 +118,7 @@ object CineMain: TCineMain
     Height = 857
     Align = alClient
     TabOrder = 4
-    object Label1: TLabel
+    object LabelTime: TLabel
       Left = 237
       Top = 363
       Width = 860
