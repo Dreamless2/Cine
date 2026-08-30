@@ -27,12 +27,6 @@ begin
   if AValor.Trim.IsEmpty then Result := '--' else Result := AValor;
 end;
 
-
-function LimparMascaraData(const AValor: string): string;
-begin
-  Result := AValor.Replace('_', '').Trim([' ', '/']);
-end;
-
 function MontarResumo(const ANomeBox, AAudioBox, ASinopseBox, AOriginalBox, AEstreiaBox,
   AAlternativoBox, ATagsBox, AFilmeBox, AMCUBox,
   AFranquiaBox, AGeneroBox, ADiretorBox,
