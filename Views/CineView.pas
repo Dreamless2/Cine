@@ -35,6 +35,8 @@ type
     { Public declarations }
     constructor Create(AOwner: TComponent); override;
     destructor Destroy; override;
+  protected
+    procedure DoShow; override;
   end;
 
 var
@@ -53,6 +55,11 @@ begin
   FecharButton.OnClick := Fechar_Click;
   PanelTopBar.OnMouseDown := Panel_MouseDown;
   PanelTopTitle.OnMouseDown := Panel_MouseDown;
+end;
+
+procedure DoShow; override;
+begin
+
 end;
 
 procedure TCineMain.OpenChildForm(AChildForm: TForm);
