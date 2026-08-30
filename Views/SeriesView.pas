@@ -330,6 +330,7 @@ procedure TSeriesMain.CopiarButton_Click(Sender: TObject);
 begin
   ResumoBox.SelectAll;
   ResumoBox.CopyToClipboard;
+  Application.MessageBox('Dados copiados com sucesso.', 'Cine - Séries', MB_OK + MB_ICONINFORMATION);
 end;
 
 procedure TSeriesMain.SalvarButton_Click(Sender: TObject);

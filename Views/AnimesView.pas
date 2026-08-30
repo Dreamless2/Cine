@@ -325,6 +325,7 @@ procedure TAnimesMain.CopiarButton_Click(Sender: TObject);
 begin
   ResumoBox.SelectAll;
   ResumoBox.CopyToClipboard;
+  Application.MessageBox('Dados copiados com sucesso.', 'Cine - Animes', MB_OK + MB_ICONINFORMATION);
 end;
 
 procedure TAnimesMain.SalvarButton_Click(Sender: TObject);
