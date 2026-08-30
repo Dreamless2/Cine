@@ -71,6 +71,7 @@ end;
  procedure TCineMain.TimerTempoTimer(Sender: TObject);
  begin
 
+
  end;
 
 procedure TCineMain.OpenChildForm(AChildForm: TForm);
