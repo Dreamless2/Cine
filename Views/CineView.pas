@@ -31,6 +31,7 @@ type
     procedure Animes_Click(Sender: TObject);
     procedure Fechar_Click(Sender: TObject);
     procedure Panel_MouseDown(Sender: TObject; Button: TMouseButton; Shift: TShiftState; X, Y: Integer);
+    procedure TimerTempoTimer(Sender: TObject);
   public
     { Public declarations }
     constructor Create(AOwner: TComponent); override;
@@ -57,12 +58,16 @@ begin
   PanelTopTitle.OnMouseDown := Panel_MouseDown;
 end;
 
-procedure
+procedure DoShow(AOwner: TComponent);
 var
   TimerTempo: TTimer;
 begin
   TimerTempo := TTimer.Create(Self);
 
+  // Configurações em runtime
+  TimerTempo.Interval := 1000;               // 1 segundo
+  TimerTempo.OnTimer  := TimerTempoTimer;    // Assina o evento
+  TimerTempo.Enabled  := True;               // Ativa o timer
 end;
 
 procedure TCineMain.OpenChildForm(AChildForm: TForm);
