@@ -52,7 +52,7 @@ begin
     LBuilder.AppendLine;
     LBuilder.AppendLine(Format('**Título Original:** __%s__', [ValorOuTraco(AOriginalBox)]));
     LBuilder.AppendLine(Format('**Título Alternativo:** __%s__', [ValorOuTraco(AAlternativoBox)]));
-    LBuilder.AppendLine(Format('**Data de Estreia:** __%s__', [ValorOuTraco(AEstreiaBox)]));
+    LBuilder.AppendLine(Format('**Data de Estreia:** __%s__', [AEstreiaBox]));
     LBuilder.AppendLine(Format('**Filme:** %s', [ValorOuTraco(AFilmeBox)]));
     LBuilder.AppendLine(Format('**Franquia:** %s', [ValorOuTraco(AFranquiaBox)]));
     LBuilder.AppendLine(Format('**Gênero:** %s', [ValorOuTraco(AGeneroBox)]));
@@ -86,7 +86,7 @@ begin
     LBuilder.AppendLine;
     LBuilder.AppendLine(Format('**Título Original:** __%s__', [ValorOuTraco(AOriginalBox)]));
     LBuilder.AppendLine(Format('**Título Alternativo:** __%s__', [ValorOuTraco(AAlternativoBox)]));
-    LBuilder.AppendLine(Format('**Data de Lançamento:** __%s__', [ValorOuTraco(AEstreiaBox)]));
+    LBuilder.AppendLine(Format('**Data de Lançamento:** __%s__', [AEstreiaBox]));
     LBuilder.AppendLine(Format('**Série:** %s', [ValorOuTraco(ASerieBox)]));
     LBuilder.AppendLine(Format('**Fase MCU:** %s', [ValorOuTraco(AMCUBox)]));
     LBuilder.AppendLine(Format('**Local de Produção:** %s', [ValorOuTraco(ALocalBox)]));
