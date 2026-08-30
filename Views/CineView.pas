@@ -58,7 +58,7 @@ begin
   PanelTopTitle.OnMouseDown := Panel_MouseDown;
 end;
 
-procedure DoShow;
+procedure TCineMain.DoShow;
 var
   TimerTempo: TTimer;
 begin
