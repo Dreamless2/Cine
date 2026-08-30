@@ -346,7 +346,7 @@ begin
       else
         Edit;
 
-      FieldByName('TipoMidia').AsString   := 'Series';
+      FieldByName('TipoMidia').AsString   := 'Serie';
       FieldByName('Codigo').AsString      := CodigoBox.Text;
       FieldByName('Nome').AsString        := NomeBox.Text;
       FieldByName('Audio').AsString       := AudioBox.Text;
