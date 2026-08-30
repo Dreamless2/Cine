@@ -7,7 +7,7 @@ uses
   Vcl.Controls, Vcl.Forms, Vcl.StdCtrls, Vcl.ExtCtrls,
   FilmesView, SeriesView, AnimesView, Vcl.ButtonStylesAttributes,
   Vcl.StyledButton, ES.BaseControls, ES.Layouts, Vcl.ButtonGroup,
-  Vcl.StyledButtonGroup, Vcl.Dialogs, System.UITypes;
+  Vcl.StyledButtonGroup, Vcl.Dialogs, System.UITypes, System.SysUtils;
 
 type
   TCineMain = class(TForm)
