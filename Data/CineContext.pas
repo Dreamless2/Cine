@@ -39,13 +39,7 @@ function THistoricoDataModule.ResolverCaminhoArquivo: string;
 var
   LPasta: string;
 begin
-  LPasta := ExtractFilePath(Application.ExeName);
-  if LPasta.Trim.IsEmpty then
-    LPasta := TPath.Combine(TPath.GetHomePath, 'Documents');
-  if LPasta.Trim.IsEmpty then
-    LPasta := TPath.GetDirectoryName(ParamStr(0));
-  if LPasta.Trim.IsEmpty then
-    LPasta := TPath.Combine(TPath.GetTempPath, 'CineContext');
+  LPasta := ExtractFilePath(Application.ExeName) + 'Data';
   TDirectory.CreateDirectory(LPasta);
   Result := TPath.Combine(LPasta, 'historico_midias.db');
 end;
