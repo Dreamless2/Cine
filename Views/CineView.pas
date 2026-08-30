@@ -63,12 +63,15 @@ var
   TimerTempo: TTimer;
 begin
   TimerTempo := TTimer.Create(Self);
-
-  // Configurações em runtime
-  TimerTempo.Interval := 1000;               // 1 segundo
-  TimerTempo.OnTimer  := TimerTempoTimer;    // Assina o evento
-  TimerTempo.Enabled  := True;               // Ativa o timer
+  TimerTempo.Interval := 1000;
+  TimerTempo.OnTimer  := TimerTempoTimer;
+  TimerTempo.Enabled  := True;
 end;
+
+ procedure TCineMain.TimerTempoTimer(Sender: TObject);
+ begin
+
+ end;
 
 procedure TCineMain.OpenChildForm(AChildForm: TForm);
 begin
