@@ -36,7 +36,7 @@ type
     constructor Create(AOwner: TComponent); override;
     destructor Destroy; override;
   protected
-    procedure DoShow; override;
+    procedure DoShow(AOwner: TComponent); override;
   end;
 
 var
@@ -57,11 +57,11 @@ begin
   PanelTopTitle.OnMouseDown := Panel_MouseDown;
 end;
 
-procedure DoShow;
+procedure
 var
   TimerTempo: TTimer;
 begin
-  TimerTempo := TTimer.Create(AOwner)
+  TimerTempo := TTimer.Create(Self);
 
 end;
 
