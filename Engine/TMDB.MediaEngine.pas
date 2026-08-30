@@ -188,6 +188,7 @@ begin
       if Assigned(LArr) and (LArr.Count > 0) then
         Result.NomeAlternativo := (LArr.Items[0] as TJSONObject).GetValue<string>('title', '');
     end;}
+
     LAltTitlesCollection := LJson.GetValue<TJSONObject>('alternative_titles', nil);
     if Assigned(LAltTitlesCollection) then
     begin
