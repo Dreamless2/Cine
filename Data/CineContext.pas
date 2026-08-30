@@ -9,7 +9,7 @@ uses
   FireDAC.Phys.SQLite, FireDAC.Phys.SQLiteDef, FireDAC.Phys.SQLiteWrapper.Stat,
   FireDAC.Stan.Async, FireDAC.DApt, System.IOUtils, FireDAC.UI.Intf,
   FireDAC.Stan.Def, FireDAC.Stan.Pool, FireDAC.Phys, FireDAC.Stan.ExprFuncs,
-  FireDAC.VCLUI.Wait;
+  FireDAC.VCLUI.Wait, System.StrUtils;
 
 type
   THistoricoDataModule = class(TDataModule)
@@ -39,7 +39,7 @@ function THistoricoDataModule.ResolverCaminhoArquivo: string;
 var
   LPasta: string;
 begin
-  LPasta := TPath.GetDocumentsPath;
+  LPasta := ExtractFilePath(Application.ExeName);
   if LPasta.Trim.IsEmpty then
     LPasta := TPath.Combine(TPath.GetHomePath, 'Documents');
   if LPasta.Trim.IsEmpty then
