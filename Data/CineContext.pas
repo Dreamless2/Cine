@@ -9,7 +9,7 @@ uses
   FireDAC.Phys.SQLite, FireDAC.Phys.SQLiteDef, FireDAC.Phys.SQLiteWrapper.Stat,
   FireDAC.Stan.Async, FireDAC.DApt, System.IOUtils, FireDAC.UI.Intf,
   FireDAC.Stan.Def, FireDAC.Stan.Pool, FireDAC.Phys, FireDAC.Stan.ExprFuncs,
-  FireDAC.VCLUI.Wait, System.StrUtils;
+  FireDAC.VCLUI.Wait, System.StrUtils, Vcl.Forms;
 
 type
   THistoricoDataModule = class(TDataModule)
