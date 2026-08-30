@@ -5,9 +5,9 @@ interface
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.Mask, Vcl.ExtCtrls,
-  TMDB.ApiClient, System.JSON, TMDB.MediaEngine, System.Threading, ResumoBuilder,
-  System.UITypes, TMDB.KeyStore, MidiaFormEvents, System.Math;
-
+ TMDB.ApiClient, System.JSON, TMDB.MediaEngine, System.Threading, ResumoBuilder,
+  System.UITypes, TMDB.KeyStore, MidiaFormEvents, System.Math, CineContext,
+  Data.DB, FireDAC.Stan.Intf, FireDAC.Stan.Option, FireDAC.Comp.Client;
 type
   TAnimesMain = class(TForm)
     PanelDesktop: TPanel;
@@ -58,15 +58,24 @@ type
   private
     { Private declarations }
     FMidiaEvents: TMidiaFormHelper;
+    FCarregandoHistorico: Boolean;
     FTMDBClient: TTMDBClient;
+    FSalvandoHistorico: Boolean;
     procedure CopiarButton_Click(Sender: TObject);
+    procedure SalvarButton_Click(Sender: TObject);
+    procedure AnteriorButton_Click(Sender: TObject);
+    procedure ProximoButton_Click(Sender: TObject);
     procedure LimparPainel(Painel: TPanel);
+    procedure CarregarHistoricoNaTela;
+    procedure AtualizarCamposComRegistroAtual;
   public
     { Public declarations }
     procedure FormDestroy(Sender: TObject);
     procedure PreencherComMedia(const AMedia: TMediaData);
     procedure Buscar(Sender: TObject; var Key: Char);
     constructor Create(AOwner: TComponent); override;
+  protected
+    procedure DoShow; override;
   end;
 
 var
@@ -103,9 +112,22 @@ begin
       Result := GerarTag(ANome);
     end);
   FMidiaEvents.AtualizarResumo;
-  CodigoBox.OnKeyPress := Buscar;
-  CopiarButton.OnClick := CopiarButton_Click;
+  CodigoBox.OnKeyPress   := Buscar;
+  CopiarButton.OnClick   := CopiarButton_Click;
+  SalvarButton.OnClick   := SalvarButton_Click;
+  AnteriorButton.OnClick := AnteriorButton_Click;
+  ProximoButton.OnClick  := ProximoButton_Click;
   LimparPainel(PanelDesktop);
+end;
+
+procedure TAnimesMain.DoShow;
+begin
+  HistoricoDataModule.HistoricoTable.Filtered := False;
+  HistoricoDataModule.HistoricoTable.Filter := 'TipoMidia = ''Anime''';
+  HistoricoDataModule.HistoricoTable.Filtered := True;
+  HistoricoDataModule.HistoricoTable.First;
+  CarregarHistoricoNaTela;
+  inherited;
 end;
 
 function ExceptionDetalhes(E: Exception): string;
@@ -115,7 +137,6 @@ begin
   while Assigned(E.InnerException) do
   begin
     E := E.InnerException;
-
     Result := Result + sLineBreak + '  -> ' + E.ClassName + ': ' + E.Message;
   end;
 end;
@@ -152,20 +173,23 @@ end;
 begin
   FMidiaEvents.DesativarEventos;
   try
-    NomeBox.Text := ValorOuPadrao(AMedia.Nome);
-    SinopseBox.Text := ValorOuPadrao(AMedia.Sinopse);
-    OriginalBox.Text := ValorOuPadrao(AMedia.NomeOriginal);
-    EstreiaBox.Text := ValorOuPadrao(AMedia.DataEstreia);
+    NomeBox.Text        := ValorOuPadrao(AMedia.Nome);
+    SinopseBox.Text     := ValorOuPadrao(AMedia.Sinopse);
+    OriginalBox.Text    := ValorOuPadrao(AMedia.NomeOriginal);
+    EstreiaBox.Text     := ValorOuPadrao(AMedia.DataEstreia);
     AlternativoBox.Text := ValorOuPadrao(AMedia.NomeAlternativo);
-    AnimeBox.Text := ValorOuPadrao(GerarTag(AMedia.Nome));
-    LocalBox.Text := ValorOuPadrao(AMedia.LocalProducao);
-    IdiomaBox.Text := ValorOuPadrao(GerarTag(AMedia.IdiomaOriginal));
+    AnimeBox.Text       := GerarTag(ValorOuPadrao(AMedia.Nome));
+    FranquiaBox.Text    := ValorOuPadrao(AMedia.Franquia);
+    LocalBox.Text       := ValorOuPadrao(AMedia.LocalProducao);
+    IdiomaBox.Text      := ValorOuPadrao(AMedia.IdiomaOriginal);
+    ReferenciaBox.Text  := ValorOuPadrao(AMedia.ObraReferencia);
+    AutoresBox.Text     := ValorOuPadrao(AMedia.Autores);
     ShowrunnersBox.Text := ValorOuPadrao(AMedia.Showrunners);
-    GeneroBox.Text := ValorOuPadrao(AMedia.Generos);
-    TagsBox.Text := ValorOuPadrao(AMedia.Tags);
-    DiretorBox.Text := ValorOuPadrao(AMedia.Diretores);
-    ArtistasBox.Text := ValorOuPadrao(AMedia.Artistas);
-    ProdutoraBox.Text := ValorOuPadrao(AMedia.Produtoras);
+    GeneroBox.Text      := ValorOuPadrao(AMedia.Generos);
+    TagsBox.Text        := ValorOuPadrao(AMedia.Tags);
+    DiretorBox.Text     := ValorOuPadrao(AMedia.Diretores);
+    ArtistasBox.Text    := ValorOuPadrao(AMedia.Artistas);
+    ProdutoraBox.Text   := ValorOuPadrao(AMedia.Produtoras);
   finally
     FMidiaEvents.ReativarEventos;
   end;
@@ -185,14 +209,14 @@ begin
 
     if not TryStrToInt(CodigoBox.Text, LMovieId) then
     begin
-      MessageDlg('Informe o código do TMDB.', mtWarning, [mbOK], 0);
+      Application.MessageBox('Informe o código do TMDB.', 'Cine - Animes',  MB_OK + MB_ICONQUESTION);
       CodigoBox.SetFocus;
       Exit;
     end;
 
     if not Assigned(FTMDBClient) then
     begin
-    MessageDlg('A chave da API do TMDB não está configurada.', mtWarning, [mbOK], 0);
+      Application.MessageBox('A chave da API do TMDB não está configurada.', 'Cine - Animes',  MB_OK + MB_ICONWARNING);
       Exit;
     end;
 
@@ -202,7 +226,7 @@ begin
         LFuture := FTMDBClient.GetTvShowAsync(LMovieId);
         LJson := LFuture.Value;
         try
-          LMedia := ProcessarMidiaTMDB(LJson.ToJSON, True);
+          LMedia := ProcessarMidiaTMDB(LJson.ToJSON, False);
           PreencherComMedia(LMedia);
         finally
           LJson.Free;
@@ -223,9 +247,10 @@ begin
               MsgErro := 'O recurso solicitado não foi encontrado.';
             end;
             MessageDlg('Erro: ' + MsgErro, mtError, [mbOK], 0);
+            Application.MessageBox(PChar('Erro: ' + MsgErro), 'Cine - Animes', MB_OK + MB_ICONERROR);
           end
           else
-          MessageDlg('Erro: ' + E.Message, mtError, [mbOK], 0);
+          Application.MessageBox(PChar('Erro: ' + E.Message), 'Cine - Animes', MB_OK + MB_ICONERROR);
         end;
       end;
     finally
@@ -234,10 +259,143 @@ begin
   end;
 end;
 
+procedure TAnimesMain.CarregarHistoricoNaTela;
+var
+  T: TFDTable;
+begin
+  if FCarregandoHistorico then
+    Exit;
+
+  T := HistoricoDataModule.HistoricoTable;
+
+  if not T.Active or T.IsEmpty then
+    Exit;
+
+  FCarregandoHistorico := True;
+  try
+    CodigoBox.Text      := T.FieldByName('Codigo').AsString;
+    NomeBox.Text        := T.FieldByName('Nome').AsString;
+    AudioBox.Text       := T.FieldByName('Audio').AsString;
+    SinopseBox.Text     := T.FieldByName('Sinopse').AsString;
+    OriginalBox.Text    := T.FieldByName('Original').AsString;
+    EstreiaBox.Text     := T.FieldByName('Estreia').AsString;
+    AlternativoBox.Text := T.FieldByName('Alternativo').AsString;
+    TagsBox.Text        := T.FieldByName('Tags').AsString;
+    FranquiaBox.Text    := T.FieldByName('Franquia').AsString;
+    LocalBox.Text       := T.FieldByName('Local').AsString;
+    IdiomaBox.Text      := T.FieldByName('Idioma').AsString;
+    ReferenciaBox.Text  := T.FieldByName('Referencia').AsString;
+    AutoresBox.Text     := T.FieldByName('Autores').AsString;
+    ShowrunnersBox.Text := T.FieldByName('Showrunners').AsString;
+    GeneroBox.Text      := T.FieldByName('Genero').AsString;
+    DiretorBox.Text     := T.FieldByName('Diretor').AsString;
+    ArtistasBox.Text    := T.FieldByName('Artistas').AsString;
+    ProdutoraBox.Text   := T.FieldByName('Produtora').AsString;
+  finally
+    FCarregandoHistorico := False;
+  end;
+end;
+
+procedure TAnimesMain.AtualizarCamposComRegistroAtual;
+begin
+  with HistoricoDataModule.HistoricoTable do
+  begin
+    CodigoBox.Text      := FieldByName('Codigo').AsString;
+    NomeBox.Text        := FieldByName('Nome').AsString;
+    AudioBox.Text       := FieldByName('Audio').AsString;
+    SinopseBox.Text     := FieldByName('Sinopse').AsString;
+    OriginalBox.Text    := FieldByName('Original').AsString;
+    EstreiaBox.Text     := FieldByName('Estreia').AsString;
+    AlternativoBox.Text := FieldByName('Alternativo').AsString;
+    TagsBox.Text        := FieldByName('Tags').AsString;
+    FranquiaBox.Text    := FieldByName('Franquia').AsString;
+    LocalBox.Text       := FieldByName('Local').AsString;
+    IdiomaBox.Text      := FieldByName('Idioma').AsString;
+    ReferenciaBox.Text  := FieldByName('Referencia').AsString;
+    AutoresBox.Text     := FieldByName('Autores').AsString;
+    ShowrunnersBox.Text := FieldByName('Showrunners').AsString;
+    GeneroBox.Text      := FieldByName('Genero').AsString;
+    DiretorBox.Text     := FieldByName('Diretor').AsString;
+    ArtistasBox.Text    := FieldByName('Artistas').AsString;
+    ProdutoraBox.Text   := FieldByName('Produtora').AsString;
+  end;
+end;
+
 procedure TAnimesMain.CopiarButton_Click(Sender: TObject);
 begin
   ResumoBox.SelectAll;
   ResumoBox.CopyToClipboard;
+end;
+
+procedure TAnimesMain.SalvarButton_Click(Sender: TObject);
+var
+  LEhNovoRegistro: Boolean;
+begin
+  FSalvandoHistorico := True;
+  try
+    with HistoricoDataModule.HistoricoTable do
+    begin
+      LEhNovoRegistro := not Locate('Codigo', CodigoBox.Text, []);
+      if LEhNovoRegistro then
+        Append
+      else
+        Edit;
+
+      FieldByName('TipoMidia').AsString   := 'Anime';
+      FieldByName('Codigo').AsString      := CodigoBox.Text;
+      FieldByName('Nome').AsString        := NomeBox.Text;
+      FieldByName('Audio').AsString       := AudioBox.Text;
+      FieldByName('Sinopse').AsString     := SinopseBox.Text;
+      FieldByName('Original').AsString    := OriginalBox.Text;
+      FieldByName('Estreia').AsString     := EstreiaBox.Text;
+      FieldByName('Alternativo').AsString := AlternativoBox.Text;
+      FieldByName('Tags').AsString        := TagsBox.Text;
+      FieldByName('Franquia').AsString    := FranquiaBox.Text;
+      FieldByName('Local').AsString       := LocalBox.Text;
+      FieldByName('Idioma').AsString      := IdiomaBox.Text;
+      FieldByName('Referencia').AsString  := ReferenciaBox.Text;
+      FieldByName('Autores').AsString     := AutoresBox.Text;
+      FieldByName('Showrunners').AsString := ShowrunnersBox.Text;
+      FieldByName('Genero').AsString      := GeneroBox.Text;
+      FieldByName('Diretor').AsString     := DiretorBox.Text;
+      FieldByName('Artistas').AsString    := ArtistasBox.Text;
+      FieldByName('Produtora').AsString   := ProdutoraBox.Text;
+      Post;
+      Refresh;
+    end;
+    if LEhNovoRegistro then
+    begin
+      Application.MessageBox(PChar('Anime ' + NomeBox.Text + ' cadastrada com sucesso.'), 'Cine - Animes', MB_OK + MB_ICONINFORMATION);
+    end
+    else
+    begin
+      Application.MessageBox(PChar('Anime ' + NomeBox.Text + ' atualizada com sucesso.'), 'Cine - Animes', MB_OK + MB_ICONINFORMATION);
+    end;
+  except
+    on E: Exception do
+    begin
+      if HistoricoDataModule.HistoricoTable.State in dsEditModes then
+          HistoricoDataModule.HistoricoTable.Cancel;
+      Application.MessageBox(PChar('Erro ao Salvar: ' + E.Message), 'Cine - Animes', MB_OK + MB_ICONERROR);
+    end;
+  end;
+  FSalvandoHistorico := False;
+end;
+
+procedure TAnimesMain.AnteriorButton_Click(Sender: TObject);
+begin
+  HistoricoDataModule.HistoricoTable.Prior;
+  AnteriorButton.Enabled := not HistoricoDataModule.HistoricoTable.Bof;
+  ProximoButton.Enabled := True;
+  AtualizarCamposComRegistroAtual;
+end;
+
+procedure TAnimesMain.ProximoButton_Click(Sender: TObject);
+begin
+  HistoricoDataModule.HistoricoTable.Next;
+  ProximoButton.Enabled := not HistoricoDataModule.HistoricoTable.Eof;
+  AnteriorButton.Enabled := True;
+  AtualizarCamposComRegistroAtual;
 end;
 
 end.

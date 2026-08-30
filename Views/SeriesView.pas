@@ -125,9 +125,13 @@ end;
 
 procedure TSeriesMain.DoShow;
 begin
+  HistoricoDataModule.HistoricoTable.Filtered := False;
+  HistoricoDataModule.HistoricoTable.Filter := 'TipoMidia = ''Série''';
+  HistoricoDataModule.HistoricoTable.Filtered := True;
+  HistoricoDataModule.HistoricoTable.First;
   CarregarHistoricoNaTela;
+  inherited;
 end;
-
 
 function ExceptionDetalhes(E: Exception): string;
 begin
@@ -136,7 +140,6 @@ begin
   while Assigned(E.InnerException) do
   begin
     E := E.InnerException;
-
     Result := Result + sLineBreak + '  -> ' + E.ClassName + ': ' + E.Message;
   end;
 end;
@@ -185,11 +188,11 @@ begin
     ReferenciaBox.Text  := ValorOuPadrao(AMedia.ObraReferencia);
     AutoresBox.Text     := ValorOuPadrao(AMedia.Autores);
     ShowrunnersBox.Text := ValorOuPadrao(AMedia.Showrunners);
-    GeneroBox.Text      := ValorOuPadrao(AMedia.Genero);
+    GeneroBox.Text      := ValorOuPadrao(AMedia.Generos);
     TagsBox.Text        := ValorOuPadrao(AMedia.Tags);
-    DiretorBox.Text     := ValorOuPadrao(AMedia.Diretor);
-    ArtistasBox.Text    := ValorOuPadrao(AMedia.Artista);
-    ProdutoraBox.Text   := ValorOuPadrao(AMedia.Produtora);
+    DiretorBox.Text     := ValorOuPadrao(AMedia.Diretores);
+    ArtistasBox.Text    := ValorOuPadrao(AMedia.Artistas);
+    ProdutoraBox.Text   := ValorOuPadrao(AMedia.Produtoras);
   finally
     FMidiaEvents.ReativarEventos;
   end;
@@ -223,7 +226,7 @@ begin
     Screen.Cursor := crHourGlass;
     try
       try
-        LFuture := FTMDBClient.GetMovieAsync(LMovieId);
+        LFuture := FTMDBClient.GetTvShowAsync(LMovieId);
         LJson := LFuture.Value;
         try
           LMedia := ProcessarMidiaTMDB(LJson.ToJSON, False);
@@ -343,7 +346,7 @@ begin
       else
         Edit;
 
-      FieldByName('TipoMidia').AsString   := 'Série';
+      FieldByName('TipoMidia').AsString   := 'Series';
       FieldByName('Codigo').AsString      := CodigoBox.Text;
       FieldByName('Nome').AsString        := NomeBox.Text;
       FieldByName('Audio').AsString       := AudioBox.Text;

@@ -35,7 +35,6 @@ object CineMain: TCineMain
     Color = 4731908
     ParentBackground = False
     TabOrder = 1
-    ExplicitTop = 19
     object LabelHome: TLabel
       Left = 671
       Top = 13
@@ -69,7 +68,6 @@ object CineMain: TCineMain
     Align = alLeft
     BevelOuter = bvNone
     TabOrder = 3
-    ExplicitTop = 83
     object FilmesButton: TStyledButton
       Left = -6
       Top = 0
@@ -85,7 +83,7 @@ object CineMain: TCineMain
       Top = 79
       Width = 235
       Height = 80
-      Caption = 'SeriesButton'
+      Caption = 'Series'
       TabOrder = 1
       StyleFamily = 'SVG-Colors'
       StyleClass = 'Indigo'
@@ -95,7 +93,7 @@ object CineMain: TCineMain
       Top = 159
       Width = 235
       Height = 80
-      Caption = 'AnimesButton'
+      Caption = 'Animes'
       TabOrder = 2
       StyleElements = [seFont, seBorder]
       StyleClass = 'Calypso SLE'
@@ -111,8 +109,6 @@ object CineMain: TCineMain
       Flat = True
       StyleFamily = 'Angular-Dark'
       StyleClass = 'Warn'
-      ExplicitLeft = -6
-      ExplicitTop = 785
     end
   end
   object PanelDesktop: TPanel
