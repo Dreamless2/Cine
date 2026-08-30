@@ -70,7 +70,13 @@ end;
 
  procedure TCineMain.TimerTempoTimer(Sender: TObject);
  begin
+  TTimer(Sender).Enabled := False;
 
+  try
+    LabelTime.Caption :=
+  finally
+
+  end;
 
  end;
 
