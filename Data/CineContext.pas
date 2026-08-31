@@ -3,7 +3,7 @@ unit CineContext;
 interface
 
 uses
-  System.SysUtils, System.Classes, Data.DB, FireDAC.Comp.DataSet, FireDAC.Comp.Client,
+  System.SysUtils, System.Classes, Data.DB, FireDAC.Comp.DataSet, FireDAC.Stan.Def, FireDAC.Comp.Client,
   System.IOUtils, FireDAC.Phys, Vcl.Forms;
 
 type
