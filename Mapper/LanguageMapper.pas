@@ -7,9 +7,7 @@ function MapearIdioma(const ACodigo: string): string;
 implementation
 
 uses
-  System.SysUtils,
-  System.StrUtils,
-  System.Generics.Collections;
+  System.SysUtils, System.StrUtils, System.Generics.Collections;
 
 var
   MapaIdiomas: TDictionary<string, string>;

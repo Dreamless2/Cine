@@ -60,8 +60,7 @@ begin
     if LResponse.StatusCode <> 200 then
       raise ETMDBApiError.CreateFmt('TMDB request failed with status %d: %s', [LResponse.StatusCode, LResponse.ContentAsString]);
 
-    LValue := TJSONObject.ParseJSONValue(LResponse.ContentAsString(TEncoding.UTF8)
-    );
+    LValue := TJSONObject.ParseJSONValue(LResponse.ContentAsString(TEncoding.UTF8));
 
     if not Assigned(LValue) or not (LValue is TJSONObject) then
     begin
