@@ -6,7 +6,7 @@ uses
   Winapi.Windows, Winapi.Messages, System.Classes,
   Vcl.Controls, Vcl.Forms, Vcl.StdCtrls, Vcl.ExtCtrls,
   FilmesView, SeriesView, AnimesView, Vcl.ButtonStylesAttributes,
-  Vcl.StyledButton, ES.BaseControls, ES.Layouts, Vcl.ButtonGroup,
+  Vcl.StyledButton, ES.BaseControls,
   Vcl.StyledButtonGroup, Vcl.Dialogs, System.UITypes, System.SysUtils;
 
 type

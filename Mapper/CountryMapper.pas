@@ -7,7 +7,7 @@ function MapearPais(const ANomeIngles: string): string;
 implementation
 
 uses
-  System.SysUtils, System.StrUtils, System.Generics.Collections, TMDB.MediaEngine;
+  System.SysUtils, System.Generics.Collections;
 
 var
   MapaPaises: TDictionary<string, string>;

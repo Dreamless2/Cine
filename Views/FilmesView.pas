@@ -7,7 +7,7 @@ uses
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.ExtCtrls, Vcl.Mask, Vcl.Buttons,
   TMDB.ApiClient, System.JSON, TMDB.MediaEngine, System.Threading, ResumoBuilder,
   System.UITypes, TMDB.KeyStore, MidiaFormEvents, System.Math, CineContext,
-  Data.DB, FireDAC.Stan.Intf, FireDAC.Stan.Option, FireDAC.Comp.Client;
+  Data.DB, FireDAC.Comp.Client;
 
 
 type

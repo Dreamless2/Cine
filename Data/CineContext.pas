@@ -3,13 +3,8 @@ unit CineContext;
 interface
 
 uses
-  System.SysUtils, System.Classes, FireDAC.Stan.Intf, FireDAC.Stan.Option,
-  FireDAC.Stan.Param, FireDAC.Stan.Error, FireDAC.DatS, FireDAC.Phys.Intf,
-  FireDAC.DApt.Intf, Data.DB, FireDAC.Comp.DataSet, FireDAC.Comp.Client,
-  FireDAC.Phys.SQLite, FireDAC.Phys.SQLiteDef, FireDAC.Phys.SQLiteWrapper.Stat,
-  FireDAC.Stan.Async, FireDAC.DApt, System.IOUtils, FireDAC.UI.Intf,
-  FireDAC.Stan.Def, FireDAC.Stan.Pool, FireDAC.Phys, FireDAC.Stan.ExprFuncs,
-  FireDAC.VCLUI.Wait, System.StrUtils, Vcl.Forms;
+  System.SysUtils, System.Classes, Data.DB, FireDAC.Comp.DataSet, FireDAC.Comp.Client,
+  System.IOUtils, FireDAC.Phys, Vcl.Forms;
 
 type
   THistoricoDataModule = class(TDataModule)
@@ -41,7 +36,7 @@ var
 begin
   LPasta := ExtractFilePath(ParamStr(0)) + 'Data';
   TDirectory.CreateDirectory(LPasta);
-  Result := TPath.Combine(LPasta, 'historico_midias.db');
+  Result := TPath.Combine(LPasta, 'midias.db');
 end;
 
 procedure THistoricoDataModule.CriarEstruturaSeNecessaria;
