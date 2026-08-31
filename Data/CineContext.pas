@@ -69,8 +69,7 @@ begin
     ')');
 
   FConexao.ExecSQL(
-    'CREATE TRIGGER IF NOT EXISTS trg_Midias_Insert ' +
-    'AFTER INSERT ON Midias ' +
+    'CREATE TRIGGER IF NOT EXISTS trg_Midias_Insert AFTER INSERT ON Midias ' +
     'BEGIN ' +
     '  UPDATE Midias SET DataHora_Cadastro = datetime(''now'',''localtime''), ' +
     '                    DataHora_Update = datetime(''now'',''localtime'') ' +
@@ -78,8 +77,7 @@ begin
     'END');
 
   FConexao.ExecSQL(
-    'CREATE TRIGGER IF NOT EXISTS trg_Midias_Update ' +
-    'AFTER UPDATE ON Midias ' +
+    'CREATE TRIGGER IF NOT EXISTS trg_Midias_Update AFTER UPDATE ON Midias ' +
     'WHEN NEW.DataHora_Update = OLD.DataHora_Update ' +
     'BEGIN ' +
     '  UPDATE Midias SET DataHora_Update = datetime(''now'',''localtime'') ' +
@@ -91,16 +89,13 @@ constructor THistoricoDataModule.Create(AOwner: TComponent);
 begin
   inherited Create(AOwner);
   FArquivoDB := ResolverCaminhoArquivo;
-
   FConexao := TFDConnection.Create(Self);
   FConexao.DriverName := 'SQLite';
   FConexao.Params.Add('DriverID=SQLite');
   FConexao.Params.Add('Database=' + FArquivoDB);
   FConexao.LoginPrompt := False;
   FConexao.Connected := True;
-
   CriarEstruturaSeNecessaria;
-
   FHistoricoTable := TFDTable.Create(Self);
   FHistoricoTable.Connection := FConexao;
   FHistoricoTable.TableName := 'Midias';
