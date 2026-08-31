@@ -3,8 +3,13 @@ unit CineContext;
 interface
 
 uses
-  System.SysUtils, System.Classes, Data.DB, FireDAC.Comp.DataSet, FireDAC.Stan.Def, FireDAC.Comp.Client,
-  System.IOUtils, FireDAC.Phys, Vcl.Forms;
+  System.SysUtils, System.Classes, Vcl.Forms, FireDAC.Stan.Intf,
+  FireDAC.Stan.Option, FireDAC.Stan.Error, FireDAC.UI.Intf, FireDAC.Phys.Intf,
+  FireDAC.Stan.Def, FireDAC.Stan.Pool, FireDAC.Stan.Async, FireDAC.Phys,
+  FireDAC.VCLUI.Wait, FireDAC.Stan.Param, FireDAC.DatS, FireDAC.DApt.Intf,
+  FireDAC.DApt, FireDAC.Stan.ExprFuncs, FireDAC.Phys.SQLiteWrapper.Stat,
+  FireDAC.Phys.SQLiteDef, FireDAC.Phys.SQLite, Data.DB, FireDAC.Comp.DataSet,
+  FireDAC.Comp.Client, System.IOUtils;
 
 type
   THistoricoDataModule = class(TDataModule)
