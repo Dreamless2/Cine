@@ -377,6 +377,7 @@ begin
     begin
       if HistoricoDataModule.HistoricoTable.State in dsEditModes then
           HistoricoDataModule.HistoricoTable.Cancel;
+
       Application.MessageBox(PChar('Erro ao Salvar: ' + E.Message), 'Cine - Animes', MB_OK + MB_ICONERROR);
     end;
   end;
