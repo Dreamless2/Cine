@@ -107,6 +107,7 @@ destructor THistoricoDataModule.Destroy;
 begin
   if Assigned(FConexao) then
     FConexao.Connected := False;
+
   inherited Destroy;
 end;
 
@@ -116,7 +117,9 @@ var
 begin
   if not FHistoricoTable.Active then
     FHistoricoTable.Open;
+
   FHistoricoTable.Append;
+
   for I := 0 to FHistoricoTable.FieldCount - 1 do
   begin
     if (FHistoricoTable.Fields[I].DataType in [ftWideString, ftWideMemo, ftString, ftMemo])
@@ -124,6 +127,7 @@ begin
       and (FHistoricoTable.Fields[I].FieldName <> 'DataHora_Update') then
       FHistoricoTable.Fields[I].AsString := '--';
   end;
+
   FHistoricoTable.FieldByName('TipoMidia').AsString := ATipoTela;
 end;
 
