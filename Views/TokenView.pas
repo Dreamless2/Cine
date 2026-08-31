@@ -22,6 +22,7 @@ type
     { Private declarations }
     procedure TokenButton_Click(Sender: TObject);
     procedure CloseButton_Click(Sender: TObject);
+    procedure Panel_MouseDown(Sender: TObject; Button: TMouseButton; Shift: TShiftState; X, Y: Integer);
   public
     { Public declarations }
     constructor Create(AOwner: TComponent); override;
@@ -41,6 +42,7 @@ begin
   ActiveControl := TokenBox;
   TokenButton.OnClick := TokenButton_Click;
   CloseButton.OnClick := CloseButton_Click;
+  Pan
 end;
 
 procedure TTokenMain.TokenButton_Click(Sender: TObject);
@@ -71,6 +73,15 @@ end;
 procedure TTokenMain.CloseButton_Click(Sender: TObject);
 begin
   Application.Terminate;
+end;
+
+procedure TTokenMain.Panel_MouseDown(Sender: TObject; Button: TMouseButton; Shift: TShiftState; X, Y: Integer);
+begin
+  if Button = mbLeft then
+  begin
+    ReleaseCapture;
+    PostMessage(Self.Handle, WM_SYSCOMMAND, $F012, 0);
+  end;
 end;
 
 
