@@ -128,20 +128,12 @@ begin
   end;
 
   try
-    if (LCredential = nil) or
-       (LCredential^.CredentialBlob = nil) or
-       (LCredential^.CredentialBlobSize = 0) then
+    if (LCredential = nil) or (LCredential^.CredentialBlob = nil) or (LCredential^.CredentialBlobSize = 0) then
       Exit;
 
-    SetLength(
-      LApiKeyBytes,
-      LCredential^.CredentialBlobSize
-    );
+    SetLength(LApiKeyBytes, LCredential^.CredentialBlobSize);
 
-    Move(
-      LCredential^.CredentialBlob^,
-      LApiKeyBytes[0],
-      LCredential^.CredentialBlobSize
+    Move(LCredential^.CredentialBlob^, LApiKeyBytes[0],    LCredential^.CredentialBlobSize
     );
 
     Result := TEncoding.UTF8.GetString(LApiKeyBytes);
