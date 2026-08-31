@@ -17,19 +17,24 @@ object TokenMain: TTokenMain
     Left = 0
     Top = 0
     Width = 1088
-    Height = 41
+    Height = 35
     Align = alTop
+    Color = 6900229
+    ParentBackground = False
     TabOrder = 0
   end
   object PanelTopTitle: TPanel
     Left = 0
-    Top = 41
+    Top = 35
     Width = 1088
     Height = 56
     Align = alTop
+    Color = 4731908
+    ParentBackground = False
     TabOrder = 1
+    ExplicitTop = 41
     object Label2: TLabel
-      Left = 14
+      Left = 453
       Top = 10
       Width = 181
       Height = 36
@@ -44,19 +49,23 @@ object TokenMain: TTokenMain
   end
   object PanelStatusBar: TPanel
     Left = 0
-    Top = 298
+    Top = 304
     Width = 1088
-    Height = 41
+    Height = 35
     Align = alBottom
+    Color = 4731908
+    ParentBackground = False
     TabOrder = 2
   end
   object PanelDesktop: TPanel
     Left = 0
-    Top = 97
+    Top = 91
     Width = 1088
-    Height = 201
+    Height = 213
     Align = alClient
     TabOrder = 3
+    ExplicitTop = 97
+    ExplicitHeight = 201
     object Label1: TLabel
       Left = 49
       Top = 28
