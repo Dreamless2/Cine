@@ -34,16 +34,16 @@ object TokenMain: TTokenMain
     TabOrder = 1
     ExplicitTop = 41
     object Label2: TLabel
-      Left = 453
-      Top = 10
-      Width = 181
-      Height = 36
-      Caption = 'Token TMDB'
+      Left = 442
+      Top = 9
+      Width = 204
+      Height = 38
+      Caption = 'Cine - Token'
       Font.Charset = ANSI_CHARSET
-      Font.Color = clWindowText
+      Font.Color = clWhite
       Font.Height = -32
-      Font.Name = 'Arial'
-      Font.Style = []
+      Font.Name = 'Georgia'
+      Font.Style = [fsBold]
       ParentFont = False
     end
   end
