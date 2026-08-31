@@ -17,22 +17,23 @@ object TokenMain: TTokenMain
     Left = 0
     Top = 0
     Width = 1088
-    Height = 35
+    Height = 25
     Align = alTop
+    BevelOuter = bvNone
     Color = 6900229
     ParentBackground = False
     TabOrder = 0
   end
   object PanelTopTitle: TPanel
     Left = 0
-    Top = 35
+    Top = 25
     Width = 1088
-    Height = 56
+    Height = 64
     Align = alTop
+    BevelOuter = bvNone
     Color = 4731908
     ParentBackground = False
     TabOrder = 1
-    ExplicitTop = 41
     object Label2: TLabel
       Left = 442
       Top = 9
@@ -53,15 +54,16 @@ object TokenMain: TTokenMain
     Width = 1088
     Height = 35
     Align = alBottom
+    BevelOuter = bvNone
     Color = 4731908
     ParentBackground = False
     TabOrder = 2
   end
   object PanelDesktop: TPanel
     Left = 0
-    Top = 91
+    Top = 89
     Width = 1088
-    Height = 213
+    Height = 215
     Align = alClient
     TabOrder = 3
     ExplicitTop = 97
