@@ -42,7 +42,8 @@ begin
   ActiveControl := TokenBox;
   TokenButton.OnClick := TokenButton_Click;
   CloseButton.OnClick := CloseButton_Click;
-  Pan
+  PanelTopBar.OnMouseDown := Panel_MouseDown;
+  PanelTopTitle.OnMouseDown := Panel_MouseDown;
 end;
 
 procedure TTokenMain.TokenButton_Click(Sender: TObject);
