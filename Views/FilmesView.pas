@@ -49,7 +49,6 @@ type
     FilmeBox: TEdit;
     Label16: TLabel;
     MCUBox: TEdit;
-    HistoricoDataSource: TDataSource;
   private
     { Private declarations }
     FMidiaEvents: TMidiaFormHelper;
