@@ -51,7 +51,7 @@ begin
 
   if LToken.IsEmpty then
   begin
-    Application.MessageBox('Enter your TMDB API Read Access Token.', 'Token Error', MB_OK or MB_ICONERROR);
+    Application.MessageBox('Informe to.', 'Token Error', MB_OK or MB_ICONERROR);
     TokenBox.SetFocus;
     Exit;
   end;
