@@ -51,20 +51,20 @@ begin
 
   if LToken.IsEmpty then
   begin
-    Application.MessageBox('Informe to.', 'Token Error', MB_OK or MB_ICONERROR);
+    Application.MessageBox('Informe token de leitura TMDB.', 'Cine - Token', MB_OK or MB_ICONERROR);
     TokenBox.SetFocus;
     Exit;
   end;
 
   try
     SaveApiKey(LToken);
-    Application.MessageBox('Token saved with sucess.', 'Token', MB_OK or MB_ICONINFORMATION);
+    Application.MessageBox('Token salvo com sucesso.', 'Cine - Token', MB_OK or MB_ICONINFORMATION);
     Application.ShowMainForm := True;
     CineMain.Show;
     Release;
   except
     on E: Exception do
-      Application.MessageBox(PChar('Could not save the token: ' + E.Message), 'Token Error', MB_OK or MB_ICONERROR);
+      Application.MessageBox(PChar('Erro: ' + E.Message), 'Cine - Token', MB_OK or MB_ICONERROR);
   end;
 end;
 

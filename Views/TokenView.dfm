@@ -20,9 +20,6 @@ object TokenMain: TTokenMain
     Height = 41
     Align = alTop
     TabOrder = 0
-    ExplicitLeft = 504
-    ExplicitTop = 128
-    ExplicitWidth = 185
   end
   object PanelTopTitle: TPanel
     Left = 0
@@ -52,9 +49,6 @@ object TokenMain: TTokenMain
     Height = 41
     Align = alBottom
     TabOrder = 2
-    ExplicitLeft = 192
-    ExplicitTop = 176
-    ExplicitWidth = 185
   end
   object PanelDesktop: TPanel
     Left = 0
@@ -63,9 +57,6 @@ object TokenMain: TTokenMain
     Height = 201
     Align = alClient
     TabOrder = 3
-    ExplicitLeft = 368
-    ExplicitTop = 234
-    ExplicitHeight = 216
     object Label1: TLabel
       Left = 49
       Top = 28
