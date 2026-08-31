@@ -3,8 +3,7 @@ unit TMDB.KeyStore;
 interface
 
 uses
-  System.SysUtils,
-  Winapi.Windows;
+  System.SysUtils, Winapi.Windows;
 
 procedure SaveApiKey(const AApiKey: string);
 function LoadApiKey: string;
