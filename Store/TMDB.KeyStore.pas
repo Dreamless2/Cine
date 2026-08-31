@@ -89,12 +89,9 @@ begin
     raise EArgumentException.Create('API key cannot be empty.');
 
   LApiKeyBytes := TEncoding.UTF8.GetBytes(AApiKey);
-
   ZeroMemory(@LCredential, SizeOf(LCredential));
-
   LCredential.&Type := CRED_TYPE_GENERIC;
   LCredential.TargetName := PWideChar(CredentialTarget);
-
   LCredential.CredentialBlobSize := Length(LApiKeyBytes);
 
   if Length(LApiKeyBytes) > 0 then
@@ -114,12 +111,7 @@ begin
   Result := '';
   LCredential := nil;
 
-  if not CredReadW(
-    PWideChar(CredentialTarget),
-    CRED_TYPE_GENERIC,
-    0,
-    LCredential
-  ) then
+  if not CredReadW(PWideChar(CredentialTarget), CRED_TYPE_GENERIC, 0, LCredential) then
   begin
     if GetLastError = ERROR_NOT_FOUND then
       Exit;
@@ -132,10 +124,7 @@ begin
       Exit;
 
     SetLength(LApiKeyBytes, LCredential^.CredentialBlobSize);
-
-    Move(LCredential^.CredentialBlob^, LApiKeyBytes[0],    LCredential^.CredentialBlobSize
-    );
-
+    Move(LCredential^.CredentialBlob^, LApiKeyBytes[0], LCredential^.CredentialBlobSize);
     Result := TEncoding.UTF8.GetString(LApiKeyBytes);
 
   finally
@@ -150,12 +139,7 @@ var
 begin
   LCredential := nil;
 
-  Result := CredReadW(
-    PWideChar(CredentialTarget),
-    CRED_TYPE_GENERIC,
-    0,
-    LCredential
-  );
+  Result := CredReadW(PWideChar(CredentialTarget), CRED_TYPE_GENERIC, 0, LCredential);
 
   if Result then
   begin
