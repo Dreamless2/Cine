@@ -22,12 +22,12 @@ begin
   Application.Initialize;
   Application.MainFormOnTaskbar := True;
   Application.ShowMainForm := False;
-
   Application.CreateForm(TCineMain, CineMain);
   Application.CreateForm(TFilmesMain, FilmesMain);
   Application.CreateForm(TSeriesMain, SeriesMain);
   Application.CreateForm(TAnimesMain, AnimesMain);
   Application.CreateForm(THistoricoDataModule, HistoricoDataModule);
+
   if HasStoredApiKey then
   begin
     Application.ShowMainForm := True;
